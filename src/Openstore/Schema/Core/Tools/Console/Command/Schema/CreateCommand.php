@@ -14,14 +14,15 @@ class CreateCommand extends AbstractCommand
      */
     protected function configure()
     {
-        $this
-        ->setName('openstore:schema:create')
-        ->setDescription(
-            'Processes the schema and either create it directly on EntityManager Storage Connection or generate the SQL output.'
-        )
+        $this->setName('openstore:schema:create')
+             ->setDescription(
+                 'Processes the schema and either create it directly on EntityManager Storage Connection or generate the SQL output.'
+             )
         ->setDefinition(array(
             new InputOption(
-                'dump-sql', null, InputOption::VALUE_NONE,
+                'dump-sql',
+                null,
+                InputOption::VALUE_NONE,
                 'Instead of trying to apply generated SQLs into EntityManager Storage Connection, output them.'
             )
         ))

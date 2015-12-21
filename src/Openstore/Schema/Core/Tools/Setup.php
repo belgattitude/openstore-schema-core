@@ -13,20 +13,21 @@ use Gedmo;
 use Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain;
 use Doctrine\Common\EventManager;
 
-class Setup {
+class Setup
+{
 
     /**
      * @var array
      */
     protected $dbParams;
-    
+
     /**
      * Paths to store entities
      * @var array
      */
     protected $paths;
-    
-    
+
+
     /**
      * Entity namespace
      * @var string
@@ -38,20 +39,21 @@ class Setup {
      * @var string development|production
      */
     protected $env;
-    
+
     /**
      *
-     * @var string 
+     * @var string
      */
     protected $proxy_path;
-    
+
     /**
      * Constructor
      * @param array $dbParams database connection configuration
      * @param array $paths paths to look for entities
      * @param string $namespace entity namespace
      */
-    function __construct(array $dbParams, array $paths, $namespace) {
+    function __construct(array $dbParams, array $paths, $namespace)
+    {
         $this->dbParams = $dbParams;
         $this->paths = $paths;
         $this->namespace = $namespace;
@@ -61,57 +63,60 @@ class Setup {
     /**
      * @var string production|development
      */
-    function setEnvironment($env) {
+    function setEnvironment($env)
+    {
         $this->env = $env;
     }
-    
+
     /**
-     * 
+     *
      * @param string $path
      */
-    function setProxyPath($path) {
+    function setProxyPath($path)
+    {
         $this->proxy_path = $path;
-        
+
     }
-    
-    
+
+
     /**
-     * 
+     *
      * @return EntityManager
      */
-    function getEntityManager() {
+    function getEntityManager()
+    {
 
-        
+
         $cache = new DoctrineCache\ArrayCache();
 
         $annotationReader = new AnnotationReader();
         $cachedAnnotationReader = new CachedReader(
-                $annotationReader,
-                $cache 
+            $annotationReader,
+            $cache
         );
-        
+
         // create a driver chain for metadata reading
         $driverChain = new MappingDriverChain();
-        
+
         // load superclass metadata mapping only, into driver chain
         // also registers Gedmo annotations.NOTE: you can personalize it
         Gedmo\DoctrineExtensions::registerAbstractMappingIntoDriverChainORM(
-                $driverChain, // our metadata driver chain, to hook into
-                $cachedAnnotationReader // our cached annotation reader
+            $driverChain, // our metadata driver chain, to hook into
+            $cachedAnnotationReader // our cached annotation reader
         );
 
         // now we want to register our application entities,
         // for that we need another metadata driver used for Entity namespace
         $annotationDriver = new AnnotationDriver(
-                $cachedAnnotationReader, // our cached annotation reader
-                $this->paths
+            $cachedAnnotationReader, // our cached annotation reader
+            $this->paths
         );
-        
-        
+
+
         $driverChain->addDriver($annotationDriver, $this->namespace);
 
         // general ORM configuration
-        
+
         $isDevMode = $this->env != "production";
         $config = DoctrineSetup::createAnnotationMetadataConfiguration($this->paths, $isDevMode);
         $config->setMetadataCacheImpl($cache);
@@ -119,12 +124,12 @@ class Setup {
         $config->setMetadataDriverImpl($driverChain);
         $config->setProxyDir($this->proxy_path);
         $config->setProxyNamespace($this->namespace . '\Proxy');
-        $config->setAutoGenerateProxyClasses($isDevMode); 
-        
+        $config->setAutoGenerateProxyClasses($isDevMode);
+
 
         // Third, create event manager and hook prefered extension listeners
         $evm = new EventManager();
-        
+
         // gedmo extension listeners
         // sluggable
         $sluggableListener = new Gedmo\Sluggable\SluggableListener();
@@ -142,7 +147,7 @@ class Setup {
         $loggableListener->setAnnotationReader($cachedAnnotationReader);
         $loggableListener->setUsername('unknown');
         $evm->addEventSubscriber($loggableListener);
-        
+
         // timestampable
         $timestampableListener = new Gedmo\Timestampable\TimestampableListener();
         $timestampableListener->setAnnotationReader($cachedAnnotationReader);
@@ -164,7 +169,7 @@ class Setup {
         $translatableListener->setAnnotationReader($cachedAnnotationReader);
         $evm->addEventSubscriber($translatableListener);
         */
-        
+
         // sortable, not used in example
         $sortableListener = new Gedmo\Sortable\SortableListener;
         $sortableListener->setAnnotationReader($cachedAnnotationReader);
@@ -172,9 +177,8 @@ class Setup {
 
         // mysql set names UTF-8 if required
         $evm->addEventSubscriber(new \Doctrine\DBAL\Event\Listeners\MysqlSessionInit());
-        
+
         // Finally, create entity manager
         return EntityManager::create($this->dbParams, $config, $evm);
     }
-
 }

@@ -3,14 +3,15 @@
 return [
     'database' => [
         'driver'   => 'mysqli',
-        'user'     => 'my_user',
-        'password' => 'my_password',
-        'dbname'   => 'my_database',
+        'user'     => 'root', // user
+        'password' => '', // password
+        'dbname'   => 'openstore_dev',
         'charset'  => 'UTF8',
         //'charset' => 'utf8mb4'
     ],
     'paths' => [
-        realpath(__DIR__ . "/../src/Openstore/Schema/Core/Entity")
+        realpath(__DIR__ . "/../vendor/openstore/schema-core/src/Openstore/Schema/Core/Entity"),
+        //realpath(__DIR__ . "/../src/Openstore/Schema/Core/Entity")
     ],
     'namespace' => 'Openstore\Schema\Core\Entity',
     'env' => 'development',

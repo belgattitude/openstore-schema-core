@@ -54,8 +54,9 @@ $cli->setCatchExceptions(true);
 // commands
 $cli->addCommands(array(
     // DBAL Commands
-    new Doctrine\DBAL\Tools\Console\Command\RunSqlCommand(),
-    new Doctrine\DBAL\Tools\Console\Command\ImportCommand(),
+    // 
+    //new Doctrine\DBAL\Tools\Console\Command\RunSqlCommand(),
+    //new Doctrine\DBAL\Tools\Console\Command\ImportCommand(),
 
     // ORM Commands
     new Doctrine\ORM\Tools\Console\Command\ClearCache\MetadataCommand(),
