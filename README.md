@@ -1,2 +1,8 @@
-# openstore-schema-core
-Openstore database core schema
+# Openstore Schema Core
+
+Openstore core database schema.
+
+
+
+	
+	

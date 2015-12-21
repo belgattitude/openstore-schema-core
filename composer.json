@@ -1,0 +1,36 @@
+{
+    "name": "openstore/schema-core",
+    "description": "Openstore core schema",
+    "license": "MIT",
+    "keywords": [
+        "openstore",
+        "schema-core"
+    ],
+    "homepage": "https://github.com/belgattitude/openstore-schema-core",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Sébastien Vanvelthem",
+            "homepage": "http://www.nuvolia.com/",
+            "role": "Lead developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Openstore\\Schema\\Core": "src/Openstore/Schema/Core"
+        }
+    },
+    "require": {
+        "php": ">=5.4.4",
+        "doctrine/orm": "2.5.*",
+        "doctrine/dbal": "2.5.*",
+        "doctrine/common": "2.5.*",
+        "gedmo/doctrine-extensions": "2.4.*",
+        "doctrine/data-fixtures": "1.1.*"
+    },
+    "archive": {
+        "exclude": ["test", "doc", ".travis.yml", ".codeclimate.yml", ".coveralls.yml", ".scrutinizer.yml", ".php_cs", ".gitignore"]
+    }
+}
+
+
