@@ -20,13 +20,25 @@ try {
     }
 
     // Step 2 : init configuration
-    $config_file = realpath(dirname(__FILE__) . "/../config/") . DIRECTORY_SEPARATOR . 'openstore-schema-core.config.php';
-    if (!file_exists($config_file)) {
-        throw new \Exception("Cannot find configuration file '$config_file'");
+
+    $directories = array(getcwd(), getcwd() . DIRECTORY_SEPARATOR . 'config');
+
+    $configFound = false;
+    $configFile = null;
+    foreach ($directories as $directory) {
+        $configFile = $directory . DIRECTORY_SEPARATOR . 'openstore-schema-core.config.php';
+        if (file_exists($configFile)) {
+            $configFound = true;
+            break;
+        }
+    }    
+    
+    if (!$found) {
+        throw new \Exception("Cannot find configuration file '$configFile'");
     }
-    $config = include $config_file;
+    $config = include $configFile;
     if (!$config) {
-        throw new \Exception("Cannot parse or empty configuration file '$config_file'");
+        throw new \Exception("Cannot parse or empty configuration file '$configFile'");
     }
 } catch (\Exception $e) {
     echo $e->getMessage() . "\n";

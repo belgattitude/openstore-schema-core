@@ -6,10 +6,29 @@ Openstore core database schema.
 
 ## Install
 
+Via composer
+
 ```sh
 $ composer require openstore/schema-core:dev-master
 ```
     
+## Standalone setup
+
+For standalone setup, you must ensure a local configuration exists with
+correct database parameters.
+
+```sh
+$ mkdir config
+$ cp ./vendor/openstore/schema-core/config/openstore-schema-core.config.php.dist ./config/openstore-schema-core.config.php
+# Edit database parameters
+$ vi ./config/openstore-schema-core.config.php
+```
+
+## List commands
+
+```sh
+$ ./vendor/bin/openstore-schema-core
+```
 
 ## Get SQL to create database
 
