@@ -3,10 +3,20 @@
 // Bootstrap
 try {
     // Step 1: init autoloader
-    if (!file_exists(__DIR__.'/../vendor/autoload.php')) {
+    
+    $autoloadFiles = array(__DIR__ . '/../vendor/autoload.php',
+                           __DIR__ . '/../../../autoload.php');
+    
+    $found = false;
+    foreach ($autoloadFiles as $autoloadFile) {
+        if (file_exists($autoloadFile)) {
+            $found = true;
+            require_once $autoloadFile;
+            break;
+        }
+    }    
+    if (!$found) {
         throw new \Exception('Cannot find composer vendor autoload, run composer update');
-    } else {
-        $loader = require __DIR__.'/../vendor/autoload.php';
     }
 
     // Step 2 : init configuration
