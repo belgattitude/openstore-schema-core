@@ -17,7 +17,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Openstore\\Schema\\Core": "src/Openstore/Schema/Core"
+            "Openstore\\Schema\\Core\\": "src/Openstore/Schema/Core"
         }
     },
     "require": {
