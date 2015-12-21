@@ -1,0 +1,18 @@
+<?php
+
+return [
+    'database' => [
+        'driver'   => 'mysqli',
+        'user'     => 'my_user',
+        'password' => 'my_password',
+        'dbname'   => 'my_database',
+        'charset'  => 'UTF8',
+        //'charset' => 'utf8mb4'
+    ],
+    'paths' => [
+        realpath(__DIR__ . "/../src/Openstore/Schema/Core/Entity")
+    ],
+    'namespace' => 'Openstore\Schema\Core\Entity',
+    'env' => 'development',
+];
+
