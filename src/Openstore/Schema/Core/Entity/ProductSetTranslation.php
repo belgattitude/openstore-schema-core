@@ -324,5 +324,4 @@ class ProductSetTranslation
     {
         return $this->legacy_synchro_at;
     }
-
 }

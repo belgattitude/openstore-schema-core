@@ -29,7 +29,7 @@
         "doctrine/data-fixtures": "1.1.*"
     },
     "archive": {
-        "exclude": ["test", "doc", ".travis.yml", ".codeclimate.yml", ".coveralls.yml", ".scrutinizer.yml", ".php_cs", ".gitignore"]
+        "exclude": ["test", "doc", ".travis.yml", ".codeclimate.yml", ".coveralls.yml", ".scrutinizer.yml", "phpcs.xml", ".gitignore"]
     }
 }
 

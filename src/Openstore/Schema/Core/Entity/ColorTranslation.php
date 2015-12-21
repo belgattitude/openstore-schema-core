@@ -258,5 +258,4 @@ class ColorTranslation
     {
         return $this->legacy_synchro_at;
     }
-
 }

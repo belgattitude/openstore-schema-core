@@ -33,13 +33,13 @@ class ProductSet
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $set_id;
-    
+
     /**
      * Type id
      * @ORM\ManyToOne(targetEntity="ProductType", inversedBy="products", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="type_id", referencedColumnName="type_id", onDelete="CASCADE", nullable=true)
      */
-    private $type_id; 
+    private $type_id;
 
     /**
      * @ORM\Column(type="string", length=60, nullable=false, options={"comment" = "Reference"})
@@ -382,5 +382,4 @@ class ProductSet
     {
         return $this->legacy_synchro_at;
     }
-
 }

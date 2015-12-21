@@ -41,8 +41,8 @@ class Color
     /**
      * @ORM\Column(type="string", length=8, nullable=true, options={"comment" = "Hex color code, i.e. #FFFFFF"})
      */
-    private $hex_code;    
-    
+    private $hex_code;
+
 
     /**
      * @Gedmo\Timestampable(on="create")
@@ -254,5 +254,4 @@ class Color
     {
         return $this->legacy_synchro_at;
     }
-
 }

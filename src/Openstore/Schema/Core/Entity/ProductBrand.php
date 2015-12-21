@@ -376,5 +376,4 @@ class ProductBrand
     {
         return $this->legacy_synchro_at;
     }
-
 }
