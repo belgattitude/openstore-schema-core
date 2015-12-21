@@ -40,6 +40,12 @@ class Setup {
     protected $env;
     
     /**
+     *
+     * @var string 
+     */
+    protected $proxy_path;
+    
+    /**
      * Constructor
      * @param array $dbParams database connection configuration
      * @param array $paths paths to look for entities
@@ -49,6 +55,7 @@ class Setup {
         $this->dbParams = $dbParams;
         $this->paths = $paths;
         $this->namespace = $namespace;
+        $this->proxy_path = sys_get_temp_dir();
     }
 
     /**
@@ -56,6 +63,15 @@ class Setup {
      */
     function setEnvironment($env) {
         $this->env = $env;
+    }
+    
+    /**
+     * 
+     * @param string $path
+     */
+    function setProxyPath($path) {
+        $this->proxy_path = $path;
+        
     }
     
     
@@ -101,7 +117,7 @@ class Setup {
         $config->setMetadataCacheImpl($cache);
         $config->setQueryCacheImpl($cache);
         $config->setMetadataDriverImpl($driverChain);
-        $config->setProxyDir(sys_get_temp_dir());
+        $config->setProxyDir($this->proxy_path);
         $config->setProxyNamespace($this->namespace . '\Proxy');
         $config->setAutoGenerateProxyClasses($isDevMode); 
         

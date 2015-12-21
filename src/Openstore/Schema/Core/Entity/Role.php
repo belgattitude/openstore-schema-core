@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Rbac\Role\HierarchicalRoleInterface;
 use ZfcRbac\Permission\PermissionInterface;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Doctrine\Common\Collections\Collection;
 
 /**
  * @ORM\Entity(repositoryClass="Openstore\Schema\Core\Entity\Repository\RoleRepository")
@@ -79,7 +80,7 @@ class Role implements HierarchicalRoleInterface
     private $children;
 
     /**
-     * @var PermissionInterface[]|\Doctrine\Common\Collections\Collection
+     * @var PermissionInterface[]|Collection
      *
      * @ORM\ManyToMany(targetEntity="Permission", indexBy="name", fetch="EAGER")
      * @ORM\JoinTable(name="role_permission",

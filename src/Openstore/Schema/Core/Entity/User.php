@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use ZfcUser\Entity\UserInterface;
 use ZfcRbac\Identity\IdentityInterface;
 use Rbac\Role\RoleInterface;
+use Doctrine\Common\Collections\Collection;
 
 /**
  * @ORM\Entity(repositoryClass="Openstore\Schema\Core\Entity\Repository\UserRepository")
@@ -63,7 +64,7 @@ class User implements UserInterface, IdentityInterface
     /**
      * Bidirectional - Many users have many roles (OWNING SIDE)
      *
-     * @var \Doctrine\Common\Collections\Collection
+     * @var Collection
      *
      * @ORM\ManyToMany(targetEntity="Openstore\Schema\Core\Entity\Role", inversedBy="users")
      * @ORM\JoinTable(name="user_role",
@@ -74,7 +75,7 @@ class User implements UserInterface, IdentityInterface
     protected $roles;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
+     * @var Collection
      * @ORM\OneToMany(targetEntity="UserPricelist", mappedBy="user_id")
      */
     protected $pricelists;
@@ -261,7 +262,7 @@ class User implements UserInterface, IdentityInterface
 
     /**
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return Collection
      */
     public function getPricelists()
     {

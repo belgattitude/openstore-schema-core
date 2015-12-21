@@ -14,5 +14,6 @@ return [
     ],
     'namespace' => 'Openstore\Schema\Core\Entity',
     'env' => 'development',
+    'proxy_path' => sys_get_temp_dir()
 ];
 

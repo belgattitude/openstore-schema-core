@@ -35,6 +35,7 @@ try {
 
 $setup = new Openstore\Schema\Core\Doctrine\Setup($config['database'], $config['paths'], $config['namespace']);
 $setup->setEnvironment($config['env']);
+$setup->setProxyPath($config['proxy_path']);
 
 $cli = new Symfony\Component\Console\Application('openstore-schema-core console', '1.0.0');
 $cli->setCatchExceptions(true);
