@@ -4,7 +4,18 @@
 
 Openstore core database schema.
 
+## Install
 
+```sh
+$ composer update
+```
+    
+
+## Get SQL to create database
+
+```sh
+$ vendor/bin/openstore-schema-core.php orm:schema-tool:create --dump-sql
+```
 
 	
 	
