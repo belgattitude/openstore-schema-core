@@ -33,7 +33,7 @@ $ ./vendor/bin/openstore-schema-core
 ## Get SQL to create database
 
 ```sh
-$ vendor/bin/openstore-schema-core.php orm:schema-tool:create --dump-sql
+$ ../vendor/bin/openstore-schema-core.php openstore:schema:create --dump-sql
 ```
 
 	

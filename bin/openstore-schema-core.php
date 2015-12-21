@@ -45,7 +45,7 @@ try {
     exit(1);
 }
 
-$setup = new Openstore\Schema\Core\Doctrine\Setup($config['database'], $config['paths'], $config['namespace']);
+$setup = new Openstore\Schema\Core\Tools\Setup($config['database'], $config['paths'], $config['namespace']);
 $setup->setEnvironment($config['env']);
 $setup->setProxyPath($config['proxy_path']);
 
@@ -64,15 +64,18 @@ $cli->addCommands(array(
     new Doctrine\ORM\Tools\Console\Command\SchemaTool\CreateCommand(),
     new Doctrine\ORM\Tools\Console\Command\SchemaTool\UpdateCommand(),
     new Doctrine\ORM\Tools\Console\Command\SchemaTool\DropCommand(),
-    new Doctrine\ORM\Tools\Console\Command\EnsureProductionSettingsCommand(),
-    new Doctrine\ORM\Tools\Console\Command\ConvertDoctrine1SchemaCommand(),
+    //new Doctrine\ORM\Tools\Console\Command\EnsureProductionSettingsCommand(),
+    //new Doctrine\ORM\Tools\Console\Command\ConvertDoctrine1SchemaCommand(),
     new Doctrine\ORM\Tools\Console\Command\GenerateRepositoriesCommand(),
     new Doctrine\ORM\Tools\Console\Command\GenerateEntitiesCommand(),
     new Doctrine\ORM\Tools\Console\Command\GenerateProxiesCommand(),
-    new Doctrine\ORM\Tools\Console\Command\ConvertMappingCommand(),
+    //new Doctrine\ORM\Tools\Console\Command\ConvertMappingCommand(),
     new Doctrine\ORM\Tools\Console\Command\RunDqlCommand(),
     new Doctrine\ORM\Tools\Console\Command\ValidateSchemaCommand(),
     new Doctrine\ORM\Tools\Console\Command\InfoCommand(),
+    
+    new Openstore\Schema\Core\Tools\Console\Command\Schema\CreateCommand(),
+    new Openstore\Schema\Core\Tools\Console\Command\Schema\UpdateCommand(),
 ));
 
 $em = $setup->getEntityManager();

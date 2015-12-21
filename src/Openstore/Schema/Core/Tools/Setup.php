@@ -1,6 +1,6 @@
 <?php
 
-namespace Openstore\Schema\Core\Doctrine;
+namespace Openstore\Schema\Core\Tools;
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Configuration;
