@@ -13,7 +13,7 @@ return [
         realpath(__DIR__ . "/../vendor/openstore/schema-core/src/OpenstoreSchema/Core/Entity"),
         //realpath(__DIR__ . "/../src/Openstore/Schema/Core/Entity")
     ],
-    'namespace' => 'Openstore\Schema\Core\Entity',
+    'namespace' => 'OpenstoreSchema\Core\Entity',
     'env' => 'development',
     'proxy_path' => sys_get_temp_dir()
 ];
