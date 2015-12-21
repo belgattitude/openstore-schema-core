@@ -7,7 +7,7 @@ Openstore core database schema.
 ## Install
 
 ```sh
-$ composer update
+$ composer require openstore/schema-core:dev-master
 ```
     
 

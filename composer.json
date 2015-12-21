@@ -31,9 +31,7 @@
         "zf-commons/zfc-user": "1.4.*",
         "symfony/console": "3.0"
     },
-    "config": {
-        "bin-dir": "bin"
-    },    
+    "bin": ["bin/openstore-schema-core"],
     "archive": {
         "exclude": ["test", "doc", ".travis.yml", ".codeclimate.yml", ".coveralls.yml", ".scrutinizer.yml", "phpcs.xml", ".gitignore"]
     }
