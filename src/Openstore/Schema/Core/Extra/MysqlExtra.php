@@ -4,9 +4,34 @@ namespace Openstore\Schema\Core\Extra;
 
 class MysqlExtra extends AbstractExtra
 {
+    protected $delimiter = "//";
+    
 
     /**
-     * Return DDL for mysql functions
+     * Special case for Mysql when delaing with delimiters
+     */
+    public function getExtrasDDLWithDelimiter() {
+        $ddls = $this->getExtrasDDL();
+        $start = "DELIMITER {$this->delimiter}";
+        $end = "DELIMITER ;";
+        
+        $newDdls = array();
+        
+        foreach ($ddls as $idx => $ddl) {
+            $newDdls[] = $start;
+            if (!preg_match('/;$/', $ddl)) {
+                $newDdls[] = $ddl . ' ' . $this->delimiter;
+            } else {
+                $newDdls[] = preg_replace('/;$/', $this->delimiter, $ddl);
+            }
+            $newDdls[] = $end;
+        }
+        
+        return join(PHP_EOL, $newDdls) . PHP_EOL . $end . PHP_EOL;
+    }
+    
+    /**
+     * RETURN DDL for mysql functions
      * @return array
      */
     public function getFunctions()
@@ -15,82 +40,82 @@ class MysqlExtra extends AbstractExtra
         $stmts = [];
         $stmts['drop/function/slugify']        = "DROP FUNCTION IF EXISTS `slugify`";
         $stmts['create/function/slugify']    = <<< ENDQ
-        CREATE FUNCTION `slugify` (dirty_string varchar(255))
-        RETURNS varchar(255) CHARSET latin1
+        CREATE FUNCTION `slugify` (dirty_string VARCHAR(255))
+        RETURNS VARCHAR(255) CHARSET latin1
         DETERMINISTIC
         BEGIN
             DECLARE x, y , z Int;
-            Declare temp_string, new_string VarChar(255);
-            Declare is_allowed Bool;
-            Declare c, check_char VarChar(1);
+            DECLARE temp_string, new_string VarChar(255);
+            DECLARE is_allowed Bool;
+            DECLARE c, check_char VarChar(1);
 
-            set temp_string = LOWER(dirty_string);
+            SET temp_string = LOWER(dirty_string);
 
-            Set temp_string = replace(temp_string, '&', ' and ');
+            SET temp_string = replace(temp_string, '&', ' and ');
 
-            Select temp_string Regexp('[^a-z0-9\-]+') into x;
-            If x = 1 then
-                set z = 1;
-                While z <= Char_length(temp_string) Do
-                    Set c = Substring(temp_string, z, 1);
-                    Set is_allowed = False;
-                    If !((ascii(c) = 45) or (ascii(c) >= 48 and ascii(c) <= 57) or (ascii(c) >= 97 and ascii(c) <= 122)) Then
-                        Set temp_string = Replace(temp_string, c, '-');
-                    End If;
-                    set z = z + 1;
-                End While;
-            End If;
+            SELECT temp_string REGEXP('[^a-z0-9\-]+') into x;
+            IF x = 1 then
+                SET z = 1;
+                WHILE z <= CHAR_LENGTH(temp_string) Do
+                    SET c = SUBSTRING(temp_string, z, 1);
+                    SET is_allowed = False;
+                    IF !((ascii(c) = 45) or (ascii(c) >= 48 and ascii(c) <= 57) or (ascii(c) >= 97 and ascii(c) <= 122)) THEN
+                        SET temp_string = REPLACE(temp_string, c, '-');
+                    END IF;
+                    SET z = z + 1;
+                END WHILE;
+            END IF;
 
-            Select temp_string Regexp("^-|-$|'") into x;
-            If x = 1 Then
-                Set temp_string = Replace(temp_string, "'", '');
-                Set z = Char_length(temp_string);
-                Set y = Char_length(temp_string);
-                Dash_check: While z > 1 Do
-                    If Strcmp(SubString(temp_string, -1, 1), '-') = 0 Then
-                        Set temp_string = Substring(temp_string,1, y-1);
-                        Set y = y - 1;
-                    Else
-                        Leave Dash_check;
-                    End If;
-                    Set z = z - 1;
-                End While;
-            End If;
+            SELECT temp_string REGEXP("^-|-$|'") into x;
+            IF x = 1 THEN
+                SET temp_string = REPLACE(temp_string, "'", '');
+                SET z = CHAR_LENGTH(temp_string);
+                SET y = CHAR_LENGTH(temp_string);
+                Dash_check: WHILE z > 1 Do
+                    IF Strcmp(SUBSTRING(temp_string, -1, 1), '-') = 0 THEN
+                        SET temp_string = SUBSTRING(temp_string,1, y-1);
+                        SET y = y - 1;
+                    ELSE
+                        LEAVE Dash_check;
+                    END IF;
+                    SET z = z - 1;
+                END WHILE;
+            END IF;
 
-            Repeat
-                Select temp_string Regexp("--") into x;
-                If x = 1 Then
-                    Set temp_string = Replace(temp_string, "--", "-");
-                End If;
-            Until x <> 1 End Repeat;
+            REPEAT
+                SELECT temp_string REGEXP("--") into x;
+                IF x = 1 THEN
+                    SET temp_string = REPLACE(temp_string, "--", "-");
+                END IF;
+            UNTIL x <> 1 END REPEAT;
 
-            If LOCATE('-', temp_string) = 1 Then
-                Set temp_string = SUBSTRING(temp_string, 2);
-            End If;
+            IF LOCATE('-', temp_string) = 1 THEN
+                SET temp_string = SUBSTRING(temp_string, 2);
+            END IF;
 
-            Return temp_string;
+            RETURN temp_string;
         END        
 ENDQ;
 
         $stmts['drop/function/strip_tags'] = "DROP FUNCTION IF EXISTS `strip_tags`";
         $stmts['create/function/strip_tags']    = <<< ENDQ
-        CREATE FUNCTION strip_tags( Dirty varchar(3000) )
-        RETURNS varchar(3000)
+        CREATE FUNCTION strip_tags( DIRTY VARCHAR(3000) )
+        RETURNS VARCHAR(3000)
         DETERMINISTIC 
         BEGIN
           DECLARE iStart, iEnd, iLength int;
-            WHILE Locate( '<', Dirty ) > 0 And Locate( '>', Dirty, Locate( '<', Dirty )) > 0 DO
+            WHILE LOCATE( '<', DIRTY ) > 0 And LOCATE( '>', DIRTY, LOCATE( '<', DIRTY )) > 0 DO
               BEGIN
-                SET iStart = Locate( '<', Dirty ), iEnd = Locate( '>', Dirty, Locate('<', Dirty ));
+                SET iStart = LOCATE( '<', DIRTY ), iEnd = LOCATE( '>', DIRTY, LOCATE('<', DIRTY ));
                 SET iLength = ( iEnd - iStart) + 1;
                 IF iLength > 0 THEN
                   BEGIN
-                    SET Dirty = Insert( Dirty, iStart, iLength, '');
+                    SET DIRTY = Insert( DIRTY, iStart, iLength, '');
                   END;
                 END IF;
               END;
             END WHILE;
-            RETURN Dirty;
+            RETURN DIRTY;
         END;
 ENDQ;
 
@@ -112,7 +137,7 @@ ENDQ;
 
         $stmts['drop/function/get_searchable_reference'] = "DROP FUNCTION IF EXISTS `get_searchable_reference`";
         $stmts['create/function/get_searchable_reference']    = <<< ENDQ
-        CREATE FUNCTION `get_searchable_reference` (`in_str` varchar(2048)) RETURNS varchar(2048) CHARSET utf8
+        CREATE FUNCTION `get_searchable_reference` (`in_str` VARCHAR(2048)) RETURNS VARCHAR(2048) CHARSET utf8
         BEGIN
             /*
               This function escape a string from any non alphanumeric chars (A_Z0_9)
@@ -143,7 +168,7 @@ ENDQ;
                             IF (c = 0 and NOT (ASCII(prev_c) > 47 AND ASCII(prev_c) < 58))
                             THEN
                                 -- NOTHING
-                                set c = c;
+                                SET c = c;
                             ELSE
                                 SET out_str = CONCAT(out_str, c);
                             END IF;
@@ -165,7 +190,7 @@ ENDQ;
     }
 
     /**
-     * Return MySQL procedures
+     * RETURN MySQL procedures
      * @return array
      */
     public function getProcedures()

@@ -49,6 +49,8 @@ $setup = new Openstore\Schema\Core\Tools\Setup($config['database'], $config['pat
 $setup->setEnvironment($config['env']);
 $setup->setProxyPath($config['proxy_path']);
 
+$em = $setup->getEntityManager();
+
 $cli = new Symfony\Component\Console\Application('openstore-schema-core console', '1.0.0');
 $cli->setCatchExceptions(true);
 // commands
@@ -76,10 +78,11 @@ $cli->addCommands(array(
     new Doctrine\ORM\Tools\Console\Command\InfoCommand(),
     
     new Openstore\Schema\Core\Tools\Console\Command\Schema\CreateCommand(),
+    new Openstore\Schema\Core\Tools\Console\Command\Schema\RecreateExtraCommand(),
     new Openstore\Schema\Core\Tools\Console\Command\Schema\UpdateCommand(),
 ));
 
-$em = $setup->getEntityManager();
+
 
 // helpers
 $helpers = array(
