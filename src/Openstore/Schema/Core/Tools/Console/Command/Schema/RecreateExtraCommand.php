@@ -52,7 +52,9 @@ EOT
 
             $output->writeln('Recreating database extras...');
             $metadatas = $extra->getExtrasDDL();            
-            $conn = $this->getConnection();
+            $connHelper = $this->getHelper('db');            
+            $conn = $connHelper->getConnection();
+
             foreach($metadatas as $key => $ddl) {
                 $output->writeln("Executing: $key");
                 $ret = $conn->exec($ddl);
@@ -63,14 +65,6 @@ EOT
         return 0;
     }
     
-    /**
-     * @return \Doctrine\DBAL\Driver\Mysqli\MysqliConnection
-     */
-    public function getConnection() {
-        $connHelper = $this->getHelper('db');            
-        $conn = $connHelper->getConnection();
-        return $conn;
-    }
     
     
 }

@@ -36,5 +36,13 @@ $ ./vendor/bin/openstore-schema-core
 $ ../vendor/bin/openstore-schema-core.php openstore:schema:create --dump-sql
 ```
 
+* Remove --dump-sql to execute query on your database
+
+
+## Get SQL to (re-)create db extras (triggers, procedures, functions, events...)
+
+```sh
+$ ../vendor/bin/openstore-schema-core.php openstore:schema:recreate-extra --dump-sql
+```
 	
 	
