@@ -45,7 +45,7 @@ try {
     exit(1);
 }
 
-$setup = new Openstore\Schema\Core\Tools\Setup($config['database'], $config['paths'], $config['namespace']);
+$setup = new OpenstoreSchema\Core\Tools\Setup($config['database'], $config['paths'], $config['namespace']);
 $setup->setEnvironment($config['env']);
 $setup->setProxyPath($config['proxy_path']);
 
@@ -77,9 +77,9 @@ $cli->addCommands(array(
     new Doctrine\ORM\Tools\Console\Command\ValidateSchemaCommand(),
     new Doctrine\ORM\Tools\Console\Command\InfoCommand(),
     
-    new Openstore\Schema\Core\Tools\Console\Command\Schema\CreateCommand(),
-    new Openstore\Schema\Core\Tools\Console\Command\Schema\RecreateExtraCommand(),
-    new Openstore\Schema\Core\Tools\Console\Command\Schema\UpdateCommand(),
+    new OpenstoreSchema\Core\Tools\Console\Command\Schema\CreateCommand(),
+    new OpenstoreSchema\Core\Tools\Console\Command\Schema\RecreateExtraCommand(),
+    new OpenstoreSchema\Core\Tools\Console\Command\Schema\UpdateCommand(),
 ));
 
 
