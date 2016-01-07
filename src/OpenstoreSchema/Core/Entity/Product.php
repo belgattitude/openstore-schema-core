@@ -113,7 +113,7 @@ class Product
     /**
      *
      * @ORM\ManyToOne(targetEntity="ProductStub", inversedBy="stubs", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(name="product_stub_id", referencedColumnName="product_stub_id", onDelete="CASCADE", nullable=false)
+     * @ORM\JoinColumn(name="product_stub_id", referencedColumnName="product_stub_id", onDelete="CASCADE", nullable=true)
      */
     private $product_stub_id;
     
