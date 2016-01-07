@@ -44,35 +44,35 @@ EOT
      */
     protected function executeSchemaCommand(InputInterface $input, OutputInterface $output, SchemaTool $schemaTool, array $metadatas)
     {
-        
+
         $extra = new Extra\MysqlExtra();
         if ($input->getOption('dump-sql')) {
             $sqls = $schemaTool->getCreateSchemaSql($metadatas);
-            
+
             $output->writeln(implode(';' . PHP_EOL, $sqls) . ';');
-            
-            $ddls = $extra->getExtrasDDLWithDelimiter();   
+
+            $ddls = $extra->getExtrasDDLWithDelimiter();
             $output->writeln($ddls);
-            
+
         } else {
             $conn = $this->getConnection();
-            
+
             $output->writeln('ATTENTION: This operation should not be executed in a production environment.' . PHP_EOL);
 
-            
-            
+
+
             $output->writeln('Creating database schema...');
             $schemaTool->createSchema($metadatas);
-            
-            $output->writeln('Recreating database extras...');
-            $metadatas = $extra->getExtrasDDL();            
-            
 
-            foreach($metadatas as $key => $ddl) {
+            $output->writeln('Recreating database extras...');
+            $metadatas = $extra->getExtrasDDL();
+
+
+            foreach ($metadatas as $key => $ddl) {
                 $output->writeln("Executing: $key");
                 $ret = $conn->exec($ddl);
             }
-            $output->writeln('Database schema and extras created successfully!');            
+            $output->writeln('Database schema and extras created successfully!');
         }
 
         return 0;

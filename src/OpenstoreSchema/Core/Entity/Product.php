@@ -34,11 +34,6 @@ use Gedmo\Mapping\Annotation as Gedmo;
 class Product
 {
     /**
-     * @ORM\OneToMany(targetEntity="ProductTranslation", mappedBy="product_id")
-     * */
-    private $translations;
-
-    /**
      * @ORM\Id
      * @ORM\Column(name="product_id", type="bigint", nullable=false, options={"unsigned"=true})
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -114,6 +109,14 @@ class Product
      * @ORM\JoinColumn(name="unit_id", referencedColumnName="unit_id", onDelete="CASCADE", nullable=true)
      */
     private $unit_id;
+    
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="ProductStub", inversedBy="stubs", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(name="product_stub_id", referencedColumnName="product_stub_id", onDelete="CASCADE", nullable=false)
+     */
+    private $product_stub_id;
+    
 
     /**
      * Primary color id

@@ -2,19 +2,23 @@
 
 namespace OpenstoreSchema\Core\Extra;
 
+abstract class AbstractExtra
+{
 
 
-abstract class AbstractExtra {
 
-    
-    
     /**
-     * 
+     *
      * @return array
      */
-    public function getExtrasDDL() {
+    public function getExtrasDDL()
+    {
         $stmts = array_merge(
-                $this->getSqlAlters(), $this->getFunctions(), $this->getProcedures(), $this->getTriggers(), $this->getEvents()
+            $this->getSqlAlters(),
+            $this->getFunctions(),
+            $this->getProcedures(),
+            $this->getTriggers(),
+            $this->getEvents()
         );
 
         foreach ($stmts as $idx => $operations) {

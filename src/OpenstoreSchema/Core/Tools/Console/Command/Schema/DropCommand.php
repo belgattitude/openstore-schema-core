@@ -31,24 +31,24 @@ EOT
      */
     protected function executeSchemaCommand(InputInterface $input, OutputInterface $output, SchemaTool $schemaTool, array $metadatas)
     {
-        
+
         $conn = $this->getConnection();
         $current_db = $conn->getDatabase();
-        
-        
+
+
         $output->writeln('ATTENTION: This operation should not be executed in a production environment.' . PHP_EOL);
-        
-        $qhelper = $this->getHelper('question');        
-        
+
+        $qhelper = $this->getHelper('question');
+
         $question = new Question\ConfirmationQuestion("Are you sure you want to drop database '$current_db' (y/n) ?", false);
 
         if (!$qhelper->ask($input, $output, $question)) {
             return;
-        }        
-        
+        }
+
         $query = "drop database if exists $current_db";
         $ret = $conn->exec($query);
-        
+
         return 0;
     }
 }

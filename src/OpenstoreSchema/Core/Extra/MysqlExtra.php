@@ -5,18 +5,19 @@ namespace OpenstoreSchema\Core\Extra;
 class MysqlExtra extends AbstractExtra
 {
     protected $delimiter = "//";
-    
+
 
     /**
      * Special case for Mysql when delaing with delimiters
      */
-    public function getExtrasDDLWithDelimiter() {
+    public function getExtrasDDLWithDelimiter()
+    {
         $ddls = $this->getExtrasDDL();
         $start = "DELIMITER {$this->delimiter}";
         $end = "DELIMITER ;";
-        
+
         $newDdls = array();
-        
+
         foreach ($ddls as $idx => $ddl) {
             $newDdls[] = $start;
             if (!preg_match('/;$/', $ddl)) {
@@ -26,10 +27,10 @@ class MysqlExtra extends AbstractExtra
             }
             $newDdls[] = $end;
         }
-        
+
         return join(PHP_EOL, $newDdls) . PHP_EOL . $end . PHP_EOL;
     }
-    
+
     /**
      * RETURN DDL for mysql functions
      * @return array
