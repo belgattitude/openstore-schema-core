@@ -80,6 +80,7 @@ $cli->addCommands(array(
     new OpenstoreSchema\Core\Tools\Console\Command\Schema\CreateCommand(),
     new OpenstoreSchema\Core\Tools\Console\Command\Schema\RecreateExtraCommand(),
     new OpenstoreSchema\Core\Tools\Console\Command\Schema\UpdateCommand(),
+    new OpenstoreSchema\Core\Tools\Console\Command\Schema\DropCommand()
 ));
 
 
@@ -88,6 +89,7 @@ $cli->addCommands(array(
 $helpers = array(
     'db' => new Doctrine\DBAL\Tools\Console\Helper\ConnectionHelper($em->getConnection()),
     'em' => new Doctrine\ORM\Tools\Console\Helper\EntityManagerHelper($em),
+    'question' => new Symfony\Component\Console\Helper\QuestionHelper(),
 );
 foreach ($helpers as $name => $helper) {
     $cli->getHelperSet()->set($helper, $name);

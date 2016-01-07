@@ -6,13 +6,15 @@ Openstore core database schema.
 
 ## Install
 
+### In your existing project
+
 Via composer
 
 ```sh
 $ composer require openstore/schema-core:dev-master
 ```
     
-## Standalone setup
+### Standalone setup
 
 For standalone setup, you must ensure a local configuration exists with
 correct database parameters.
@@ -24,25 +26,39 @@ $ cp ./vendor/openstore/schema-core/config/openstore-schema-core.config.php.dist
 $ vi ./config/openstore-schema-core.config.php
 ```
 
-## List commands
+### Database creation
 
-```sh
+```console
+mysql -e "CREATE DATABASE my_test_db;" -uroot -p
+```
+
+
+## Openstore schema commands
+
+### List commands
+
+```console
 $ ./vendor/bin/openstore-schema-core
 ```
 
-## Get SQL to create database
+### Get SQL to create database
 
-```sh
-$ ../vendor/bin/openstore-schema-core.php openstore:schema:create --dump-sql
+```console
+$ ./vendor/bin/openstore-schema-core.php openstore:schema:create --dump-sql
 ```
 
-* Remove --dump-sql to execute query on your database
+*Remove --dump-sql to execute query on your database*
 
 
-## Get SQL to (re-)create db extras (triggers, procedures, functions, events...)
+### Get SQL to (re-)create db extras (triggers, procedures, functions, events...)
 
-```sh
-$ ../vendor/bin/openstore-schema-core.php openstore:schema:recreate-extra --dump-sql
+```console
+$ ./vendor/bin/openstore-schema-core.php openstore:schema:recreate-extra --dump-sql
 ```
-	
+
+### Drop database (only testing environment)
+
+```console
+$ ./vendor/bin/openstore-schema-core.php openstore:schema:drop 
+```
 	

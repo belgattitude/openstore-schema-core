@@ -44,4 +44,15 @@ abstract class AbstractCommand extends Command
         }
     }
     
+    /**
+     * Return underlying database connection
+     * 
+     * @return \Doctrine\DBAL\Connection
+     */
+    protected function getConnection()
+    {
+        return $this->getHelper('db')->getConnection();
+        
+    }
+    
 }

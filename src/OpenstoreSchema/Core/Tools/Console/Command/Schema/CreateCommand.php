@@ -55,16 +55,18 @@ EOT
             $output->writeln($ddls);
             
         } else {
+            $conn = $this->getConnection();
+            
             $output->writeln('ATTENTION: This operation should not be executed in a production environment.' . PHP_EOL);
 
+            
+            
             $output->writeln('Creating database schema...');
             $schemaTool->createSchema($metadatas);
             
-            
             $output->writeln('Recreating database extras...');
             $metadatas = $extra->getExtrasDDL();            
-            $connHelper = $this->getHelper('db');            
-            $conn = $connHelper->getConnection();
+            
 
             foreach($metadatas as $key => $ddl) {
                 $output->writeln("Executing: $key");
