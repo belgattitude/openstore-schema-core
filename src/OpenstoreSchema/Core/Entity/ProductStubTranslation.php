@@ -16,7 +16,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     @ORM\UniqueConstraint(name="unique_translation_idx",columns={"product_stub_id", "lang"})
  *   },
  *   indexes={
- *     @ORM\Index(name="description_idx", columns={"description"}),
+ *     @ORM\Index(name="description_idx", columns={"description_header"}),
  *     @ORM\Index(name="keywords_idx", columns={"keywords"}),
  *     @ORM\Index(name="revision_idx", columns={"revision"}),
  *   },
@@ -52,12 +52,18 @@ class ProductStubTranslation
     private $lang;
 
     /**
-     * @ORM\Column(type="string", length=5000, nullable=true)
+     * @ORM\Column(type="string", length=5000, nullable=true, options={"comment" = "Description header that will be prepended to product desc"})
      */
-    private $description;
+    private $description_header;
 
     /**
-     * @ORM\Column(type="string", length=5000, nullable=true, options={"comment" = "Specifications"})
+     * @ORM\Column(type="string", length=5000, nullable=true, options={"comment" = "Description footer that will be appended to product desc"})
+     */
+    private $description_footer;
+
+    
+    /**
+     * @ORM\Column(type="string", length=5000, nullable=true, options={"comment" = "Common product stub specifications"})
      */
     private $specs;
 
@@ -131,24 +137,41 @@ class ProductStubTranslation
 
     /**
      *
-     * @param string $description
+     * @param string $description_header
      */
-    public function setDescription($description)
+    public function setDescriptionHeader($description_header)
     {
-        $this->description = $description;
-        return $this;
+        $this->description_header = $description_header;
     }
 
     /**
      *
+     * @param string $description_footer
+     */
+    public function setDescriptionFooter($description_footer)
+    {
+        $this->description_footer = $description_footer;
+    }
+    
+    
+    /**
      * @return string
      */
-    public function getDescription()
+    public function getDescriptionHeader()
     {
-        return $this->description;
+        return $this->description_header;
     }
 
 
+    /**
+     * @return string
+     */
+    public function getDescriptionFooter()
+    {
+        return $this->description_footer;
+    }
+    
+    
     /**
      *
      * @param string $specs
