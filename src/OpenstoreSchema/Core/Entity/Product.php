@@ -87,8 +87,8 @@ class Product
      * @ORM\ManyToOne(targetEntity="ProductSerie", inversedBy="series", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="serie_id", referencedColumnName="serie_id", onDelete="CASCADE", nullable=true)
      */
-    private $serie_id;    
-    
+    private $serie_id;
+
     /**
      *
      * @ORM\ManyToOne(targetEntity="ProductCategory", inversedBy="categories", cascade={"persist", "remove"})
@@ -116,14 +116,14 @@ class Product
      * @ORM\JoinColumn(name="unit_id", referencedColumnName="unit_id", onDelete="CASCADE", nullable=true)
      */
     private $unit_id;
-    
+
     /**
      *
      * @ORM\ManyToOne(targetEntity="ProductStub", inversedBy="stubs", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="product_stub_id", referencedColumnName="product_stub_id", onDelete="CASCADE", nullable=true)
      */
     private $product_stub_id;
-    
+
 
     /**
      * Primary color id

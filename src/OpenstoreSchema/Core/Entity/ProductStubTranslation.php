@@ -61,7 +61,7 @@ class ProductStubTranslation
      */
     private $description_footer;
 
-    
+
     /**
      * @ORM\Column(type="string", length=5000, nullable=true, options={"comment" = "Common product stub specifications"})
      */
@@ -152,8 +152,8 @@ class ProductStubTranslation
     {
         $this->description_footer = $description_footer;
     }
-    
-    
+
+
     /**
      * @return string
      */
@@ -170,8 +170,8 @@ class ProductStubTranslation
     {
         return $this->description_footer;
     }
-    
-    
+
+
     /**
      *
      * @param string $specs

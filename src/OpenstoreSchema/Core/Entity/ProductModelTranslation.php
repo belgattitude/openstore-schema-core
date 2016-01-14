@@ -158,7 +158,7 @@ class ProductModelTranslation
     public function setDescription($description)
     {
         $this->description = $description;
-        
+
     }
 
     /**
@@ -177,7 +177,7 @@ class ProductModelTranslation
     public function setLangId($lang_id)
     {
         $this->lang_id = $lang_id;
-        
+
     }
 
     /**
@@ -205,7 +205,7 @@ class ProductModelTranslation
     public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
-        
+
     }
 
     /**
@@ -243,7 +243,7 @@ class ProductModelTranslation
     public function setCreatedBy($created_by)
     {
         $this->created_by = $created_by;
-        
+
     }
 
     /**
@@ -262,7 +262,7 @@ class ProductModelTranslation
     public function setUpdatedBy($updated_by)
     {
         $this->updated_by = $updated_by;
-        
+
     }
 
     /**
@@ -291,7 +291,7 @@ class ProductModelTranslation
     public function setLegacySynchroAt($legacy_synchro_at)
     {
         $this->legacy_synchro_at = $legacy_synchro_at;
-        
+
     }
 
     /**
@@ -313,6 +313,4 @@ class ProductModelTranslation
     {
         return $this->getTitle();
     }
-
-
 }
