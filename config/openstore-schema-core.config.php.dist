@@ -6,6 +6,7 @@ return array(
     'database' => array(
         'driver'   => 'mysqli',
         'user'     => 'root', // user
+        'host'     => 'localhost',
         'password' => '', // password
         'dbname'   => 'openstore_dev',
         'charset'  => 'UTF8',

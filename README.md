@@ -4,6 +4,18 @@
 
 Openstore core database schema.
 
+## Requirements
+
+- PHP engine 5.4+, 7.0+ or HHVM >= 3.2.
+- Currently supported database platforms (Mysql, MariaDb)
+
+| Database      | Extra              |
+|---------------|--------------------|
+| MySQL 5.6+    | INNODB engine      |
+| Mariadb 10+   | INNODB/XTRADB      |
+| Percona 5.6+  | INNODB/XTRADB      |
+
+
 ## Install
 
 ### In your existing project
