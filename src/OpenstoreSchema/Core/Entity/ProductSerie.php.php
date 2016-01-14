@@ -10,39 +10,43 @@ use Gedmo\Mapping\Annotation as Gedmo;
 /**
  * @ORM\Entity
  * @ORM\Table(
- *   name="product_model_translation",
+ *   name="product_serie",
  *   uniqueConstraints={
+ *     @ORM\UniqueConstraint(name="unique_brand_reference_idx",columns={"brand_id", "reference"}),
  *     @ORM\UniqueConstraint(name="unique_legacy_mapping_idx",columns={"legacy_mapping"}),
- *     @ORM\UniqueConstraint(name="unique_translation_idx",columns={"model_id", "lang"})
+ *     @ORM\UniqueConstraint(name="unique_slug_idx",columns={"slug"})
  *   },
  *   indexes={
  *     @ORM\Index(name="title_idx", columns={"title"}),
  *     @ORM\Index(name="description_idx", columns={"description"}),
+ *     @ORM\Index(name="slug_idx", columns={"slug"}),
+ *     @ORM\Index(name="revision_idx", columns={"revision"})
  *   },
- *   options={"comment" = "Product model translation table"}
+ *   options={"comment" = "Product serie table"}
  * )
  */
-class ProductModelTranslation
+class ProductSerie
 {
+
     /**
      * @ORM\Id
-     * @ORM\Column(name="id", type="bigint", nullable=false, options={"unsigned"=true, "comment" = "Primary key"})
+     * @ORM\Column(name="serie_id", type="integer", nullable=false, options={"unsigned"=true})
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    private $serie_id;
 
     /**
      *
-     * @ORM\ManyToOne(targetEntity="ProductModel", inversedBy="translations", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(name="model_id", referencedColumnName="model_id", onDelete="CASCADE", nullable=false)
+     * @ORM\ManyToOne(targetEntity="ProductBrand", inversedBy="products", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(name="brand_id", referencedColumnName="brand_id", onDelete="CASCADE", nullable=true)
      */
-    private $model_id;
-
+    private $brand_id;
+    
+    
     /**
-     * @ORM\ManyToOne(targetEntity="Language", inversedBy="product_translations", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(name="lang", referencedColumnName="lang", onDelete="RESTRICT", nullable=false)
+     * @ORM\Column(type="string", length=60, nullable=false, options={"comment" = "Reference"})
      */
-    private $lang;
+    private $reference;
 
     /**
      * @Gedmo\Slug(fields={"title"})
@@ -56,9 +60,24 @@ class ProductModelTranslation
     private $title;
 
     /**
-     * @ORM\Column(type="string", length=16000, nullable=true)
+     * @ORM\Column(type="string", length=10000, nullable=true)
      */
     private $description;
+
+   /**
+     * @ORM\Column(type="string", length=10000, nullable=true, options={"comment" = "Specifications"})
+     */
+    private $specs;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"default"=1, "unsigned"=true, "comment" = "Translation revision number"})
+     */
+    private $revision;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=false, options={"default"=1, "comment"="Whether the serie is active in public website"})
+     */
+    private $flag_active;
 
     /**
      * @Gedmo\Timestampable(on="create")
@@ -94,14 +113,21 @@ class ProductModelTranslation
      */
     protected $legacy_synchro_at;
 
+    public function __construct()
+    {
+        /**
+         * Default value for flag_active
+         */
+        $this->flag_active = true;
+    }
 
     /**
      *
-     * @param integer $id
+     * @param integer $serie_id
      */
-    public function setId($id)
+    public function setSerieId($serie_id)
     {
-        $this->id = $id;
+        $this->serie_id = $serie_id;
         return $this;
     }
 
@@ -109,9 +135,28 @@ class ProductModelTranslation
      *
      * @return integer
      */
-    public function getId()
+    public function getSerieId()
     {
-        return $this->id;
+        return $this->serie_id;
+    }
+
+    /**
+     * Set reference
+     * @param string $reference
+     */
+    public function setReference($reference)
+    {
+        $this->reference = $reference;
+        return $this;
+    }
+
+    /**
+     * Return reference
+     * @return string
+     */
+    public function getReference()
+    {
+        return $this->reference;
     }
 
     /**
@@ -158,7 +203,7 @@ class ProductModelTranslation
     public function setDescription($description)
     {
         $this->description = $description;
-        
+        return $this;
     }
 
     /**
@@ -172,21 +217,59 @@ class ProductModelTranslation
 
     /**
      *
-     * @param integer $lang_id
+     * @param string $specs
      */
-    public function setLangId($lang_id)
+    public function setSpecs($specs)
     {
-        $this->lang_id = $lang_id;
-        
+        $this->specs = $specs;
+        return $this;
+    }
+
+    /**
+     *
+     * @return string
+     */
+    public function getSpecs()
+    {
+        return $this->specs;
+    }
+
+    /**
+     *
+     * @param integer $revision
+     */
+    public function setRevision($revision)
+    {
+        $this->revision = $revision;
+        return $this;
     }
 
     /**
      *
      * @return integer
      */
-    public function getLangId()
+    public function getRevision()
     {
-        return $this->lang_id;
+        return $this->revision;
+    }
+
+
+    /**
+     *
+     * @return boolean
+     */
+    public function getFlagActive()
+    {
+        return (boolean) $this->flag_active;
+    }
+
+    /**
+     *
+     */
+    public function setFlagActive($flag_active)
+    {
+        $this->flag_active = $flag_active;
+        return $this;
     }
 
     /**
@@ -205,7 +288,7 @@ class ProductModelTranslation
     public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
-        
+        return $this;
     }
 
     /**
@@ -243,7 +326,7 @@ class ProductModelTranslation
     public function setCreatedBy($created_by)
     {
         $this->created_by = $created_by;
-        
+        return $this;
     }
 
     /**
@@ -262,7 +345,7 @@ class ProductModelTranslation
     public function setUpdatedBy($updated_by)
     {
         $this->updated_by = $updated_by;
-        
+        return $this;
     }
 
     /**
@@ -291,7 +374,7 @@ class ProductModelTranslation
     public function setLegacySynchroAt($legacy_synchro_at)
     {
         $this->legacy_synchro_at = $legacy_synchro_at;
-        
+        return $this;
     }
 
     /**
@@ -302,17 +385,4 @@ class ProductModelTranslation
     {
         return $this->legacy_synchro_at;
     }
-
-
-
-    /**
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return $this->getTitle();
-    }
-
-
 }

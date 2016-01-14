@@ -77,14 +77,21 @@ class Product
 
     /**
      *
-     * @ORM\ManyToOne(targetEntity="ProductModel", inversedBy="products", cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity="ProductModel", inversedBy="models", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="model_id", referencedColumnName="model_id", onDelete="CASCADE", nullable=true)
      */
     private $model_id;
 
     /**
      *
-     * @ORM\ManyToOne(targetEntity="ProductCategory", inversedBy="products", cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity="ProductSerie", inversedBy="series", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(name="serie_id", referencedColumnName="serie_id", onDelete="CASCADE", nullable=true)
+     */
+    private $serie_id;    
+    
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="ProductCategory", inversedBy="categories", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="category_id", referencedColumnName="category_id", onDelete="CASCADE", nullable=true)
      */
     private $category_id;

@@ -27,17 +27,6 @@ use Gedmo\Mapping\Annotation as Gedmo;
  */
 class ProductModel
 {
-    /**
-     * @ORM\OneToMany(targetEntity="ProductModelTranslation", mappedBy="model_id")
-     * */
-    private $translations;
-
-    /**
-     *
-     * @ORM\ManyToOne(targetEntity="ProductBrand", inversedBy="products", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(name="brand_id", referencedColumnName="brand_id", onDelete="CASCADE", nullable=true)
-     */
-    private $brand_id;
 
     /**
      * @ORM\Id
@@ -46,6 +35,14 @@ class ProductModel
      */
     private $model_id;
 
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="ProductBrand", inversedBy="products", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(name="brand_id", referencedColumnName="brand_id", onDelete="CASCADE", nullable=true)
+     */
+    private $brand_id;
+    
+    
     /**
      * @ORM\Column(type="string", length=60, nullable=false, options={"comment" = "Reference"})
      */
@@ -118,8 +115,6 @@ class ProductModel
 
     public function __construct()
     {
-        $this->translations = new \Doctrine\Common\Collections\ArrayCollection();
-
         /**
          * Default value for flag_active
          */
@@ -132,7 +127,7 @@ class ProductModel
      */
     public function setModelId($model_id)
     {
-        $this->model_id = $id;
+        $this->model_id = $model_id;
         return $this;
     }
 
@@ -374,7 +369,7 @@ class ProductModel
 
     /**
      * Set legacy synchro time
-     * @param string $legacy_mapping
+     * @param string $legacy_synchro_at
      */
     public function setLegacySynchroAt($legacy_synchro_at)
     {

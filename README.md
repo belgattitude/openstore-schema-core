@@ -41,7 +41,7 @@ mysql -e "CREATE DATABASE my_test_db;" -uroot -p
 $ ./vendor/bin/openstore-schema-core
 ```
 
-### Get SQL to create database
+### Get SQL to create database (and db extras)
 
 ```console
 $ ./vendor/bin/openstore-schema-core.php openstore:schema:create --dump-sql
@@ -61,4 +61,5 @@ $ ./vendor/bin/openstore-schema-core.php openstore:schema:recreate-extra --dump-
 ```console
 $ ./vendor/bin/openstore-schema-core.php openstore:schema:drop 
 ```
+
 	

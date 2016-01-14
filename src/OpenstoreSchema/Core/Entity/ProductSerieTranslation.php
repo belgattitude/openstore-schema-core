@@ -10,19 +10,19 @@ use Gedmo\Mapping\Annotation as Gedmo;
 /**
  * @ORM\Entity
  * @ORM\Table(
- *   name="product_model_translation",
+ *   name="product_serie_translation",
  *   uniqueConstraints={
  *     @ORM\UniqueConstraint(name="unique_legacy_mapping_idx",columns={"legacy_mapping"}),
- *     @ORM\UniqueConstraint(name="unique_translation_idx",columns={"model_id", "lang"})
+ *     @ORM\UniqueConstraint(name="unique_translation_idx",columns={"serie_id", "lang"})
  *   },
  *   indexes={
  *     @ORM\Index(name="title_idx", columns={"title"}),
  *     @ORM\Index(name="description_idx", columns={"description"}),
  *   },
- *   options={"comment" = "Product model translation table"}
+ *   options={"comment" = "Product serie translation table"}
  * )
  */
-class ProductModelTranslation
+class ProductSerieTranslation
 {
     /**
      * @ORM\Id
@@ -33,10 +33,10 @@ class ProductModelTranslation
 
     /**
      *
-     * @ORM\ManyToOne(targetEntity="ProductModel", inversedBy="translations", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(name="model_id", referencedColumnName="model_id", onDelete="CASCADE", nullable=false)
+     * @ORM\ManyToOne(targetEntity="ProductSerie", inversedBy="translations", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(name="serie_id", referencedColumnName="serie_id", onDelete="CASCADE", nullable=false)
      */
-    private $model_id;
+    private $serie_id;
 
     /**
      * @ORM\ManyToOne(targetEntity="Language", inversedBy="product_translations", cascade={"persist", "remove"})
@@ -302,8 +302,6 @@ class ProductModelTranslation
     {
         return $this->legacy_synchro_at;
     }
-
-
 
     /**
      *
