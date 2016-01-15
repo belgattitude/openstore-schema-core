@@ -63,6 +63,12 @@ class ProductPricelist
     private $price;
 
     /**
+     * @ORM\Column(type="decimal", precision=12, scale=6, nullable=false, options={"comment"="Minimum sale under wich product cannot be sold (discounts must be checked)"})
+     */
+    private $minimum_price;
+    
+    
+    /**
      * @ORM\Column(type="decimal", precision=12, scale=6, nullable=false, options={"comment"="Unit sales list price wihtout discounts"})
      */
     private $list_price;
@@ -107,7 +113,8 @@ class ProductPricelist
      * @ORM\Column(type="decimal", precision=9, scale=6, nullable=false, options={"default"=0, "comment"="Regular discount 4"})
      */
     private $discount_4;
-
+    
+    
     /**
      * @ORM\Column(type="boolean", nullable=true, options={"comment"="Whether the product is considered as liquidation (stock clearance), , eventual discounts will appear in discount_1,_2..."})
      */
