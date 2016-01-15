@@ -33,7 +33,7 @@
     },
     "bin": ["bin/openstore-schema-core"],
     "archive": {
-        "exclude": ["test", "doc", ".travis.yml", ".codeclimate.yml", ".coveralls.yml", ".scrutinizer.yml", "phpcs.xml", ".gitignore"]
+        "exclude": ["test", "doc", ".travis.yml", ".codeclimate.yml", "tools", ".coveralls.yml", ".scrutinizer.yml", "phpcs.xml", ".gitignore"]
     }
 }
 

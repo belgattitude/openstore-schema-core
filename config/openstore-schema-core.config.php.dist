@@ -11,6 +11,7 @@ return array(
         'dbname'   => 'openstore_dev',
         'charset'  => 'UTF8',
         //'charset' => 'utf8mb4'
+        
     ),
     'env' => 'development',
     // Path used to generate proxy classes (see doctrine)

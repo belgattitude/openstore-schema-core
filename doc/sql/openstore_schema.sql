@@ -228,8 +228,8 @@ DROP FUNCTION IF EXISTS `strip_tags` //
 DELIMITER ;
 DELIMITER //
         CREATE FUNCTION strip_tags( DIRTY VARCHAR(3000) )
-        RETURNS VARCHAR(3000)
-        DETERMINISTIC 
+        RETURNS VARCHAR(3000) CHARSET utf8 COLLATE utf8_general_ci
+        DETERMINISTIC
         BEGIN
           DECLARE iStart, iEnd, iLength int;
             WHILE LOCATE( '<', DIRTY ) > 0 And LOCATE( '>', DIRTY, LOCATE( '<', DIRTY )) > 0 DO
@@ -251,11 +251,11 @@ DROP FUNCTION IF EXISTS `delete_double_spaces` //
 DELIMITER ;
 DELIMITER //
         CREATE FUNCTION delete_double_spaces ( title VARCHAR(3000) )
-        RETURNS VARCHAR(3000) DETERMINISTIC
+        RETURNS VARCHAR(3000) CHARSET utf8 COLLATE utf8_unicode_ci DETERMINISTIC
         BEGIN
             DECLARE result VARCHAR(3000);
             SET result = REPLACE( title, '  ', ' ' );
-            WHILE (result <> title) DO 
+            WHILE (result <> title) DO
                 SET title = result;
                 SET result = REPLACE( title, '  ', ' ' );
             END WHILE;
@@ -270,12 +270,12 @@ DELIMITER //
         BEGIN
             /*
               This function escape a string from any non alphanumeric chars (A_Z0_9)
-              to get a searchable reference. Also try to remove any first 
+              to get a searchable reference. Also try to remove any first
               non-significative zero.
 
-              FOR example 'BA-0114-22' -> 'BA11422'  
+              FOR example 'BA-0114-22' -> 'BA11422'
 
-            */    
+            */
             DECLARE out_str VARCHAR(2048) DEFAULT '';
             DECLARE c VARCHAR(1) DEFAULT '';
             DECLARE prev_c VARCHAR(1) DEFAULT '';
@@ -292,7 +292,7 @@ DELIMITER //
                     THEN
                         -- IF A NUMBER, try to get rid of non-significave numbers
                         IF (ASCII(c) > 47 AND ASCII(c) < 58)
-                        THEN 
+                        THEN
                             -- IF C is a zero and PREVIOUS CHARACTER IS NUMERIC
                             IF (c = 0 and NOT (ASCII(prev_c) > 47 AND ASCII(prev_c) < 58))
                             THEN
@@ -301,7 +301,7 @@ DELIMITER //
                             ELSE
                                 SET out_str = CONCAT(out_str, c);
                             END IF;
-                        ELSE 
+                        ELSE
                             SET out_str = CONCAT(out_str, c);
                         END IF;
                     END IF;
@@ -321,8 +321,8 @@ DELIMITER //
         BEGIN
                 SET @updated_at = NOW();
                 SET @default_lang := (SELECT lang FROM `language` where flag_default = 1);
-                IF (@default_lang is null) THEN 
-                     SET @default_lang = 'en'; 
+                IF (@default_lang is null) THEN
+                     SET @default_lang = 'en';
                 END IF;
                 INSERT INTO product_search (product_id, lang, keywords, updated_at)
                 SELECT DISTINCT
@@ -378,17 +378,17 @@ DELIMITER //
                         and pc18.lang = p18.lang
                         left outer join
                     product_pricelist ppl on (p.product_id = ppl.product_id and ppl.flag_active=1)
-                            left outer join 
+                            left outer join
                     pricelist pl on (pl.pricelist_id = ppl.pricelist_id and pl.flag_active=1)
                 where
                     1=1
                     and p.flag_active = 1
                     and pl.flag_active = 1
-                order by if (p18.lang is null, @default_lang, p18.lang), p.product_id 
+                order by if (p18.lang is null, @default_lang, p18.lang), p.product_id
             on duplicate key update
                     keywords = UPPER(
                         delete_double_spaces(
-                            REPLACE(        
+                            REPLACE(
                                 strip_tags(
                                         TRIM(
                                                 CONCAT_WS(' ',
@@ -427,10 +427,10 @@ DELIMITER //
                 SET @updated_at = NOW();
                 SET @product_id = product_id;
                 SET @default_lang := (SELECT lang FROM `language` where flag_default = 1);
-                IF (@default_lang is null) THEN 
-                     SET @default_lang = 'en'; 
+                IF (@default_lang is null) THEN
+                     SET @default_lang = 'en';
                 END IF;
-                PREPARE stmt FROM 
+                PREPARE stmt FROM
                 "INSERT INTO product_search (product_id, lang, keywords, updated_at)
                 SELECT DISTINCT
                     p.product_id,
@@ -485,18 +485,18 @@ DELIMITER //
                         and pc18.lang = p18.lang
                         left outer join
                     product_pricelist ppl on (p.product_id = ppl.product_id and ppl.flag_active=1)
-                            left outer join 
+                            left outer join
                     pricelist pl on (pl.pricelist_id = ppl.pricelist_id and pl.flag_active=1)
                 where
                     1=1
                     and p.flag_active = 1
                     and pl.flag_active = 1
                     and p.product_id = ?
-                order by if (p18.lang is null, @default_lang, p18.lang), p.product_id 
+                order by if (p18.lang is null, @default_lang, p18.lang), p.product_id
                 on duplicate key update
                     keywords = UPPER(
                         delete_double_spaces(
-                            REPLACE(        
+                            REPLACE(
                                 strip_tags(
                                         TRIM(
                                                 CONCAT_WS(' ',
@@ -520,7 +520,7 @@ DELIMITER //
                         )
                     )
                     ,
-                    updated_at = @updated_at";   
+                    updated_at = @updated_at";
                 EXECUTE stmt USING @product_id;
                 DEALLOCATE PREPARE stmt;
         END //
@@ -531,7 +531,7 @@ DELIMITER ;
 DELIMITER //
         CREATE PROCEDURE `rebuild_category_breadcrumbs` ()
         BEGIN
-            -- 1. Category     
+            -- 1. Category
             UPDATE product_category
                     INNER JOIN
                 (
@@ -548,13 +548,13 @@ DELIMITER //
                             LEFT JOIN `product_category` AS `pc2` ON pc1.lft BETWEEN pc2.lft AND pc2.rgt
                             WHERE
                                     pc2.lvl > 0
-                            GROUP BY 1 
+                            GROUP BY 1
                             ORDER BY pc1.category_id
-                    ) AS tmp 
+                    ) AS tmp
                     ON tmp.category_id = product_category.category_id
-            SET product_category.breadcrumb = tmp.breadcrumb;        
+            SET product_category.breadcrumb = tmp.breadcrumb;
 
-            -- 2. Category translations    
+            -- 2. Category translations
             UPDATE product_category_translation
                     INNER JOIN
                 (
@@ -575,11 +575,10 @@ DELIMITER //
                                     pc2.lvl > 0
                             GROUP BY 1 , 2
                             ORDER BY pc1.category_id
-                    ) AS tmp 
+                    ) AS tmp
                     ON tmp.category_id = product_category_translation.category_id
                     AND tmp.lang = product_category_translation.lang
-            SET product_category_translation.breadcrumb = tmp.breadcrumb;    
+            SET product_category_translation.breadcrumb = tmp.breadcrumb;
         END//
 DELIMITER ;
 DELIMITER ;
-

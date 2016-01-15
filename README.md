@@ -11,10 +11,11 @@ Openstore core database schema.
 
 | Database      | Extra              |
 |---------------|--------------------|
-| MySQL 5.6+    | INNODB engine      |
+| MySQL 5.6+    | INNODB engine  )   |
 | Mariadb 10+   | INNODB/XTRADB      |
 | Percona 5.6+  | INNODB/XTRADB      |
 
+* If you use the utf8mb4, you must ensure innodb_file_per_table=1, innodb_file_format=barracuda and innodb_large_prefix=2700
 
 ## Install
 
