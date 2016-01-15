@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 0.13.0 (2016-01-14) Added minimum price
+## 0.13.0 (2016-01-15) Added minimum price
 
 - Added sales minimum price in ProductPricelist 
 - Receipts for compressing tables with INNODB file_format barracuda in README
