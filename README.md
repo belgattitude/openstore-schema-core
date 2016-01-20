@@ -88,4 +88,9 @@ ALTER TABLE product_category_translation ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
 ALTER TABLE sale_order_line ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=16;
 ALTER TABLE sale_order ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
 ```
+
+## ERD
+
+![product_erd_image](https://raw.githubusercontent.com/belgattitude/openstore-schema-core/master/doc/image/erd-zoom-product.jpg "Product erd")
+
 	
