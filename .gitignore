@@ -7,6 +7,7 @@ nbproject
 .idea
 .project
 .settings
+*.bak
 composer.lock
 config/openstore-schema-core.config.php
 vendor
