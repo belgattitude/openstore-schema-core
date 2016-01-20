@@ -91,6 +91,8 @@ ALTER TABLE sale_order ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
 
 ## ERD
 
+### Basic zoom on product group tables
+
 ![product_erd_image](https://raw.githubusercontent.com/belgattitude/openstore-schema-core/master/doc/image/erd-zoom-product.jpg "Product erd")
 
 	
