@@ -36,7 +36,7 @@ class ProductSet
 
     /**
      * Type id
-     * @ORM\ManyToOne(targetEntity="ProductType", inversedBy="products", cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity="ProductSetType", inversedBy="products", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="type_id", referencedColumnName="type_id", onDelete="CASCADE", nullable=true)
      */
     private $type_id;
