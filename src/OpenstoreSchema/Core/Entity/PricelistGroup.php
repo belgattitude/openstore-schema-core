@@ -8,56 +8,27 @@ use Gedmo\Mapping\Annotation as Gedmo;
 /**
  * @ORM\Entity
  * @ORM\Table(
- *   name="pricelist",
+ *   name="pricelist_group",
  *   uniqueConstraints={
  *     @ORM\UniqueConstraint(name="unique_reference_idx",columns={"reference"}),
  *     @ORM\UniqueConstraint(name="unique_legacy_mapping_idx",columns={"legacy_mapping"}),
- *     @ORM\UniqueConstraint(name="unique_flag_default_idx",columns={"flag_default"}),
  *     @ORM\UniqueConstraint(name="sort_index_idx",columns={"sort_index"})
  *   },
- *   options={"comment" = "Pricelist table"}
+ *   options={"comment" = "Pricelist groups table"}
  * )
  */
-class Pricelist
+class PricelistGroup
 {
 
     /**
      * @ORM\Id
-     * @ORM\Column(name="pricelist_id", type="smallint", nullable=false, options={"unsigned"=true})
+     * @ORM\Column(name="group_id", type="smallint", nullable=false, options={"unsigned"=true})
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $pricelist_id;
+    private $group_id;
 
     /**
-     *
-     * @ORM\ManyToOne(targetEntity="Stock", inversedBy="stocks", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(name="stock_id", referencedColumnName="stock_id", onDelete="CASCADE", nullable=false)
-     */
-    private $stock_id;
-
-    /**
-     *
-     * @ORM\ManyToOne(targetEntity="PricelistGroup", inversedBy="groups", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(name="group_id", referencedColumnName="group_id", onDelete="CASCADE", nullable=true)
-     */
-    private $group_id;    
-    
-    /**
-     *
-     * @ORM\ManyToOne(targetEntity="Currency", inversedBy="pricelists", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(name="currency_id", referencedColumnName="currency_id", nullable=false)
-     */
-    private $currency_id;
-
-    /**
-     * When dealing with pricelist condition, use this pricelist_id instead of pricelist
-     * @ORM\ManyToOne(targetEntity="Pricelist")
-     * @ORM\JoinColumn(name="discount_condition_pricelist_id", referencedColumnName="pricelist_id", onDelete="CASCADE", nullable=true)
-     */
-    private $discount_condition_pricelist_id;
-
-    /**
-     * @ORM\Column(type="string", length=60, nullable=false, options={"comment" = "Reference"})
+     * @ORM\Column(type="string", length=60, nullable=false, options={"comment" = "Pricelist group reference"})
      */
     private $reference;
 
@@ -67,47 +38,9 @@ class Pricelist
     private $title;
 
     /**
-     * @ORM\Column(type="string", length=15000, nullable=true)
-     */
-    private $description;
-
-    /**
-     * @ORM\Column(type="boolean", nullable=false, options={"default"=1, "comment"="Whether this pricelist must honour special discount conditions"})
-     */
-    private $flag_enable_discount_condition;
-
-
-
-
-    /**
-     * @ORM\Column(type="boolean", nullable=true, options={"default"=null, "comment"="Whether this pricelist is default"})
-     */
-    private $flag_default;
-
-    /**
-     * @ORM\Column(type="boolean", nullable=false, options={"default"=1, "comment"="Whether the pricelist is public"})
-     */
-    private $flag_public;
-
-    /**
-     * @ORM\Column(type="boolean", nullable=false, options={"default"=1, "comment"="Whether the brand is active in public website"})
-     */
-    private $flag_active;
-
-    /**
-     * @ORM\Column(type="date", nullable=true, options={"comment" = "Flag products as new if more recent than this date"})
-     */
-    private $new_product_min_date;
-
-    /**
      * @ORM\Column(type="integer", nullable=true, options={"unsigned"=true, "comment"="Relative sort index"})
      */
     private $sort_index;
-
-    /**
-     * @ORM\Column(type="string", length=40, nullable=true)
-     */
-    private $icon_class;
 
     /**
      * @Gedmo\Timestampable(on="create")
@@ -143,21 +76,14 @@ class Pricelist
      */
     protected $legacy_synchro_at;
 
-    public function __construct()
-    {
-        /**
-         * Default value for flag_active
-         */
-        $this->flag_active = true;
-    }
 
     /**
      *
-     * @param integer $pricelist_id
+     * @param integer $group_id
      */
-    public function setPricelistId($pricelist_id)
+    public function setGroupId($group_id)
     {
-        $this->pricelist_id = $pricelist_id;
+        $this->group_id = $group_id;
         return $this;
     }
 
@@ -165,48 +91,11 @@ class Pricelist
      *
      * @return integer
      */
-    public function getPricelistId()
+    public function getGroupId()
     {
-        return $this->pricelist_id;
+        return $this->group_id;
     }
 
-    /**
-     *
-     * @param Currency $currency_id
-     */
-    public function setCurrency(Currency $currency_id)
-    {
-        $this->currency_id = $currency_id;
-        return $this;
-    }
-
-    /**
-     *
-     * @return integer
-     */
-    public function getCurrencyId()
-    {
-        return $this->currency_id;
-    }
-
-    /**
-     *
-     * @param Stock $stock_id
-     */
-    public function setStock(Stock $stock_id)
-    {
-        $this->stock_id = $stock_id;
-        return $this;
-    }
-
-    /**
-     *
-     * @return Stock
-     */
-    public function getStock()
-    {
-        return $this->stock_id;
-    }
 
     /**
      * Set reference
@@ -246,24 +135,6 @@ class Pricelist
         return $this->title;
     }
 
-    /**
-     *
-     * @param string $description
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-        return $this;
-    }
-
-    /**
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
 
     /**
      *
@@ -296,71 +167,6 @@ class Pricelist
         return $this->sort_index;
     }
 
-
-    /**
-     *
-     * @return string
-     */
-    public function getIconClass()
-    {
-        return $this->icon_class;
-    }
-
-    /**
-     *
-     * @return boolean
-     */
-    public function getFlagActive()
-    {
-        return (boolean) $this->flag_active;
-    }
-
-    /**
-     * @return Pricelist
-     */
-    public function setFlagActive($flag_active)
-    {
-        $this->flag_active = $flag_active;
-        return $this;
-    }
-
-    /**
-     *
-     * @return boolean
-     */
-    public function getFlagPublic()
-    {
-        return (boolean) $this->flag_public;
-    }
-
-
-    /**
-     * @return Pricelist
-     */
-    public function setFlagEnableDiscountCondition($flag_enable_discount_condition)
-    {
-        $this->flag_enable_discount_condition = $flag_enable_discount_condition;
-        return $this;
-    }
-
-    /**
-     *
-     * @return boolean
-     */
-    public function getFlagEnableDiscountCondition()
-    {
-        return (boolean) $this->flag_enable_discount_condition;
-    }
-
-
-    /**
-     * @return Pricelist
-     */
-    public function setFlagPublic($flag_public)
-    {
-        $this->flag_public = $flag_public;
-        return $this;
-    }
 
     /**
      *
@@ -480,5 +286,14 @@ class Pricelist
         return $this->legacy_synchro_at;
     }
 
+
+    /**
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
 
 }
