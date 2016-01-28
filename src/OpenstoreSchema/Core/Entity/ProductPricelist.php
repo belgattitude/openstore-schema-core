@@ -60,13 +60,7 @@ class ProductPricelist
     /**
      * @ORM\Column(type="decimal", precision=12, scale=6, nullable=false, options={"comment"="Unit sales price discounts included"})
      */
-    private $price;
-
-    /**
-     * @ORM\Column(type="decimal", precision=12, scale=6, nullable=false, options={"comment"="Minimum sale under wich product cannot be sold (discounts must be checked)"})
-     */
-    private $minimum_price;
-    
+    private $price;    
     
     /**
      * @ORM\Column(type="decimal", precision=12, scale=6, nullable=false, options={"comment"="Unit sales list price wihtout discounts"})
@@ -78,12 +72,26 @@ class ProductPricelist
      */
     private $public_price;
 
-
     /**
      * @ORM\Column(type="decimal", precision=12, scale=6, nullable=true, options={"comment"="Minimum advertised price, only where regulation applies"})
      */
     private $map_price;
+    
+    /**
+     * @ORM\Column(type="decimal", precision=12, scale=6, nullable=true, options={"comment"="Product cost price"})
+     */
+    private $cost_price;    
 
+    /**
+     * @ORM\Column(type="decimal", precision=12, scale=6, nullable=true, options={"comment"="Minimum sale under which product cannot be sold (discounts must be checked)"})
+     */
+    private $minimum_price;    
+
+    /**
+     * @ORM\Column(type="decimal", precision=9, scale=6, nullable=true, options={"comment"="Minimum margin under which product cannot be sold"})
+     */
+    private $minimum_margin;    
+    
     /**
      * @ORM\Column(type="decimal", precision=16, scale=6, nullable=true, options={"comment"="Sales minimum quantity"})
      */
@@ -114,6 +122,10 @@ class ProductPricelist
      */
     private $discount_4;
     
+    /**
+     * @ORM\Column(type="decimal", precision=9, scale=6, nullable=true, options={"comment"="Maximum regular discount 1 (when a discount can be applied freely)"})
+     */
+    private $maximum_discount_1;
     
     /**
      * @ORM\Column(type="boolean", nullable=true, options={"comment"="Whether the product is considered as liquidation (stock clearance), , eventual discounts will appear in discount_1,_2..."})
@@ -144,6 +156,13 @@ class ProductPricelist
      */
     private $is_hot;
 
+    /**
+     *
+     * @ORM\Column(type="boolean", nullable=true, options={"comment"="Whether the product is considered as a trending product in this pricelist"})
+     */
+    private $is_trending;
+    
+    
     /**
      * @ORM\Column(type="boolean", nullable=true, options={"comment"="Whether the product is considered as promotional, eventual discounts will appear in discount_1,_2..."})
      */
