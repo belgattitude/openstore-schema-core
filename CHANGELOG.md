@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.14.0 (2016-01-28) Added maximum discount 1
+
+- Added columns into in ProductPricelist 
+
+
 ## 0.13.0 (2016-01-15) Added minimum price
 
 - Added sales minimum price in ProductPricelist 
