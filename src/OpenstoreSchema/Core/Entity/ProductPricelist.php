@@ -17,10 +17,22 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *   },
  *   indexes={
  *     @ORM\Index(name="price_idx", columns={"price"}),
+ *     @ORM\Index(name="flag_active", columns={"flag_active"}),  
+ *     @ORM\Index(name="is_liquidation", columns={"is_liquidation"}),
+ *     @ORM\Index(name="is_popular", columns={"is_popular"}),
+ *     @ORM\Index(name="is_trending", columns={"is_trending"}),
+ *     @ORM\Index(name="is_new", columns={"is_new"}), 
+ *     @ORM\Index(name="is_hot", columns={"is_hot"}),
+ *     @ORM\Index(name="is_bestvalue", columns={"is_bestvalue"}), 
+ *     @ORM\Index(name="is_bestseller", columns={"is_bestseller"}), 
+ *     @ORM\Index(name="is_promotional", columns={"is_promotional"}),
+ *     @ORM\Index(name="is_high_runner", columns={"is_high_runner"}) 
  *   },
  *   options={"comment" = "Product pricelist"}
  * )
  */
+
+
 class ProductPricelist
 {
     /**
@@ -169,6 +181,16 @@ class ProductPricelist
     private $is_promotional;
 
     /**
+     * @ORM\Column(type="boolean", nullable=true, options={"comment"="Whether the product is considered as popular (lots of customers, reps...)"})
+     */
+    private $is_popular;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true, options={"comment"="Whether the product is high runner (long lifetime.)"})
+     */
+    private $is_high_runner;
+    
+    /**
      * @ORM\Column(type="date", nullable=true, options={"comment"="Discount started at"})
      */
     private $promo_start_at;
@@ -227,10 +249,6 @@ class ProductPricelist
      * @ORM\Column(type="datetime",nullable=true, options={"comment" = "Last synchro timestamp"})
      */
     protected $legacy_synchro_at;
-
-    public function __construct()
-    {
-    }
 
     /**
      *

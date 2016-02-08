@@ -188,6 +188,59 @@ ENDQ;
 
         return $stmts;
 
+        
+/*
+create function jsonvalue returns string soname 'ha_connect.so';
+create function json_array returns string soname 'ha_connect.so';
+create function json_array_add_values returns string soname 'ha_connect.so';
+create function json_array_add returns string soname 'ha_connect.so';
+create function json_array_delete returns string soname 'ha_connect.so';
+create function json_object returns string soname 'ha_connect.so';
+create function json_object_nonull returns string soname 'ha_connect.so';
+create function json_object_key returns string soname 'ha_connect.so';
+create function json_object_add returns string soname 'ha_connect.so';
+create function json_object_delete returns string soname 'ha_connect.so';
+create function json_object_list returns string soname 'ha_connect.so';
+create function jsonvalue returns string soname 'ha_connect.so';
+create aggregate function json_array_grp returns string soname 'ha_connect.so';
+create aggregate function json_object_grp returns string soname 'ha_connect.so';
+create function json_array_add_values returns string soname 'ha_connect.so';
+create function json_object_add returns string soname 'ha_connect.so';
+create function json_object_delete returns string soname 'ha_connect.so';
+create function json_object_list returns string soname 'ha_connect.so';
+create function jsonlocate returns string soname 'ha_connect.so';
+create function json_locate_all returns string soname 'ha_connect.so';
+create function jsoncontains returns integer soname 'ha_connect.so';
+create function jsoncontains_path returns integer soname 'ha_connect.so';
+create function json_item_merge returns real soname 'ha_connect.so';
+create function json_get_item returns string soname 'ha_connect.so';
+create function jsonget_string returns string soname 'ha_connect.so';
+create function jsonget_int returns integer soname 'ha_connect.so';
+create function jsonget_real returns real soname 'ha_connect.so';
+create function json_set_item returns string soname 'ha_connect.so';
+create function json_insert_item returns string soname 'ha_connect.so';
+create function json_update_item returns string soname 'ha_connect.so';
+create function json_file returns string soname 'ha_connect.so';
+create function jfile_make returns string soname 'ha_connect.so';
+create function json_serialize returns string soname 'ha_connect.so';
+create function jbin_array returns string soname 'ha_connect.so';
+create function jbin_array_add_values returns string soname 'ha_connect.so';
+create function jbin_array_add returns string soname 'ha_connect.so';
+create function jbin_array_delete returns string soname 'ha_connect.so';
+create function jbin_object returns string soname 'ha_connect.so';
+create function jbin_object_nonull returns string soname 'ha_connect.so';
+create function jbin_object_key returns string soname 'ha_connect.so';
+create function jbin_object_add returns string soname 'ha_connect.so';
+create function jbin_object_delete returns string soname 'ha_connect.so';
+create function jbin_object_list returns string soname 'ha_connect.so';
+create function jbin_item_merge returns string soname 'ha_connect.so';
+create function jbin_get_item returns string soname 'ha_connect.so';
+create function jbin_set_item returns real soname 'ha_connect.so';
+create function jbin_insert_item returns real soname 'ha_connect.so';
+create function jbin_update_item returns real soname 'ha_connect.so';
+create function jbin_file returns string soname 'ha_connect.so';
+ */        
+        
     }
 
     /**

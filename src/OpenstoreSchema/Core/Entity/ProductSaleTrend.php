@@ -1,0 +1,325 @@
+<?php
+
+namespace OpenstoreSchema\Core\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(
+ *   name="product_stat_trend",
+ *   options={"comment" = "Product sale trend stats"}
+ * )
+ */
+class ProductStatTrend
+{
+
+    /**
+     * @ORM\Id
+     * @ORM\Column(name="product_stat_trend_id", type="bigint", nullable=false, options={"unsigned"=true})
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $product_stat_trend_id;
+
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="Pricelist", inversedBy="products", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(name="pricelist_id", referencedColumnName="pricelist_id", onDelete="CASCADE", nullable=false)
+     */
+    private $pricelist_id;
+
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="Product", inversedBy="products", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(name="product_id", referencedColumnName="product_id", onDelete="CASCADE", nullable=false)
+     */
+    private $product_id;
+    
+
+    /**
+     * @ORM\Column(type="date", nullable=true, options={"comment" = "First recorded sale at"})
+     */
+    private $first_sale_recorded_at;
+
+    /**
+     * @ORM\Column(type="date", nullable=true, options={"comment" = "Latest recorded sale at"})
+     */
+    private $latest_sale_recorded_at;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct customers"})
+     */
+    private $nb_customers;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct sales reps"})
+     */
+    private $nb_sale_reps;
+
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct orders"})
+     */
+    private $nb_orders;
+
+    /**
+     * @ORM\Column(type="decimal", precision=15, scale=6, nullable=true, options={"comment"="Total recorded order line quantity"})
+     */
+    private $total_recorded_quantity;
+
+    /**
+     * @ORM\Column(type="decimal", precision=15, scale=6, nullable=true, options={"comment"="Total recorded turn over"})
+     */
+    private $total_recorded_turnover;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct customers last month"})
+     */
+    private $nb_customers_last_month;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct sales reps last month"})
+     */
+    private $nb_sale_reps_last_month;
+
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct orders last month"})
+     */
+    private $nb_orders_last_month;
+
+    /**
+     * @ORM\Column(type="decimal", precision=15, scale=6, nullable=true, options={"comment"="Total recorded order line quantity last month"})
+     */
+    private $total_recorded_quantity_last_month;
+
+    /**
+     * @ORM\Column(type="decimal", precision=15, scale=6, nullable=true, options={"comment"="Total recorded turn over last month"})
+     */
+    private $total_recorded_turnover_last_month;
+    
+
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct customers last month"})
+     */
+    private $nb_customers_last_2_months;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct sales reps last month"})
+     */
+    private $nb_sale_reps_last_2_months;
+
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct orders last month"})
+     */
+    private $nb_orders_last_2_months;
+
+    /**
+     * @ORM\Column(type="decimal", precision=15, scale=6, nullable=true, options={"comment"="Total recorded order line quantity last month"})
+     */
+    private $total_recorded_quantity_last_2_months;
+
+    /**
+     * @ORM\Column(type="decimal", precision=15, scale=6, nullable=true, options={"comment"="Total recorded turn over last month"})
+     */
+    private $total_recorded_turnover_last_2_months;
+    
+      
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct customers last month"})
+     */
+    private $nb_customers_last_3_months;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct sales reps last month"})
+     */
+    private $nb_sale_reps_last_3_months;
+
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct orders last month"})
+     */
+    private $nb_orders_last_3_months;
+
+    /**
+     * @ORM\Column(type="decimal", precision=15, scale=6, nullable=true, options={"comment"="Total recorded order line quantity last month"})
+     */
+    private $total_recorded_quantity_last_3_months;
+
+    /**
+     * @ORM\Column(type="decimal", precision=15, scale=6, nullable=true, options={"comment"="Total recorded turn over last month"})
+     */
+    private $total_recorded_turnover_last_3_months;
+    
+
+    
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct customers last month"})
+     */
+    private $nb_customers_last_4_months;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct sales reps last month"})
+     */
+    private $nb_sale_reps_last_4_months;
+
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct orders last month"})
+     */
+    private $nb_orders_last_4_months;
+
+    /**
+     * @ORM\Column(type="decimal", precision=15, scale=6, nullable=true, options={"comment"="Total recorded order line quantity last month"})
+     */
+    private $total_recorded_quantity_last_4_months;
+
+    /**
+     * @ORM\Column(type="decimal", precision=15, scale=6, nullable=true, options={"comment"="Total recorded turn over last month"})
+     */
+    private $total_recorded_turnover_last_4_months;
+    
+    
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct customers last month"})
+     */
+    private $nb_customers_last_5_months;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct sales reps last month"})
+     */
+    private $nb_sale_reps_last_5_months;
+
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct orders last month"})
+     */
+    private $nb_orders_last_5_months;
+
+    /**
+     * @ORM\Column(type="decimal", precision=15, scale=6, nullable=true, options={"comment"="Total recorded order line quantity last month"})
+     */
+    private $total_recorded_quantity_last_5_months;
+
+    /**
+     * @ORM\Column(type="decimal", precision=15, scale=6, nullable=true, options={"comment"="Total recorded turn over last month"})
+     */
+    private $total_recorded_turnover_last_5_months;
+    
+    
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct customers last month"})
+     */
+    private $nb_customers_last_6_months;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct sales reps last month"})
+     */
+    private $nb_sale_reps_last_6_months;
+
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct orders last month"})
+     */
+    private $nb_orders_last_6_months;
+
+    /**
+     * @ORM\Column(type="decimal", precision=15, scale=6, nullable=true, options={"comment"="Total recorded order line quantity last month"})
+     */
+    private $total_recorded_quantity_last_6_months;
+
+    /**
+     * @ORM\Column(type="decimal", precision=15, scale=6, nullable=true, options={"comment"="Total recorded turn over last month"})
+     */
+    private $total_recorded_turnover_last_6_months;
+    
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct customers last month"})
+     */
+    private $nb_customers_last_12_months;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct sales reps last month"})
+     */
+    private $nb_sale_reps_last_12_months;
+
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct orders last month"})
+     */
+    private $nb_orders_last_12_months;
+
+    /**
+     * @ORM\Column(type="decimal", precision=15, scale=6, nullable=true, options={"comment"="Total recorded order line quantity last month"})
+     */
+    private $total_recorded_quantity_last_12_months;
+
+    /**
+     * @ORM\Column(type="decimal", precision=15, scale=6, nullable=true, options={"comment"="Total recorded turn over last month"})
+     */
+    private $total_recorded_turnover_last_12_months;
+    
+    
+    /**
+     *
+     * @param integer $product_stat_trend_id
+     */
+    public function setId($product_stat_trend_id)
+    {
+        $this->product_stat_trend_id = $product_stat_trend_id;
+        return $this;
+    }
+
+    /**
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->product_stat_trend;
+    }
+
+    /**
+     *
+     * @param integer $pricelist_id
+     */
+    public function setPricelistId($pricelist_id)
+    {
+        $this->pricelist_id = $pricelist_id;
+        return $this;
+    }
+
+    /**
+     *
+     * @return integer
+     */
+    public function getPricelistId()
+    {
+        return $this->pricelist_id;
+    }
+
+
+    /**
+     *
+     * @return string
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updated_at;
+    }
+
+    /**
+     *
+     * @param string $updated_at
+     */
+    public function setUpdatedAt($updated_at)
+    {
+        $this->updated_at = $updated_at;
+        return $this;
+    }
+
+}
