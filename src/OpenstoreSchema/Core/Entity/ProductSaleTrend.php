@@ -9,6 +9,9 @@ use Gedmo\Mapping\Annotation as Gedmo;
  * @ORM\Entity
  * @ORM\Table(
  *   name="product_stat_trend",
+ *   uniqueConstraints={
+ *     @ORM\UniqueConstraint(name="unique_product_price_idx",columns={"pricelist_id", "product_id"}),
+ *   }, 
  *   options={"comment" = "Product sale trend stats"}
  * )
  */
@@ -263,6 +266,12 @@ class ProductStatTrend
      */
     private $total_recorded_turnover_last_12_months;
     
+    /**
+     * @ORM\Column(type="datetime",nullable=true, options={"comment" = "Last synchro timestamp"})
+     */
+    protected $legacy_synchro_at;
+    
+    
     
     /**
      *
@@ -303,23 +312,16 @@ class ProductStatTrend
     }
 
 
+    
     /**
-     *
-     * @return string
+     * Set legacy synchro time
+     * @param string $legacy_synchro_at
      */
-    public function getUpdatedAt()
+    public function setLegacySynchroAt($legacy_synchro_at)
     {
-        return $this->updated_at;
-    }
-
-    /**
-     *
-     * @param string $updated_at
-     */
-    public function setUpdatedAt($updated_at)
-    {
-        $this->updated_at = $updated_at;
+        $this->legacy_synchro_at = $legacy_synchro_at;
         return $this;
     }
+    
 
 }
