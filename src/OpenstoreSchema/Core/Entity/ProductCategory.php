@@ -24,6 +24,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     @ORM\Index(name="rgt_idx", columns={"rgt"}),
  *     @ORM\Index(name="lvl_idx", columns={"lvl"}),
  *     @ORM\Index(name="breadcrumb_idx", columns={"breadcrumb"}),
+ *     @ORM\Index(name="flag_rankable_idx", columns={"flag_rankable"}),
  *     @ORM\Index(name="alt_mapping_reference_idx", columns={"alt_mapping_reference"}),
  *   },
  *   options={"comment" = "Product category table"}
@@ -32,15 +33,6 @@ use Gedmo\Mapping\Annotation as Gedmo;
  */
 class ProductCategory
 {
-    /**
-     * @var \Zend\InputFilter\InputFilterInterface $inputFilter
-     */
-    protected $inputFilter;
-
-    /**
-     * @ORM\OneToMany(targetEntity="ProductBrandTranslation", mappedBy="brand_id")
-     * */
-    private $translations;
 
     /**
      * @ORM\Id
@@ -75,6 +67,13 @@ class ProductCategory
      */
     private $breadcrumb;
 
+    
+    /**
+     * @ORM\Column(type="boolean", nullable=true, options={"default"=null, "comment"="Can be used to rank products beloging to"})
+     */
+    private $flag_rankable;
+    
+    
     /**
      * @ORM\Column(type="integer", nullable=true, options={"unsigned"=true, "comment"="Relative sort index"})
      */
