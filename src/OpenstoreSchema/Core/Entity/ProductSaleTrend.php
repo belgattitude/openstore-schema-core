@@ -12,6 +12,12 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *   uniqueConstraints={
  *     @ORM\UniqueConstraint(name="unique_product_price_idx",columns={"pricelist_id", "product_id"}),
  *   }, 
+  *   indexes={
+ *     @ORM\Index(name="first_sale_recorded_at_idx", columns={"first_sale_recorded_at"}),
+ *     @ORM\Index(name="latest_sale_recorded_at_idx", columns={"latest_sale_recorded_at"}),  
+ *     @ORM\Index(name="total_recorded_quantity_last_12_months_idx", columns={"total_recorded_quantity_last_12_months"}),
+ *     @ORM\Index(name="total_recorded_turnover_last_12_months_idx", columns={"total_recorded_turnover_last_12_months"}),
+ *   },
  *   options={"comment" = "Product sale trend stats"}
  * )
  */
