@@ -246,6 +246,10 @@ class ProductStatTrend
     private $total_recorded_turnover_last_6_months;
 
 
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct customers last 7 months"})
+     */
+    private $nb_customers_last_7_months;    
 
     /**
      * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct sales reps last 7 months"})
@@ -270,6 +274,12 @@ class ProductStatTrend
 
     
     /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct customers last 8 months"})
+     */
+    private $nb_customers_last_8_months;    
+    
+    
+    /**
      * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct sales reps last 8 months"})
      */
     private $nb_sale_reps_last_8_months;
@@ -291,6 +301,12 @@ class ProductStatTrend
     private $total_recorded_turnover_last_8_months;
 
 
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct customers last 9 months"})
+     */
+    private $nb_customers_last_9_months;    
+    
+    
     /**
      * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct sales reps last 9 months"})
      */
@@ -314,6 +330,12 @@ class ProductStatTrend
 
 
     /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct customers last 10 months"})
+     */
+    private $nb_customers_last_10_months;    
+    
+    
+    /**
      * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct sales reps last 10 months"})
      */
     private $nb_sale_reps_last_10_months;
@@ -335,6 +357,12 @@ class ProductStatTrend
     private $total_recorded_turnover_last_10_months;
 
 
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct customers last 11 months"})
+     */
+    private $nb_customers_last_11_months;    
+    
+    
     /**
      * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct sales reps last 11 months"})
      */
