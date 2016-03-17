@@ -244,6 +244,117 @@ class ProductStatTrend
      * @ORM\Column(type="decimal", precision=15, scale=6, nullable=true, options={"comment"="Total recorded turn over last month"})
      */
     private $total_recorded_turnover_last_6_months;
+
+
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct sales reps last 7 months"})
+     */
+    private $nb_sale_reps_last_7_months;
+
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct orders last 7 months"})
+     */
+    private $nb_orders_last_7_months;
+
+    /**
+     * @ORM\Column(type="decimal", precision=15, scale=7, nullable=true, options={"comment"="Total recorded order line quantity last 7 months"})
+     */
+    private $total_recorded_quantity_last_7_months;
+
+    /**
+     * @ORM\Column(type="decimal", precision=15, scale=7, nullable=true, options={"comment"="Total recorded turn over last 7 months"})
+     */
+    private $total_recorded_turnover_last_7_months;
+
+    
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct sales reps last 8 months"})
+     */
+    private $nb_sale_reps_last_8_months;
+
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct orders last 8 months"})
+     */
+    private $nb_orders_last_8_months;
+
+    /**
+     * @ORM\Column(type="decimal", precision=15, scale=7, nullable=true, options={"comment"="Total recorded order line quantity last 8 months"})
+     */
+    private $total_recorded_quantity_last_8_months;
+
+    /**
+     * @ORM\Column(type="decimal", precision=15, scale=7, nullable=true, options={"comment"="Total recorded turn over last 8 months"})
+     */
+    private $total_recorded_turnover_last_8_months;
+
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct sales reps last 9 months"})
+     */
+    private $nb_sale_reps_last_9_months;
+
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct orders last 9 months"})
+     */
+    private $nb_orders_last_9_months;
+
+    /**
+     * @ORM\Column(type="decimal", precision=15, scale=7, nullable=true, options={"comment"="Total recorded order line quantity last 9 months"})
+     */
+    private $total_recorded_quantity_last_9_months;
+
+    /**
+     * @ORM\Column(type="decimal", precision=15, scale=7, nullable=true, options={"comment"="Total recorded turn over last 9 months"})
+     */
+    private $total_recorded_turnover_last_9_months;
+
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct sales reps last 10 months"})
+     */
+    private $nb_sale_reps_last_10_months;
+
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct orders last 10 months"})
+     */
+    private $nb_orders_last_10_months;
+
+    /**
+     * @ORM\Column(type="decimal", precision=15, scale=7, nullable=true, options={"comment"="Total recorded order line quantity last 10 months"})
+     */
+    private $total_recorded_quantity_last_10_months;
+
+    /**
+     * @ORM\Column(type="decimal", precision=15, scale=7, nullable=true, options={"comment"="Total recorded turn over last 10 months"})
+     */
+    private $total_recorded_turnover_last_10_months;
+
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct sales reps last 11 months"})
+     */
+    private $nb_sale_reps_last_11_months;
+
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct orders last 11 months"})
+     */
+    private $nb_orders_last_11_months;
+
+    /**
+     * @ORM\Column(type="decimal", precision=15, scale=7, nullable=true, options={"comment"="Total recorded order line quantity last 11 months"})
+     */
+    private $total_recorded_quantity_last_11_months;
+
+    /**
+     * @ORM\Column(type="decimal", precision=15, scale=7, nullable=true, options={"comment"="Total recorded turn over last 11 months"})
+     */
+    private $total_recorded_turnover_last_11_months;
     
 
     /**
