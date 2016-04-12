@@ -40,8 +40,8 @@ class Pricelist
      * @ORM\ManyToOne(targetEntity="PricelistGroup", inversedBy="groups", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="group_id", referencedColumnName="group_id", onDelete="CASCADE", nullable=true)
      */
-    private $group_id;    
-    
+    private $group_id;
+
     /**
      *
      * @ORM\ManyToOne(targetEntity="Currency", inversedBy="pricelists", cascade={"persist", "remove"})
@@ -57,7 +57,7 @@ class Pricelist
     private $discount_condition_pricelist_id;
 
     /**
-     * @ORM\Column(type="string", length=60, nullable=false, options={"comment" = "Reference"})
+     * @ORM\Column(type="string", length=10, nullable=false, options={"comment" = "Unique pricelist reference"})
      */
     private $reference;
 
@@ -158,7 +158,6 @@ class Pricelist
     public function setPricelistId($pricelist_id)
     {
         $this->pricelist_id = $pricelist_id;
-        return $this;
     }
 
     /**
@@ -177,7 +176,6 @@ class Pricelist
     public function setCurrency(Currency $currency_id)
     {
         $this->currency_id = $currency_id;
-        return $this;
     }
 
     /**
@@ -196,7 +194,6 @@ class Pricelist
     public function setStock(Stock $stock_id)
     {
         $this->stock_id = $stock_id;
-        return $this;
     }
 
     /**
@@ -215,7 +212,6 @@ class Pricelist
     public function setReference($reference)
     {
         $this->reference = $reference;
-        return $this;
     }
 
     /**
@@ -234,7 +230,6 @@ class Pricelist
     public function setTitle($title)
     {
         $this->title = $title;
-        return $this;
     }
 
     /**
@@ -253,7 +248,6 @@ class Pricelist
     public function setDescription($description)
     {
         $this->description = $description;
-        return $this;
     }
 
     /**
@@ -272,7 +266,6 @@ class Pricelist
     public function setIconClass($icon_class)
     {
         $this->icon_class = $icon_class;
-        return $this;
     }
 
 
@@ -284,7 +277,6 @@ class Pricelist
     public function setSortIndex($sort_index)
     {
         $this->sort_index = $sort_index;
-        return $this;
     }
 
     /**
@@ -321,7 +313,6 @@ class Pricelist
     public function setFlagActive($flag_active)
     {
         $this->flag_active = $flag_active;
-        return $this;
     }
 
     /**
@@ -340,7 +331,6 @@ class Pricelist
     public function setFlagEnableDiscountCondition($flag_enable_discount_condition)
     {
         $this->flag_enable_discount_condition = $flag_enable_discount_condition;
-        return $this;
     }
 
     /**
@@ -359,7 +349,6 @@ class Pricelist
     public function setFlagPublic($flag_public)
     {
         $this->flag_public = $flag_public;
-        return $this;
     }
 
     /**
@@ -379,7 +368,6 @@ class Pricelist
     public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
-        return $this;
     }
 
     /**
@@ -399,7 +387,6 @@ class Pricelist
     public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
-        return $this;
     }
 
     /**
@@ -419,7 +406,6 @@ class Pricelist
     public function setCreatedBy($created_by)
     {
         $this->created_by = $created_by;
-        return $this;
     }
 
     /**
@@ -439,7 +425,6 @@ class Pricelist
     public function setUpdatedBy($updated_by)
     {
         $this->updated_by = $updated_by;
-        return $this;
     }
 
     /**
@@ -458,7 +443,6 @@ class Pricelist
     public function setLegacyMapping($legacy_mapping)
     {
         $this->legacy_mapping = $legacy_mapping;
-        return $this;
     }
 
     /**
@@ -468,7 +452,6 @@ class Pricelist
     public function setLegacySynchroAt($legacy_synchro_at)
     {
         $this->legacy_synchro_at = $legacy_synchro_at;
-        return $this;
     }
 
     /**
@@ -479,6 +462,4 @@ class Pricelist
     {
         return $this->legacy_synchro_at;
     }
-
-
 }

@@ -2,8 +2,6 @@
 
 namespace OpenstoreSchema\Core\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -111,7 +109,6 @@ class ProductSetType
     public function setTypeId($type_id)
     {
         $this->type_id = $type_id;
-        return $this;
     }
 
     /**
@@ -130,7 +127,6 @@ class ProductSetType
     public function setReference($reference)
     {
         $this->reference = $reference;
-        return $this;
     }
 
     /**
@@ -149,7 +145,6 @@ class ProductSetType
     public function setTitle($title)
     {
         $this->title = $title;
-        return $this;
     }
 
     /**
@@ -168,7 +163,6 @@ class ProductSetType
     public function setDescription($description)
     {
         $this->description = $description;
-        return $this;
     }
 
     /**
@@ -196,7 +190,6 @@ class ProductSetType
     public function setFlagDefault($flag_default)
     {
         $this->flag_default = $flag_default;
-        return $this;
     }
 
     /**
@@ -206,7 +199,6 @@ class ProductSetType
     public function setIconClass($icon_class)
     {
         $this->icon_class = $icon_class;
-        return $this;
     }
 
     /**
@@ -233,7 +225,6 @@ class ProductSetType
     public function setFlagActive($flag_active)
     {
         $this->flag_active = $flag_active;
-        return $this;
     }
 
     /**
@@ -252,7 +243,6 @@ class ProductSetType
     public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
-        return $this;
     }
 
     /**
@@ -271,7 +261,6 @@ class ProductSetType
     public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
-        return $this;
     }
 
     /**
@@ -290,7 +279,6 @@ class ProductSetType
     public function setCreatedBy($created_by)
     {
         $this->created_by = $created_by;
-        return $this;
     }
 
     /**
@@ -309,7 +297,6 @@ class ProductSetType
     public function setUpdatedBy($updated_by)
     {
         $this->updated_by = $updated_by;
-        return $this;
     }
 
     /**
@@ -328,7 +315,6 @@ class ProductSetType
     public function setLegacyMapping($legacy_mapping)
     {
         $this->legacy_mapping = $legacy_mapping;
-        return $this;
     }
 
     /**
@@ -338,7 +324,6 @@ class ProductSetType
     public function setLegacySynchroAt($legacy_synchro_at)
     {
         $this->legacy_synchro_at = $legacy_synchro_at;
-        return $this;
     }
 
     /**

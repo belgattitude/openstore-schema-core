@@ -2,8 +2,6 @@
 
 namespace OpenstoreSchema\Core\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -176,7 +174,6 @@ class SaleOrderStatus
     public function setFlagActive($flag_active)
     {
         $this->flag_active = $flag_active;
-        return $this;
     }
 
     /**
@@ -194,7 +191,6 @@ class SaleOrderStatus
     public function setFlagReadOnly($flag_readonly)
     {
         $this->flag_readonly = $flag_readonly;
-        return $this;
     }
 
     /**
@@ -212,7 +208,6 @@ class SaleOrderStatus
     public function setFlagDefault($flag_default)
     {
         $this->flag_default = $flag_default;
-        return $this;
     }
 
     /**
@@ -231,7 +226,6 @@ class SaleOrderStatus
     public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
-        return $this;
     }
 
     /**
@@ -250,7 +244,6 @@ class SaleOrderStatus
     public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
-        return $this;
     }
 
     /**
@@ -269,7 +262,6 @@ class SaleOrderStatus
     public function setCreatedBy($created_by)
     {
         $this->created_by = $created_by;
-        return $this;
     }
 
     /**
@@ -288,7 +280,6 @@ class SaleOrderStatus
     public function setUpdatedBy($updated_by)
     {
         $this->updated_by = $updated_by;
-        return $this;
     }
 
     /**
@@ -307,7 +298,6 @@ class SaleOrderStatus
     public function setLegacyMapping($legacy_mapping)
     {
         $this->legacy_mapping = $legacy_mapping;
-        return $this;
     }
 
     /**
@@ -317,7 +307,6 @@ class SaleOrderStatus
     public function setLegacySynchroAt($legacy_synchro_at)
     {
         $this->legacy_synchro_at = $legacy_synchro_at;
-        return $this;
     }
 
     /**

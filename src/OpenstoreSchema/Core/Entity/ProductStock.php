@@ -2,8 +2,6 @@
 
 namespace OpenstoreSchema\Core\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -92,7 +90,6 @@ class ProductStock
     public function setId($id)
     {
         $this->id = $id;
-        return $this;
     }
 
     /**
@@ -120,7 +117,6 @@ class ProductStock
     public function setAvailableStock($available_stock)
     {
         $this->available_stock = $available_stock;
-        return $this;
     }
 
     /**
@@ -130,7 +126,6 @@ class ProductStock
     public function setTheoreticalStock($theoretical_stock)
     {
         $this->theoretical_stock = $theoretical_stock;
-        return $this;
     }
 
     /**
@@ -157,7 +152,6 @@ class ProductStock
     public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
-        return $this;
     }
 
     /**
@@ -176,7 +170,6 @@ class ProductStock
     public function setLegacyMapping($legacy_mapping)
     {
         $this->legacy_mapping = $legacy_mapping;
-        return $this;
     }
 
     /**
@@ -186,7 +179,6 @@ class ProductStock
     public function setLegacySynchroAt($legacy_synchro_at)
     {
         $this->legacy_synchro_at = $legacy_synchro_at;
-        return $this;
     }
 
     /**

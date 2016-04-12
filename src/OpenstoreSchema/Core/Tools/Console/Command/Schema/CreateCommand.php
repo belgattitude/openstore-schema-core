@@ -19,14 +19,14 @@ class CreateCommand extends AbstractCommand
              ->setDescription(
                  'Processes the schema and either create it directly on EntityManager Storage Connection or generate the SQL output.'
              )
-        ->setDefinition(array(
+        ->setDefinition([
             new InputOption(
                 'dump-sql',
                 null,
                 InputOption::VALUE_NONE,
                 'Instead of trying to apply generated SQLs into EntityManager Storage Connection, output them.'
             )
-        ))
+        ])
         ->setHelp(<<<EOT
 Processes the schema and either create it directly on EntityManager Storage Connection or generate the SQL output.
 
@@ -44,7 +44,6 @@ EOT
      */
     protected function executeSchemaCommand(InputInterface $input, OutputInterface $output, SchemaTool $schemaTool, array $metadatas)
     {
-
         $extra = new Extra\MysqlExtra();
         if ($input->getOption('dump-sql')) {
             $sqls = $schemaTool->getCreateSchemaSql($metadatas);
@@ -53,7 +52,6 @@ EOT
 
             $ddls = $extra->getExtrasDDLWithDelimiter();
             $output->writeln($ddls);
-
         } else {
             $conn = $this->getConnection();
 

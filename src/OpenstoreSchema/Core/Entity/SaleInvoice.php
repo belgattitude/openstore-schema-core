@@ -2,8 +2,6 @@
 
 namespace OpenstoreSchema\Core\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -145,7 +143,6 @@ class SaleInvoice
     public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
-        return $this;
     }
 
     /**
@@ -164,7 +161,6 @@ class SaleInvoice
     public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
-        return $this;
     }
 
     /**
@@ -183,7 +179,6 @@ class SaleInvoice
     public function setDeletedAt($deleted_at)
     {
         $this->deleted_at = $deleted_at;
-        return $this;
     }
 
     /**
@@ -202,7 +197,6 @@ class SaleInvoice
     public function setCreatedBy($created_by)
     {
         $this->created_by = $created_by;
-        return $this;
     }
 
     /**
@@ -221,7 +215,6 @@ class SaleInvoice
     public function setUpdatedBy($updated_by)
     {
         $this->updated_by = $updated_by;
-        return $this;
     }
 
     /**
@@ -240,7 +233,6 @@ class SaleInvoice
     public function setLegacyMapping($legacy_mapping)
     {
         $this->legacy_mapping = $legacy_mapping;
-        return $this;
     }
 
     /**
@@ -250,7 +242,6 @@ class SaleInvoice
     public function setLegacySynchroAt($legacy_synchro_at)
     {
         $this->legacy_synchro_at = $legacy_synchro_at;
-        return $this;
     }
 
     /**

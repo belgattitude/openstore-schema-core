@@ -16,7 +16,7 @@ class MysqlExtra extends AbstractExtra
         $start = "DELIMITER {$this->delimiter}";
         $end = "DELIMITER ;";
 
-        $newDdls = array();
+        $newDdls = [];
 
         foreach ($ddls as $idx => $ddl) {
             $newDdls[] = $start;
@@ -28,7 +28,7 @@ class MysqlExtra extends AbstractExtra
             $newDdls[] = $end;
         }
 
-        return join(PHP_EOL, $newDdls) . PHP_EOL . $end . PHP_EOL;
+        return implode(PHP_EOL, $newDdls) . PHP_EOL . $end . PHP_EOL;
     }
 
     /**
@@ -37,7 +37,6 @@ class MysqlExtra extends AbstractExtra
      */
     public function getFunctions()
     {
-
         $stmts = [];
         $stmts['drop/function/slugify']        = "DROP FUNCTION IF EXISTS `slugify`";
         $stmts['create/function/slugify']    = <<< ENDQ
@@ -188,7 +187,7 @@ ENDQ;
 
         return $stmts;
 
-        
+
 /*
 create function jsonvalue returns string soname 'ha_connect.so';
 create function json_array returns string soname 'ha_connect.so';
@@ -239,8 +238,7 @@ create function jbin_set_item returns real soname 'ha_connect.so';
 create function jbin_insert_item returns real soname 'ha_connect.so';
 create function jbin_update_item returns real soname 'ha_connect.so';
 create function jbin_file returns string soname 'ha_connect.so';
- */        
-        
+ */
     }
 
     /**
@@ -249,7 +247,6 @@ create function jbin_file returns string soname 'ha_connect.so';
      */
     public function getProcedures()
     {
-
         $stmts = [];
         $stmts['drop/procedure/rebuild_catalog_search'] = "DROP PROCEDURE IF EXISTS `rebuild_catalog_search`";
         $stmts['create/procedure/rebuild_catalog_search']    = <<< ENDQ
@@ -515,7 +512,6 @@ ENDQ;
         END;
 ENDQ;
         return $stmts;
-
     }
 
     /**

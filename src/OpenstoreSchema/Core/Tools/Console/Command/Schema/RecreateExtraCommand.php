@@ -19,14 +19,14 @@ class RecreateExtraCommand extends AbstractCommand
              ->setDescription(
                  'Add database extra ddl like triggers, procedures, functions...'
              )
-        ->setDefinition(array(
+        ->setDefinition([
             new InputOption(
                 'dump-sql',
                 null,
                 InputOption::VALUE_NONE,
                 'Instead of trying to apply generated DDLs into EntityManager, output them.'
             )
-        ))
+        ])
         ->setHelp(<<<EOT
 Processes the extra DDL statements and either create it directly on EntityManager Storage Connection or generate the SQL output.
 EOT
@@ -41,12 +41,10 @@ EOT
         $extra = new Extra\MysqlExtra();
 
         if ($input->getOption('dump-sql')) {
-            $sqls = array();
+            $sqls = [];
             $ddls = $extra->getExtrasDDLWithDelimiter();
 
             $output->writeln($ddls);
-
-
         } else {
             $output->writeln('ATTENTION: This operation should not be executed in a production environment.' . PHP_EOL);
 

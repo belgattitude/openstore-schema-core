@@ -84,7 +84,6 @@ class PricelistGroup
     public function setGroupId($group_id)
     {
         $this->group_id = $group_id;
-        return $this;
     }
 
     /**
@@ -104,7 +103,6 @@ class PricelistGroup
     public function setReference($reference)
     {
         $this->reference = $reference;
-        return $this;
     }
 
     /**
@@ -123,7 +121,6 @@ class PricelistGroup
     public function setTitle($title)
     {
         $this->title = $title;
-        return $this;
     }
 
     /**
@@ -143,7 +140,6 @@ class PricelistGroup
     public function setIconClass($icon_class)
     {
         $this->icon_class = $icon_class;
-        return $this;
     }
 
 
@@ -155,7 +151,6 @@ class PricelistGroup
     public function setSortIndex($sort_index)
     {
         $this->sort_index = $sort_index;
-        return $this;
     }
 
     /**
@@ -185,7 +180,6 @@ class PricelistGroup
     public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
-        return $this;
     }
 
     /**
@@ -205,7 +199,6 @@ class PricelistGroup
     public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
-        return $this;
     }
 
     /**
@@ -225,7 +218,6 @@ class PricelistGroup
     public function setCreatedBy($created_by)
     {
         $this->created_by = $created_by;
-        return $this;
     }
 
     /**
@@ -245,7 +237,6 @@ class PricelistGroup
     public function setUpdatedBy($updated_by)
     {
         $this->updated_by = $updated_by;
-        return $this;
     }
 
     /**
@@ -264,7 +255,6 @@ class PricelistGroup
     public function setLegacyMapping($legacy_mapping)
     {
         $this->legacy_mapping = $legacy_mapping;
-        return $this;
     }
 
     /**
@@ -274,7 +264,6 @@ class PricelistGroup
     public function setLegacySynchroAt($legacy_synchro_at)
     {
         $this->legacy_synchro_at = $legacy_synchro_at;
-        return $this;
     }
 
     /**
@@ -295,5 +284,4 @@ class PricelistGroup
     {
         return $this->getTitle();
     }
-
 }

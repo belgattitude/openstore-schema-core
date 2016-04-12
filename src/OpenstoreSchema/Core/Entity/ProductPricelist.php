@@ -2,8 +2,6 @@
 
 namespace OpenstoreSchema\Core\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -17,16 +15,16 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *   },
  *   indexes={
  *     @ORM\Index(name="price_idx", columns={"price"}),
- *     @ORM\Index(name="flag_active", columns={"flag_active"}),  
- *     @ORM\Index(name="is_liquidation", columns={"is_liquidation"}),
- *     @ORM\Index(name="is_popular", columns={"is_popular"}),
- *     @ORM\Index(name="is_trending", columns={"is_trending"}),
- *     @ORM\Index(name="is_new", columns={"is_new"}), 
- *     @ORM\Index(name="is_hot", columns={"is_hot"}),
- *     @ORM\Index(name="is_bestvalue", columns={"is_bestvalue"}), 
- *     @ORM\Index(name="is_bestseller", columns={"is_bestseller"}), 
- *     @ORM\Index(name="is_promotional", columns={"is_promotional"}),
- *     @ORM\Index(name="is_high_runner", columns={"is_high_runner"}) 
+ *     @ORM\Index(name="flag_active_idx", columns={"flag_active"}),  
+ *     @ORM\Index(name="is_liquidation_idx", columns={"is_liquidation"}),
+ *     @ORM\Index(name="is_popular_idx", columns={"is_popular"}),
+ *     @ORM\Index(name="is_trending_idx", columns={"is_trending"}),
+ *     @ORM\Index(name="is_new_idx", columns={"is_new"}), 
+ *     @ORM\Index(name="is_hot_idx", columns={"is_hot"}),
+ *     @ORM\Index(name="is_bestvalue_idx", columns={"is_bestvalue"}), 
+ *     @ORM\Index(name="is_bestseller_idx", columns={"is_bestseller"}), 
+ *     @ORM\Index(name="is_promotional_idx", columns={"is_promotional"}),
+ *     @ORM\Index(name="is_high_runner_idx", columns={"is_high_runner"}) 
  *   },
  *   options={"comment" = "Product pricelist"}
  * )
@@ -72,8 +70,8 @@ class ProductPricelist
     /**
      * @ORM\Column(type="decimal", precision=12, scale=6, nullable=false, options={"comment"="Unit sales price discounts included"})
      */
-    private $price;    
-    
+    private $price;
+
     /**
      * @ORM\Column(type="decimal", precision=12, scale=6, nullable=false, options={"comment"="Unit sales list price wihtout discounts"})
      */
@@ -88,22 +86,22 @@ class ProductPricelist
      * @ORM\Column(type="decimal", precision=12, scale=6, nullable=true, options={"comment"="Minimum advertised price, only where regulation applies"})
      */
     private $map_price;
-    
+
     /**
      * @ORM\Column(type="decimal", precision=12, scale=6, nullable=true, options={"comment"="Product cost price"})
      */
-    private $cost_price;    
+    private $cost_price;
 
     /**
      * @ORM\Column(type="decimal", precision=12, scale=6, nullable=true, options={"comment"="Minimum sale under which product cannot be sold (discounts must be checked)"})
      */
-    private $minimum_price;    
+    private $minimum_price;
 
     /**
      * @ORM\Column(type="decimal", precision=9, scale=6, nullable=true, options={"comment"="Minimum margin under which product cannot be sold"})
      */
-    private $minimum_margin;    
-    
+    private $minimum_margin;
+
     /**
      * @ORM\Column(type="decimal", precision=16, scale=6, nullable=true, options={"comment"="Sales minimum quantity"})
      */
@@ -133,12 +131,12 @@ class ProductPricelist
      * @ORM\Column(type="decimal", precision=9, scale=6, nullable=false, options={"default"=0, "comment"="Regular discount 4"})
      */
     private $discount_4;
-    
+
     /**
      * @ORM\Column(type="decimal", precision=9, scale=6, nullable=true, options={"comment"="Maximum regular discount 1 (when a discount can be applied freely)"})
      */
     private $maximum_discount_1;
-    
+
     /**
      * @ORM\Column(type="boolean", nullable=true, options={"comment"="Whether the product is considered as liquidation (stock clearance), , eventual discounts will appear in discount_1,_2..."})
      */
@@ -173,8 +171,8 @@ class ProductPricelist
      * @ORM\Column(type="boolean", nullable=true, options={"comment"="Whether the product is considered as a trending product in this pricelist"})
      */
     private $is_trending;
-    
-    
+
+
     /**
      * @ORM\Column(type="boolean", nullable=true, options={"comment"="Whether the product is considered as promotional, eventual discounts will appear in discount_1,_2..."})
      */
@@ -189,7 +187,7 @@ class ProductPricelist
      * @ORM\Column(type="boolean", nullable=true, options={"comment"="Whether the product is high runner (long lifetime.)"})
      */
     private $is_high_runner;
-    
+
     /**
      * @ORM\Column(type="date", nullable=true, options={"comment"="Discount started at"})
      */
@@ -257,7 +255,6 @@ class ProductPricelist
     public function setId($id)
     {
         $this->product_pricelist_id = $id;
-        return $this;
     }
 
     /**
@@ -276,7 +273,6 @@ class ProductPricelist
     public function setPricelistId($pricelist_id)
     {
         $this->pricelist_id = $pricelist_id;
-        return $this;
     }
 
     /**
@@ -295,7 +291,6 @@ class ProductPricelist
     public function setProductId($product_id)
     {
         $this->product_id = $product_id;
-        return $this;
     }
 
     /**
@@ -322,7 +317,6 @@ class ProductPricelist
     public function setFlagActive($flag_active)
     {
         $this->flag_active = $flag_active;
-        return $this;
     }
 
     /**
@@ -340,7 +334,6 @@ class ProductPricelist
     public function setUnavailableAt($unavailable_at)
     {
         $this->unavailable_at = $unavailable_at;
-        return $this;
     }
 
 
@@ -359,7 +352,6 @@ class ProductPricelist
     public function setAvailableAt($available_at)
     {
         $this->available_at = $available_at;
-        return $this;
     }
 
     /**
@@ -378,7 +370,6 @@ class ProductPricelist
     public function setPrice($price)
     {
         $this->price = $price;
-        return $this;
     }
 
     /**
@@ -388,7 +379,6 @@ class ProductPricelist
     public function setPublicPrice($public_price)
     {
         $this->public_price = $public_price;
-        return $this;
     }
 
     /**
@@ -424,7 +414,6 @@ class ProductPricelist
     public function setPromoStartAt($promo_start_at)
     {
         $this->promo_start_at = $promo_start_at;
-        return $this;
     }
 
     public function getPromoStartAt()
@@ -438,7 +427,6 @@ class ProductPricelist
     public function setPromoEndAt($promo_end_at)
     {
         $this->promo_end_at = $promo_end_at;
-        return $this;
     }
 
     public function getPromoEndAt()
@@ -462,7 +450,6 @@ class ProductPricelist
     public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
-        return $this;
     }
 
     /**
@@ -481,7 +468,6 @@ class ProductPricelist
     public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
-        return $this;
     }
 
     /**
@@ -500,7 +486,6 @@ class ProductPricelist
     public function setDeletedAt($deleted_at)
     {
         $this->deleted_at = $deleted_at;
-        return $this;
     }
 
     /**
@@ -519,7 +504,6 @@ class ProductPricelist
     public function setCreatedBy($created_by)
     {
         $this->created_by = $created_by;
-        return $this;
     }
 
     /**
@@ -538,7 +522,6 @@ class ProductPricelist
     public function setUpdatedBy($updated_by)
     {
         $this->updated_by = $updated_by;
-        return $this;
     }
 
     /**
@@ -557,7 +540,6 @@ class ProductPricelist
     public function setLegacyMapping($legacy_mapping)
     {
         $this->legacy_mapping = $legacy_mapping;
-        return $this;
     }
 
     /**
@@ -567,7 +549,6 @@ class ProductPricelist
     public function setLegacySynchroAt($legacy_synchro_at)
     {
         $this->legacy_synchro_at = $legacy_synchro_at;
-        return $this;
     }
 
     /**

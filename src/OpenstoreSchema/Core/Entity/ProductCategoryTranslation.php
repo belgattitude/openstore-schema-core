@@ -2,8 +2,6 @@
 
 namespace OpenstoreSchema\Core\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -117,7 +115,6 @@ class ProductCategoryTranslation
     public function setId($id)
     {
         $this->id = $id;
-        return $this;
     }
 
     /**
@@ -135,7 +132,6 @@ class ProductCategoryTranslation
     public function setSlug($slug)
     {
         $this->slug = $slug;
-        return $this;
     }
 
     /**
@@ -154,7 +150,6 @@ class ProductCategoryTranslation
     public function setTitle($title)
     {
         $this->title = $title;
-        return $this;
     }
 
     /**
@@ -173,7 +168,6 @@ class ProductCategoryTranslation
     public function setDescription($description)
     {
         $this->description = $description;
-        return $this;
     }
 
     /**
@@ -192,7 +186,6 @@ class ProductCategoryTranslation
     public function setProductId($product_id)
     {
         $this->product_id = $product_id;
-        return $this;
     }
 
     /**
@@ -211,7 +204,6 @@ class ProductCategoryTranslation
     public function setLangId($lang_id)
     {
         $this->lang_id = $lang_id;
-        return $this;
     }
 
     /**
@@ -239,7 +231,6 @@ class ProductCategoryTranslation
     public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
-        return $this;
     }
 
     /**
@@ -258,7 +249,6 @@ class ProductCategoryTranslation
     public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
-        return $this;
     }
 
     /**
@@ -277,7 +267,6 @@ class ProductCategoryTranslation
     public function setCreatedBy($created_by)
     {
         $this->created_by = $created_by;
-        return $this;
     }
 
     /**
@@ -296,7 +285,6 @@ class ProductCategoryTranslation
     public function setUpdatedBy($updated_by)
     {
         $this->updated_by = $updated_by;
-        return $this;
     }
 
     /**
@@ -315,7 +303,6 @@ class ProductCategoryTranslation
     public function setLegacyMapping($legacy_mapping)
     {
         $this->legacy_mapping = $legacy_mapping;
-        return $this;
     }
 
     /**
@@ -325,7 +312,6 @@ class ProductCategoryTranslation
     public function setLegacySynchroAt($legacy_synchro_at)
     {
         $this->legacy_synchro_at = $legacy_synchro_at;
-        return $this;
     }
 
     /**

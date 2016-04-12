@@ -2,10 +2,7 @@
 
 namespace OpenstoreSchema\Core\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity
@@ -104,7 +101,6 @@ class ProductPackaging
     public function setId($id)
     {
         $this->id = $id;
-        return $this;
     }
 
     /**
@@ -132,7 +128,6 @@ class ProductPackaging
     public function setVolume($volume)
     {
         $this->volume = $volume;
-        return $this;
     }
 
     /**
@@ -151,7 +146,6 @@ class ProductPackaging
     public function setWeight($weight)
     {
         $this->weight = $weight;
-        return $this;
     }
 
     /**
@@ -170,7 +164,6 @@ class ProductPackaging
     public function setLength($length)
     {
         $this->length = $length;
-        return $this;
     }
 
     /**
@@ -189,7 +182,6 @@ class ProductPackaging
     public function setHeight($height)
     {
         $this->height = $height;
-        return $this;
     }
 
     /**
@@ -208,7 +200,6 @@ class ProductPackaging
     public function setWidth($width)
     {
         $this->width = $with;
-        return $this;
     }
 
     /**
@@ -228,7 +219,6 @@ class ProductPackaging
     public function setBarcodeEan($barcode_ean)
     {
         $this->barcode_ean = $barcode_ean;
-        return $this;
     }
 
     /**
@@ -248,7 +238,6 @@ class ProductPackaging
     public function setBarcodeUpc($barcode_upc)
     {
         $this->barcode_upc = $barcode_upc;
-        return $this;
     }
 
     /**
@@ -276,7 +265,6 @@ class ProductPackaging
     public function setLegacyMapping($legacy_mapping)
     {
         $this->legacy_mapping = $legacy_mapping;
-        return $this;
     }
 
     /**
@@ -286,7 +274,6 @@ class ProductPackaging
     public function setLegacySynchroAt($legacy_synchro_at)
     {
         $this->legacy_synchro_at = $legacy_synchro_at;
-        return $this;
     }
 
     /**

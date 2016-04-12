@@ -2,12 +2,8 @@
 
 namespace OpenstoreSchema\Core\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
-
-;
 
 /**
  * @ORM\Entity
@@ -131,7 +127,6 @@ class Media
     public function setMediaId($media_id)
     {
         $this->media_id = $media_id;
-        return $this;
     }
 
     /**
@@ -150,7 +145,6 @@ class Media
     public function setFilename($filename)
     {
         $this->filename = $filename;
-        return $this;
     }
 
     /**
@@ -169,7 +163,6 @@ class Media
     public function setLocation($location)
     {
         $this->location = $location;
-        return $this;
     }
 
     /**
@@ -188,7 +181,6 @@ class Media
     public function setTitle($title)
     {
         $this->title = $title;
-        return $this;
     }
 
     /**
@@ -207,7 +199,6 @@ class Media
     public function setDescription($description)
     {
         $this->description = $description;
-        return $this;
     }
 
     /**
@@ -235,7 +226,6 @@ class Media
     public function setFilesize($filesize)
     {
         $this->filesize = $filesize;
-        return $this;
     }
 
     /**
@@ -254,7 +244,6 @@ class Media
     public function setFilemtime($filemtime)
     {
         $this->filemtime = $filemtime;
-        return $this;
     }
 
     /**
@@ -273,7 +262,6 @@ class Media
     public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
-        return $this;
     }
 
     /**
@@ -292,7 +280,6 @@ class Media
     public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
-        return $this;
     }
 
     /**
@@ -311,7 +298,6 @@ class Media
     public function setDeletedAt($deleted_at)
     {
         $this->deleted_at = $deleted_at;
-        return $this;
     }
 
     /**
@@ -330,7 +316,6 @@ class Media
     public function setCreatedBy($created_by)
     {
         $this->created_by = $created_by;
-        return $this;
     }
 
     /**
@@ -349,7 +334,6 @@ class Media
     public function setUpdatedBy($updated_by)
     {
         $this->updated_by = $updated_by;
-        return $this;
     }
 
     /**
@@ -368,7 +352,6 @@ class Media
     public function setLegacyMapping($legacy_mapping)
     {
         $this->legacy_mapping = $legacy_mapping;
-        return $this;
     }
 
     /**
@@ -378,7 +361,6 @@ class Media
     public function setLegacySynchroAt($legacy_synchro_at)
     {
         $this->legacy_synchro_at = $legacy_synchro_at;
-        return $this;
     }
 
     /**

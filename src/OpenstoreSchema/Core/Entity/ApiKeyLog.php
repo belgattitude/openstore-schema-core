@@ -2,8 +2,6 @@
 
 namespace OpenstoreSchema\Core\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -77,7 +75,6 @@ class ApiKeyLog
     public function setId($id)
     {
         $this->id = $id;
-        return $this;
     }
 
     /**
@@ -96,7 +93,6 @@ class ApiKeyLog
     public function setApiId($api_id)
     {
         $this->api_id = $api_id;
-        return $this;
     }
 
     /**
@@ -115,7 +111,6 @@ class ApiKeyLog
     public function setServiceId($service_id)
     {
         $this->service_id = $service_id;
-        return $this;
     }
 
     /**
@@ -143,7 +138,6 @@ class ApiKeyLog
     public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
-        return $this;
     }
 
     /**

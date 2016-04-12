@@ -2,8 +2,6 @@
 
 namespace OpenstoreSchema\Core\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -67,7 +65,6 @@ class ProductSearch
     public function setId($id)
     {
         $this->id = $id;
-        return $this;
     }
 
     /**
@@ -86,7 +83,6 @@ class ProductSearch
     public function setKeywords($keywords)
     {
         $this->keywords = $keywords;
-        return $this;
     }
 
     /**
@@ -105,7 +101,6 @@ class ProductSearch
     public function setProductId($product_id)
     {
         $this->product_id = $product_id;
-        return $this;
     }
 
     /**
@@ -124,7 +119,6 @@ class ProductSearch
     public function setLangId($lang_id)
     {
         $this->lang_id = $lang_id;
-        return $this;
     }
 
     /**
@@ -152,6 +146,5 @@ class ProductSearch
     public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
-        return $this;
     }
 }

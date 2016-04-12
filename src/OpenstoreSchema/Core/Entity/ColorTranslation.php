@@ -2,8 +2,6 @@
 
 namespace OpenstoreSchema\Core\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -94,7 +92,6 @@ class ColorTranslation
     public function setId($id)
     {
         $this->id = $id;
-        return $this;
     }
 
     /**
@@ -114,7 +111,6 @@ class ColorTranslation
     public function setName($name)
     {
         $this->name = $name;
-        return $this;
     }
 
     /**
@@ -133,7 +129,6 @@ class ColorTranslation
     public function setColorId($color_id)
     {
         $this->color_id = $color_id;
-        return $this;
     }
 
     /**
@@ -161,7 +156,6 @@ class ColorTranslation
     public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
-        return $this;
     }
 
     /**
@@ -180,7 +174,6 @@ class ColorTranslation
     public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
-        return $this;
     }
 
     /**
@@ -199,7 +192,6 @@ class ColorTranslation
     public function setCreatedBy($created_by)
     {
         $this->created_by = $created_by;
-        return $this;
     }
 
     /**
@@ -218,7 +210,6 @@ class ColorTranslation
     public function setUpdatedBy($updated_by)
     {
         $this->updated_by = $updated_by;
-        return $this;
     }
 
     /**
@@ -237,7 +228,6 @@ class ColorTranslation
     public function setLegacyMapping($legacy_mapping)
     {
         $this->legacy_mapping = $legacy_mapping;
-        return $this;
     }
 
     /**
@@ -247,7 +237,6 @@ class ColorTranslation
     public function setLegacySynchroAt($legacy_synchro_at)
     {
         $this->legacy_synchro_at = $legacy_synchro_at;
-        return $this;
     }
 
     /**

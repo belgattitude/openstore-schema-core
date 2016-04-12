@@ -2,8 +2,6 @@
 
 namespace OpenstoreSchema\Core\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -18,6 +16,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *   },
  *   indexes={
  *     @ORM\Index(name="title_idx", columns={"title"}),
+ *     @ORM\Index(name="flag_active_idx", columns={"flag_active"}),  
  *     @ORM\Index(name="reference_idx", columns={"reference"}),
  *     @ORM\Index(name="search_reference_idx", columns={"search_reference"}),
  *     @ORM\Index(name="description_idx", columns={"description"}),
@@ -306,8 +305,6 @@ class Product
 
     public function __construct()
     {
-        $this->translations = new \Doctrine\Common\Collections\ArrayCollection();
-
         /**
          * Default value for flag_active
          */
@@ -321,7 +318,6 @@ class Product
     public function setProductId($product_id)
     {
         $this->product_id = $product_id;
-        return $this;
     }
 
     /**
@@ -340,7 +336,6 @@ class Product
     public function setReference($reference)
     {
         $this->reference = $reference;
-        return $this;
     }
 
     /**
@@ -358,7 +353,6 @@ class Product
     public function setSlug($slug)
     {
         $this->slug = $slug;
-        return $this;
     }
 
     /**
@@ -377,7 +371,6 @@ class Product
     public function setTitle($title)
     {
         $this->title = $title;
-        return $this;
     }
 
     /**
@@ -396,7 +389,6 @@ class Product
     public function setDescription($description)
     {
         $this->description = $description;
-        return $this;
     }
 
     /**
@@ -411,12 +403,10 @@ class Product
     /**
      *
      * @param int $type_id
-     * @return Product
      */
     public function setTypeId($type_id)
     {
         $this->type_id = $type_id;
-        return $this;
     }
 
     /**
@@ -427,6 +417,43 @@ class Product
         return $this->type_id;
     }
 
+
+    /**
+     *
+     * @param int $group_id
+     */
+    public function setGroupId($group_id)
+    {
+        $this->group_id = $group_id;
+    }
+
+    /**
+     * @return integer
+     */
+    public function getGroupId()
+    {
+        return $this->group_id;
+    }
+
+
+    /**
+     *
+     * @param int $brand_id
+     */
+    public function setBrandId($brand_id)
+    {
+        $this->brand_id = $brand_id;
+    }
+
+    /**
+     * @return integer
+     */
+    public function getBrandId()
+    {
+        return $this->brand_id;
+    }
+
+
     /**
      *
      * @param int $status_id
@@ -435,7 +462,6 @@ class Product
     public function setStatusId($status_id)
     {
         $this->status_id = $status_id;
-        return $this;
     }
 
     /**
@@ -454,7 +480,6 @@ class Product
     public function setUnitId($unit_id)
     {
         $this->unit_id = $unit_id;
-        return $this;
     }
 
     /**
@@ -472,7 +497,6 @@ class Product
     public function setVolume($volume)
     {
         $this->volume = $volume;
-        return $this;
     }
 
     /**
@@ -491,7 +515,6 @@ class Product
     public function setWeight($weight)
     {
         $this->weight = $weight;
-        return $this;
     }
 
     /**
@@ -510,7 +533,6 @@ class Product
     public function setLength($length)
     {
         $this->length = $length;
-        return $this;
     }
 
     /**
@@ -529,7 +551,6 @@ class Product
     public function setHeight($height)
     {
         $this->height = $height;
-        return $this;
     }
 
     /**
@@ -548,7 +569,6 @@ class Product
     public function setWidth($width)
     {
         $this->width = $with;
-        return $this;
     }
 
     /**
@@ -568,7 +588,6 @@ class Product
     public function setBarcodeEan13($barcode_ean13)
     {
         $this->barcode_ean13 = $barcode_ean13;
-        return $this;
     }
 
     /**
@@ -587,7 +606,6 @@ class Product
     public function setIconClass($icon_class)
     {
         $this->icon_class = $icon_class;
-        return $this;
     }
 
     /**
@@ -652,7 +670,6 @@ class Product
     public function setFlagActive($flag_active)
     {
         $this->flag_active = $flag_active;
-        return $this;
     }
 
     /**
@@ -670,7 +687,6 @@ class Product
     public function setAvailableAt($available_at)
     {
         $this->available_at = $available_at;
-        return $this;
     }
 
     /**
@@ -689,7 +705,6 @@ class Product
     public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
-        return $this;
     }
 
     /**
@@ -708,7 +723,6 @@ class Product
     public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
-        return $this;
     }
 
     /**
@@ -727,7 +741,6 @@ class Product
     public function setDeletedAt($deleted_at)
     {
         $this->deleted_at = $deleted_at;
-        return $this;
     }
 
     /**
@@ -746,7 +759,6 @@ class Product
     public function setCreatedBy($created_by)
     {
         $this->created_by = $created_by;
-        return $this;
     }
 
     /**
@@ -765,7 +777,6 @@ class Product
     public function setUpdatedBy($updated_by)
     {
         $this->updated_by = $updated_by;
-        return $this;
     }
 
     /**
@@ -784,7 +795,6 @@ class Product
     public function setLegacyMapping($legacy_mapping)
     {
         $this->legacy_mapping = $legacy_mapping;
-        return $this;
     }
 
     /**
@@ -794,7 +804,6 @@ class Product
     public function setLegacySynchroAt($legacy_synchro_at)
     {
         $this->legacy_synchro_at = $legacy_synchro_at;
-        return $this;
     }
 
     /**

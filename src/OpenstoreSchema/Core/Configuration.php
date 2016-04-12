@@ -25,7 +25,7 @@ class Configuration
     public static function getEntityPaths()
     {
         if (self::$paths === null) {
-            self::$paths = array(realpath(__DIR__ . DIRECTORY_SEPARATOR . 'Entity'));
+            self::$paths = [realpath(__DIR__ . DIRECTORY_SEPARATOR . 'Entity')];
         }
         return self::$paths;
     }

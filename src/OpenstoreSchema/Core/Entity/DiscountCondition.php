@@ -2,8 +2,6 @@
 
 namespace OpenstoreSchema\Core\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -166,7 +164,6 @@ class DiscountCondition
     public function setId($id)
     {
         $this->id = $id;
-        return $this;
     }
 
     /**
@@ -185,7 +182,6 @@ class DiscountCondition
     public function setPricelistId($pricelist_id)
     {
         $this->pricelist_id = $pricelist_id;
-        return $this;
     }
 
     /**
@@ -204,7 +200,6 @@ class DiscountCondition
     public function setCustomerId($customer_id)
     {
         $this->customer_id = $customer_id;
-        return $this;
     }
 
     /**
@@ -223,7 +218,6 @@ class DiscountCondition
     public function setBrandId($brand_id)
     {
         $this->brand_id = $brand_id;
-        return $this;
     }
 
     /**
@@ -242,7 +236,6 @@ class DiscountCondition
     public function setModelId($model_id)
     {
         $this->model_id = $model_id;
-        return $this;
     }
 
     /**
@@ -261,7 +254,6 @@ class DiscountCondition
     public function setCategoryId($category_id)
     {
         $this->category_id = $category_id;
-        return $this;
     }
 
     /**
@@ -280,7 +272,6 @@ class DiscountCondition
     public function setProductGroupId($product_group_id)
     {
         $this->product_group_id = $product_group_id;
-        return $this;
     }
 
     /**
@@ -299,7 +290,6 @@ class DiscountCondition
     public function setProductId($product_id)
     {
         $this->product_id = $product_id;
-        return $this;
     }
 
     /**
@@ -326,7 +316,6 @@ class DiscountCondition
     public function setActivatedAt($activated_at)
     {
         $this->activated_at = $activated_at;
-        return $this;
     }
 
     /**
@@ -345,7 +334,6 @@ class DiscountCondition
     public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
-        return $this;
     }
 
     /**
@@ -364,7 +352,6 @@ class DiscountCondition
     public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
-        return $this;
     }
 
     /**
@@ -383,7 +370,6 @@ class DiscountCondition
     public function setDeletedAt($deleted_at)
     {
         $this->deleted_at = $deleted_at;
-        return $this;
     }
 
     /**
@@ -402,7 +388,6 @@ class DiscountCondition
     public function setCreatedBy($created_by)
     {
         $this->created_by = $created_by;
-        return $this;
     }
 
     /**
@@ -421,7 +406,6 @@ class DiscountCondition
     public function setUpdatedBy($updated_by)
     {
         $this->updated_by = $updated_by;
-        return $this;
     }
 
     /**
@@ -440,7 +424,6 @@ class DiscountCondition
     public function setLegacyMapping($legacy_mapping)
     {
         $this->legacy_mapping = $legacy_mapping;
-        return $this;
     }
 
     /**
@@ -450,7 +433,6 @@ class DiscountCondition
     public function setLegacySynchroAt($legacy_synchro_at)
     {
         $this->legacy_synchro_at = $legacy_synchro_at;
-        return $this;
     }
 
     /**

@@ -2,10 +2,6 @@
 
 namespace OpenstoreSchema\Core\Entity\Repository;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
-use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Mapping\Annotation as Gedmo;
 use Zend\InputFilter\InputFilter;
 use Zend\InputFilter\Factory as InputFactory;
 use Zend\InputFilter\InputFilterAwareInterface;
@@ -25,7 +21,7 @@ class UserRepository extends EntityRepository implements InputFilterAwareInterfa
      */
     public function getAllRoles()
     {
-        $roles = array();
+        $roles = [];
         $repo = $this->em->getRepository('OpenstoreSchema\Core\Entity\Role');
 
         foreach ($user->getRoles() as $role) {
@@ -48,7 +44,6 @@ class UserRepository extends EntityRepository implements InputFilterAwareInterfa
     public function setInputFilter(InputFilterInterface $inputFilter)
     {
         $this->inputFiler = $inputFilter;
-        return $this;
     }
 
     /**
@@ -65,24 +60,24 @@ class UserRepository extends EntityRepository implements InputFilterAwareInterfa
             $inputFilter = new InputFilter();
             $factory = new InputFactory();
 
-            $inputFilter->add($factory->createInput(array(
+            $inputFilter->add($factory->createInput([
                         'name' => 'reference',
                         'required' => true,
-                        'filters' => array(
-                            array('name' => 'StripTags'),
-                            array('name' => 'StringTrim'),
-                        ),
-                        'validators' => array(
-                            array(
+                        'filters' => [
+                            ['name' => 'StripTags'],
+                            ['name' => 'StringTrim'],
+                        ],
+                        'validators' => [
+                            [
                                 'name' => 'StringLength',
-                                'options' => array(
+                                'options' => [
                                     'encoding' => 'UTF-8',
                                     'min' => 1,
                                     'max' => 60,
-                                ),
-                            ),
-                        ),
-                    )));
+                                ],
+                            ],
+                        ],
+                    ]));
 
             $this->inputFilter = $inputFilter;
         }

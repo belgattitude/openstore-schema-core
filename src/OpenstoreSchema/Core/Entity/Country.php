@@ -2,8 +2,6 @@
 
 namespace OpenstoreSchema\Core\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -98,7 +96,6 @@ class Country
     public function setCountryId($country_id)
     {
         $this->country_id = $country_id;
-        return $this;
     }
 
     /**
@@ -117,7 +114,6 @@ class Country
     public function setReference($reference)
     {
         $this->reference = $reference;
-        return $this;
     }
 
     /**
@@ -136,7 +132,6 @@ class Country
     public function setName($name)
     {
         $this->name = $name;
-        return $this;
     }
 
     /**
@@ -155,7 +150,6 @@ class Country
     public function setIconClass($icon_class)
     {
         $this->icon_class = $icon_class;
-        return $this;
     }
 
     /**
@@ -182,7 +176,6 @@ class Country
     public function setFlagActive($flag_active)
     {
         $this->flag_active = $flag_active;
-        return $this;
     }
 
     /**
@@ -201,7 +194,6 @@ class Country
     public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
-        return $this;
     }
 
     /**
@@ -220,7 +212,6 @@ class Country
     public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
-        return $this;
     }
 
     /**
@@ -239,7 +230,6 @@ class Country
     public function setCreatedBy($created_by)
     {
         $this->created_by = $created_by;
-        return $this;
     }
 
     /**
@@ -258,7 +248,6 @@ class Country
     public function setUpdatedBy($updated_by)
     {
         $this->updated_by = $updated_by;
-        return $this;
     }
 
     /**
@@ -277,7 +266,6 @@ class Country
     public function setLegacyMapping($legacy_mapping)
     {
         $this->legacy_mapping = $legacy_mapping;
-        return $this;
     }
 
     /**
@@ -287,7 +275,6 @@ class Country
     public function setLegacySynchroAt($legacy_synchro_at)
     {
         $this->legacy_synchro_at = $legacy_synchro_at;
-        return $this;
     }
 
     /**

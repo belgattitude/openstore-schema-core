@@ -2,8 +2,6 @@
 
 namespace OpenstoreSchema\Core\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -126,7 +124,6 @@ class ProductSet
     public function setId($id)
     {
         $this->set_id = $id;
-        return $this;
     }
 
     /**
@@ -145,7 +142,6 @@ class ProductSet
     public function setReference($reference)
     {
         $this->reference = $reference;
-        return $this;
     }
 
     /**
@@ -163,7 +159,6 @@ class ProductSet
     public function setSlug($slug)
     {
         $this->slug = $slug;
-        return $this;
     }
 
     /**
@@ -182,7 +177,6 @@ class ProductSet
     public function setTitle($title)
     {
         $this->title = $title;
-        return $this;
     }
 
     /**
@@ -201,7 +195,6 @@ class ProductSet
     public function setDescription($description)
     {
         $this->description = $description;
-        return $this;
     }
 
     /**
@@ -220,7 +213,6 @@ class ProductSet
     public function setUrl($url)
     {
         $this->url = $url;
-        return $this;
     }
 
     /**
@@ -239,7 +231,6 @@ class ProductSet
     public function setIconClass($icon_class)
     {
         $this->icon_class = $icon_class;
-        return $this;
     }
 
     /**
@@ -266,7 +257,6 @@ class ProductSet
     public function setFlagActive($flag_active)
     {
         $this->flag_active = $flag_active;
-        return $this;
     }
 
     /**
@@ -285,7 +275,6 @@ class ProductSet
     public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
-        return $this;
     }
 
     /**
@@ -304,7 +293,6 @@ class ProductSet
     public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
-        return $this;
     }
 
     /**
@@ -323,7 +311,6 @@ class ProductSet
     public function setCreatedBy($created_by)
     {
         $this->created_by = $created_by;
-        return $this;
     }
 
     /**
@@ -342,7 +329,6 @@ class ProductSet
     public function setUpdatedBy($updated_by)
     {
         $this->updated_by = $updated_by;
-        return $this;
     }
 
     /**
@@ -361,7 +347,6 @@ class ProductSet
     public function setLegacyMapping($legacy_mapping)
     {
         $this->legacy_mapping = $legacy_mapping;
-        return $this;
     }
 
     /**
@@ -371,7 +356,6 @@ class ProductSet
     public function setLegacySynchroAt($legacy_synchro_at)
     {
         $this->legacy_synchro_at = $legacy_synchro_at;
-        return $this;
     }
 
     /**

@@ -2,12 +2,10 @@
 
 namespace OpenstoreSchema\Core\Tools\Console\Command\Schema;
 
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Question;
 use Symfony\Component\Console\Output\OutputInterface;
 use Doctrine\ORM\Tools\SchemaTool;
-use OpenstoreSchema\Core\Extra;
 
 class DropCommand extends AbstractCommand
 {
@@ -31,7 +29,6 @@ EOT
      */
     protected function executeSchemaCommand(InputInterface $input, OutputInterface $output, SchemaTool $schemaTool, array $metadatas)
     {
-
         $conn = $this->getConnection();
         $current_db = $conn->getDatabase();
 

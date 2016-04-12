@@ -3,7 +3,6 @@
 namespace OpenstoreSchema\Core\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -67,13 +66,13 @@ class ProductCategory
      */
     private $breadcrumb;
 
-    
+
     /**
      * @ORM\Column(type="boolean", nullable=true, options={"default"=null, "comment"="Can be used to rank products beloging to"})
      */
     private $flag_rankable;
-    
-    
+
+
     /**
      * @ORM\Column(type="integer", nullable=true, options={"unsigned"=true, "comment"="Relative sort index"})
      */
@@ -258,7 +257,6 @@ class ProductCategory
     public function setSortIndex($sort_index)
     {
         $this->sort_index = $sort_index;
-        return $this;
     }
 
     /**
@@ -278,7 +276,6 @@ class ProductCategory
     public function setGlobalSortIndex($global_sort_index)
     {
         $this->global_sort_index = $global_sort_index;
-        return $this;
     }
 
     /**
@@ -297,7 +294,6 @@ class ProductCategory
     public function setIconClass($icon_class)
     {
         $this->icon_class = $icon_class;
-        return $this;
     }
 
     /**

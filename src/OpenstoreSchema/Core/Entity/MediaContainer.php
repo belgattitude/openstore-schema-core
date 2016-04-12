@@ -2,8 +2,6 @@
 
 namespace OpenstoreSchema\Core\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -103,7 +101,6 @@ class MediaContainer
     public function setContainerId($container_id)
     {
         $this->container_id = $container_id;
-        return $this;
     }
 
     /**
@@ -122,7 +119,6 @@ class MediaContainer
     public function setFolder($folder)
     {
         $this->folder = $folder;
-        return $this;
     }
 
     /**
@@ -141,7 +137,6 @@ class MediaContainer
     public function setReference($reference)
     {
         $this->reference = $reference;
-        return $this;
     }
 
     /**
@@ -160,7 +155,6 @@ class MediaContainer
     public function setTitle($title)
     {
         $this->title = $title;
-        return $this;
     }
 
     /**
@@ -179,7 +173,6 @@ class MediaContainer
     public function setDescription($description)
     {
         $this->description = $description;
-        return $this;
     }
 
     /**
@@ -207,7 +200,6 @@ class MediaContainer
     public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
-        return $this;
     }
 
     /**
@@ -226,7 +218,6 @@ class MediaContainer
     public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
-        return $this;
     }
 
     /**
@@ -245,7 +236,6 @@ class MediaContainer
     public function setDeletedAt($deleted_at)
     {
         $this->deleted_at = $deleted_at;
-        return $this;
     }
 
     /**
@@ -264,7 +254,6 @@ class MediaContainer
     public function setCreatedBy($created_by)
     {
         $this->created_by = $created_by;
-        return $this;
     }
 
     /**
@@ -283,7 +272,6 @@ class MediaContainer
     public function setUpdatedBy($updated_by)
     {
         $this->updated_by = $updated_by;
-        return $this;
     }
 
     /**
@@ -302,7 +290,6 @@ class MediaContainer
     public function setLegacyMapping($legacy_mapping)
     {
         $this->legacy_mapping = $legacy_mapping;
-        return $this;
     }
 
     /**
@@ -312,7 +299,6 @@ class MediaContainer
     public function setLegacySynchroAt($legacy_synchro_at)
     {
         $this->legacy_synchro_at = $legacy_synchro_at;
-        return $this;
     }
 
     /**

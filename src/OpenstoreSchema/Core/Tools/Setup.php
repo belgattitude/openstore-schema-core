@@ -52,7 +52,7 @@ class Setup
      * @param array $paths paths to look for entities
      * @param string $namespace entity namespace
      */
-    function __construct(array $dbParams, array $paths, $namespace)
+    public function __construct(array $dbParams, array $paths, $namespace)
     {
         $this->dbParams = $dbParams;
         $this->paths = $paths;
@@ -63,7 +63,7 @@ class Setup
     /**
      * @var string production|development
      */
-    function setEnvironment($env)
+    public function setEnvironment($env)
     {
         $this->env = $env;
     }
@@ -72,10 +72,9 @@ class Setup
      *
      * @param string $path
      */
-    function setProxyPath($path)
+    public function setProxyPath($path)
     {
         $this->proxy_path = $path;
-
     }
 
 
@@ -83,10 +82,8 @@ class Setup
      *
      * @return EntityManager
      */
-    function getEntityManager()
+    public function getEntityManager()
     {
-
-
         $cache = new DoctrineCache\ArrayCache();
 
         $annotationReader = new AnnotationReader();

@@ -2,8 +2,6 @@
 
 namespace OpenstoreSchema\Core\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -123,7 +121,6 @@ class ProductMedia
     public function setProductId($product_id)
     {
         $this->product_id = $product_id;
-        return $this;
     }
 
     /**
@@ -143,7 +140,6 @@ class ProductMedia
     public function setMediaId($media_id)
     {
         $this->media_id = $media_id;
-        return $this;
     }
 
     /**
@@ -163,7 +159,6 @@ class ProductMedia
     public function setTypeId($type_id)
     {
         $this->type_id = $type_id;
-        return $this;
     }
 
     /**
@@ -191,7 +186,6 @@ class ProductMedia
     public function setSortIndex($sort_index)
     {
         $this->sort_index = $sort_index;
-        return $this;
     }
 
     /**
@@ -210,7 +204,6 @@ class ProductMedia
     public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
-        return $this;
     }
 
     /**
@@ -229,7 +222,6 @@ class ProductMedia
     public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
-        return $this;
     }
 
     /**
@@ -248,7 +240,6 @@ class ProductMedia
     public function setCreatedBy($created_by)
     {
         $this->created_by = $created_by;
-        return $this;
     }
 
     /**
@@ -267,7 +258,6 @@ class ProductMedia
     public function setUpdatedBy($updated_by)
     {
         $this->updated_by = $updated_by;
-        return $this;
     }
 
     /**
@@ -286,7 +276,6 @@ class ProductMedia
     public function setLegacyMapping($legacy_mapping)
     {
         $this->legacy_mapping = $legacy_mapping;
-        return $this;
     }
 
     /**
@@ -296,7 +285,6 @@ class ProductMedia
     public function setLegacySynchroAt($legacy_synchro_at)
     {
         $this->legacy_synchro_at = $legacy_synchro_at;
-        return $this;
     }
 
     /**

@@ -3,7 +3,6 @@
 namespace OpenstoreSchema\Core\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity
@@ -44,7 +43,7 @@ class ProductStatTrend
      * @ORM\JoinColumn(name="product_id", referencedColumnName="product_id", onDelete="CASCADE", nullable=false)
      */
     private $product_id;
-    
+
 
     /**
      * @ORM\Column(type="date", nullable=true, options={"comment" = "First recorded sale at"})
@@ -107,7 +106,7 @@ class ProductStatTrend
      * @ORM\Column(type="decimal", precision=15, scale=6, nullable=true, options={"comment"="Total recorded turn over last month"})
      */
     private $total_recorded_turnover_last_month;
-    
+
 
 
     /**
@@ -135,8 +134,8 @@ class ProductStatTrend
      * @ORM\Column(type="decimal", precision=15, scale=6, nullable=true, options={"comment"="Total recorded turn over last month"})
      */
     private $total_recorded_turnover_last_2_months;
-    
-      
+
+
     /**
      * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct customers last month"})
      */
@@ -162,9 +161,9 @@ class ProductStatTrend
      * @ORM\Column(type="decimal", precision=15, scale=6, nullable=true, options={"comment"="Total recorded turn over last month"})
      */
     private $total_recorded_turnover_last_3_months;
-    
 
-    
+
+
     /**
      * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct customers last month"})
      */
@@ -190,8 +189,8 @@ class ProductStatTrend
      * @ORM\Column(type="decimal", precision=15, scale=6, nullable=true, options={"comment"="Total recorded turn over last month"})
      */
     private $total_recorded_turnover_last_4_months;
-    
-    
+
+
     /**
      * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct customers last month"})
      */
@@ -217,8 +216,8 @@ class ProductStatTrend
      * @ORM\Column(type="decimal", precision=15, scale=6, nullable=true, options={"comment"="Total recorded turn over last month"})
      */
     private $total_recorded_turnover_last_5_months;
-    
-    
+
+
     /**
      * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct customers last month"})
      */
@@ -249,7 +248,7 @@ class ProductStatTrend
     /**
      * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct customers last 7 months"})
      */
-    private $nb_customers_last_7_months;    
+    private $nb_customers_last_7_months;
 
     /**
      * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct sales reps last 7 months"})
@@ -272,13 +271,13 @@ class ProductStatTrend
      */
     private $total_recorded_turnover_last_7_months;
 
-    
+
     /**
      * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct customers last 8 months"})
      */
-    private $nb_customers_last_8_months;    
-    
-    
+    private $nb_customers_last_8_months;
+
+
     /**
      * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct sales reps last 8 months"})
      */
@@ -304,9 +303,9 @@ class ProductStatTrend
     /**
      * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct customers last 9 months"})
      */
-    private $nb_customers_last_9_months;    
-    
-    
+    private $nb_customers_last_9_months;
+
+
     /**
      * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct sales reps last 9 months"})
      */
@@ -332,9 +331,9 @@ class ProductStatTrend
     /**
      * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct customers last 10 months"})
      */
-    private $nb_customers_last_10_months;    
-    
-    
+    private $nb_customers_last_10_months;
+
+
     /**
      * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct sales reps last 10 months"})
      */
@@ -360,9 +359,9 @@ class ProductStatTrend
     /**
      * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct customers last 11 months"})
      */
-    private $nb_customers_last_11_months;    
-    
-    
+    private $nb_customers_last_11_months;
+
+
     /**
      * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct sales reps last 11 months"})
      */
@@ -383,7 +382,7 @@ class ProductStatTrend
      * @ORM\Column(type="decimal", precision=15, scale=7, nullable=true, options={"comment"="Total recorded turn over last 11 months"})
      */
     private $total_recorded_turnover_last_11_months;
-    
+
 
     /**
      * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct customers last month"})
@@ -410,14 +409,14 @@ class ProductStatTrend
      * @ORM\Column(type="decimal", precision=15, scale=6, nullable=true, options={"comment"="Total recorded turn over last month"})
      */
     private $total_recorded_turnover_last_12_months;
-    
+
     /**
      * @ORM\Column(type="datetime",nullable=true, options={"comment" = "Last synchro timestamp"})
      */
     protected $legacy_synchro_at;
-    
-    
-    
+
+
+
     /**
      *
      * @param integer $product_stat_trend_id
@@ -425,7 +424,6 @@ class ProductStatTrend
     public function setId($product_stat_trend_id)
     {
         $this->product_stat_trend_id = $product_stat_trend_id;
-        return $this;
     }
 
     /**
@@ -444,7 +442,6 @@ class ProductStatTrend
     public function setPricelistId($pricelist_id)
     {
         $this->pricelist_id = $pricelist_id;
-        return $this;
     }
 
     /**
@@ -457,7 +454,7 @@ class ProductStatTrend
     }
 
 
-    
+
     /**
      * Set legacy synchro time
      * @param string $legacy_synchro_at
@@ -465,8 +462,5 @@ class ProductStatTrend
     public function setLegacySynchroAt($legacy_synchro_at)
     {
         $this->legacy_synchro_at = $legacy_synchro_at;
-        return $this;
     }
-    
-
 }

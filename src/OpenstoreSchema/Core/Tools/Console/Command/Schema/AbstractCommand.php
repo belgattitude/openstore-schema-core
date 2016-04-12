@@ -51,6 +51,5 @@ abstract class AbstractCommand extends Command
     protected function getConnection()
     {
         return $this->getHelper('db')->getConnection();
-
     }
 }
