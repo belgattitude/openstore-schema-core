@@ -19,6 +19,8 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     @ORM\Index(name="is_liquidation_idx", columns={"is_liquidation"}),
  *     @ORM\Index(name="is_popular_idx", columns={"is_popular"}),
  *     @ORM\Index(name="is_trending_idx", columns={"is_trending"}),
+ *     @ORM\Index(name="is_fresh_idx", columns={"is_fresh"}),
+ *     @ORM\Index(name="is_deal_idx", columns={"is_deal"}),
  *     @ORM\Index(name="is_new_idx", columns={"is_new"}), 
  *     @ORM\Index(name="is_hot_idx", columns={"is_hot"}),
  *     @ORM\Index(name="is_bestvalue_idx", columns={"is_bestvalue"}), 
@@ -171,6 +173,20 @@ class ProductPricelist
      * @ORM\Column(type="boolean", nullable=true, options={"comment"="Whether the product is considered as a trending product in this pricelist"})
      */
     private $is_trending;
+
+
+    /**
+     *
+     * @ORM\Column(type="boolean", nullable=true, options={"comment"="Whether the product is considered as a fresh and shining product in this pricelist"})
+     */
+    private $is_fresh;
+
+
+    /**
+     *
+     * @ORM\Column(type="boolean", nullable=true, options={"comment"="Whether the product is considered as a notable deal product in this pricelist"})
+     */
+    private $is_deal;
 
 
     /**

@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.17.0 (2016-05-15) Added is_deal, is_fresh
+
+- Added columns into in ProductPricelist is_deal, is_fresh
+
+
 ## 0.14.0 (2016-01-28) Added maximum discount 1
 
 - Added columns into in ProductPricelist 
