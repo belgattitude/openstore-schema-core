@@ -62,14 +62,18 @@ class ProductSerie
      * @ORM\Column(type="string", length=80, nullable=true)
      */
     private $title;
-
     
     /**
      * @ORM\Column(type="string", length=10000, nullable=true)
      */
     private $description;
 
-   /**
+    /**
+     * @ORM\Column(type="boolean", nullable=true, options={"default"=null, "comment"="Whether this serie is part of a marketing action"})
+     */
+    private $flag_marketing_action;
+    
+    /**
      * @ORM\Column(type="string", length=10000, nullable=true, options={"comment" = "Specifications"})
      */
     private $specs;
