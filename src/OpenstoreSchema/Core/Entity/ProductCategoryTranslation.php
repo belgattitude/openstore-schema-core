@@ -66,9 +66,15 @@ class ProductCategoryTranslation
     private $description;
 
     /**
-     * @ORM\Column(type="string", length=1500, nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $breadcrumb;
+    
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true, options={"default"=null, "comment"="Rankable breadcrumb if product_category.flag_rankable is true"})
+     */
+    private $rankable_breadcrumb;    
+    
 
     /**
      * @Gedmo\Timestampable(on="create")

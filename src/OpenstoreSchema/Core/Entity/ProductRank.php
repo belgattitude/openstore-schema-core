@@ -13,12 +13,12 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     @ORM\UniqueConstraint(name="unique_product_rank_idx",columns={"product_id", "rankable_category_id", "pricelist_id", "brand_id"}),
  *   },
  *   indexes={
- *     @ORM\Index(name="deal_rank_position_idx", columns={"deal_rank_position"}),
- *     @ORM\Index(name="fresh_rank_position_idx", columns={"fresh_rank_position"}),
- *     @ORM\Index(name="bestseller_rank_position_idx", columns={"bestseller_rank_position"}),
- *     @ORM\Index(name="popular_rank_position_idx", columns={"popular_rank_position"}),
- *     @ORM\Index(name="trending_rank_position_idx", columns={"trending_rank_position"}), 
- *     @ORM\Index(name="mostrated_rank_position_idx", columns={"mostrated_rank_position"}), 
+ *     @ORM\Index(name="deal_rank_idx", columns={"deal_rank"}),
+ *     @ORM\Index(name="fresh_rank_idx", columns={"fresh_rank"}),
+ *     @ORM\Index(name="bestseller_rank_idx", columns={"bestseller_rank"}),
+ *     @ORM\Index(name="popular_rank_idx", columns={"popular_rank"}),
+ *     @ORM\Index(name="trending_rank_idx", columns={"trending_rank"}), 
+ *     @ORM\Index(name="mostrated_rank_idx", columns={"mostrated_rank"}), 
  *   },
  *   options={"comment" = "Product rankings"}
  * )
@@ -68,38 +68,38 @@ class ProductRank
      *
      * @ORM\Column(type="smallint", nullable=true, options={"unsigned"=true, "comment"="Notable deal product relative position in rankable category"})
      */
-    private $deal_rank_position;
+    private $deal_rank;
 
 
     /**
      *
      * @ORM\Column(type="smallint", nullable=true, options={"unsigned"=true, "comment"="Fresh and shining product relative position in rankable category"})
      */
-    private $fresh_rank_position;
+    private $fresh_rank;
 
    /**
      *
      * @ORM\Column(type="smallint", nullable=true, options={"unsigned"=true, "comment"="Bestseller product relative position in rankable category"})
      */
-    private $bestseller_rank_position;
+    private $bestseller_rank;
 
    /**
      *
      * @ORM\Column(type="smallint", nullable=true, options={"unsigned"=true, "comment"="Popular product relative position in rankable category"})
      */
-    private $popular_rank_position;
+    private $popular_rank;
 
    /**
      *
      * @ORM\Column(type="smallint", nullable=true, options={"unsigned"=true, "comment"="Trending product relative position in rankable category"})
      */
-    private $trending_rank_position;
+    private $trending_rank;
 
     /**
      *
      * @ORM\Column(type="smallint", nullable=true, options={"unsigned"=true, "comment"="Best rated product relative position in rankable category"})
      */
-    private $mostrated_rank_position;
+    private $mostrated_rank;
 
 
     /**

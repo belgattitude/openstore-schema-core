@@ -17,16 +17,13 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     @ORM\Index(name="price_idx", columns={"price"}),
  *     @ORM\Index(name="flag_active_idx", columns={"flag_active"}),  
  *     @ORM\Index(name="is_liquidation_idx", columns={"is_liquidation"}),
- *     @ORM\Index(name="is_popular_idx", columns={"is_popular"}),
- *     @ORM\Index(name="is_trending_idx", columns={"is_trending"}),
- *     @ORM\Index(name="is_fresh_idx", columns={"is_fresh"}),
- *     @ORM\Index(name="is_deal_idx", columns={"is_deal"}),
  *     @ORM\Index(name="is_new_idx", columns={"is_new"}), 
- *     @ORM\Index(name="is_hot_idx", columns={"is_hot"}),
- *     @ORM\Index(name="is_bestvalue_idx", columns={"is_bestvalue"}), 
- *     @ORM\Index(name="is_bestseller_idx", columns={"is_bestseller"}), 
  *     @ORM\Index(name="is_promotional_idx", columns={"is_promotional"}),
- *     @ORM\Index(name="is_high_runner_idx", columns={"is_high_runner"}) 
+ *     @ORM\Index(name="popular_rank_idx", columns={"popular_rank"}),
+ *     @ORM\Index(name="trending_rank_idx", columns={"trending_rank"}),
+ *     @ORM\Index(name="fresh_rank_idx", columns={"fresh_rank"}),
+ *     @ORM\Index(name="deal_rank_idx", columns={"deal_rank"}),
+ *     @ORM\Index(name="bestseller_rank_idx", columns={"bestseller_rank"}),  
  *   },
  *   options={"comment" = "Product pricelist"}
  * )
@@ -151,58 +148,9 @@ class ProductPricelist
     private $is_new;
 
     /**
-     *
-     * @ORM\Column(type="boolean", nullable=true, options={"comment"="Whether the product is considered as a best seller in this pricelist"})
-     */
-    private $is_bestseller;
-
-    /**
-     *
-     * @ORM\Column(type="boolean", nullable=true, options={"comment"="Whether the product is considered as a best value in this pricelist"})
-     */
-    private $is_bestvalue;
-
-    /**
-     *
-     * @ORM\Column(type="boolean", nullable=true, options={"comment"="Whether the product is considered as a hot product in this pricelist"})
-     */
-    private $is_hot;
-
-    /**
-     *
-     * @ORM\Column(type="boolean", nullable=true, options={"comment"="Whether the product is considered as a trending product in this pricelist"})
-     */
-    private $is_trending;
-
-
-    /**
-     *
-     * @ORM\Column(type="boolean", nullable=true, options={"comment"="Whether the product is considered as a fresh and shining product in this pricelist"})
-     */
-    private $is_fresh;
-
-
-    /**
-     *
-     * @ORM\Column(type="boolean", nullable=true, options={"comment"="Whether the product is considered as a notable deal product in this pricelist"})
-     */
-    private $is_deal;
-
-
-    /**
      * @ORM\Column(type="boolean", nullable=true, options={"comment"="Whether the product is considered as promotional, eventual discounts will appear in discount_1,_2..."})
      */
-    private $is_promotional;
-
-    /**
-     * @ORM\Column(type="boolean", nullable=true, options={"comment"="Whether the product is considered as popular (lots of customers, reps...)"})
-     */
-    private $is_popular;
-
-    /**
-     * @ORM\Column(type="boolean", nullable=true, options={"comment"="Whether the product is high runner (long lifetime.)"})
-     */
-    private $is_high_runner;
+    private $is_promotional;    
 
     /**
      * @ORM\Column(type="date", nullable=true, options={"comment"="Discount started at"})
@@ -213,6 +161,38 @@ class ProductPricelist
      * @ORM\Column(type="date", nullable=true, options={"comment"="Discount end at"})
      */
     private $promo_end_at;
+
+    
+    /**
+     *
+     * @ORM\Column(type="smallint", nullable=true, options={"unsigned"=true, "comment"="Bestseller rank (relative rankable to category)"})
+     */
+    private $bestseller_rank;
+
+    /**
+     *
+     * @ORM\Column(type="smallint", nullable=true, options={"unsigned"=true, "comment"="Trending rank (relative to rankable category)"})
+     */
+    private $trending_rank;
+
+    /**
+     *
+     * @ORM\Column(type="smallint", nullable=true, options={"unsigned"=true, "comment"="Fresh and shining rank (relative to rankable category)"})
+     */
+    private $fresh_rank;
+
+    /**
+     *
+     * @ORM\Column(type="smallint", nullable=true, options={"unsigned"=true, "comment"="Notable deal rank (relative to rankable category)"})
+     */
+    private $deal_rank;
+
+    /**
+     * @ORM\Column(type="smallint", nullable=true, options={"unsigned"=true, "comment"="Popular ranking (relative to rankable category)"})
+     */
+    private $popular_rank;
+
+
 
     /**
      * @ORM\Column(type="date", nullable=true, options={"comment" = "Date on which product was made available, useful to display as new product"})
