@@ -45,6 +45,12 @@ class ProductSerie
      * @ORM\Column(type="string", length=60, nullable=false, options={"comment" = "Reference"})
      */
     private $reference;
+    
+    /**
+     * @ORM\Column(type="string", length=60, nullable=true, options={"comment" = "Displayable reference, without extra info to maintain uniqueness"})
+     */
+    private $display_reference;
+    
 
     /**
      * @Gedmo\Slug(fields={"title"})
@@ -57,6 +63,7 @@ class ProductSerie
      */
     private $title;
 
+    
     /**
      * @ORM\Column(type="string", length=10000, nullable=true)
      */
