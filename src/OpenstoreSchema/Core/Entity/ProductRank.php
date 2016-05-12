@@ -207,7 +207,6 @@ class ProductRank
         return $this->pricelist_id;
     }
 
-
     /**
      *
      * @param int $brand_id
