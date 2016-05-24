@@ -50,7 +50,12 @@ class ProductSerie
      * @ORM\Column(type="string", length=60, nullable=true, options={"comment" = "Displayable reference, without extra info to maintain uniqueness"})
      */
     private $display_reference;
-    
+
+
+    /**
+     * @ORM\Column(type="string", length=1, nullable=true, options={"default"=null, "comment"="Serie group code"})
+     */
+    private $group_code;
 
     /**
      * @Gedmo\Slug(fields={"title"})
