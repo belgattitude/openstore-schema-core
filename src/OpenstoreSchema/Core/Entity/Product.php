@@ -94,8 +94,8 @@ class Product
      * @ORM\JoinColumn(name="category_id", referencedColumnName="category_id", onDelete="CASCADE", nullable=true)
      */
     private $category_id;
-    
-    
+
+
     /**
      * Type id
      * @ORM\ManyToOne(targetEntity="ProductType", inversedBy="products", cascade={"persist", "remove"})

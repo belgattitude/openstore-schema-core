@@ -72,12 +72,12 @@ class ProductCategory
      */
     private $flag_rankable;
 
-    
+
     /**
      * @ORM\Column(type="string", length=255, nullable=true, options={"default"=null, "comment"="Rankable breadcrumb if flag_rankable is true"})
      */
-    private $rankable_breadcrumb;    
-    
+    private $rankable_breadcrumb;
+
 
     /**
      * @ORM\Column(type="integer", nullable=true, options={"unsigned"=true, "comment"="Relative sort index"})

@@ -111,12 +111,12 @@ class ProductRank
      * @ORM\Column(type="decimal", precision=15, scale=6, nullable=true, options={"comment"="Total recorded turn over (free period)"})
      */
     private $total_recorded_turnover;
-    
+
     /**
      * @ORM\Column(type="integer", nullable=true, options={"unsigned"=true, "comment"="Number of distinct customers (free period)"})
      */
-    private $nb_customers;    
-    
+    private $nb_customers;
+
     /**
      * @Gedmo\Timestampable(on="create")
      * @ORM\Column(type="datetime", nullable=true, options={"comment" = "Record creation timestamp"})

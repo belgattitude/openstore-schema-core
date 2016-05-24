@@ -150,7 +150,7 @@ class ProductPricelist
     /**
      * @ORM\Column(type="boolean", nullable=true, options={"comment"="Whether the product is considered as promotional, eventual discounts will appear in discount_1,_2..."})
      */
-    private $is_promotional;    
+    private $is_promotional;
 
     /**
      * @ORM\Column(type="date", nullable=true, options={"comment"="Discount started at"})
@@ -162,7 +162,7 @@ class ProductPricelist
      */
     private $promo_end_at;
 
-    
+
     /**
      *
      * @ORM\Column(type="smallint", nullable=true, options={"unsigned"=true, "comment"="Bestseller rank (relative rankable to category)"})
