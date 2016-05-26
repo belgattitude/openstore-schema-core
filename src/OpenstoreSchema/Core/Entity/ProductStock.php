@@ -64,6 +64,13 @@ class ProductStock
     private $next_available_stock;
 
     /**
+     * @ORM\Column(type="decimal", precision=12, scale=6, nullable=true, options={"comment"="Average monthly sales for this product / pricelist"})
+     */
+    private $avg_monthly_sale_qty;
+
+
+
+    /**
      * @Gedmo\Timestampable(on="update")
      * @ORM\Column(type="datetime", nullable=true, options={"comment" = "Record last update timestamp"})
      */

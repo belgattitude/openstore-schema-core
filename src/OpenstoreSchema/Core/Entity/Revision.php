@@ -75,13 +75,13 @@ class Revision
 
 
     /**
-     * @ORM\Column(type="string", length=64000, nullable=false, options={"comment" = "Previous data, stored as json"})
+     * @ORM\Column(type="string", length=65536, nullable=false, options={"comment" = "Previous data, stored as json"})
      */
     private $previous_data;
 
 
     /**
-     * @ORM\Column(type="string", length=64000, nullable=false, options={"comment" = "Data at time of saving, stored as json"})
+     * @ORM\Column(type="string", length=65536, nullable=false, options={"comment" = "Data at time of saving, stored as json"})
      */
     private $current_data;
 
