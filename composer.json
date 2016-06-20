@@ -26,7 +26,7 @@
         "doctrine/common": "^2.5.0",
         "doctrine/orm": "^2.5.0",
         "gedmo/doctrine-extensions": "^2.4.13",
-        "doctrine/data-fixtures": "^1.2.0",
+        "doctrine/data-fixtures": "^1.1.1 || ^1.2.0",
         "zf-commons/zfc-rbac": "^2.5.4",
         "zf-commons/zfc-user": "^1.4.2",
         "symfony/console": "^2.6.0 || ^3.0.0"
