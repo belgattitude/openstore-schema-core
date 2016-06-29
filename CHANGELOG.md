@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 0.18.0 Added column 
+
+- Added `weight_gross` in product table 
+
+```sql
+ALTER TABLE product ADD weight_gross NUMERIC(12, 6) DEFAULT NULL COMMENT 'Gross weight per sales unit in Kg', CHANGE weight weight NUMERIC(12, 6) DEFAULT NULL COMMENT 'Net weight per sales unit in Kg';
+```
+
 ## 0.17.0 (2016-05-15) Added is_deal, is_fresh
 
 - Added columns into in ProductPricelist is_deal, is_fresh

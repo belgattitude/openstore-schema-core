@@ -169,9 +169,15 @@ class Product
     private $volume;
 
     /**
-     * @ORM\Column(type="decimal", precision=12, scale=6, nullable=true, options={"comment"="Weight per sales unit in Kg"})
+     * @ORM\Column(type="decimal", precision=12, scale=6, nullable=true, options={"comment"="Net weight per sales unit in Kg"})
      */
     private $weight;
+
+    /**
+     * @ORM\Column(type="decimal", precision=12, scale=6, nullable=true, options={"comment"="Gross weight per sales unit in Kg"})
+     */
+    private $weight_gross;
+
 
     /**
      * @ORM\Column(type="decimal", precision=12, scale=6, nullable=true, options={"comment"="Length per sales unit in meter"})
