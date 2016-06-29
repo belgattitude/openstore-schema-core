@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 0.18.0 Added column 
+## 0.18.0 (2016-06-29) Added column 
 
 - Added `weight_gross` in product table 
 
