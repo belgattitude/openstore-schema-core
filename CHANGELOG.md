@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 0.19.0 (2016-09-15) MediaType added, possiblity to null container in media (remote)  
+
+- Added `MediaType` table in relation to `Media`
+- Removed constraint of `container_id` in `Media`
+- Added columns `media_remote_url` and `media_remote_id` in `Media`,
+
 ## 0.18.0 (2016-06-29) Added column 
 
 - Added `weight_gross` in product table 

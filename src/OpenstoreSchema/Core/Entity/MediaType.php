@@ -8,99 +8,44 @@ use Gedmo\Mapping\Annotation as Gedmo;
 /**
  * @ORM\Entity
  * @ORM\Table(
- *   name="media",
+ *   name="media_type",
  *   uniqueConstraints={
+ *     @ORM\UniqueConstraint(name="unique_reference_idx",columns={"reference"}),
  *     @ORM\UniqueConstraint(name="unique_legacy_mapping_idx",columns={"legacy_mapping"}),
  *   },
  *   indexes={
- *     @ORM\Index(name="title_idx", columns={"title"}),
- *     @ORM\Index(name="description_idx", columns={"description"}),
  *   },
- *   options={"comment" = "Media table"}
+ *   options={"comment" = "Media type table"}
  * )
- * @Gedmo\SoftDeleteable(fieldName="deleted_at")
  */
-class Media
+class MediaType
 {
-
-
     /**
      * @ORM\Id
-     * @ORM\Column(name="media_id", type="bigint", nullable=false, options={"unsigned"=true})
+     * @ORM\Column(name="type_id", type="integer", nullable=false, options={"unsigned"=true})
      * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $media_id;
-
-
-    /**
-     *
-     * @ORM\ManyToOne(targetEntity="MediaType", inversedBy="medias", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(name="type_id", referencedColumnName="type_id", onDelete="CASCADE", nullable=true)
      */
     private $type_id;
 
     /**
-     *
-     * @ORM\ManyToOne(targetEntity="MediaContainer", inversedBy="medias", cascade={"persist", "remove"})
-     * @ORM\JoinColumn( name="container_id",
-     *                  referencedColumnName="container_id",
-     *                  onDelete="CASCADE",
-     *                  nullable=true
-     *                )
+     * @ORM\Column(type="string", length=60, nullable=false, options={"comment" = "Reference"})
      */
-    private $container_id;
+    private $reference;
 
     /**
-     * @ORM\Column(type="string", length=385, nullable=true, options={"comment" = "Only for remote content (with a null container)"})
-     */
-    private $media_remote_url;
-
-    /**
-     * @ORM\Column(type="string", length=64, nullable=true, options={"comment" = "External media id, only for remote content (with a null container)"})
-     */
-    private $media_remote_id;
-
-
-    /**
-     * @ORM\Column(type="string", length=60, nullable=true)
-     */
-    private $mimetype;
-
-    /**
-     * @ORM\Column(type="string", length=120, nullable=true)
-     */
-    private $filename;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $location;
-
-    /**
-     * @ORM\Column(type="bigint", nullable=true, options={"comment" = "Filesize in bytes", "unsigned" = true})
-     */
-    private $filesize;
-
-    /**
-     * @ORM\Column(type="integer", nullable=true, options={"comment" = "Video duration in seconds", "unsigned" = true})
-     */
-    private $duration;
-
-
-    /**
-     * @ORM\Column(type="integer", nullable=true, options={"unsigned" = true})
-     */
-    private $filemtime;
-
-    /**
-     * @ORM\Column(type="string", length=100, nullable=true)
+     * @ORM\Column(type="string", length=80, nullable=true)
      */
     private $title;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=15000, nullable=true)
      */
     private $description;
+
+    /**
+     * @ORM\Column(type="string", length=40, nullable=true)
+     */
+    private $icon_class;
 
     /**
      * @Gedmo\Timestampable(on="create")
@@ -113,11 +58,6 @@ class Media
      * @ORM\Column(type="datetime", nullable=true, options={"comment" = "Record last update timestamp"})
      */
     private $updated_at;
-
-    /**
-     * @ORM\Column(type="datetime", nullable=true, options={"comment" = "Record deletion date"})
-     */
-    private $deleted_at;
 
     /**
      * @Gedmo\Blameable(on="create")
@@ -143,61 +83,47 @@ class Media
 
     public function __construct()
     {
+
+        /**
+         * Default value for flag_active
+         */
+        $this->flag_active = true;
     }
 
     /**
      *
-     * @param integer $media_id
-     * @return \OpenstoreSchema\Core\Entity\Media
+     * @param integer $id
      */
-    public function setMediaId($media_id)
+    public function setTypeId($type_id)
     {
-        $this->media_id = $media_id;
+        $this->type_id = $type_id;
     }
 
     /**
      *
      * @return integer
      */
-    public function getMediaId()
+    public function getTypeId()
     {
-        return $this->media_id;
+        return $this->type_id;
     }
 
     /**
-     *
-     * @param string $filename
+     * Set reference
+     * @param string $reference
      */
-    public function setFilename($filename)
+    public function setReference($reference)
     {
-        $this->filename = $filename;
+        $this->reference = $reference;
     }
 
     /**
-     *
+     * Return reference
      * @return string
      */
-    public function getFilename()
+    public function getReference()
     {
-        return $this->filename;
-    }
-
-    /**
-     *
-     * @param string $location
-     */
-    public function setLocation($location)
-    {
-        $this->location = $location;
-    }
-
-    /**
-     *
-     * @return string
-     */
-    public function getLocation()
-    {
-        return $this->location;
+        return $this->reference;
     }
 
     /**
@@ -238,38 +164,37 @@ class Media
 
     /**
      *
-     * @return int
+     * @return string
      */
-    public function getFilesize()
+    public function setIconClass($icon_class)
     {
-        return $this->filesize;
+        $this->icon_class = $icon_class;
     }
 
     /**
      *
-     * @param int $filesize
+     * @return string
      */
-    public function setFilesize($filesize)
+    public function getIconClass()
     {
-        $this->filesize = $filesize;
+        return $this->icon_class;
     }
 
     /**
      *
-     * @return int
+     * @return boolean
      */
-    public function getFilemtime()
+    public function getFlagActive()
     {
-        return $this->filemtime;
+        return (boolean) $this->flag_active;
     }
 
     /**
      *
-     * @param int $filemtime
      */
-    public function setFilemtime($filemtime)
+    public function setFlagActive($flag_active)
     {
-        $this->filemtime = $filemtime;
+        $this->flag_active = $flag_active;
     }
 
     /**
@@ -306,24 +231,6 @@ class Media
     public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
-    }
-
-    /**
-     *
-     * @return string
-     */
-    public function getDeletedAt()
-    {
-        return $this->deleted_at;
-    }
-
-    /**
-     *
-     * @param string $deleted_at
-     */
-    public function setDeletedAt($deleted_at)
-    {
-        $this->deleted_at = $deleted_at;
     }
 
     /**
@@ -417,25 +324,4 @@ class Media
         return $this->getTitle();
     }
 
-    /**
-     * Magic getter to expose protected properties.
-     *
-     * @param string $property
-     * @return mixed
-     */
-    public function __get($property)
-    {
-        return $this->$property;
-    }
-
-    /**
-     * Magic setter to save protected properties.
-     *
-     * @param string $property
-     * @param mixed $value
-     */
-    public function __set($property, $value)
-    {
-        $this->$property = $value;
-    }
 }
