@@ -323,5 +323,4 @@ class MediaType
     {
         return $this->getTitle();
     }
-
 }
