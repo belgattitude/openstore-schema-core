@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 0.19.0 (2016-09-15) MediaType added, possiblity to null container in media (remote)  
+## 0.19.0 (2016-09-15) MediaType added, possibility to null container in media (remote)  
 
 - Added `MediaType` table in relation to `Media`
 - Removed constraint of `container_id` in `Media`
