@@ -77,7 +77,7 @@ class MediaType
     protected $legacy_mapping;
 
     /**
-     * @ORM\Column(type="datetime",nullable=true, options={"comment" = "Last synchro timestamp"})
+     * @ORM\Column(type="datetime", nullable=true, options={"comment" = "Last synchro timestamp"})
      */
     protected $legacy_synchro_at;
 

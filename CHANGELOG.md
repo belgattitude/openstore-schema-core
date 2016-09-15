@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## 0.20.0 (2016_09_15)
+
+- Added unique constraint on media type and remote_id
+
+```sql
+CREATE UNIQUE INDEX unique_remote_media_id_idx ON media (type_id, media_remote_id);
+```
+
+- Added preview picture url
+
+```sql
+ALTER TABLE media ADD preview_url VARCHAR(255) DEFAULT NULL COMMENT 'Image preview url';
+```
+
 ## 0.19.0 (2016-09-15) MediaType added, possibility to null container in media (remote)  
 
 - Added `MediaType` table in relation to `Media`

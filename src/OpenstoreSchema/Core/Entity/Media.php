@@ -11,6 +11,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *   name="media",
  *   uniqueConstraints={
  *     @ORM\UniqueConstraint(name="unique_legacy_mapping_idx",columns={"legacy_mapping"}),
+ *     @ORM\UniqueConstraint(name="unique_remote_media_id_idx",columns={"type_id", "media_remote_id"}),
  *   },
  *   indexes={
  *     @ORM\Index(name="title_idx", columns={"title"}),
@@ -101,6 +102,11 @@ class Media
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $description;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true, options={"comment" = "Image preview url"})
+     */
+    private $preview_url;
 
     /**
      * @Gedmo\Timestampable(on="create")
