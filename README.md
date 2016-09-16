@@ -56,6 +56,8 @@ $ ./vendor/bin/openstore-schema-core
 
 ### Get SQL to create database (and db extras)
 
+Use this command to dump the changes from your existing schema
+
 ```console
 $ ./vendor/bin/openstore-schema-core openstore:schema:create --dump-sql
 ```
