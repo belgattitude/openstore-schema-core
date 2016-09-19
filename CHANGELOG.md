@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 0.22.0 (2016-09-19)
+
+- Added unique constraint on container and location for media table
+
+```sql
+CREATE UNIQUE INDEX unique_container_location_idx ON media (container_id, location);
+```
+
 ## 0.21.0 (2016-09-19)
 
 - Added product_serie_media table

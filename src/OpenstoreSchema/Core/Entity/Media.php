@@ -11,6 +11,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *   name="media",
  *   uniqueConstraints={
  *     @ORM\UniqueConstraint(name="unique_legacy_mapping_idx",columns={"legacy_mapping"}),
+ *     @ORM\UniqueConstraint(name="unique_container_location_idx",columns={"container_id", "location"}),
  *     @ORM\UniqueConstraint(name="unique_remote_media_id_idx",columns={"type_id", "media_remote_id"}),
  *   },
  *   indexes={
