@@ -21,10 +21,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  */
 class ProductMedia
 {
-    /**
-     * @var \Zend\InputFilter\InputFilterInterface $inputFilter
-     */
-    protected $inputFilter;
+
 
     /**
      * @ORM\Id

@@ -1,5 +1,31 @@
 # CHANGELOG
 
+## 0.23.0 (2016-09-21)
+
+- For 'Media', refactored media_remote_id, media_remote_url and preview_url in
+  remote_media_id, remote_media_url and remote_preview_url to preserve
+  consistencies
+  
+```sql
+DROP INDEX unique_remote_media_id_idx ON media;
+ALTER TABLE media ADD remote_preview_url VARCHAR(255) DEFAULT NULL COMMENT 'Remote media image preview url', DROP preview_url, CHANGE media_remote_url remote_media_url VARCHAR(385) DEFAULT NULL COMMENT 'Only for remote content (with a null container)', CHANGE media_remote_id remote_media_id VARCHAR(64) DEFAULT NULL COMMENT 'External media id, only for remote content (with a null container)';
+CREATE UNIQUE INDEX unique_remote_media_id_idx ON media (type_id, remote_media_id);  
+```  
+
+- For 'ProductSerieMedia', refactored type_id in product_media_type_id.
+
+```sql
+ALTER TABLE product_serie_media DROP FOREIGN KEY FK_E0F0B87C54C8C93;
+DROP INDEX IDX_E0F0B87C54C8C93 ON product_serie_media;
+DROP INDEX unique_product_media_type_idx ON product_serie_media;
+DROP INDEX unique_product_type_flag_primary_idx ON product_serie_media;
+ALTER TABLE product_serie_media CHANGE type_id product_media_type_id INT UNSIGNED NOT NULL;
+ALTER TABLE product_serie_media ADD CONSTRAINT FK_E0F0B877E761628 FOREIGN KEY (product_media_type_id) REFERENCES product_media_type (type_id) ON DELETE CASCADE;
+CREATE INDEX IDX_E0F0B877E761628 ON product_serie_media (product_media_type_id);
+CREATE UNIQUE INDEX unique_product_media_type_idx ON product_serie_media (serie_id, media_id, product_media_type_id);
+CREATE UNIQUE INDEX unique_product_type_flag_primary_idx ON product_serie_media (product_media_type_id, serie_id, flag_primary);
+```
+
 ## 0.22.0 (2016-09-19)
 
 - Added unique constraint on container and location for media table

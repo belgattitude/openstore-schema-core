@@ -12,7 +12,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *   uniqueConstraints={
  *     @ORM\UniqueConstraint(name="unique_legacy_mapping_idx",columns={"legacy_mapping"}),
  *     @ORM\UniqueConstraint(name="unique_container_location_idx",columns={"container_id", "location"}),
- *     @ORM\UniqueConstraint(name="unique_remote_media_id_idx",columns={"type_id", "media_remote_id"}),
+ *     @ORM\UniqueConstraint(name="unique_remote_media_id_idx",columns={"type_id", "remote_media_id"}),
  *   },
  *   indexes={
  *     @ORM\Index(name="title_idx", columns={"title"}),
@@ -55,12 +55,18 @@ class Media
     /**
      * @ORM\Column(type="string", length=385, nullable=true, options={"comment" = "Only for remote content (with a null container)"})
      */
-    private $media_remote_url;
+    private $remote_media_url;
 
     /**
      * @ORM\Column(type="string", length=64, nullable=true, options={"comment" = "External media id, only for remote content (with a null container)"})
      */
-    private $media_remote_id;
+    private $remote_media_id;
+
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true, options={"comment" = "Remote media image preview url"})
+     */
+    private $remote_preview_url;
 
 
     /**
@@ -104,10 +110,6 @@ class Media
      */
     private $description;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true, options={"comment" = "Image preview url"})
-     */
-    private $preview_url;
 
     /**
      * @Gedmo\Timestampable(on="create")

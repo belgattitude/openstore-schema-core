@@ -10,8 +10,8 @@ use Gedmo\Mapping\Annotation as Gedmo;
  * @ORM\Table(
  *   name="product_serie_media",
  *   uniqueConstraints={
- *     @ORM\UniqueConstraint(name="unique_product_media_type_idx",columns={"serie_id", "media_id", "type_id"}),
- *     @ORM\UniqueConstraint(name="unique_product_type_flag_primary_idx",columns={"type_id", "serie_id", "flag_primary"}),
+ *     @ORM\UniqueConstraint(name="unique_product_media_type_idx",columns={"serie_id", "media_id", "product_media_type_id"}),
+ *     @ORM\UniqueConstraint(name="unique_product_type_flag_primary_idx",columns={"product_media_type_id", "serie_id", "flag_primary"}),
  *   },
  *   indexes={
  *     @ORM\Index(name="sort_index_idx", columns={"sort_index"}),
@@ -46,9 +46,9 @@ class ProductSerieMedia
     /**
      *
      * @ORM\ManyToOne(targetEntity="ProductMediaType", inversedBy="series", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(name="type_id", referencedColumnName="type_id", onDelete="CASCADE", nullable=false)
+     * @ORM\JoinColumn(name="product_media_type_id", referencedColumnName="type_id", onDelete="CASCADE", nullable=false)
      */
-    private $type_id;
+    private $product_media_type_id;
 
     /**
      *
@@ -148,21 +148,20 @@ class ProductSerieMedia
 
     /**
      *
-     * @param integer $type_id
-     * @return \OpenstoreSchema\Core\Entity\ProductMedia
+     * @param integer $product_media_type_id
      */
-    public function setTypeId($type_id)
+    public function setProductMediaTypeId($product_media_type_id)
     {
-        $this->type_id = $type_id;
+        $this->product_media_type_id = $product_media_type_id;
     }
 
     /**
      *
      * @return integer
      */
-    public function getTypeId()
+    public function getProductMediaTypeId()
     {
-        return $this->type_id;
+        return $this->product_media_type_id;
     }
 
     /**
