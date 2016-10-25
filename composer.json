@@ -30,7 +30,7 @@
         "zf-commons/zfc-rbac": "^2.6.1",
         "zf-commons/zfc-user": "^1.4.4",
         "symfony/console": "^2.6.0 || ^3.0.0",
-        "ocramius/proxy-manager": "^1.0.2 || ^2.0.3"
+        "ocramius/package-versions": "^1.1.1"
     },
     "bin": ["bin/openstore-schema-core"],
     "archive": {
