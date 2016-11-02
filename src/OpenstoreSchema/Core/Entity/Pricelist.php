@@ -94,10 +94,12 @@ class Pricelist
      */
     private $flag_active;
 
+
     /**
-     * @ORM\Column(type="date", nullable=true, options={"comment" = "Flag products as new if more recent than this date"})
+     * @ORM\Column(type="smallint", nullable=true, options={"unsigned"=true, "comment" = "Flag products as new if more recent than the number of days"})
      */
-    private $new_product_min_date;
+    private $cond_product_new_max_days;
+
 
     /**
      * @ORM\Column(type="integer", nullable=true, options={"unsigned"=true, "comment"="Relative sort index"})

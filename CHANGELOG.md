@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## 0.24.0 (2016-11-02)
+
+- For `Pricelist`, added condition for marking products as 'new': `cond_product_new_max_days`
+  And REMOVAL of `new_product_min_date`
+
+```sql
+ALTER TABLE pricelist ADD cond_product_new_max_days SMALLINT UNSIGNED DEFAULT NULL COMMENT 'Flag products as new if more recent than the number of days';
+ALTER TABLE pricelist DROP new_product_min_date;
+```
+
 ## 0.23.0 (2016-09-21)
 
 - For 'Media', refactored media_remote_id, media_remote_url and preview_url in
