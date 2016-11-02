@@ -2,6 +2,7 @@
 
 ## 0.24.0 (2016-11-02)
 
+
 - For `Pricelist`, added condition for marking products as 'new': `cond_product_new_max_days`
   And REMOVAL of `new_product_min_date`
 
