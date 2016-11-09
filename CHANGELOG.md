@@ -1,5 +1,20 @@
 # CHANGELOG
 
+## 0.25.0 (2016-11-09)
+
+- Added `keywords` in `ProductCategoryTranslation` that can be used with fulltext search
+- Added `rank_pricelist_id` in `Pricelist` useful when you want to use `ProductRank` on another
+  pricelist than current.
+  
+```sql
+ALTER TABLE product_category_translation ADD keywords VARCHAR(255) DEFAULT NULL;
+CREATE FULLTEXT INDEX keywords_ft_idx ON product_category_translation (keywords);
+
+ALTER TABLE pricelist ADD rank_pricelist_id SMALLINT UNSIGNED DEFAULT NULL;
+ALTER TABLE pricelist ADD CONSTRAINT FK_5CCFEA6D5ECD273E FOREIGN KEY (rank_pricelist_id) REFERENCES pricelist (pricelist_id) ON DELETE CASCADE;
+CREATE INDEX IDX_5CCFEA6D5ECD273E ON pricelist (rank_pricelist_id);
+```
+
 ## 0.24.0 (2016-11-02)
 
 

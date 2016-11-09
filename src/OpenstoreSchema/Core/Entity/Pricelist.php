@@ -42,12 +42,22 @@ class Pricelist
      */
     private $group_id;
 
+
+
     /**
      *
      * @ORM\ManyToOne(targetEntity="Currency", inversedBy="pricelists", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="currency_id", referencedColumnName="currency_id", nullable=false)
      */
     private $currency_id;
+
+    /**
+     * When dealing with product_rank use this one instead pricelist_id
+     *
+     * @ORM\ManyToOne(targetEntity="Pricelist")
+     * @ORM\JoinColumn(name="rank_pricelist_id", referencedColumnName="pricelist_id", onDelete="CASCADE", nullable=true)
+     */
+    private $rank_pricelist_id;
 
     /**
      * When dealing with pricelist condition, use this pricelist_id instead of pricelist
@@ -75,8 +85,6 @@ class Pricelist
      * @ORM\Column(type="boolean", nullable=false, options={"default"=1, "comment"="Whether this pricelist must honour special discount conditions"})
      */
     private $flag_enable_discount_condition;
-
-
 
 
     /**

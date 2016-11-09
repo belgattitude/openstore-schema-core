@@ -67,6 +67,7 @@ class ProductCategory
     private $breadcrumb;
 
 
+
     /**
      * @ORM\Column(type="boolean", nullable=true, options={"default"=null, "comment"="Can be used to rank products beloging to"})
      */
