@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## 0.26.0 (2016-11-22)
+
+- Added a new procedure `CALL rebuild_category_keywords()` to rebuild product translation keywords 
+
+Update your database with
+
+```console
+$ ./bin/openstore-schema-core openstore:schema:recreate-extra
+```
+
+
 ## 0.25.0 (2016-11-09)
 
 - Added `keywords` in `ProductCategoryTranslation` that can be used with fulltext search

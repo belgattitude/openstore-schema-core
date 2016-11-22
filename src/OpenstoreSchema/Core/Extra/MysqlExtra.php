@@ -511,6 +511,45 @@ ENDQ;
             SET product_category_translation.breadcrumb = tmp.breadcrumb;    
         END;
 ENDQ;
+
+        ///
+        // CATEGORY KEYWORDS
+        //
+
+        $stmts['drop/procedure/rebuild_category_keywords'] = "DROP PROCEDURE IF EXISTS `rebuild_category_keywords`";
+        $stmts['create/procedure/rebuild_category_keywords']    = <<< ENDQ
+        CREATE PROCEDURE `rebuild_category_keywords` ()
+        BEGIN
+            -- 2. Product category translation keywords
+                
+            UPDATE product_category_translation
+                    INNER JOIN
+                (
+                            SELECT
+                                    pc1.category_id,
+                                    pc18.lang,
+                                            GROUP_CONCAT(
+                                                    IF(pc18.title is null, pc2.title, pc18.title)
+                                                    ORDER BY pc1.lvl , pc2.lvl
+                                                    SEPARATOR ' '
+                                    ) AS `keywords`
+                            FROM
+                                    `product_category` AS `pc1`
+                            LEFT JOIN `product_category` AS `pc2` ON pc1.lft BETWEEN pc2.lft AND pc2.rgt
+                            LEFT JOIN `product_category_translation` AS `pc18` ON pc18.category_id = pc2.category_id
+                            WHERE
+                                    pc2.lvl > 0
+                            GROUP BY 1 , 2
+                            ORDER BY pc1.category_id
+                    ) AS tmp 
+                    ON tmp.category_id = product_category_translation.category_id
+                    AND tmp.lang = product_category_translation.lang
+            SET product_category_translation.keywords = tmp.keywords;    
+        END;
+ENDQ;
+
+
+
         return $stmts;
     }
 
