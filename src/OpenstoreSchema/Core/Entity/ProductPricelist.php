@@ -15,21 +15,19 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *   },
  *   indexes={
  *     @ORM\Index(name="price_idx", columns={"price"}),
- *     @ORM\Index(name="flag_active_idx", columns={"flag_active"}),  
+ *     @ORM\Index(name="flag_active_idx", columns={"flag_active"}),
  *     @ORM\Index(name="is_liquidation_idx", columns={"is_liquidation"}),
- *     @ORM\Index(name="is_new_idx", columns={"is_new"}), 
+ *     @ORM\Index(name="is_new_idx", columns={"is_new"}),
  *     @ORM\Index(name="is_promotional_idx", columns={"is_promotional"}),
  *     @ORM\Index(name="popular_rank_idx", columns={"popular_rank"}),
  *     @ORM\Index(name="trending_rank_idx", columns={"trending_rank"}),
  *     @ORM\Index(name="fresh_rank_idx", columns={"fresh_rank"}),
  *     @ORM\Index(name="deal_rank_idx", columns={"deal_rank"}),
- *     @ORM\Index(name="bestseller_rank_idx", columns={"bestseller_rank"}),  
+ *     @ORM\Index(name="bestseller_rank_idx", columns={"bestseller_rank"}),
  *   },
  *   options={"comment" = "Product pricelist"}
  * )
  */
-
-
 class ProductPricelist
 {
     /**
@@ -40,27 +38,25 @@ class ProductPricelist
     private $product_pricelist_id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="Pricelist", inversedBy="products", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="pricelist_id", referencedColumnName="pricelist_id", onDelete="CASCADE", nullable=false)
      */
     private $pricelist_id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="Product", inversedBy="products", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="product_id", referencedColumnName="product_id", onDelete="CASCADE", nullable=false)
      */
     private $product_id;
 
     /**
-     *
      * @ORM\Column(type="boolean", nullable=false, options={"default"=1, "comment"="Whether the product is active in public website"})
      */
     private $flag_active;
 
     /**
-     * Status id
+     * Status id.
+     *
      * @ORM\ManyToOne(targetEntity="ProductStatus", inversedBy="products", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="status_id", referencedColumnName="status_id", onDelete="CASCADE", nullable=true)
      */
@@ -142,7 +138,6 @@ class ProductPricelist
     private $is_liquidation;
 
     /**
-     *
      * @ORM\Column(type="boolean", nullable=true, options={"comment"="Whether the product is considered as a new product in this pricelist"})
      */
     private $is_new;
@@ -162,27 +157,22 @@ class ProductPricelist
      */
     private $promo_end_at;
 
-
     /**
-     *
      * @ORM\Column(type="smallint", nullable=true, options={"unsigned"=true, "comment"="Bestseller rank (relative rankable to category)"})
      */
     private $bestseller_rank;
 
     /**
-     *
      * @ORM\Column(type="smallint", nullable=true, options={"unsigned"=true, "comment"="Trending rank (relative to rankable category)"})
      */
     private $trending_rank;
 
     /**
-     *
      * @ORM\Column(type="smallint", nullable=true, options={"unsigned"=true, "comment"="Fresh and shining rank (relative to rankable category)"})
      */
     private $fresh_rank;
 
     /**
-     *
      * @ORM\Column(type="smallint", nullable=true, options={"unsigned"=true, "comment"="Notable deal rank (relative to rankable category)"})
      */
     private $deal_rank;
@@ -191,8 +181,6 @@ class ProductPricelist
      * @ORM\Column(type="smallint", nullable=true, options={"unsigned"=true, "comment"="Popular ranking (relative to rankable category)"})
      */
     private $popular_rank;
-
-
 
     /**
      * @ORM\Column(type="date", nullable=true, options={"comment" = "Date on which product was made available, useful to display as new product"})
@@ -203,7 +191,6 @@ class ProductPricelist
      * @ORM\Column(type="date", nullable=true, options={"comment" = "Date on which product was/will be made unavailable"})
      */
     private $unavailable_at;
-
 
     /**
      * @Gedmo\Timestampable(on="create")
@@ -245,8 +232,7 @@ class ProductPricelist
     protected $legacy_synchro_at;
 
     /**
-     *
-     * @param integer $id
+     * @param int $id
      */
     public function setId($id)
     {
@@ -254,8 +240,7 @@ class ProductPricelist
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -263,8 +248,7 @@ class ProductPricelist
     }
 
     /**
-     *
-     * @param integer $pricelist_id
+     * @param int $pricelist_id
      */
     public function setPricelistId($pricelist_id)
     {
@@ -272,8 +256,7 @@ class ProductPricelist
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getPricelistId()
     {
@@ -281,8 +264,7 @@ class ProductPricelist
     }
 
     /**
-     *
-     * @param integer $product_id
+     * @param int $product_id
      */
     public function setProductId($product_id)
     {
@@ -290,8 +272,7 @@ class ProductPricelist
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getProductId()
     {
@@ -299,24 +280,19 @@ class ProductPricelist
     }
 
     /**
-     *
-     * @return boolean
+     * @return bool
      */
     public function getFlagActive()
     {
-        return (boolean) $this->flag_active;
+        return (bool) $this->flag_active;
     }
 
-    /**
-     *
-     */
     public function setFlagActive($flag_active)
     {
         $this->flag_active = $flag_active;
     }
 
     /**
-     *
      * @return date
      */
     public function getUnavailableAt()
@@ -332,9 +308,7 @@ class ProductPricelist
         $this->unavailable_at = $unavailable_at;
     }
 
-
     /**
-     *
      * @return date
      */
     public function getAvailableAt()
@@ -351,7 +325,6 @@ class ProductPricelist
     }
 
     /**
-     *
      * @return float
      */
     public function getPrice()
@@ -361,6 +334,7 @@ class ProductPricelist
 
     /**
      * @param float $price
+     *
      * @return ProductPricelist
      */
     public function setPrice($price)
@@ -370,6 +344,7 @@ class ProductPricelist
 
     /**
      * @param float $public_price
+     *
      * @return ProductPricelist
      */
     public function setPublicPrice($public_price)
@@ -384,7 +359,6 @@ class ProductPricelist
     {
         return $this->public_price;
     }
-
 
     /**
      * @param float $map_price
@@ -401,8 +375,6 @@ class ProductPricelist
     {
         return $this->map_price;
     }
-
-
 
     /**
      * @param string $promo_start_at date Y-m-d H:i:s
@@ -431,7 +403,6 @@ class ProductPricelist
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -440,7 +411,6 @@ class ProductPricelist
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -449,7 +419,6 @@ class ProductPricelist
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -458,7 +427,6 @@ class ProductPricelist
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -467,7 +435,6 @@ class ProductPricelist
     }
 
     /**
-     *
      * @return string
      */
     public function getDeletedAt()
@@ -476,7 +443,6 @@ class ProductPricelist
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setDeletedAt($deleted_at)
@@ -485,7 +451,8 @@ class ProductPricelist
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -494,7 +461,8 @@ class ProductPricelist
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -503,7 +471,8 @@ class ProductPricelist
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -512,7 +481,8 @@ class ProductPricelist
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -521,7 +491,8 @@ class ProductPricelist
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -530,7 +501,8 @@ class ProductPricelist
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -539,7 +511,8 @@ class ProductPricelist
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -548,7 +521,8 @@ class ProductPricelist
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()
@@ -567,7 +541,6 @@ class ProductPricelist
     }
 
     /**
-     *
      * @return string
      */
     public function __toString()
@@ -579,6 +552,7 @@ class ProductPricelist
      * Magic getter to expose protected properties.
      *
      * @param string $property
+     *
      * @return mixed
      */
     public function __get($property)
@@ -590,7 +564,7 @@ class ProductPricelist
      * Magic setter to save protected properties.
      *
      * @param string $property
-     * @param mixed $value
+     * @param mixed  $value
      */
     public function __set($property, $value)
     {

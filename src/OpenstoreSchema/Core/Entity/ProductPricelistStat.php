@@ -14,7 +14,6 @@ use Gedmo\Mapping\Annotation as Gedmo;
  */
 class ProductPricelistStat
 {
-
     /**
      * @ORM\Id
      * @ORM\OneToOne(targetEntity="ProductPricelist")
@@ -47,7 +46,6 @@ class ProductPricelistStat
      */
     private $nb_sale_reps;
 
-
     /**
      * @ORM\Column(type="integer", nullable=true, options={"comment"="Number of distinct orders"})
      */
@@ -75,13 +73,8 @@ class ProductPricelistStat
      */
     private $updated_at;
 
-
-
-
-
     /**
-     *
-     * @param integer $id
+     * @param int $id
      */
     public function setId($id)
     {
@@ -89,8 +82,7 @@ class ProductPricelistStat
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -98,8 +90,7 @@ class ProductPricelistStat
     }
 
     /**
-     *
-     * @param integer $product_pricelist_id
+     * @param int $product_pricelist_id
      */
     public function setProduct_PricelistId($product_pricelist_id)
     {
@@ -107,8 +98,7 @@ class ProductPricelistStat
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getProductPricelistId()
     {
@@ -116,7 +106,6 @@ class ProductPricelistStat
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -125,7 +114,6 @@ class ProductPricelistStat
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -134,7 +122,6 @@ class ProductPricelistStat
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -143,7 +130,6 @@ class ProductPricelistStat
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)

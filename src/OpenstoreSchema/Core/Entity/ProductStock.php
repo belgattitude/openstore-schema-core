@@ -30,14 +30,12 @@ class ProductStock
     private $id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="Stock", inversedBy="products", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="stock_id", referencedColumnName="stock_id", onDelete="CASCADE", nullable=false)
      */
     private $stock_id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="Product", inversedBy="products", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="product_id", referencedColumnName="product_id", onDelete="CASCADE", nullable=false)
      */
@@ -68,8 +66,6 @@ class ProductStock
      */
     private $avg_monthly_sale_qty;
 
-
-
     /**
      * @Gedmo\Timestampable(on="update")
      * @ORM\Column(type="datetime", nullable=true, options={"comment" = "Record last update timestamp"})
@@ -91,8 +87,7 @@ class ProductStock
     }
 
     /**
-     *
-     * @param integer $id
+     * @param int $id
      */
     public function setId($id)
     {
@@ -100,8 +95,7 @@ class ProductStock
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -109,7 +103,6 @@ class ProductStock
     }
 
     /**
-     *
      * @return float
      */
     public function getAvailableStock()
@@ -119,6 +112,7 @@ class ProductStock
 
     /**
      * @param float $available_stock
+     *
      * @return ProductPricelist
      */
     public function setAvailableStock($available_stock)
@@ -128,6 +122,7 @@ class ProductStock
 
     /**
      * @param float $theoretical_stock
+     *
      * @return ProductPricelist
      */
     public function setTheoreticalStock($theoretical_stock)
@@ -144,7 +139,6 @@ class ProductStock
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -153,7 +147,6 @@ class ProductStock
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -162,7 +155,8 @@ class ProductStock
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -171,7 +165,8 @@ class ProductStock
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -180,7 +175,8 @@ class ProductStock
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -189,7 +185,8 @@ class ProductStock
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()
@@ -208,7 +205,6 @@ class ProductStock
     }
 
     /**
-     *
      * @return string
      */
     public function __toString()
@@ -220,6 +216,7 @@ class ProductStock
      * Magic getter to expose protected properties.
      *
      * @param string $property
+     *
      * @return mixed
      */
     public function __get($property)
@@ -231,7 +228,7 @@ class ProductStock
      * Magic setter to save protected properties.
      *
      * @param string $property
-     * @param mixed $value
+     * @param mixed  $value
      */
     public function __set($property, $value)
     {

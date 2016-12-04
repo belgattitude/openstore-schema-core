@@ -1,6 +1,5 @@
 <?php
 
-
 namespace OpenstoreSchema\Core\Tools\Console\Command\Schema;
 
 use Symfony\Component\Console\Input\InputInterface;
@@ -16,7 +15,7 @@ abstract class AbstractCommand extends Command
      * @param SchemaTool      $schemaTool
      * @param array           $metadatas
      *
-     * @return null|int Null or 0 if everything went fine, or an error code.
+     * @return null|int null or 0 if everything went fine, or an error code
      */
     abstract protected function executeSchemaCommand(InputInterface $input, OutputInterface $output, SchemaTool $schemaTool, array $metadatas);
 
@@ -32,19 +31,20 @@ abstract class AbstractCommand extends Command
 
         $metadatas = $em->getMetadataFactory()->getAllMetadata();
 
-        if (! empty($metadatas)) {
+        if (!empty($metadatas)) {
             // Create SchemaTool
             $tool = new SchemaTool($em);
 
             return $this->executeSchemaCommand($input, $output, $tool, $metadatas);
         } else {
             $output->writeln('No Metadata Classes to process.');
+
             return 0;
         }
     }
 
     /**
-     * Return underlying database connection
+     * Return underlying database connection.
      *
      * @return \Doctrine\DBAL\Connection
      */

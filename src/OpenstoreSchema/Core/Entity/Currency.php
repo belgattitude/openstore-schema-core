@@ -91,8 +91,7 @@ class Currency
     }
 
     /**
-     *
-     * @param integer $id
+     * @param int $id
      */
     public function setCurrencyId($currency_id)
     {
@@ -100,8 +99,7 @@ class Currency
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getCurrencyId()
     {
@@ -109,7 +107,8 @@ class Currency
     }
 
     /**
-     * Set reference
+     * Set reference.
+     *
      * @param string $reference
      */
     public function setReference($reference)
@@ -118,7 +117,8 @@ class Currency
     }
 
     /**
-     * Return reference
+     * Return reference.
+     *
      * @return string
      */
     public function getReference()
@@ -127,7 +127,8 @@ class Currency
     }
 
     /**
-     * Set symbol
+     * Set symbol.
+     *
      * @param string $symbol
      */
     public function setSymbol($symbol)
@@ -136,7 +137,8 @@ class Currency
     }
 
     /**
-     * Return symbol
+     * Return symbol.
+     *
      * @return string
      */
     public function getSymbol()
@@ -145,7 +147,6 @@ class Currency
     }
 
     /**
-     *
      * @param string $title
      */
     public function setTitle($title)
@@ -154,7 +155,6 @@ class Currency
     }
 
     /**
-     *
      * @return string
      */
     public function getTitle()
@@ -163,7 +163,6 @@ class Currency
     }
 
     /**
-     *
      * @param string $icon_class
      */
     public function setIconClass($icon_class)
@@ -172,7 +171,6 @@ class Currency
     }
 
     /**
-     *
      * @return string
      */
     public function getIconClass()
@@ -181,7 +179,6 @@ class Currency
     }
 
     /**
-     *
      * @return int
      */
     public function getDisplayDecimals()
@@ -198,7 +195,6 @@ class Currency
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -207,7 +203,6 @@ class Currency
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -216,7 +211,6 @@ class Currency
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -225,7 +219,6 @@ class Currency
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -234,7 +227,8 @@ class Currency
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -243,7 +237,8 @@ class Currency
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -252,7 +247,8 @@ class Currency
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -261,7 +257,8 @@ class Currency
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -270,7 +267,8 @@ class Currency
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -279,7 +277,8 @@ class Currency
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -288,7 +287,8 @@ class Currency
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -297,7 +297,8 @@ class Currency
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()
@@ -316,7 +317,6 @@ class Currency
     }
 
     /**
-     *
      * @return string
      */
     public function __toString()
@@ -328,6 +328,7 @@ class Currency
      * Magic getter to expose protected properties.
      *
      * @param string $property
+     *
      * @return mixed
      */
     public function __get($property)
@@ -339,7 +340,7 @@ class Currency
      * Magic setter to save protected properties.
      *
      * @param string $property
-     * @param mixed $value
+     * @param mixed  $value
      */
     public function __set($property, $value)
     {

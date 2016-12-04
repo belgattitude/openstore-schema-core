@@ -30,7 +30,6 @@ class ProductSetTranslation
     private $id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="ProductSet", inversedBy="translations", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="set_id", referencedColumnName="set_id", onDelete="CASCADE", nullable=false)
      */
@@ -97,8 +96,7 @@ class ProductSetTranslation
     }
 
     /**
-     *
-     * @param integer $id
+     * @param int $id
      */
     public function setId($id)
     {
@@ -106,8 +104,7 @@ class ProductSetTranslation
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -123,7 +120,6 @@ class ProductSetTranslation
     }
 
     /**
-     *
      * @return string
      */
     public function getSlug()
@@ -132,7 +128,6 @@ class ProductSetTranslation
     }
 
     /**
-     *
      * @param string $title
      */
     public function setTitle($title)
@@ -141,7 +136,6 @@ class ProductSetTranslation
     }
 
     /**
-     *
      * @return string
      */
     public function getTitle()
@@ -150,7 +144,6 @@ class ProductSetTranslation
     }
 
     /**
-     *
      * @param string $description
      */
     public function setDescription($description)
@@ -159,7 +152,6 @@ class ProductSetTranslation
     }
 
     /**
-     *
      * @return string
      */
     public function getDescription()
@@ -168,8 +160,7 @@ class ProductSetTranslation
     }
 
     /**
-     *
-     * @param integer $product_id
+     * @param int $product_id
      */
     public function setProductId($product_id)
     {
@@ -177,8 +168,7 @@ class ProductSetTranslation
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getProductId()
     {
@@ -186,8 +176,7 @@ class ProductSetTranslation
     }
 
     /**
-     *
-     * @param integer $lang_id
+     * @param int $lang_id
      */
     public function setLangId($lang_id)
     {
@@ -195,8 +184,7 @@ class ProductSetTranslation
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getLangId()
     {
@@ -204,7 +192,6 @@ class ProductSetTranslation
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -213,7 +200,6 @@ class ProductSetTranslation
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -222,7 +208,6 @@ class ProductSetTranslation
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -231,7 +216,6 @@ class ProductSetTranslation
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -240,7 +224,8 @@ class ProductSetTranslation
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -249,7 +234,8 @@ class ProductSetTranslation
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -258,7 +244,8 @@ class ProductSetTranslation
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -267,7 +254,8 @@ class ProductSetTranslation
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -276,7 +264,8 @@ class ProductSetTranslation
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -285,7 +274,8 @@ class ProductSetTranslation
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -294,7 +284,8 @@ class ProductSetTranslation
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_synchro_at
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -303,7 +294,8 @@ class ProductSetTranslation
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()

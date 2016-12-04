@@ -26,21 +26,18 @@ class UserScope
     private $id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="User", inversedBy="users", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="user_id", referencedColumnName="user_id", onDelete="CASCADE", nullable=false)
      */
     private $user_id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="Customer", inversedBy="customers", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="customer_id", referencedColumnName="customer_id", onDelete="CASCADE", nullable=false)
      */
     private $customer_id;
 
     /**
-     *
      * @ORM\Column(type="boolean", nullable=false, options={"default"=1, "comment"="Whether the user can activate the pricelist"})
      */
     private $flag_active;
@@ -84,8 +81,7 @@ class UserScope
     }
 
     /**
-     *
-     * @param integer $id
+     * @param int $id
      */
     public function setId($id)
     {
@@ -93,8 +89,7 @@ class UserScope
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -102,8 +97,7 @@ class UserScope
     }
 
     /**
-     *
-     * @param integer $pricelist_id
+     * @param int $pricelist_id
      */
     public function setPricelistId($pricelist_id)
     {
@@ -111,8 +105,7 @@ class UserScope
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getPricelistId()
     {
@@ -120,8 +113,7 @@ class UserScope
     }
 
     /**
-     *
-     * @param integer $customer_id
+     * @param int $customer_id
      */
     public function setCustomerId($customer_id)
     {
@@ -129,8 +121,7 @@ class UserScope
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getCustomerId()
     {
@@ -138,24 +129,19 @@ class UserScope
     }
 
     /**
-     *
-     * @return boolean
+     * @return bool
      */
     public function getFlagActive()
     {
-        return (boolean) $this->flag_active;
+        return (bool) $this->flag_active;
     }
 
-    /**
-     *
-     */
     public function setFlagActive($flag_active)
     {
         $this->flag_active = $flag_active;
     }
 
     /**
-     *
      * @return date
      */
     public function getActivatedAt()
@@ -172,7 +158,6 @@ class UserScope
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -181,7 +166,6 @@ class UserScope
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -190,7 +174,6 @@ class UserScope
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -199,7 +182,6 @@ class UserScope
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -208,7 +190,6 @@ class UserScope
     }
 
     /**
-     *
      * @return string
      */
     public function getDeletedAt()
@@ -217,7 +198,6 @@ class UserScope
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setDeletedAt($deleted_at)
@@ -226,7 +206,8 @@ class UserScope
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -235,7 +216,8 @@ class UserScope
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -244,7 +226,8 @@ class UserScope
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -253,7 +236,8 @@ class UserScope
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -262,7 +246,8 @@ class UserScope
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -271,7 +256,8 @@ class UserScope
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -280,7 +266,8 @@ class UserScope
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -289,7 +276,8 @@ class UserScope
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()
@@ -308,7 +296,6 @@ class UserScope
     }
 
     /**
-     *
      * @return string
      */
     public function __toString()
@@ -320,6 +307,7 @@ class UserScope
      * Magic getter to expose protected properties.
      *
      * @param string $property
+     *
      * @return mixed
      */
     public function __get($property)
@@ -331,7 +319,7 @@ class UserScope
      * Magic setter to save protected properties.
      *
      * @param string $property
-     * @param mixed $value
+     * @param mixed  $value
      */
     public function __set($property, $value)
     {

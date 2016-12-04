@@ -86,9 +86,6 @@ class SaleInvoice
      */
     protected $legacy_synchro_at;
 
-
-
-
     public function setInvoicedAt($invoiced_at)
     {
         $this->invoiced_at = $invoiced_at;
@@ -101,7 +98,6 @@ class SaleInvoice
     {
         $this->customer_reference = $customer_reference;
     }
-
 
     /**
      * @return string
@@ -128,7 +124,6 @@ class SaleInvoice
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -137,7 +132,6 @@ class SaleInvoice
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -146,7 +140,6 @@ class SaleInvoice
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -155,7 +148,6 @@ class SaleInvoice
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -164,7 +156,6 @@ class SaleInvoice
     }
 
     /**
-     *
      * @return string
      */
     public function getDeletedAt()
@@ -173,7 +164,6 @@ class SaleInvoice
     }
 
     /**
-     *
      * @param string $deleted_at
      */
     public function setDeletedAt($deleted_at)
@@ -182,7 +172,8 @@ class SaleInvoice
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -191,7 +182,8 @@ class SaleInvoice
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -200,7 +192,8 @@ class SaleInvoice
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -209,7 +202,8 @@ class SaleInvoice
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -218,7 +212,8 @@ class SaleInvoice
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -227,7 +222,8 @@ class SaleInvoice
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -236,7 +232,8 @@ class SaleInvoice
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -245,7 +242,8 @@ class SaleInvoice
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()

@@ -94,7 +94,7 @@ class SaleOrderStatus
     {
         $this->translations = new \Doctrine\Common\Collections\ArrayCollection();
 
-        /**
+        /*
          * Default value for flag_active
          */
         $this->flag_active = true;
@@ -106,8 +106,7 @@ class SaleOrderStatus
     }
 
     /**
-     *
-     * @param integer $id
+     * @param int $id
      */
     public function setStatusId($status_id)
     {
@@ -115,8 +114,7 @@ class SaleOrderStatus
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getStatusId()
     {
@@ -124,7 +122,8 @@ class SaleOrderStatus
     }
 
     /**
-     * Set reference
+     * Set reference.
+     *
      * @param string $reference
      */
     public function setReference($reference)
@@ -133,7 +132,8 @@ class SaleOrderStatus
     }
 
     /**
-     * Return reference
+     * Return reference.
+     *
      * @return string
      */
     public function getReference()
@@ -142,7 +142,6 @@ class SaleOrderStatus
     }
 
     /**
-     *
      * @param string $title
      */
     public function setTitle($title)
@@ -151,7 +150,6 @@ class SaleOrderStatus
     }
 
     /**
-     *
      * @return string
      */
     public function getTitle()
@@ -160,58 +158,45 @@ class SaleOrderStatus
     }
 
     /**
-     *
-     * @return boolean
+     * @return bool
      */
     public function getFlagActive()
     {
-        return (boolean) $this->flag_active;
+        return (bool) $this->flag_active;
     }
 
-    /**
-     *
-     */
     public function setFlagActive($flag_active)
     {
         $this->flag_active = $flag_active;
     }
 
     /**
-     *
-     * @return boolean
+     * @return bool
      */
     public function getFlagReadOnly()
     {
-        return (boolean) $this->flag_readonly;
+        return (bool) $this->flag_readonly;
     }
 
-    /**
-     *
-     */
     public function setFlagReadOnly($flag_readonly)
     {
         $this->flag_readonly = $flag_readonly;
     }
 
     /**
-     *
-     * @return boolean
+     * @return bool
      */
     public function getFlagDefault()
     {
-        return (boolean) $this->flag_default;
+        return (bool) $this->flag_default;
     }
 
-    /**
-     *
-     */
     public function setFlagDefault($flag_default)
     {
         $this->flag_default = $flag_default;
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -220,7 +205,6 @@ class SaleOrderStatus
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -229,7 +213,6 @@ class SaleOrderStatus
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -238,7 +221,6 @@ class SaleOrderStatus
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -247,7 +229,8 @@ class SaleOrderStatus
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -256,7 +239,8 @@ class SaleOrderStatus
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -265,7 +249,8 @@ class SaleOrderStatus
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -274,7 +259,8 @@ class SaleOrderStatus
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -283,7 +269,8 @@ class SaleOrderStatus
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -292,7 +279,8 @@ class SaleOrderStatus
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -301,7 +289,8 @@ class SaleOrderStatus
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -310,7 +299,8 @@ class SaleOrderStatus
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()
@@ -329,7 +319,6 @@ class SaleOrderStatus
     }
 
     /**
-     *
      * @return string
      */
     public function __toString()
@@ -341,6 +330,7 @@ class SaleOrderStatus
      * Magic getter to expose protected properties.
      *
      * @param string $property
+     *
      * @return mixed
      */
     public function __get($property)
@@ -352,7 +342,7 @@ class SaleOrderStatus
      * Magic setter to save protected properties.
      *
      * @param string $property
-     * @param mixed $value
+     * @param mixed  $value
      */
     public function __set($property, $value)
     {

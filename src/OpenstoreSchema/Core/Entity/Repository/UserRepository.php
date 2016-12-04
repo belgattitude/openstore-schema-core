@@ -11,13 +11,12 @@ use Doctrine\ORM\EntityRepository;
 class UserRepository extends EntityRepository implements InputFilterAwareInterface
 {
     /**
-     * @var InputFilterInterface $inputFilter
+     * @var InputFilterInterface
      */
     protected $inputFilter;
 
-
     /**
-     * Get all roles hierachically
+     * Get all roles hierachically.
      */
     public function getAllRoles()
     {
@@ -38,7 +37,6 @@ class UserRepository extends EntityRepository implements InputFilterAwareInterfa
     }
 
     /**
-     *
      * @param InputFilterInterface $inputFilter
      */
     public function setInputFilter(InputFilterInterface $inputFilter)
@@ -47,7 +45,6 @@ class UserRepository extends EntityRepository implements InputFilterAwareInterfa
     }
 
     /**
-     *
      * @return InputFilterInterface $inputFilter
      */
     public function getInputFilter()

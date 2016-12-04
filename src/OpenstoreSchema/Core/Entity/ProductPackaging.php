@@ -27,14 +27,12 @@ class ProductPackaging
     private $id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="PackagingType", inversedBy="products", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="type_id", referencedColumnName="type_id", onDelete="CASCADE", nullable=false)
      */
     private $type_id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="Product", inversedBy="products", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="product_id", referencedColumnName="product_id", onDelete="CASCADE", nullable=false)
      */
@@ -95,8 +93,7 @@ class ProductPackaging
     }
 
     /**
-     *
-     * @param integer $id
+     * @param int $id
      */
     public function setId($id)
     {
@@ -104,8 +101,7 @@ class ProductPackaging
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -113,7 +109,6 @@ class ProductPackaging
     }
 
     /**
-     *
      * @param float|int $quantity
      */
     public function setQuantity($quantity)
@@ -122,7 +117,8 @@ class ProductPackaging
     }
 
     /**
-     * Set volume
+     * Set volume.
+     *
      * @return Product
      */
     public function setVolume($volume)
@@ -131,7 +127,6 @@ class ProductPackaging
     }
 
     /**
-     *
      * @return float
      */
     public function getVolume()
@@ -140,7 +135,8 @@ class ProductPackaging
     }
 
     /**
-     * Set weight
+     * Set weight.
+     *
      * @return Product
      */
     public function setWeight($weight)
@@ -149,7 +145,6 @@ class ProductPackaging
     }
 
     /**
-     *
      * @return float
      */
     public function getWeight()
@@ -158,7 +153,8 @@ class ProductPackaging
     }
 
     /**
-     * Set length
+     * Set length.
+     *
      * @return Product
      */
     public function setLength($length)
@@ -167,7 +163,6 @@ class ProductPackaging
     }
 
     /**
-     *
      * @return float
      */
     public function getLength()
@@ -176,7 +171,8 @@ class ProductPackaging
     }
 
     /**
-     * Set height
+     * Set height.
+     *
      * @return Product
      */
     public function setHeight($height)
@@ -185,7 +181,6 @@ class ProductPackaging
     }
 
     /**
-     *
      * @return decimal
      */
     public function getHeight()
@@ -194,7 +189,8 @@ class ProductPackaging
     }
 
     /**
-     * Set width
+     * Set width.
+     *
      * @return Product
      */
     public function setWidth($width)
@@ -203,7 +199,6 @@ class ProductPackaging
     }
 
     /**
-     *
      * @return decimal
      */
     public function getWidth()
@@ -212,8 +207,10 @@ class ProductPackaging
     }
 
     /**
-     * Set barcode_ean
+     * Set barcode_ean.
+     *
      * @param string $barcode_ean
+     *
      * @return Product
      */
     public function setBarcodeEan($barcode_ean)
@@ -222,7 +219,6 @@ class ProductPackaging
     }
 
     /**
-     *
      * @return string
      */
     public function getBarcodeEan()
@@ -231,8 +227,10 @@ class ProductPackaging
     }
 
     /**
-     * Set barcode_upc
+     * Set barcode_upc.
+     *
      * @param string $barcode_upc
+     *
      * @return Product
      */
     public function setBarcodeUpc($barcode_upc)
@@ -241,7 +239,6 @@ class ProductPackaging
     }
 
     /**
-     *
      * @return string
      */
     public function getBarcodeUpc()
@@ -250,7 +247,8 @@ class ProductPackaging
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -259,7 +257,8 @@ class ProductPackaging
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -268,7 +267,8 @@ class ProductPackaging
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_synchro_at
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -277,7 +277,8 @@ class ProductPackaging
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()
@@ -296,7 +297,6 @@ class ProductPackaging
     }
 
     /**
-     *
      * @return string
      */
     public function __toString()
@@ -308,6 +308,7 @@ class ProductPackaging
      * Magic getter to expose protected properties.
      *
      * @param string $property
+     *
      * @return mixed
      */
     public function __get($property)
@@ -319,7 +320,7 @@ class ProductPackaging
      * Magic setter to save protected properties.
      *
      * @param string $property
-     * @param mixed $value
+     * @param mixed  $value
      */
     public function __set($property, $value)
     {

@@ -25,7 +25,6 @@ use Gedmo\Mapping\Annotation as Gedmo;
  */
 class ProductBrand
 {
-
     /**
      * @ORM\Id
      * @ORM\Column(name="brand_id", type="integer", nullable=false, options={"unsigned"=true})
@@ -105,15 +104,14 @@ class ProductBrand
 
     public function __construct()
     {
-        /**
+        /*
          * Default value for flag_active
          */
         $this->flag_active = true;
     }
 
     /**
-     *
-     * @param integer $id
+     * @param int $id
      */
     public function setBrandId($id)
     {
@@ -121,8 +119,7 @@ class ProductBrand
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getBRandId()
     {
@@ -130,7 +127,8 @@ class ProductBrand
     }
 
     /**
-     * Set reference
+     * Set reference.
+     *
      * @param string $reference
      */
     public function setReference($reference)
@@ -139,7 +137,8 @@ class ProductBrand
     }
 
     /**
-     * Return reference
+     * Return reference.
+     *
      * @return string
      */
     public function getReference()
@@ -156,7 +155,6 @@ class ProductBrand
     }
 
     /**
-     *
      * @return string
      */
     public function getSlug()
@@ -165,7 +163,6 @@ class ProductBrand
     }
 
     /**
-     *
      * @param string $title
      */
     public function setTitle($title)
@@ -174,7 +171,6 @@ class ProductBrand
     }
 
     /**
-     *
      * @return string
      */
     public function getTitle()
@@ -183,7 +179,6 @@ class ProductBrand
     }
 
     /**
-     *
      * @param string $description
      */
     public function setDescription($description)
@@ -192,7 +187,6 @@ class ProductBrand
     }
 
     /**
-     *
      * @return string
      */
     public function getDescription()
@@ -201,7 +195,6 @@ class ProductBrand
     }
 
     /**
-     *
      * @param string $url homepage url
      */
     public function setUrl($url)
@@ -210,7 +203,6 @@ class ProductBrand
     }
 
     /**
-     *
      * @return string
      */
     public function getUrl()
@@ -219,7 +211,6 @@ class ProductBrand
     }
 
     /**
-     *
      * @return string
      */
     public function setIconClass($icon_class)
@@ -228,7 +219,6 @@ class ProductBrand
     }
 
     /**
-     *
      * @return string
      */
     public function getIconClass()
@@ -237,24 +227,19 @@ class ProductBrand
     }
 
     /**
-     *
-     * @return boolean
+     * @return bool
      */
     public function getFlagActive()
     {
-        return (boolean) $this->flag_active;
+        return (bool) $this->flag_active;
     }
 
-    /**
-     *
-     */
     public function setFlagActive($flag_active)
     {
         $this->flag_active = $flag_active;
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -263,7 +248,6 @@ class ProductBrand
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -272,7 +256,6 @@ class ProductBrand
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -281,7 +264,6 @@ class ProductBrand
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -290,7 +272,8 @@ class ProductBrand
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -299,7 +282,8 @@ class ProductBrand
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -308,7 +292,8 @@ class ProductBrand
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -317,7 +302,8 @@ class ProductBrand
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -326,7 +312,8 @@ class ProductBrand
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -335,7 +322,8 @@ class ProductBrand
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -344,7 +332,8 @@ class ProductBrand
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_synchro_at
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -353,7 +342,8 @@ class ProductBrand
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()

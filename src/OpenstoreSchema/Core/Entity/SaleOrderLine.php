@@ -29,7 +29,6 @@ class SaleOrderLine
      */
     private $line_id;
 
-
     /**
      * @ORM\Column(name="line_number", type="smallint", nullable=true, options={"unsigned"=true, "comment" = "Order line number for display, sort...."})
      */
@@ -65,7 +64,6 @@ class SaleOrderLine
     private $invoice_id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="Product", inversedBy="orders", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="product_id", referencedColumnName="product_id", nullable=false)
      */
@@ -307,7 +305,6 @@ class SaleOrderLine
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -316,7 +313,6 @@ class SaleOrderLine
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -325,7 +321,6 @@ class SaleOrderLine
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -334,7 +329,6 @@ class SaleOrderLine
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -343,7 +337,6 @@ class SaleOrderLine
     }
 
     /**
-     *
      * @return string
      */
     public function getDeletedAt()
@@ -352,7 +345,6 @@ class SaleOrderLine
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setDeletedAt($deleted_at)
@@ -361,7 +353,8 @@ class SaleOrderLine
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -370,7 +363,8 @@ class SaleOrderLine
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -379,7 +373,8 @@ class SaleOrderLine
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -388,7 +383,8 @@ class SaleOrderLine
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -397,7 +393,8 @@ class SaleOrderLine
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -406,7 +403,8 @@ class SaleOrderLine
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -415,7 +413,8 @@ class SaleOrderLine
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -424,7 +423,8 @@ class SaleOrderLine
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()

@@ -25,7 +25,6 @@ use Gedmo\Mapping\Annotation as Gedmo;
  */
 class ProductSerie
 {
-
     /**
      * @ORM\Id
      * @ORM\Column(name="serie_id", type="integer", nullable=false, options={"unsigned"=true})
@@ -34,12 +33,10 @@ class ProductSerie
     private $serie_id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="ProductBrand", inversedBy="products", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="brand_id", referencedColumnName="brand_id", onDelete="CASCADE", nullable=true)
      */
     private $brand_id;
-
 
     /**
      * @ORM\Column(type="string", length=60, nullable=false, options={"comment" = "Reference"})
@@ -50,7 +47,6 @@ class ProductSerie
      * @ORM\Column(type="string", length=60, nullable=true, options={"comment" = "Displayable reference, without extra info to maintain uniqueness"})
      */
     private $display_reference;
-
 
     /**
      * @ORM\Column(type="string", length=1, nullable=true, options={"default"=null, "comment"="Serie group code"})
@@ -129,15 +125,14 @@ class ProductSerie
 
     public function __construct()
     {
-        /**
+        /*
          * Default value for flag_active
          */
         $this->flag_active = true;
     }
 
     /**
-     *
-     * @param integer $serie_id
+     * @param int $serie_id
      */
     public function setSerieId($serie_id)
     {
@@ -145,8 +140,7 @@ class ProductSerie
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getSerieId()
     {
@@ -154,7 +148,8 @@ class ProductSerie
     }
 
     /**
-     * Set reference
+     * Set reference.
+     *
      * @param string $reference
      */
     public function setReference($reference)
@@ -163,7 +158,8 @@ class ProductSerie
     }
 
     /**
-     * Return reference
+     * Return reference.
+     *
      * @return string
      */
     public function getReference()
@@ -180,7 +176,6 @@ class ProductSerie
     }
 
     /**
-     *
      * @return string
      */
     public function getSlug()
@@ -189,7 +184,6 @@ class ProductSerie
     }
 
     /**
-     *
      * @param string $title
      */
     public function setTitle($title)
@@ -198,7 +192,6 @@ class ProductSerie
     }
 
     /**
-     *
      * @return string
      */
     public function getTitle()
@@ -207,7 +200,6 @@ class ProductSerie
     }
 
     /**
-     *
      * @param string $description
      */
     public function setDescription($description)
@@ -216,7 +208,6 @@ class ProductSerie
     }
 
     /**
-     *
      * @return string
      */
     public function getDescription()
@@ -225,7 +216,6 @@ class ProductSerie
     }
 
     /**
-     *
      * @param string $specs
      */
     public function setSpecs($specs)
@@ -234,7 +224,6 @@ class ProductSerie
     }
 
     /**
-     *
      * @return string
      */
     public function getSpecs()
@@ -243,8 +232,7 @@ class ProductSerie
     }
 
     /**
-     *
-     * @param integer $revision
+     * @param int $revision
      */
     public function setRevision($revision)
     {
@@ -252,34 +240,27 @@ class ProductSerie
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getRevision()
     {
         return $this->revision;
     }
 
-
     /**
-     *
-     * @return boolean
+     * @return bool
      */
     public function getFlagActive()
     {
-        return (boolean) $this->flag_active;
+        return (bool) $this->flag_active;
     }
 
-    /**
-     *
-     */
     public function setFlagActive($flag_active)
     {
         $this->flag_active = $flag_active;
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -288,7 +269,6 @@ class ProductSerie
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -297,7 +277,6 @@ class ProductSerie
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -306,7 +285,6 @@ class ProductSerie
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -315,7 +293,8 @@ class ProductSerie
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -324,7 +303,8 @@ class ProductSerie
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -333,7 +313,8 @@ class ProductSerie
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -342,7 +323,8 @@ class ProductSerie
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -351,7 +333,8 @@ class ProductSerie
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -360,7 +343,8 @@ class ProductSerie
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -369,7 +353,8 @@ class ProductSerie
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_synchro_at
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -378,7 +363,8 @@ class ProductSerie
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()

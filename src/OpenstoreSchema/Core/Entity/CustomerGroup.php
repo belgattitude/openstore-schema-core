@@ -90,15 +90,14 @@ class CustomerGroup
 
     public function __construct()
     {
-        /**
+        /*
          * Default value for flag_active
          */
         $this->flag_active = true;
     }
 
     /**
-     *
-     * @param integer $id
+     * @param int $id
      */
     public function setId($id)
     {
@@ -106,8 +105,7 @@ class CustomerGroup
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -115,7 +113,8 @@ class CustomerGroup
     }
 
     /**
-     * Set reference
+     * Set reference.
+     *
      * @param string $reference
      */
     public function setReference($reference)
@@ -124,7 +123,8 @@ class CustomerGroup
     }
 
     /**
-     * Return reference
+     * Return reference.
+     *
      * @return string
      */
     public function getReference()
@@ -133,7 +133,6 @@ class CustomerGroup
     }
 
     /**
-     *
      * @param string $title
      */
     public function setTitle($title)
@@ -142,7 +141,6 @@ class CustomerGroup
     }
 
     /**
-     *
      * @return string
      */
     public function getTitle()
@@ -151,7 +149,6 @@ class CustomerGroup
     }
 
     /**
-     *
      * @param string $description
      */
     public function setDescription($description)
@@ -160,7 +157,6 @@ class CustomerGroup
     }
 
     /**
-     *
      * @return string
      */
     public function getDescription()
@@ -169,7 +165,6 @@ class CustomerGroup
     }
 
     /**
-     *
      * @return string
      */
     public function setIconClass($icon_class)
@@ -178,7 +173,6 @@ class CustomerGroup
     }
 
     /**
-     *
      * @return string
      */
     public function getIconClass()
@@ -187,24 +181,19 @@ class CustomerGroup
     }
 
     /**
-     *
-     * @return boolean
+     * @return bool
      */
     public function getFlagActive()
     {
-        return (boolean) $this->flag_active;
+        return (bool) $this->flag_active;
     }
 
-    /**
-     *
-     */
     public function setFlagActive($flag_active)
     {
         $this->flag_active = $flag_active;
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -213,7 +202,6 @@ class CustomerGroup
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -222,7 +210,6 @@ class CustomerGroup
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -231,7 +218,6 @@ class CustomerGroup
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -240,7 +226,8 @@ class CustomerGroup
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -249,7 +236,8 @@ class CustomerGroup
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -258,7 +246,8 @@ class CustomerGroup
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -267,7 +256,8 @@ class CustomerGroup
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -276,7 +266,8 @@ class CustomerGroup
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -285,7 +276,8 @@ class CustomerGroup
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -294,7 +286,8 @@ class CustomerGroup
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -303,7 +296,8 @@ class CustomerGroup
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()
@@ -312,7 +306,6 @@ class CustomerGroup
     }
 
     /**
-     *
      * @return string
      */
     public function __toString()

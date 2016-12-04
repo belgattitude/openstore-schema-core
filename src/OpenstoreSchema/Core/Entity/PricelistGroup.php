@@ -19,7 +19,6 @@ use Gedmo\Mapping\Annotation as Gedmo;
  */
 class PricelistGroup
 {
-
     /**
      * @ORM\Id
      * @ORM\Column(name="group_id", type="smallint", nullable=false, options={"unsigned"=true})
@@ -76,10 +75,8 @@ class PricelistGroup
      */
     protected $legacy_synchro_at;
 
-
     /**
-     *
-     * @param integer $group_id
+     * @param int $group_id
      */
     public function setGroupId($group_id)
     {
@@ -87,17 +84,16 @@ class PricelistGroup
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getGroupId()
     {
         return $this->group_id;
     }
 
-
     /**
-     * Set reference
+     * Set reference.
+     *
      * @param string $reference
      */
     public function setReference($reference)
@@ -106,7 +102,8 @@ class PricelistGroup
     }
 
     /**
-     * Return reference
+     * Return reference.
+     *
      * @return string
      */
     public function getReference()
@@ -115,7 +112,6 @@ class PricelistGroup
     }
 
     /**
-     *
      * @param string $title
      */
     public function setTitle($title)
@@ -124,7 +120,6 @@ class PricelistGroup
     }
 
     /**
-     *
      * @return string
      */
     public function getTitle()
@@ -132,9 +127,7 @@ class PricelistGroup
         return $this->title;
     }
 
-
     /**
-     *
      * @return string
      */
     public function setIconClass($icon_class)
@@ -142,10 +135,9 @@ class PricelistGroup
         $this->icon_class = $icon_class;
     }
 
-
     /**
+     * @param int $sort_index
      *
-     * @param integer $sort_index
      * @return Pricelist
      */
     public function setSortIndex($sort_index)
@@ -154,17 +146,14 @@ class PricelistGroup
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getSortIndex()
     {
         return $this->sort_index;
     }
 
-
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -173,8 +162,8 @@ class PricelistGroup
     }
 
     /**
-     *
      * @param string $created_at
+     *
      * @return Pricelist
      */
     public function setCreatedAt($created_at)
@@ -183,7 +172,6 @@ class PricelistGroup
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -192,8 +180,8 @@ class PricelistGroup
     }
 
     /**
-     *
      * @param string $updated_at
+     *
      * @return Pricelist
      */
     public function setUpdatedAt($updated_at)
@@ -202,7 +190,8 @@ class PricelistGroup
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -211,8 +200,10 @@ class PricelistGroup
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
+     *
      * @return Pricelist
      */
     public function setCreatedBy($created_by)
@@ -221,7 +212,8 @@ class PricelistGroup
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -230,8 +222,10 @@ class PricelistGroup
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
+     *
      * @return Pricelist
      */
     public function setUpdatedBy($updated_by)
@@ -240,7 +234,8 @@ class PricelistGroup
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -249,7 +244,8 @@ class PricelistGroup
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -258,7 +254,8 @@ class PricelistGroup
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_synchro_at
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -267,7 +264,8 @@ class PricelistGroup
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()
@@ -275,9 +273,7 @@ class PricelistGroup
         return $this->legacy_synchro_at;
     }
 
-
     /**
-     *
      * @return string
      */
     public function __toString()

@@ -88,16 +88,14 @@ class PackagingType
 
     public function __construct()
     {
-
-        /**
+        /*
          * Default value for flag_active
          */
         $this->flag_active = true;
     }
 
     /**
-     *
-     * @param integer $id
+     * @param int $id
      */
     public function setTypeId($type_id)
     {
@@ -105,8 +103,7 @@ class PackagingType
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getTypeId()
     {
@@ -114,7 +111,8 @@ class PackagingType
     }
 
     /**
-     * Set reference
+     * Set reference.
+     *
      * @param string $reference
      */
     public function setReference($reference)
@@ -123,7 +121,8 @@ class PackagingType
     }
 
     /**
-     * Return reference
+     * Return reference.
+     *
      * @return string
      */
     public function getReference()
@@ -132,7 +131,6 @@ class PackagingType
     }
 
     /**
-     *
      * @param string $title
      */
     public function setTitle($title)
@@ -141,7 +139,6 @@ class PackagingType
     }
 
     /**
-     *
      * @return string
      */
     public function getTitle()
@@ -150,7 +147,6 @@ class PackagingType
     }
 
     /**
-     *
      * @param string $description
      */
     public function setDescription($description)
@@ -159,7 +155,8 @@ class PackagingType
     }
 
     /**
-     * Return description
+     * Return description.
+     *
      * @return string
      */
     public function getDescription()
@@ -168,7 +165,6 @@ class PackagingType
     }
 
     /**
-     *
      * @return string
      */
     public function setIconClass($icon_class)
@@ -177,7 +173,6 @@ class PackagingType
     }
 
     /**
-     *
      * @return string
      */
     public function getIconClass()
@@ -186,24 +181,19 @@ class PackagingType
     }
 
     /**
-     *
-     * @return boolean
+     * @return bool
      */
     public function getFlagActive()
     {
-        return (boolean) $this->flag_active;
+        return (bool) $this->flag_active;
     }
 
-    /**
-     *
-     */
     public function setFlagActive($flag_active)
     {
         $this->flag_active = $flag_active;
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -212,7 +202,6 @@ class PackagingType
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -221,7 +210,6 @@ class PackagingType
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -230,7 +218,6 @@ class PackagingType
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -239,7 +226,8 @@ class PackagingType
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -248,7 +236,8 @@ class PackagingType
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -257,7 +246,8 @@ class PackagingType
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -266,7 +256,8 @@ class PackagingType
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -275,7 +266,8 @@ class PackagingType
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -284,7 +276,8 @@ class PackagingType
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -293,7 +286,8 @@ class PackagingType
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -302,7 +296,8 @@ class PackagingType
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()
@@ -321,7 +316,6 @@ class PackagingType
     }
 
     /**
-     *
      * @return string
      */
     public function __toString()

@@ -30,7 +30,6 @@ class SaleRep
      */
     private $reference;
 
-
     /**
      * @ORM\Column(type="string", length=80, nullable=false)
      */
@@ -72,7 +71,6 @@ class SaleRep
     private $city;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="Country", inversedBy="customers", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="country_id", referencedColumnName="country_id", nullable=true)
      */
@@ -157,18 +155,16 @@ class SaleRep
      */
     protected $legacy_synchro_at;
 
-
     public function __construct()
     {
-        /**
+        /*
          * Default value for flag_active
          */
         $this->flag_active = true;
     }
 
     /**
-     *
-     * @param integer $rep_id
+     * @param int $rep_id
      */
     public function setId($rep_id)
     {
@@ -176,8 +172,7 @@ class SaleRep
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getRepId()
     {
@@ -185,7 +180,8 @@ class SaleRep
     }
 
     /**
-     * Set reference
+     * Set reference.
+     *
      * @param string $reference
      */
     public function setReference($reference)
@@ -194,7 +190,8 @@ class SaleRep
     }
 
     /**
-     * Return reference
+     * Return reference.
+     *
      * @return string
      */
     public function getReference()
@@ -203,7 +200,6 @@ class SaleRep
     }
 
     /**
-     *
      * @param string $name
      */
     public function setName($name)
@@ -212,7 +208,6 @@ class SaleRep
     }
 
     /**
-     *
      * @return string
      */
     public function getName()
@@ -221,7 +216,6 @@ class SaleRep
     }
 
     /**
-     *
      * @param string $first_name
      */
     public function setFirstName($first_name)
@@ -230,7 +224,6 @@ class SaleRep
     }
 
     /**
-     *
      * @return string
      */
     public function getFirstName()
@@ -239,24 +232,19 @@ class SaleRep
     }
 
     /**
-     *
-     * @return boolean
+     * @return bool
      */
     public function getFlagActive()
     {
-        return (boolean) $this->flag_active;
+        return (bool) $this->flag_active;
     }
 
-    /**
-     *
-     */
     public function setFlagActive($flag_active)
     {
         $this->flag_active = $flag_active;
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -265,7 +253,6 @@ class SaleRep
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -274,7 +261,6 @@ class SaleRep
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -283,7 +269,6 @@ class SaleRep
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -292,7 +277,8 @@ class SaleRep
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -301,7 +287,8 @@ class SaleRep
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -310,7 +297,8 @@ class SaleRep
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -319,7 +307,8 @@ class SaleRep
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -328,7 +317,8 @@ class SaleRep
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -337,7 +327,8 @@ class SaleRep
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -346,7 +337,8 @@ class SaleRep
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_synchro_at
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -355,7 +347,8 @@ class SaleRep
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()
@@ -363,9 +356,7 @@ class SaleRep
         return $this->legacy_synchro_at;
     }
 
-
     /**
-     *
      * @return string
      */
     public function __toString()

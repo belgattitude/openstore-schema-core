@@ -30,7 +30,6 @@ class ProductSerieTranslation
     private $id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="ProductSerie", inversedBy="translations", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="serie_id", referencedColumnName="serie_id", onDelete="CASCADE", nullable=false)
      */
@@ -92,10 +91,8 @@ class ProductSerieTranslation
      */
     protected $legacy_synchro_at;
 
-
     /**
-     *
-     * @param integer $id
+     * @param int $id
      */
     public function setId($id)
     {
@@ -103,8 +100,7 @@ class ProductSerieTranslation
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -120,7 +116,6 @@ class ProductSerieTranslation
     }
 
     /**
-     *
      * @return string
      */
     public function getSlug()
@@ -129,7 +124,6 @@ class ProductSerieTranslation
     }
 
     /**
-     *
      * @param string $title
      */
     public function setTitle($title)
@@ -138,7 +132,6 @@ class ProductSerieTranslation
     }
 
     /**
-     *
      * @return string
      */
     public function getTitle()
@@ -147,7 +140,6 @@ class ProductSerieTranslation
     }
 
     /**
-     *
      * @param string $description
      */
     public function setDescription($description)
@@ -156,7 +148,6 @@ class ProductSerieTranslation
     }
 
     /**
-     *
      * @return string
      */
     public function getDescription()
@@ -165,8 +156,7 @@ class ProductSerieTranslation
     }
 
     /**
-     *
-     * @param integer $lang_id
+     * @param int $lang_id
      */
     public function setLangId($lang_id)
     {
@@ -174,8 +164,7 @@ class ProductSerieTranslation
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getLangId()
     {
@@ -183,7 +172,6 @@ class ProductSerieTranslation
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -192,7 +180,6 @@ class ProductSerieTranslation
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -201,7 +188,6 @@ class ProductSerieTranslation
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -210,7 +196,6 @@ class ProductSerieTranslation
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -219,7 +204,8 @@ class ProductSerieTranslation
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -228,7 +214,8 @@ class ProductSerieTranslation
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -237,7 +224,8 @@ class ProductSerieTranslation
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -246,7 +234,8 @@ class ProductSerieTranslation
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -255,7 +244,8 @@ class ProductSerieTranslation
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -264,7 +254,8 @@ class ProductSerieTranslation
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -273,7 +264,8 @@ class ProductSerieTranslation
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_synchro_at
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -282,7 +274,8 @@ class ProductSerieTranslation
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()
@@ -291,7 +284,6 @@ class ProductSerieTranslation
     }
 
     /**
-     *
      * @return string
      */
     public function __toString()

@@ -18,7 +18,7 @@ class DropCommand extends AbstractCommand
              ->setDescription(
                  'Drop the current database schema.'
              )
-        ->setHelp(<<<EOT
+        ->setHelp(<<<'EOT'
 Drop the current database
 EOT
         );
@@ -31,7 +31,6 @@ EOT
     {
         $conn = $this->getConnection();
         $current_db = $conn->getDatabase();
-
 
         $output->writeln('ATTENTION: This operation should not be executed in a production environment.' . PHP_EOL);
 

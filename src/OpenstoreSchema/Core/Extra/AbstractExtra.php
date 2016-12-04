@@ -4,11 +4,7 @@ namespace OpenstoreSchema\Core\Extra;
 
 abstract class AbstractExtra
 {
-
-
-
     /**
-     *
      * @return array
      */
     public function getExtrasDDL()
@@ -28,35 +24,41 @@ abstract class AbstractExtra
                 }
             }
         }
+
         return $stmts;
     }
 
     /**
-     * Return DDL for database functions
+     * Return DDL for database functions.
+     *
      * @return array
      */
     abstract public function getFunctions();
 
     /**
-     * Return DDL for database procedures
+     * Return DDL for database procedures.
+     *
      * @return array
      */
     abstract public function getProcedures();
 
     /**
-     * Return DDL for database triggers
+     * Return DDL for database triggers.
+     *
      * @return array
      */
     abstract public function getTriggers();
 
     /**
-     * Return DDL for database events
+     * Return DDL for database events.
+     *
      * @return array
      */
     abstract public function getEvents();
 
     /**
-     * Return DDL for database alters
+     * Return DDL for database alters.
+     *
      * @return array
      */
     abstract public function getSqlAlters();

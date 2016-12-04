@@ -36,7 +36,6 @@ class ProductStubTranslation
     private $id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="ProductStub", inversedBy="translations", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="product_stub_id", referencedColumnName="product_stub_id", onDelete="CASCADE", nullable=false)
      */
@@ -59,7 +58,6 @@ class ProductStubTranslation
      */
     private $description_footer;
 
-
     /**
      * @ORM\Column(type="string", length=5000, nullable=true, options={"comment" = "Common product stub specifications"})
      */
@@ -74,7 +72,6 @@ class ProductStubTranslation
      * @ORM\Column(type="integer", nullable=true, options={"default"=1, "unsigned"=true, "comment" = "Translation revision number"})
      */
     private $revision;
-
 
     /**
      * @Gedmo\Timestampable(on="create")
@@ -115,8 +112,7 @@ class ProductStubTranslation
     }
 
     /**
-     *
-     * @param integer $id
+     * @param int $id
      */
     public function setId($id)
     {
@@ -124,8 +120,7 @@ class ProductStubTranslation
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -133,7 +128,6 @@ class ProductStubTranslation
     }
 
     /**
-     *
      * @param string $description_header
      */
     public function setDescriptionHeader($description_header)
@@ -142,14 +136,12 @@ class ProductStubTranslation
     }
 
     /**
-     *
      * @param string $description_footer
      */
     public function setDescriptionFooter($description_footer)
     {
         $this->description_footer = $description_footer;
     }
-
 
     /**
      * @return string
@@ -159,7 +151,6 @@ class ProductStubTranslation
         return $this->description_header;
     }
 
-
     /**
      * @return string
      */
@@ -168,9 +159,7 @@ class ProductStubTranslation
         return $this->description_footer;
     }
 
-
     /**
-     *
      * @param string $specs
      */
     public function setSpecs($specs)
@@ -179,7 +168,6 @@ class ProductStubTranslation
     }
 
     /**
-     *
      * @return string
      */
     public function getSpecs()
@@ -187,10 +175,8 @@ class ProductStubTranslation
         return $this->specs;
     }
 
-
     /**
-     *
-     * @param integer $product_stub_id
+     * @param int $product_stub_id
      */
     public function setProductStubId($product_stub_id)
     {
@@ -198,18 +184,15 @@ class ProductStubTranslation
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getProductStubId()
     {
         return $this->product_stub_id;
     }
 
-
     /**
-     *
-     * @param integer $revision
+     * @param int $revision
      */
     public function setRevision($revision)
     {
@@ -217,18 +200,15 @@ class ProductStubTranslation
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getRevision()
     {
         return $this->revision;
     }
 
-
     /**
-     *
-     * @param integer $lang_id
+     * @param int $lang_id
      */
     public function setLangId($lang_id)
     {
@@ -236,8 +216,7 @@ class ProductStubTranslation
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getLangId()
     {
@@ -245,7 +224,6 @@ class ProductStubTranslation
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -254,7 +232,6 @@ class ProductStubTranslation
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -263,7 +240,6 @@ class ProductStubTranslation
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -272,7 +248,6 @@ class ProductStubTranslation
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -281,7 +256,8 @@ class ProductStubTranslation
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -290,7 +266,8 @@ class ProductStubTranslation
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -299,7 +276,8 @@ class ProductStubTranslation
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -308,7 +286,8 @@ class ProductStubTranslation
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -317,7 +296,8 @@ class ProductStubTranslation
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -326,7 +306,8 @@ class ProductStubTranslation
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -335,7 +316,8 @@ class ProductStubTranslation
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_synchro_at
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -344,7 +326,8 @@ class ProductStubTranslation
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()

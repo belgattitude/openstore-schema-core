@@ -37,7 +37,7 @@ class Permission implements PermissionInterface
     protected $name;
 
     /**
-     * Constructor
+     * Constructor.
      */
     public function __construct($name)
     {
@@ -45,7 +45,7 @@ class Permission implements PermissionInterface
     }
 
     /**
-     * Get the permission identifier
+     * Get the permission identifier.
      *
      * @return int
      */
@@ -55,7 +55,7 @@ class Permission implements PermissionInterface
     }
 
     /**
-     * Get the permission identifier
+     * Get the permission identifier.
      *
      * @return int
      */
@@ -65,7 +65,7 @@ class Permission implements PermissionInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function __toString()
     {

@@ -18,8 +18,6 @@ use Gedmo\Mapping\Annotation as Gedmo;
  */
 class Country
 {
-
-
     /**
      * @ORM\Id
      * @ORM\Column(name="country_id", type="smallint", nullable=false, options={"unsigned"=true})
@@ -83,15 +81,14 @@ class Country
 
     public function __construct()
     {
-        /**
+        /*
          * Default value for flag_active
          */
         $this->flag_active = true;
     }
 
     /**
-     *
-     * @param integer $country_id
+     * @param int $country_id
      */
     public function setCountryId($country_id)
     {
@@ -99,8 +96,7 @@ class Country
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getCountryId()
     {
@@ -108,7 +104,8 @@ class Country
     }
 
     /**
-     * Set reference
+     * Set reference.
+     *
      * @param string $reference
      */
     public function setReference($reference)
@@ -117,7 +114,8 @@ class Country
     }
 
     /**
-     * Return reference
+     * Return reference.
+     *
      * @return string
      */
     public function getReference()
@@ -126,7 +124,6 @@ class Country
     }
 
     /**
-     *
      * @param string $name
      */
     public function setName($name)
@@ -135,7 +132,6 @@ class Country
     }
 
     /**
-     *
      * @return string
      */
     public function getName()
@@ -144,7 +140,6 @@ class Country
     }
 
     /**
-     *
      * @return string
      */
     public function setIconClass($icon_class)
@@ -153,7 +148,6 @@ class Country
     }
 
     /**
-     *
      * @return string
      */
     public function getIconClass()
@@ -162,24 +156,19 @@ class Country
     }
 
     /**
-     *
-     * @return boolean
+     * @return bool
      */
     public function getFlagActive()
     {
-        return (boolean) $this->flag_active;
+        return (bool) $this->flag_active;
     }
 
-    /**
-     *
-     */
     public function setFlagActive($flag_active)
     {
         $this->flag_active = $flag_active;
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -188,7 +177,6 @@ class Country
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -197,7 +185,6 @@ class Country
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -206,7 +193,6 @@ class Country
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -215,7 +201,8 @@ class Country
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -224,7 +211,8 @@ class Country
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -233,7 +221,8 @@ class Country
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -242,7 +231,8 @@ class Country
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -251,7 +241,8 @@ class Country
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -260,7 +251,8 @@ class Country
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -269,7 +261,8 @@ class Country
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -278,7 +271,8 @@ class Country
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()
@@ -297,7 +291,6 @@ class Country
     }
 
     /**
-     *
      * @return string
      */
     public function __toString()
@@ -309,6 +302,7 @@ class Country
      * Magic getter to expose protected properties.
      *
      * @param string $property
+     *
      * @return mixed
      */
     public function __get($property)
@@ -320,7 +314,7 @@ class Country
      * Magic setter to save protected properties.
      *
      * @param string $property
-     * @param mixed $value
+     * @param mixed  $value
      */
     public function __set($property, $value)
     {

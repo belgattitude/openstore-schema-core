@@ -23,7 +23,6 @@ use Doctrine\Common\Collections\Collection;
  *   },
  *   options={"comment" = "Access roles"}
  * )
- *
  */
 class Role implements HierarchicalRoleInterface
 {
@@ -96,7 +95,7 @@ class Role implements HierarchicalRoleInterface
     private $users;
 
     /**
-     * Init the Doctrine collection
+     * Init the Doctrine collection.
      */
     public function __construct()
     {
@@ -106,7 +105,7 @@ class Role implements HierarchicalRoleInterface
     }
 
     /**
-     * Get the role identifier
+     * Get the role identifier.
      *
      * @return int
      */
@@ -116,7 +115,7 @@ class Role implements HierarchicalRoleInterface
     }
 
     /**
-     * Get the role identifier
+     * Get the role identifier.
      *
      * @return int
      */
@@ -126,10 +125,9 @@ class Role implements HierarchicalRoleInterface
     }
 
     /**
-     * Set the role name
+     * Set the role name.
      *
-     * @param  string $name
-     * @return void
+     * @param string $name
      */
     public function setName($name)
     {
@@ -137,7 +135,7 @@ class Role implements HierarchicalRoleInterface
     }
 
     /**
-     * Get the role name
+     * Get the role name.
      *
      * @return string
      */
@@ -147,7 +145,7 @@ class Role implements HierarchicalRoleInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function addChild(HierarchicalRoleInterface $child)
     {
@@ -155,7 +153,7 @@ class Role implements HierarchicalRoleInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function addPermission($permission)
     {
@@ -167,7 +165,7 @@ class Role implements HierarchicalRoleInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function hasPermission($permission)
     {
@@ -213,7 +211,7 @@ class Role implements HierarchicalRoleInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     /*
       public function getChildren()
@@ -223,7 +221,7 @@ class Role implements HierarchicalRoleInterface
      */
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function hasChildren()
     {
@@ -231,7 +229,7 @@ class Role implements HierarchicalRoleInterface
     }
 
     /**
-     * Get users
+     * Get users.
      *
      * @return User
      */

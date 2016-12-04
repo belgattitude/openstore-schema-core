@@ -24,14 +24,12 @@ class ApiKeyLog
     private $id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="ApiKey", inversedBy="services", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="api_id", referencedColumnName="api_id", onDelete="CASCADE", nullable=false)
      */
     private $api_id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="ApiService", inversedBy="keys", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="service_id", referencedColumnName="service_id", onDelete="CASCADE", nullable=true)
      */
@@ -69,8 +67,7 @@ class ApiKeyLog
     private $usage_count;
 
     /**
-     *
-     * @param integer $id
+     * @param int $id
      */
     public function setId($id)
     {
@@ -78,8 +75,7 @@ class ApiKeyLog
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -87,8 +83,7 @@ class ApiKeyLog
     }
 
     /**
-     *
-     * @param integer $api_id
+     * @param int $api_id
      */
     public function setApiId($api_id)
     {
@@ -96,8 +91,7 @@ class ApiKeyLog
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getApiId()
     {
@@ -105,8 +99,7 @@ class ApiKeyLog
     }
 
     /**
-     *
-     * @param integer $service_id
+     * @param int $service_id
      */
     public function setServiceId($service_id)
     {
@@ -114,8 +107,7 @@ class ApiKeyLog
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getServiceId()
     {
@@ -123,7 +115,6 @@ class ApiKeyLog
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -132,7 +123,6 @@ class ApiKeyLog
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -151,7 +141,6 @@ class ApiKeyLog
     }
 
     /**
-     *
      * @return string
      */
     public function __toString()
@@ -163,6 +152,7 @@ class ApiKeyLog
      * Magic getter to expose protected properties.
      *
      * @param string $property
+     *
      * @return mixed
      */
     public function __get($property)
@@ -174,7 +164,7 @@ class ApiKeyLog
      * Magic setter to save protected properties.
      *
      * @param string $property
-     * @param mixed $value
+     * @param mixed  $value
      */
     public function __set($property, $value)
     {

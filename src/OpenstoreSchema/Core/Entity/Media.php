@@ -24,8 +24,6 @@ use Gedmo\Mapping\Annotation as Gedmo;
  */
 class Media
 {
-
-
     /**
      * @ORM\Id
      * @ORM\Column(name="media_id", type="bigint", nullable=false, options={"unsigned"=true})
@@ -33,16 +31,13 @@ class Media
      */
     private $media_id;
 
-
     /**
-     *
      * @ORM\ManyToOne(targetEntity="MediaType", inversedBy="medias", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="type_id", referencedColumnName="type_id", onDelete="CASCADE", nullable=true)
      */
     private $type_id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="MediaContainer", inversedBy="medias", cascade={"persist", "remove"})
      * @ORM\JoinColumn( name="container_id",
      *                  referencedColumnName="container_id",
@@ -62,12 +57,10 @@ class Media
      */
     private $remote_media_id;
 
-
     /**
      * @ORM\Column(type="string", length=255, nullable=true, options={"comment" = "Remote media image preview url"})
      */
     private $remote_preview_url;
-
 
     /**
      * @ORM\Column(type="string", length=60, nullable=true)
@@ -94,7 +87,6 @@ class Media
      */
     private $duration;
 
-
     /**
      * @ORM\Column(type="integer", nullable=true, options={"unsigned" = true})
      */
@@ -109,7 +101,6 @@ class Media
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $description;
-
 
     /**
      * @Gedmo\Timestampable(on="create")
@@ -155,8 +146,8 @@ class Media
     }
 
     /**
+     * @param int $media_id
      *
-     * @param integer $media_id
      * @return \OpenstoreSchema\Core\Entity\Media
      */
     public function setMediaId($media_id)
@@ -165,8 +156,7 @@ class Media
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getMediaId()
     {
@@ -174,7 +164,6 @@ class Media
     }
 
     /**
-     *
      * @param string $filename
      */
     public function setFilename($filename)
@@ -183,7 +172,6 @@ class Media
     }
 
     /**
-     *
      * @return string
      */
     public function getFilename()
@@ -192,7 +180,6 @@ class Media
     }
 
     /**
-     *
      * @param string $location
      */
     public function setLocation($location)
@@ -201,7 +188,6 @@ class Media
     }
 
     /**
-     *
      * @return string
      */
     public function getLocation()
@@ -210,7 +196,6 @@ class Media
     }
 
     /**
-     *
      * @param string $title
      */
     public function setTitle($title)
@@ -219,7 +204,6 @@ class Media
     }
 
     /**
-     *
      * @return string
      */
     public function getTitle()
@@ -228,7 +212,6 @@ class Media
     }
 
     /**
-     *
      * @param string $description
      */
     public function setDescription($description)
@@ -237,7 +220,6 @@ class Media
     }
 
     /**
-     *
      * @return string
      */
     public function getDescription()
@@ -246,7 +228,6 @@ class Media
     }
 
     /**
-     *
      * @return int
      */
     public function getFilesize()
@@ -255,7 +236,6 @@ class Media
     }
 
     /**
-     *
      * @param int $filesize
      */
     public function setFilesize($filesize)
@@ -264,7 +244,6 @@ class Media
     }
 
     /**
-     *
      * @return int
      */
     public function getFilemtime()
@@ -273,7 +252,6 @@ class Media
     }
 
     /**
-     *
      * @param int $filemtime
      */
     public function setFilemtime($filemtime)
@@ -282,7 +260,6 @@ class Media
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -291,7 +268,6 @@ class Media
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -300,7 +276,6 @@ class Media
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -309,7 +284,6 @@ class Media
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -318,7 +292,6 @@ class Media
     }
 
     /**
-     *
      * @return string
      */
     public function getDeletedAt()
@@ -327,7 +300,6 @@ class Media
     }
 
     /**
-     *
      * @param string $deleted_at
      */
     public function setDeletedAt($deleted_at)
@@ -336,7 +308,8 @@ class Media
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -345,7 +318,8 @@ class Media
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -354,7 +328,8 @@ class Media
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -363,7 +338,8 @@ class Media
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -372,7 +348,8 @@ class Media
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -381,7 +358,8 @@ class Media
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -390,7 +368,8 @@ class Media
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -399,7 +378,8 @@ class Media
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()
@@ -418,7 +398,6 @@ class Media
     }
 
     /**
-     *
      * @return string
      */
     public function __toString()
@@ -430,6 +409,7 @@ class Media
      * Magic getter to expose protected properties.
      *
      * @param string $property
+     *
      * @return mixed
      */
     public function __get($property)
@@ -441,7 +421,7 @@ class Media
      * Magic setter to save protected properties.
      *
      * @param string $property
-     * @param mixed $value
+     * @param mixed  $value
      */
     public function __set($property, $value)
     {

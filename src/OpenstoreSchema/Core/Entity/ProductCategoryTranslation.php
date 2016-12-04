@@ -26,7 +26,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
 class ProductCategoryTranslation
 {
     /**
-     * @var \Zend\InputFilter\InputFilterInterface $inputFilter
+     * @var \Zend\InputFilter\InputFilterInterface
      */
     protected $inputFilter;
 
@@ -38,7 +38,6 @@ class ProductCategoryTranslation
     private $id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="ProductCategory", inversedBy="translations", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="category_id", referencedColumnName="category_id", onDelete="CASCADE", nullable=false)
      */
@@ -76,12 +75,10 @@ class ProductCategoryTranslation
      */
     private $keywords;
 
-
     /**
      * @ORM\Column(type="string", length=255, nullable=true, options={"default"=null, "comment"="Rankable breadcrumb if product_category.flag_rankable is true"})
      */
     private $rankable_breadcrumb;
-
 
     /**
      * @Gedmo\Timestampable(on="create")
@@ -122,8 +119,7 @@ class ProductCategoryTranslation
     }
 
     /**
-     *
-     * @param integer $id
+     * @param int $id
      */
     public function setId($id)
     {
@@ -131,8 +127,7 @@ class ProductCategoryTranslation
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -148,7 +143,6 @@ class ProductCategoryTranslation
     }
 
     /**
-     *
      * @return string
      */
     public function getSlug()
@@ -157,7 +151,6 @@ class ProductCategoryTranslation
     }
 
     /**
-     *
      * @param string $title
      */
     public function setTitle($title)
@@ -166,7 +159,6 @@ class ProductCategoryTranslation
     }
 
     /**
-     *
      * @return string
      */
     public function getTitle()
@@ -175,7 +167,6 @@ class ProductCategoryTranslation
     }
 
     /**
-     *
      * @param string $description
      */
     public function setDescription($description)
@@ -184,7 +175,6 @@ class ProductCategoryTranslation
     }
 
     /**
-     *
      * @return string
      */
     public function getDescription()
@@ -193,8 +183,7 @@ class ProductCategoryTranslation
     }
 
     /**
-     *
-     * @param integer $product_id
+     * @param int $product_id
      */
     public function setProductId($product_id)
     {
@@ -202,8 +191,7 @@ class ProductCategoryTranslation
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getProductId()
     {
@@ -211,8 +199,7 @@ class ProductCategoryTranslation
     }
 
     /**
-     *
-     * @param integer $lang_id
+     * @param int $lang_id
      */
     public function setLangId($lang_id)
     {
@@ -220,8 +207,7 @@ class ProductCategoryTranslation
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getLangId()
     {
@@ -229,7 +215,6 @@ class ProductCategoryTranslation
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -238,7 +223,6 @@ class ProductCategoryTranslation
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -247,7 +231,6 @@ class ProductCategoryTranslation
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -256,7 +239,6 @@ class ProductCategoryTranslation
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -265,7 +247,8 @@ class ProductCategoryTranslation
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -274,7 +257,8 @@ class ProductCategoryTranslation
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -283,7 +267,8 @@ class ProductCategoryTranslation
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -292,7 +277,8 @@ class ProductCategoryTranslation
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -301,7 +287,8 @@ class ProductCategoryTranslation
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -310,7 +297,8 @@ class ProductCategoryTranslation
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -319,7 +307,8 @@ class ProductCategoryTranslation
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -328,7 +317,8 @@ class ProductCategoryTranslation
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()
@@ -347,7 +337,6 @@ class ProductCategoryTranslation
     }
 
     /**
-     *
      * @return string
      */
     public function __toString()
@@ -359,6 +348,7 @@ class ProductCategoryTranslation
      * Magic getter to expose protected properties.
      *
      * @param string $property
+     *
      * @return mixed
      */
     public function __get($property)
@@ -370,7 +360,7 @@ class ProductCategoryTranslation
      * Magic setter to save protected properties.
      *
      * @param string $property
-     * @param mixed $value
+     * @param mixed  $value
      */
     public function __set($property, $value)
     {

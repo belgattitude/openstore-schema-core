@@ -21,8 +21,6 @@ use Gedmo\Mapping\Annotation as Gedmo;
  */
 class ProductMedia
 {
-
-
     /**
      * @ORM\Id
      * @ORM\Column(name="id", type="bigint", nullable=false, options={"unsigned"=true})
@@ -31,34 +29,29 @@ class ProductMedia
     private $id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="Product", inversedBy="products", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="product_id", referencedColumnName="product_id", onDelete="CASCADE", nullable=false)
      */
     private $product_id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="Media", inversedBy="products", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="media_id", referencedColumnName="media_id", onDelete="CASCADE", nullable=false)
      */
     private $media_id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="ProductMediaType", inversedBy="products", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="type_id", referencedColumnName="type_id", onDelete="CASCADE", nullable=false)
      */
     private $type_id;
 
     /**
-     *
      * @ORM\Column(name="flag_primary", type="boolean", nullable=true)
      */
     private $flag_primary;
 
     /**
-     *
      * @ORM\Column(name="sort_index", type="integer", nullable=true, options={"unsigned"=true})
      */
     private $sort_index;
@@ -102,8 +95,7 @@ class ProductMedia
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -111,8 +103,8 @@ class ProductMedia
     }
 
     /**
+     * @param int $product_id
      *
-     * @param integer $product_id
      * @return \OpenstoreSchema\Core\Entity\ProductMedia
      */
     public function setProductId($product_id)
@@ -121,8 +113,7 @@ class ProductMedia
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getProductId()
     {
@@ -130,8 +121,8 @@ class ProductMedia
     }
 
     /**
+     * @param int $media_id
      *
-     * @param integer $media_id
      * @return \OpenstoreSchema\Core\Entity\ProductMedia
      */
     public function setMediaId($media_id)
@@ -140,8 +131,7 @@ class ProductMedia
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getMediaId()
     {
@@ -149,8 +139,8 @@ class ProductMedia
     }
 
     /**
+     * @param int $type_id
      *
-     * @param integer $type_id
      * @return \OpenstoreSchema\Core\Entity\ProductMedia
      */
     public function setTypeId($type_id)
@@ -159,8 +149,7 @@ class ProductMedia
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getTypeId()
     {
@@ -168,7 +157,6 @@ class ProductMedia
     }
 
     /**
-     *
      * @return int
      */
     public function getSortIndex()
@@ -177,7 +165,6 @@ class ProductMedia
     }
 
     /**
-     *
      * @param int $sort_index
      */
     public function setSortIndex($sort_index)
@@ -186,7 +173,6 @@ class ProductMedia
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -195,7 +181,6 @@ class ProductMedia
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -204,7 +189,6 @@ class ProductMedia
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -213,7 +197,6 @@ class ProductMedia
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -222,7 +205,8 @@ class ProductMedia
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -231,7 +215,8 @@ class ProductMedia
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -240,7 +225,8 @@ class ProductMedia
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -249,7 +235,8 @@ class ProductMedia
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -258,7 +245,8 @@ class ProductMedia
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -267,7 +255,8 @@ class ProductMedia
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -276,7 +265,8 @@ class ProductMedia
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -285,7 +275,8 @@ class ProductMedia
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()
@@ -307,6 +298,7 @@ class ProductMedia
      * Magic getter to expose protected properties.
      *
      * @param string $property
+     *
      * @return mixed
      */
     public function __get($property)
@@ -318,7 +310,7 @@ class ProductMedia
      * Magic setter to save protected properties.
      *
      * @param string $property
-     * @param mixed $value
+     * @param mixed  $value
      */
     public function __set($property, $value)
     {

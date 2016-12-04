@@ -43,7 +43,6 @@ class ProductSetType
      */
     private $description;
 
-
     /**
      * @ORM\Column(type="boolean", nullable=true, options={"default"=null, "comment"="Is the default state"})
      */
@@ -95,16 +94,14 @@ class ProductSetType
 
     public function __construct()
     {
-
-        /**
+        /*
          * Default value for flag_active
          */
         $this->flag_active = true;
     }
 
     /**
-     *
-     * @param integer $type_id
+     * @param int $type_id
      */
     public function setTypeId($type_id)
     {
@@ -112,8 +109,7 @@ class ProductSetType
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getTypeId()
     {
@@ -121,7 +117,8 @@ class ProductSetType
     }
 
     /**
-     * Set reference
+     * Set reference.
+     *
      * @param string $reference
      */
     public function setReference($reference)
@@ -130,7 +127,8 @@ class ProductSetType
     }
 
     /**
-     * Return reference
+     * Return reference.
+     *
      * @return string
      */
     public function getReference()
@@ -139,7 +137,6 @@ class ProductSetType
     }
 
     /**
-     *
      * @param string $title
      */
     public function setTitle($title)
@@ -148,7 +145,6 @@ class ProductSetType
     }
 
     /**
-     *
      * @return string
      */
     public function getTitle()
@@ -157,7 +153,6 @@ class ProductSetType
     }
 
     /**
-     *
      * @param string $description
      */
     public function setDescription($description)
@@ -166,7 +161,8 @@ class ProductSetType
     }
 
     /**
-     * Return description
+     * Return description.
+     *
      * @return string
      */
     public function getDescription()
@@ -174,26 +170,20 @@ class ProductSetType
         return $this->description;
     }
 
-
     /**
-     *
-     * @return boolean
+     * @return bool
      */
     public function getFlagDefault()
     {
-        return (boolean) $this->flag_default;
+        return (bool) $this->flag_default;
     }
 
-    /**
-     *
-     */
     public function setFlagDefault($flag_default)
     {
         $this->flag_default = $flag_default;
     }
 
     /**
-     *
      * @return string
      */
     public function setIconClass($icon_class)
@@ -202,7 +192,6 @@ class ProductSetType
     }
 
     /**
-     *
      * @return string
      */
     public function getIconClass()
@@ -211,24 +200,19 @@ class ProductSetType
     }
 
     /**
-     *
-     * @return boolean
+     * @return bool
      */
     public function getFlagActive()
     {
-        return (boolean) $this->flag_active;
+        return (bool) $this->flag_active;
     }
 
-    /**
-     *
-     */
     public function setFlagActive($flag_active)
     {
         $this->flag_active = $flag_active;
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -237,7 +221,6 @@ class ProductSetType
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -246,7 +229,6 @@ class ProductSetType
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -255,7 +237,6 @@ class ProductSetType
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -264,7 +245,8 @@ class ProductSetType
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -273,7 +255,8 @@ class ProductSetType
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -282,7 +265,8 @@ class ProductSetType
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -291,7 +275,8 @@ class ProductSetType
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -300,7 +285,8 @@ class ProductSetType
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -309,7 +295,8 @@ class ProductSetType
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -318,7 +305,8 @@ class ProductSetType
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_synchro_at
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -327,7 +315,8 @@ class ProductSetType
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()

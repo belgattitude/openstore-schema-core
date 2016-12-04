@@ -33,7 +33,8 @@ class ProductSet
     private $set_id;
 
     /**
-     * Type id
+     * Type id.
+     *
      * @ORM\ManyToOne(targetEntity="ProductSetType", inversedBy="products", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="type_id", referencedColumnName="type_id", onDelete="CASCADE", nullable=true)
      */
@@ -111,15 +112,14 @@ class ProductSet
 
     public function __construct()
     {
-        /**
+        /*
          * Default value for flag_active
          */
         $this->flag_active = true;
     }
 
     /**
-     *
-     * @param integer $id
+     * @param int $id
      */
     public function setId($id)
     {
@@ -127,8 +127,7 @@ class ProductSet
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -136,7 +135,8 @@ class ProductSet
     }
 
     /**
-     * Set reference
+     * Set reference.
+     *
      * @param string $reference
      */
     public function setReference($reference)
@@ -145,7 +145,8 @@ class ProductSet
     }
 
     /**
-     * Return reference
+     * Return reference.
+     *
      * @return string
      */
     public function getReference()
@@ -162,7 +163,6 @@ class ProductSet
     }
 
     /**
-     *
      * @return string
      */
     public function getSlug()
@@ -171,7 +171,6 @@ class ProductSet
     }
 
     /**
-     *
      * @param string $title
      */
     public function setTitle($title)
@@ -180,7 +179,6 @@ class ProductSet
     }
 
     /**
-     *
      * @return string
      */
     public function getTitle()
@@ -189,7 +187,6 @@ class ProductSet
     }
 
     /**
-     *
      * @param string $description
      */
     public function setDescription($description)
@@ -198,7 +195,6 @@ class ProductSet
     }
 
     /**
-     *
      * @return string
      */
     public function getDescription()
@@ -207,7 +203,6 @@ class ProductSet
     }
 
     /**
-     *
      * @param string $url homepage url
      */
     public function setUrl($url)
@@ -216,7 +211,6 @@ class ProductSet
     }
 
     /**
-     *
      * @return string
      */
     public function getUrl()
@@ -225,7 +219,6 @@ class ProductSet
     }
 
     /**
-     *
      * @return string
      */
     public function setIconClass($icon_class)
@@ -234,7 +227,6 @@ class ProductSet
     }
 
     /**
-     *
      * @return string
      */
     public function getIconClass()
@@ -243,24 +235,19 @@ class ProductSet
     }
 
     /**
-     *
-     * @return boolean
+     * @return bool
      */
     public function getFlagActive()
     {
-        return (boolean) $this->flag_active;
+        return (bool) $this->flag_active;
     }
 
-    /**
-     *
-     */
     public function setFlagActive($flag_active)
     {
         $this->flag_active = $flag_active;
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -269,7 +256,6 @@ class ProductSet
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -278,7 +264,6 @@ class ProductSet
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -287,7 +272,6 @@ class ProductSet
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -296,7 +280,8 @@ class ProductSet
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -305,7 +290,8 @@ class ProductSet
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -314,7 +300,8 @@ class ProductSet
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -323,7 +310,8 @@ class ProductSet
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -332,7 +320,8 @@ class ProductSet
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -341,7 +330,8 @@ class ProductSet
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -350,7 +340,8 @@ class ProductSet
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -359,7 +350,8 @@ class ProductSet
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()

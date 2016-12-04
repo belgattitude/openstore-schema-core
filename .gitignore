@@ -8,6 +8,7 @@ nbproject
 .project
 .settings
 *.bak
+.*.cache
 composer.lock
 config/openstore-schema-core.config.php
 vendor

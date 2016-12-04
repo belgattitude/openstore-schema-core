@@ -31,7 +31,6 @@ class Customer
     private $reference;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="CustomerGroup", inversedBy="customers", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="group_id", referencedColumnName="group_id", onDelete="CASCADE", nullable=true)
      */
@@ -78,7 +77,6 @@ class Customer
     private $city;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="Country", inversedBy="customers", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="country_id", referencedColumnName="country_id", nullable=true)
      */
@@ -165,15 +163,14 @@ class Customer
 
     public function __construct()
     {
-        /**
+        /*
          * Default value for flag_active
          */
         $this->flag_active = true;
     }
 
     /**
-     *
-     * @param integer $customer_id
+     * @param int $customer_id
      */
     public function setId($customer_id)
     {
@@ -181,8 +178,7 @@ class Customer
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getCustomerId()
     {
@@ -190,7 +186,8 @@ class Customer
     }
 
     /**
-     * Set reference
+     * Set reference.
+     *
      * @param string $reference
      */
     public function setReference($reference)
@@ -199,7 +196,8 @@ class Customer
     }
 
     /**
-     * Return reference
+     * Return reference.
+     *
      * @return string
      */
     public function getReference()
@@ -208,7 +206,6 @@ class Customer
     }
 
     /**
-     *
      * @param string $title
      */
     public function setName($name)
@@ -217,7 +214,6 @@ class Customer
     }
 
     /**
-     *
      * @return string
      */
     public function getName()
@@ -226,7 +222,6 @@ class Customer
     }
 
     /**
-     *
      * @param string $first_name
      */
     public function setFirstName($first_name)
@@ -235,7 +230,6 @@ class Customer
     }
 
     /**
-     *
      * @return string
      */
     public function getFirstName()
@@ -244,24 +238,19 @@ class Customer
     }
 
     /**
-     *
-     * @return boolean
+     * @return bool
      */
     public function getFlagActive()
     {
-        return (boolean) $this->flag_active;
+        return (bool) $this->flag_active;
     }
 
-    /**
-     *
-     */
     public function setFlagActive($flag_active)
     {
         $this->flag_active = $flag_active;
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -270,7 +259,6 @@ class Customer
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -279,7 +267,6 @@ class Customer
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -288,7 +275,6 @@ class Customer
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -297,7 +283,8 @@ class Customer
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -306,7 +293,8 @@ class Customer
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -315,7 +303,8 @@ class Customer
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -324,7 +313,8 @@ class Customer
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -333,7 +323,8 @@ class Customer
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -342,7 +333,8 @@ class Customer
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -351,7 +343,8 @@ class Customer
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -360,7 +353,8 @@ class Customer
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()
@@ -379,7 +373,6 @@ class Customer
     }
 
     /**
-     *
      * @return string
      */
     public function __toString()
@@ -391,6 +384,7 @@ class Customer
      * Magic getter to expose protected properties.
      *
      * @param string $property
+     *
      * @return mixed
      */
     public function __get($property)
@@ -402,7 +396,7 @@ class Customer
      * Magic setter to save protected properties.
      *
      * @param string $property
-     * @param mixed $value
+     * @param mixed  $value
      */
     public function __set($property, $value)
     {

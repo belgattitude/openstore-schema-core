@@ -21,14 +21,12 @@ use Gedmo\Mapping\Annotation as Gedmo;
  */
 class ProductStub
 {
-
     /**
      * @ORM\Id
      * @ORM\Column(name="product_stub_id", type="integer", nullable=false, options={"unsigned"=true})
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $product_stub_id;
-
 
     /**
      * @ORM\Column(type="string", length=60, nullable=false, options={"comment" = "Unique reference"})
@@ -57,10 +55,9 @@ class ProductStub
      */
     protected $legacy_synchro_at;
 
-
-
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -69,7 +66,8 @@ class ProductStub
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -78,7 +76,8 @@ class ProductStub
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -87,7 +86,8 @@ class ProductStub
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -96,7 +96,8 @@ class ProductStub
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -105,7 +106,8 @@ class ProductStub
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -114,7 +116,8 @@ class ProductStub
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -123,7 +126,8 @@ class ProductStub
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()

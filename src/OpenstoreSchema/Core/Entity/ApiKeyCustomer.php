@@ -26,14 +26,12 @@ class ApiKeyCustomer
     private $id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="ApiKey", inversedBy="services", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="api_id", referencedColumnName="api_id", onDelete="CASCADE", nullable=false)
      */
     private $api_id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="Customer", inversedBy="keys", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="customer_id", referencedColumnName="customer_id", onDelete="CASCADE", nullable=false)
      */
@@ -78,8 +76,7 @@ class ApiKeyCustomer
     }
 
     /**
-     *
-     * @param integer $id
+     * @param int $id
      */
     public function setId($id)
     {
@@ -87,8 +84,7 @@ class ApiKeyCustomer
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -96,8 +92,7 @@ class ApiKeyCustomer
     }
 
     /**
-     *
-     * @param integer $api_id
+     * @param int $api_id
      */
     public function setApiId($api_id)
     {
@@ -105,8 +100,7 @@ class ApiKeyCustomer
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getApiId()
     {
@@ -114,8 +108,7 @@ class ApiKeyCustomer
     }
 
     /**
-     *
-     * @param integer $customer_id
+     * @param int $customer_id
      */
     public function setCustomerId($customer_id)
     {
@@ -123,8 +116,7 @@ class ApiKeyCustomer
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getCustomerId()
     {
@@ -132,7 +124,6 @@ class ApiKeyCustomer
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -141,7 +132,6 @@ class ApiKeyCustomer
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -150,7 +140,6 @@ class ApiKeyCustomer
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -159,7 +148,6 @@ class ApiKeyCustomer
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -168,7 +156,6 @@ class ApiKeyCustomer
     }
 
     /**
-     *
      * @return string
      */
     public function getDeletedAt()
@@ -177,7 +164,6 @@ class ApiKeyCustomer
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setDeletedAt($deleted_at)
@@ -186,7 +172,8 @@ class ApiKeyCustomer
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -195,7 +182,8 @@ class ApiKeyCustomer
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -204,7 +192,8 @@ class ApiKeyCustomer
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -213,7 +202,8 @@ class ApiKeyCustomer
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -222,7 +212,8 @@ class ApiKeyCustomer
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -231,7 +222,8 @@ class ApiKeyCustomer
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -240,7 +232,8 @@ class ApiKeyCustomer
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -249,7 +242,8 @@ class ApiKeyCustomer
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()
@@ -268,7 +262,6 @@ class ApiKeyCustomer
     }
 
     /**
-     *
      * @return string
      */
     public function __toString()
@@ -280,6 +273,7 @@ class ApiKeyCustomer
      * Magic getter to expose protected properties.
      *
      * @param string $property
+     *
      * @return mixed
      */
     public function __get($property)
@@ -291,7 +285,7 @@ class ApiKeyCustomer
      * Magic setter to save protected properties.
      *
      * @param string $property
-     * @param mixed $value
+     * @param mixed  $value
      */
     public function __set($property, $value)
     {

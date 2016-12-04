@@ -17,15 +17,14 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     @ORM\Index(name="fresh_rank_idx", columns={"fresh_rank"}),
  *     @ORM\Index(name="bestseller_rank_idx", columns={"bestseller_rank"}),
  *     @ORM\Index(name="popular_rank_idx", columns={"popular_rank"}),
- *     @ORM\Index(name="trending_rank_idx", columns={"trending_rank"}), 
- *     @ORM\Index(name="mostrated_rank_idx", columns={"mostrated_rank"}), 
+ *     @ORM\Index(name="trending_rank_idx", columns={"trending_rank"}),
+ *     @ORM\Index(name="mostrated_rank_idx", columns={"mostrated_rank"}),
  *   },
  *   options={"comment" = "Product rankings"}
  * )
  */
 class ProductRank
 {
-
     /**
      * @ORM\Id
      * @ORM\Column(name="product_rank_id", type="bigint", nullable=false, options={"unsigned"=true})
@@ -33,74 +32,59 @@ class ProductRank
      */
     private $product_rank_id;
 
-
     /**
-     *
      * @ORM\ManyToOne(targetEntity="Product", inversedBy="products", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="product_id", referencedColumnName="product_id", onDelete="CASCADE", nullable=false)
      */
     private $product_id;
 
-
     /**
-     *
      * @ORM\ManyToOne(targetEntity="ProductCategory", inversedBy="categories", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="rankable_category_id", referencedColumnName="category_id", onDelete="CASCADE", nullable=true)
      */
     private $rankable_category_id;
 
-
     /**
-     *
      * @ORM\ManyToOne(targetEntity="Pricelist", inversedBy="products", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="pricelist_id", referencedColumnName="pricelist_id", onDelete="CASCADE", nullable=true)
      */
     private $pricelist_id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="ProductBrand", inversedBy="products", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="brand_id", referencedColumnName="brand_id", onDelete="CASCADE", nullable=true)
      */
     private $brand_id;
 
     /**
-     *
      * @ORM\Column(type="smallint", nullable=true, options={"unsigned"=true, "comment"="Notable deal product relative position in rankable category"})
      */
     private $deal_rank;
 
-
     /**
-     *
      * @ORM\Column(type="smallint", nullable=true, options={"unsigned"=true, "comment"="Fresh and shining product relative position in rankable category"})
      */
     private $fresh_rank;
 
-   /**
-     *
+    /**
      * @ORM\Column(type="smallint", nullable=true, options={"unsigned"=true, "comment"="Bestseller product relative position in rankable category"})
      */
     private $bestseller_rank;
 
-   /**
-     *
+    /**
      * @ORM\Column(type="smallint", nullable=true, options={"unsigned"=true, "comment"="Popular product relative position in rankable category"})
      */
     private $popular_rank;
 
-   /**
-     *
+    /**
      * @ORM\Column(type="smallint", nullable=true, options={"unsigned"=true, "comment"="Trending product relative position in rankable category"})
      */
     private $trending_rank;
 
     /**
-     *
      * @ORM\Column(type="smallint", nullable=true, options={"unsigned"=true, "comment"="Best rated product relative position in rankable category"})
      */
     private $mostrated_rank;
-
 
     /**
      * @ORM\Column(type="decimal", precision=15, scale=6, nullable=true, options={"comment"="Total recorded order line quantity (free period)"})
@@ -129,11 +113,8 @@ class ProductRank
      */
     private $updated_at;
 
-
-
     /**
-     *
-     * @param integer $id
+     * @param int $id
      */
     public function setId($id)
     {
@@ -141,18 +122,15 @@ class ProductRank
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
         return $this->product_rank_id;
     }
 
-
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getProductId()
     {
@@ -160,18 +138,15 @@ class ProductRank
     }
 
     /**
-     *
-     * @param integer $product_id
+     * @param int $product_id
      */
     public function setProductId($product_id)
     {
         $this->product_id = $product_id;
     }
 
-
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getRankableCategoryId()
     {
@@ -179,28 +154,23 @@ class ProductRank
     }
 
     /**
-     *
-     * @param integer $rankable_category_id
+     * @param int $rankable_category_id
      */
     public function setRankableCategoryId($rankable_category_id)
     {
         $this->rankable_category_id = $rankable_category_id;
     }
 
-
     /**
-     *
-     * @param integer $pricelist_id
+     * @param int $pricelist_id
      */
     public function setPricelistId($pricelist_id)
     {
         $this->pricelist_id = $pricelist_id;
     }
 
-
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getPricelistId()
     {
@@ -208,7 +178,6 @@ class ProductRank
     }
 
     /**
-     *
      * @param int $brand_id
      */
     public function setBrandId($brand_id)
@@ -217,16 +186,14 @@ class ProductRank
     }
 
     /**
-     * @return integer
+     * @return int
      */
     public function getBrandId()
     {
         return $this->brand_id;
     }
 
-
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -235,7 +202,6 @@ class ProductRank
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -244,7 +210,6 @@ class ProductRank
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -253,7 +218,6 @@ class ProductRank
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)

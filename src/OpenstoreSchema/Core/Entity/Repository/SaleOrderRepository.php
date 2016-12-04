@@ -1,4 +1,5 @@
 <?php
+
 namespace OpenstoreSchema\Core\Entity\Repository;
 
 use Zend\InputFilter\InputFilter;
@@ -10,13 +11,11 @@ use Doctrine\ORM\EntityRepository;
 class SaleOrderRepository extends EntityRepository implements InputFilterAwareInterface
 {
     /**
-     * @var InputFilterInterface $inputFilter
+     * @var InputFilterInterface
      */
     protected $inputFilter;
 
-
     /**
-     *
      * @param InputFilterInterface $inputFilter
      */
     public function setInputFilter(InputFilterInterface $inputFilter)
@@ -25,7 +24,6 @@ class SaleOrderRepository extends EntityRepository implements InputFilterAwareIn
     }
 
     /**
-     *
      * @return InputFilterInterface $inputFilter
      */
     public function getInputFilter()

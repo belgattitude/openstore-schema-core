@@ -86,8 +86,6 @@ class SaleDelivery
      */
     protected $legacy_synchro_at;
 
-
-
     public function setDeliveredAt($delivered_at)
     {
         $this->delivered_at = $delivered_at;
@@ -100,7 +98,6 @@ class SaleDelivery
     {
         $this->customer_reference = $customer_reference;
     }
-
 
     /**
      * @return string
@@ -127,7 +124,6 @@ class SaleDelivery
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -136,7 +132,6 @@ class SaleDelivery
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -145,7 +140,6 @@ class SaleDelivery
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -154,7 +148,6 @@ class SaleDelivery
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -163,7 +156,6 @@ class SaleDelivery
     }
 
     /**
-     *
      * @return string
      */
     public function getDeletedAt()
@@ -172,7 +164,6 @@ class SaleDelivery
     }
 
     /**
-     *
      * @param string $deleted_at
      */
     public function setDeletedAt($deleted_at)
@@ -181,7 +172,8 @@ class SaleDelivery
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -190,7 +182,8 @@ class SaleDelivery
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -199,7 +192,8 @@ class SaleDelivery
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -208,7 +202,8 @@ class SaleDelivery
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -217,7 +212,8 @@ class SaleDelivery
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -226,7 +222,8 @@ class SaleDelivery
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -235,7 +232,8 @@ class SaleDelivery
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -244,7 +242,8 @@ class SaleDelivery
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()

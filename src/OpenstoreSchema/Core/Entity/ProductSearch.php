@@ -30,7 +30,6 @@ class ProductSearch
     private $id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="Product", inversedBy="translations", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="product_id", referencedColumnName="product_id", onDelete="CASCADE", nullable=false)
      */
@@ -59,8 +58,7 @@ class ProductSearch
     private $updated_at;
 
     /**
-     *
-     * @param integer $id
+     * @param int $id
      */
     public function setId($id)
     {
@@ -68,8 +66,7 @@ class ProductSearch
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -77,7 +74,6 @@ class ProductSearch
     }
 
     /**
-     *
      * @param string $keywords
      */
     public function setKeywords($keywords)
@@ -86,7 +82,6 @@ class ProductSearch
     }
 
     /**
-     *
      * @return string
      */
     public function getKeywords()
@@ -95,8 +90,7 @@ class ProductSearch
     }
 
     /**
-     *
-     * @param integer $product_id
+     * @param int $product_id
      */
     public function setProductId($product_id)
     {
@@ -104,8 +98,7 @@ class ProductSearch
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getProductId()
     {
@@ -113,8 +106,7 @@ class ProductSearch
     }
 
     /**
-     *
-     * @param integer $lang_id
+     * @param int $lang_id
      */
     public function setLangId($lang_id)
     {
@@ -122,8 +114,7 @@ class ProductSearch
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getLangId()
     {
@@ -131,7 +122,6 @@ class ProductSearch
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -140,7 +130,6 @@ class ProductSearch
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)

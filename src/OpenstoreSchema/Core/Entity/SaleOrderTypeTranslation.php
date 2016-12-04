@@ -29,7 +29,6 @@ class SaleOrderTypeTranslation
     private $id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="SaleOrderType", inversedBy="translations", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="type_id", referencedColumnName="type_id", onDelete="CASCADE", nullable=false)
      */
@@ -85,8 +84,7 @@ class SaleOrderTypeTranslation
     }
 
     /**
-     *
-     * @param integer $id
+     * @param int $id
      */
     public function setId($id)
     {
@@ -94,8 +92,7 @@ class SaleOrderTypeTranslation
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -111,7 +108,6 @@ class SaleOrderTypeTranslation
     }
 
     /**
-     *
      * @return string
      */
     public function getSlug()
@@ -120,7 +116,6 @@ class SaleOrderTypeTranslation
     }
 
     /**
-     *
      * @param string $title
      */
     public function setTitle($title)
@@ -129,7 +124,6 @@ class SaleOrderTypeTranslation
     }
 
     /**
-     *
      * @return string
      */
     public function getTitle()
@@ -138,8 +132,7 @@ class SaleOrderTypeTranslation
     }
 
     /**
-     *
-     * @param integer $lang_id
+     * @param int $lang_id
      */
     public function setLangId($lang_id)
     {
@@ -147,8 +140,7 @@ class SaleOrderTypeTranslation
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getLangId()
     {
@@ -156,7 +148,6 @@ class SaleOrderTypeTranslation
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -165,7 +156,6 @@ class SaleOrderTypeTranslation
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -174,7 +164,6 @@ class SaleOrderTypeTranslation
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -183,7 +172,6 @@ class SaleOrderTypeTranslation
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -192,7 +180,8 @@ class SaleOrderTypeTranslation
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -201,7 +190,8 @@ class SaleOrderTypeTranslation
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -210,7 +200,8 @@ class SaleOrderTypeTranslation
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -219,7 +210,8 @@ class SaleOrderTypeTranslation
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -228,7 +220,8 @@ class SaleOrderTypeTranslation
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -237,7 +230,8 @@ class SaleOrderTypeTranslation
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -246,7 +240,8 @@ class SaleOrderTypeTranslation
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -255,7 +250,8 @@ class SaleOrderTypeTranslation
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()
@@ -274,7 +270,6 @@ class SaleOrderTypeTranslation
     }
 
     /**
-     *
      * @return string
      */
     public function __toString()
@@ -286,6 +281,7 @@ class SaleOrderTypeTranslation
      * Magic getter to expose protected properties.
      *
      * @param string $property
+     *
      * @return mixed
      */
     public function __get($property)
@@ -297,7 +293,7 @@ class SaleOrderTypeTranslation
      * Magic setter to save protected properties.
      *
      * @param string $property
-     * @param mixed $value
+     * @param mixed  $value
      */
     public function __set($property, $value)
     {

@@ -83,7 +83,7 @@ class SaleOrderType
     {
         $this->translations = new \Doctrine\Common\Collections\ArrayCollection();
 
-        /**
+        /*
          * Default value for flag_active
          */
         $this->flag_active = true;
@@ -100,8 +100,7 @@ class SaleOrderType
     }
 
     /**
-     *
-     * @param integer $type_id
+     * @param int $type_id
      */
     public function setTypeId($type_id)
     {
@@ -109,8 +108,7 @@ class SaleOrderType
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getTypeId()
     {
@@ -118,7 +116,8 @@ class SaleOrderType
     }
 
     /**
-     * Set reference
+     * Set reference.
+     *
      * @param string $reference
      */
     public function setReference($reference)
@@ -127,7 +126,8 @@ class SaleOrderType
     }
 
     /**
-     * Return reference
+     * Return reference.
+     *
      * @return string
      */
     public function getReference()
@@ -136,7 +136,6 @@ class SaleOrderType
     }
 
     /**
-     *
      * @param string $title
      */
     public function setTitle($title)
@@ -145,7 +144,6 @@ class SaleOrderType
     }
 
     /**
-     *
      * @return string
      */
     public function getTitle()
@@ -154,24 +152,19 @@ class SaleOrderType
     }
 
     /**
-     *
-     * @return boolean
+     * @return bool
      */
     public function getFlagActive()
     {
-        return (boolean) $this->flag_active;
+        return (bool) $this->flag_active;
     }
 
-    /**
-     *
-     */
     public function setFlagActive($flag_active)
     {
         $this->flag_active = $flag_active;
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -180,7 +173,6 @@ class SaleOrderType
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -189,7 +181,6 @@ class SaleOrderType
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -198,7 +189,6 @@ class SaleOrderType
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -207,7 +197,8 @@ class SaleOrderType
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -216,7 +207,8 @@ class SaleOrderType
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -225,7 +217,8 @@ class SaleOrderType
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -234,7 +227,8 @@ class SaleOrderType
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -243,7 +237,8 @@ class SaleOrderType
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -252,7 +247,8 @@ class SaleOrderType
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -261,7 +257,8 @@ class SaleOrderType
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -270,7 +267,8 @@ class SaleOrderType
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()
@@ -289,7 +287,6 @@ class SaleOrderType
     }
 
     /**
-     *
      * @return string
      */
     public function __toString()
@@ -301,6 +298,7 @@ class SaleOrderType
      * Magic getter to expose protected properties.
      *
      * @param string $property
+     *
      * @return mixed
      */
     public function __get($property)
@@ -312,7 +310,7 @@ class SaleOrderType
      * Magic setter to save protected properties.
      *
      * @param string $property
-     * @param mixed $value
+     * @param mixed  $value
      */
     public function __set($property, $value)
     {

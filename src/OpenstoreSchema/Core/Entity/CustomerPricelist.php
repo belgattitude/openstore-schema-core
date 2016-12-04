@@ -26,21 +26,18 @@ class CustomerPricelist
     private $id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="Pricelist", inversedBy="userpricelists", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="pricelist_id", referencedColumnName="pricelist_id", onDelete="CASCADE", nullable=false)
      */
     private $pricelist_id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="Customer", inversedBy="customerpricelists", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="customer_id", referencedColumnName="customer_id", onDelete="CASCADE", nullable=false)
      */
     private $customer_id;
 
     /**
-     *
      * @ORM\Column(type="boolean", nullable=false, options={"default"=1, "comment"="Whether the customer can activate the pricelist"})
      */
     private $flag_active;
@@ -89,8 +86,7 @@ class CustomerPricelist
     }
 
     /**
-     *
-     * @param integer $id
+     * @param int $id
      */
     public function setId($id)
     {
@@ -98,8 +94,7 @@ class CustomerPricelist
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -107,8 +102,7 @@ class CustomerPricelist
     }
 
     /**
-     *
-     * @param integer $pricelist_id
+     * @param int $pricelist_id
      */
     public function setPricelistId($pricelist_id)
     {
@@ -116,8 +110,7 @@ class CustomerPricelist
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getPricelistId()
     {
@@ -125,8 +118,7 @@ class CustomerPricelist
     }
 
     /**
-     *
-     * @param integer $customer_id
+     * @param int $customer_id
      */
     public function setCustomerId($customer_id)
     {
@@ -134,8 +126,7 @@ class CustomerPricelist
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getCustomerId()
     {
@@ -143,24 +134,19 @@ class CustomerPricelist
     }
 
     /**
-     *
-     * @return boolean
+     * @return bool
      */
     public function getFlagActive()
     {
-        return (boolean) $this->flag_active;
+        return (bool) $this->flag_active;
     }
 
-    /**
-     *
-     */
     public function setFlagActive($flag_active)
     {
         $this->flag_active = $flag_active;
     }
 
     /**
-     *
      * @return date
      */
     public function getActivatedAt()
@@ -177,7 +163,6 @@ class CustomerPricelist
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -186,7 +171,6 @@ class CustomerPricelist
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -195,7 +179,6 @@ class CustomerPricelist
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -204,7 +187,6 @@ class CustomerPricelist
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -213,7 +195,6 @@ class CustomerPricelist
     }
 
     /**
-     *
      * @return string
      */
     public function getDeletedAt()
@@ -222,7 +203,6 @@ class CustomerPricelist
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setDeletedAt($deleted_at)
@@ -231,7 +211,8 @@ class CustomerPricelist
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -240,7 +221,8 @@ class CustomerPricelist
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -249,7 +231,8 @@ class CustomerPricelist
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -258,7 +241,8 @@ class CustomerPricelist
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -267,7 +251,8 @@ class CustomerPricelist
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -276,7 +261,8 @@ class CustomerPricelist
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -285,7 +271,8 @@ class CustomerPricelist
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -294,7 +281,8 @@ class CustomerPricelist
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()
@@ -313,7 +301,6 @@ class CustomerPricelist
     }
 
     /**
-     *
      * @return string
      */
     public function __toString()
@@ -325,6 +312,7 @@ class CustomerPricelist
      * Magic getter to expose protected properties.
      *
      * @param string $property
+     *
      * @return mixed
      */
     public function __get($property)
@@ -336,7 +324,7 @@ class CustomerPricelist
      * Magic setter to save protected properties.
      *
      * @param string $property
-     * @param mixed $value
+     * @param mixed  $value
      */
     public function __set($property, $value)
     {

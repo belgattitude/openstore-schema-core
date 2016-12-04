@@ -4,17 +4,16 @@ namespace OpenstoreSchema\Core\Extra;
 
 class MysqlExtra extends AbstractExtra
 {
-    protected $delimiter = "//";
-
+    protected $delimiter = '//';
 
     /**
-     * Special case for Mysql when delaing with delimiters
+     * Special case for Mysql when delaing with delimiters.
      */
     public function getExtrasDDLWithDelimiter()
     {
         $ddls = $this->getExtrasDDL();
         $start = "DELIMITER {$this->delimiter}";
-        $end = "DELIMITER ;";
+        $end = 'DELIMITER ;';
 
         $newDdls = [];
 
@@ -32,14 +31,15 @@ class MysqlExtra extends AbstractExtra
     }
 
     /**
-     * RETURN DDL for mysql functions
+     * RETURN DDL for mysql functions.
+     *
      * @return array
      */
     public function getFunctions()
     {
         $stmts = [];
-        $stmts['drop/function/slugify']        = "DROP FUNCTION IF EXISTS `slugify`";
-        $stmts['create/function/slugify']    = <<< ENDQ
+        $stmts['drop/function/slugify'] = 'DROP FUNCTION IF EXISTS `slugify`';
+        $stmts['create/function/slugify'] = <<< ENDQ
         CREATE FUNCTION `slugify` (dirty_string VARCHAR(255))
         RETURNS VARCHAR(255) CHARSET latin1
         DETERMINISTIC
@@ -97,8 +97,8 @@ class MysqlExtra extends AbstractExtra
         END        
 ENDQ;
 
-        $stmts['drop/function/strip_tags'] = "DROP FUNCTION IF EXISTS `strip_tags`";
-        $stmts['create/function/strip_tags']    = <<< ENDQ
+        $stmts['drop/function/strip_tags'] = 'DROP FUNCTION IF EXISTS `strip_tags`';
+        $stmts['create/function/strip_tags'] = <<< 'ENDQ'
         CREATE FUNCTION strip_tags( DIRTY VARCHAR(3000) )
         RETURNS VARCHAR(3000) CHARSET utf8 COLLATE utf8_general_ci
         DETERMINISTIC 
@@ -119,9 +119,8 @@ ENDQ;
         END;
 ENDQ;
 
-
-        $stmts['drop/function/delete_double_spaces'] = "DROP FUNCTION IF EXISTS `delete_double_spaces`";
-        $stmts['create/function/delete_double_spaces']    = <<< ENDQ
+        $stmts['drop/function/delete_double_spaces'] = 'DROP FUNCTION IF EXISTS `delete_double_spaces`';
+        $stmts['create/function/delete_double_spaces'] = <<< 'ENDQ'
         CREATE FUNCTION delete_double_spaces ( title VARCHAR(3000) )
         RETURNS VARCHAR(3000) CHARSET utf8 COLLATE utf8_unicode_ci DETERMINISTIC
         BEGIN
@@ -135,8 +134,8 @@ ENDQ;
         END;
 ENDQ;
 
-        $stmts['drop/function/get_searchable_reference'] = "DROP FUNCTION IF EXISTS `get_searchable_reference`";
-        $stmts['create/function/get_searchable_reference']    = <<< ENDQ
+        $stmts['drop/function/get_searchable_reference'] = 'DROP FUNCTION IF EXISTS `get_searchable_reference`';
+        $stmts['create/function/get_searchable_reference'] = <<< 'ENDQ'
         CREATE FUNCTION `get_searchable_reference` (`in_str` VARCHAR(2048)) RETURNS VARCHAR(2048) CHARSET utf8
         BEGIN
             /*
@@ -186,7 +185,6 @@ ENDQ;
 ENDQ;
 
         return $stmts;
-
 
 /*
 create function jsonvalue returns string soname 'ha_connect.so';
@@ -242,14 +240,15 @@ create function jbin_file returns string soname 'ha_connect.so';
     }
 
     /**
-     * RETURN MySQL procedures
+     * RETURN MySQL procedures.
+     *
      * @return array
      */
     public function getProcedures()
     {
         $stmts = [];
-        $stmts['drop/procedure/rebuild_catalog_search'] = "DROP PROCEDURE IF EXISTS `rebuild_catalog_search`";
-        $stmts['create/procedure/rebuild_catalog_search']    = <<< ENDQ
+        $stmts['drop/procedure/rebuild_catalog_search'] = 'DROP PROCEDURE IF EXISTS `rebuild_catalog_search`';
+        $stmts['create/procedure/rebuild_catalog_search'] = <<< ENDQ
         CREATE PROCEDURE `rebuild_catalog_search` ()
         BEGIN
                 SET @updated_at = NOW();
@@ -350,9 +349,8 @@ create function jbin_file returns string soname 'ha_connect.so';
         END
 ENDQ;
 
-
-        $stmts['drop/procedure/rebuild_product_search'] = "DROP PROCEDURE IF EXISTS `rebuild_product_search`";
-        $stmts['create/procedure/rebuild_product_search']    = <<< ENDQ
+        $stmts['drop/procedure/rebuild_product_search'] = 'DROP PROCEDURE IF EXISTS `rebuild_product_search`';
+        $stmts['create/procedure/rebuild_product_search'] = <<< ENDQ
         CREATE PROCEDURE `rebuild_product_search` (IN product_id BIGINT)
         BEGIN
                 SET @updated_at = NOW();
@@ -455,10 +453,8 @@ ENDQ;
         END
 ENDQ;
 
-
-
-        $stmts['drop/procedure/rebuild_category_breadcrumbs'] = "DROP PROCEDURE IF EXISTS `rebuild_category_breadcrumbs`";
-        $stmts['create/procedure/rebuild_category_breadcrumbs']    = <<< ENDQ
+        $stmts['drop/procedure/rebuild_category_breadcrumbs'] = 'DROP PROCEDURE IF EXISTS `rebuild_category_breadcrumbs`';
+        $stmts['create/procedure/rebuild_category_breadcrumbs'] = <<< 'ENDQ'
         CREATE PROCEDURE `rebuild_category_breadcrumbs` ()
         BEGIN
             -- 1. Category     
@@ -516,8 +512,8 @@ ENDQ;
         // CATEGORY KEYWORDS
         //
 
-        $stmts['drop/procedure/rebuild_category_keywords'] = "DROP PROCEDURE IF EXISTS `rebuild_category_keywords`";
-        $stmts['create/procedure/rebuild_category_keywords']    = <<< ENDQ
+        $stmts['drop/procedure/rebuild_category_keywords'] = 'DROP PROCEDURE IF EXISTS `rebuild_category_keywords`';
+        $stmts['create/procedure/rebuild_category_keywords'] = <<< 'ENDQ'
         CREATE PROCEDURE `rebuild_category_keywords` ()
         BEGIN
             -- 2. Product category translation keywords
@@ -548,13 +544,10 @@ ENDQ;
         END;
 ENDQ;
 
-
-
         return $stmts;
     }
 
     /**
-     *
      * @return array
      */
     public function getTriggers()
@@ -578,18 +571,16 @@ ENDQ;
     }
 
     /**
-     *
      * @return array
      */
     public function getEvents()
     {
         $stmts = [];
+
         return  $stmts;
     }
 
-
     /**
-     *
      * @return array
      */
     public function getSqlAlters()

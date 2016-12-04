@@ -35,19 +35,16 @@ class Revision
      */
     private $related_table;
 
-
     /**
      * @ORM\Column(type="bigint", nullable=false, options={"comment" = "Related table primary key"})
      */
     private $related_id;
-
 
     /**
      * @Gedmo\Timestampable(on="create")
      * @ORM\Column(type="datetime", nullable=true, options={"comment" = "Record creation timestamp"})
      */
     private $created_at;
-
 
     /**
      * @Gedmo\Blameable(on="create")
@@ -60,39 +57,31 @@ class Revision
      */
     private $flag_revision_updated;
 
-
-
     /**
      * @ORM\Column(type="integer", nullable=true, options={"comment" = "Optional revision number, revision differ from version as it acts like a milestone"})
      */
     private $revision;
-
 
     /**
      * @ORM\Column(type="string", length=150, nullable=true, options={"comment" = "Log message, reason of change"})
      */
     private $message;
 
-
     /**
      * @ORM\Column(type="string", length=65536, nullable=false, options={"comment" = "Previous data, stored as json"})
      */
     private $previous_data;
-
 
     /**
      * @ORM\Column(type="string", length=65536, nullable=false, options={"comment" = "Data at time of saving, stored as json"})
      */
     private $current_data;
 
-
     public function __construct()
     {
     }
 
-
     /**
-     *
      * @param string $message
      */
     public function setMessage($message)
@@ -101,7 +90,6 @@ class Revision
     }
 
     /**
-     *
      * @return string
      */
     public function getMessage()
@@ -109,9 +97,7 @@ class Revision
         return $this->message;
     }
 
-
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -120,7 +106,6 @@ class Revision
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -128,9 +113,9 @@ class Revision
         $this->created_at = $created_at;
     }
 
-
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -139,7 +124,8 @@ class Revision
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)

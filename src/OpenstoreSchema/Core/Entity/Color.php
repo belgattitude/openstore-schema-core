@@ -18,7 +18,6 @@ use Gedmo\Mapping\Annotation as Gedmo;
  */
 class Color
 {
-
     /**
      * @ORM\Id
      * @ORM\Column(name="color_id", type="integer", nullable=false, options={"unsigned"=true})
@@ -40,7 +39,6 @@ class Color
      * @ORM\Column(type="string", length=8, nullable=true, options={"comment" = "Hex color code, i.e. #FFFFFF"})
      */
     private $hex_code;
-
 
     /**
      * @Gedmo\Timestampable(on="create")
@@ -81,8 +79,7 @@ class Color
     }
 
     /**
-     *
-     * @param integer $color_id
+     * @param int $color_id
      */
     public function setColorId($color_id)
     {
@@ -90,8 +87,7 @@ class Color
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getColorId()
     {
@@ -99,7 +95,8 @@ class Color
     }
 
     /**
-     * Set reference
+     * Set reference.
+     *
      * @param string $reference
      */
     public function setReference($reference)
@@ -108,7 +105,8 @@ class Color
     }
 
     /**
-     * Return reference
+     * Return reference.
+     *
      * @return string
      */
     public function getReference()
@@ -117,7 +115,6 @@ class Color
     }
 
     /**
-     *
      * @param string $name
      */
     public function setName($name)
@@ -126,7 +123,6 @@ class Color
     }
 
     /**
-     *
      * @return string
      */
     public function getName()
@@ -134,10 +130,7 @@ class Color
         return $this->name;
     }
 
-
-
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -146,7 +139,6 @@ class Color
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -155,7 +147,6 @@ class Color
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -164,7 +155,6 @@ class Color
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -173,7 +163,8 @@ class Color
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -182,7 +173,8 @@ class Color
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -191,7 +183,8 @@ class Color
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -200,7 +193,8 @@ class Color
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -209,7 +203,8 @@ class Color
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -218,7 +213,8 @@ class Color
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -227,7 +223,8 @@ class Color
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_synchro_at
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -236,7 +233,8 @@ class Color
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()

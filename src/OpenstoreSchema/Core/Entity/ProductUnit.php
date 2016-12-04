@@ -105,15 +105,14 @@ class ProductUnit
     public function __construct()
     {
         $this->translations = new \Doctrine\Common\Collections\ArrayCollection();
-        /**
+        /*
          * Default value for flag_active
          */
         $this->flag_active = true;
     }
 
     /**
-     *
-     * @param integer $unit_id
+     * @param int $unit_id
      */
     public function setUnitId($unit_id)
     {
@@ -121,8 +120,7 @@ class ProductUnit
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getUnitId()
     {
@@ -130,7 +128,8 @@ class ProductUnit
     }
 
     /**
-     * Set reference
+     * Set reference.
+     *
      * @param string $reference
      */
     public function setReference($reference)
@@ -139,7 +138,8 @@ class ProductUnit
     }
 
     /**
-     * Return reference
+     * Return reference.
+     *
      * @return string
      */
     public function getReference()
@@ -148,7 +148,6 @@ class ProductUnit
     }
 
     /**
-     *
      * @param string $title
      */
     public function setTitle($title)
@@ -157,7 +156,6 @@ class ProductUnit
     }
 
     /**
-     *
      * @return string
      */
     public function getTitle()
@@ -166,7 +164,6 @@ class ProductUnit
     }
 
     /**
-     *
      * @param string $description
      */
     public function setDescription($description)
@@ -175,7 +172,6 @@ class ProductUnit
     }
 
     /**
-     *
      * @return string
      */
     public function getDescription()
@@ -184,7 +180,6 @@ class ProductUnit
     }
 
     /**
-     *
      * @return string
      */
     public function setIconClass($icon_class)
@@ -193,7 +188,6 @@ class ProductUnit
     }
 
     /**
-     *
      * @return string
      */
     public function getIconClass()
@@ -202,7 +196,6 @@ class ProductUnit
     }
 
     /**
-     *
      * @return int
      */
     public function getDisplayDecimals()
@@ -219,7 +212,8 @@ class ProductUnit
     }
 
     /**
-     * Set symbol
+     * Set symbol.
+     *
      * @param string $symbol
      */
     public function setSymbol($symbol)
@@ -228,7 +222,8 @@ class ProductUnit
     }
 
     /**
-     * Return symbol
+     * Return symbol.
+     *
      * @return string
      */
     public function getSymbol()
@@ -236,26 +231,20 @@ class ProductUnit
         return $this->symbol;
     }
 
-
     /**
-     *
-     * @return boolean
+     * @return bool
      */
     public function getFlagActive()
     {
-        return (boolean) $this->flag_active;
+        return (bool) $this->flag_active;
     }
 
-    /**
-     *
-     */
     public function setFlagActive($flag_active)
     {
         $this->flag_active = $flag_active;
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -264,7 +253,6 @@ class ProductUnit
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -273,7 +261,6 @@ class ProductUnit
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -282,7 +269,6 @@ class ProductUnit
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -291,7 +277,8 @@ class ProductUnit
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -300,7 +287,8 @@ class ProductUnit
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -309,7 +297,8 @@ class ProductUnit
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -318,7 +307,8 @@ class ProductUnit
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -327,7 +317,8 @@ class ProductUnit
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -336,7 +327,8 @@ class ProductUnit
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -345,7 +337,8 @@ class ProductUnit
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -354,7 +347,8 @@ class ProductUnit
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()
@@ -373,7 +367,6 @@ class ProductUnit
     }
 
     /**
-     *
      * @return string
      */
     public function __toString()
@@ -385,6 +378,7 @@ class ProductUnit
      * Magic getter to expose protected properties.
      *
      * @param string $property
+     *
      * @return mixed
      */
     public function __get($property)
@@ -396,7 +390,7 @@ class ProductUnit
      * Magic setter to save protected properties.
      *
      * @param string $property
-     * @param mixed $value
+     * @param mixed  $value
      */
     public function __set($property, $value)
     {

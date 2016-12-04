@@ -46,7 +46,7 @@ class UpdateCommand extends AbstractCommand
             ),
         ]);
 
-        $this->setHelp(<<<EOT
+        $this->setHelp(<<<'EOT'
 The <info>%command.name%</info> command generates the SQL needed to
 synchronize the database schema with the current mapping metadata of the
 default entity manager.
@@ -74,7 +74,7 @@ described by any metadata.
 by the ORM, you can use a DBAL functionality to filter the tables and sequences down
 on a global level:
 
-    \$config->setFilterSchemaAssetsExpression(\$regexp);
+    $config->setFilterSchemaAssetsExpression($regexp);
 EOT
         );
     }
@@ -85,7 +85,7 @@ EOT
     protected function executeSchemaCommand(InputInterface $input, OutputInterface $output, SchemaTool $schemaTool, array $metadatas)
     {
         // Defining if update is complete or not (--complete not defined means $saveMode = true)
-        $saveMode = ! $input->getOption('complete');
+        $saveMode = !$input->getOption('complete');
 
         $sqls = $schemaTool->getUpdateSchemaSql($metadatas, $saveMode);
 
@@ -96,7 +96,7 @@ EOT
         }
 
         $dumpSql = true === $input->getOption('dump-sql');
-        $force   = true === $input->getOption('force');
+        $force = true === $input->getOption('force');
 
         if ($dumpSql) {
             $output->writeln(implode(';' . PHP_EOL, $sqls) . ';');

@@ -29,56 +29,48 @@ class DiscountCondition
     private $id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="Pricelist", inversedBy="discounts", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="pricelist_id", referencedColumnName="pricelist_id", onDelete="CASCADE", nullable=true)
      */
     private $pricelist_id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="CustomerGroup", inversedBy="discounts", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="customer_group_id", referencedColumnName="group_id", onDelete="CASCADE", nullable=true)
      */
     private $customer_group_id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="Customer", inversedBy="discounts", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="customer_id", referencedColumnName="customer_id", onDelete="CASCADE", nullable=true)
      */
     private $customer_id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="ProductBrand", inversedBy="discounts", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="brand_id", referencedColumnName="brand_id", onDelete="CASCADE", nullable=true)
      */
     private $brand_id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="ProductGroup", inversedBy="discounts", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="product_group_id", referencedColumnName="group_id", onDelete="CASCADE", nullable=true)
      */
     private $product_group_id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="ProductModel", inversedBy="discounts", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="model_id", referencedColumnName="model_id", onDelete="CASCADE", nullable=true)
      */
     private $model_id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="ProductCategory", inversedBy="discounts", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="category_id", referencedColumnName="category_id", onDelete="CASCADE", nullable=true)
      */
     private $category_id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="Product", inversedBy="discounts", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="product_id", referencedColumnName="product_id", onDelete="CASCADE", nullable=true)
      */
@@ -158,8 +150,7 @@ class DiscountCondition
     }
 
     /**
-     *
-     * @param integer $id
+     * @param int $id
      */
     public function setId($id)
     {
@@ -167,8 +158,7 @@ class DiscountCondition
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -176,8 +166,7 @@ class DiscountCondition
     }
 
     /**
-     *
-     * @param integer $pricelist_id
+     * @param int $pricelist_id
      */
     public function setPricelistId($pricelist_id)
     {
@@ -185,8 +174,7 @@ class DiscountCondition
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getPricelistId()
     {
@@ -194,8 +182,7 @@ class DiscountCondition
     }
 
     /**
-     *
-     * @param integer $customer_id
+     * @param int $customer_id
      */
     public function setCustomerId($customer_id)
     {
@@ -203,8 +190,7 @@ class DiscountCondition
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getCustomerId()
     {
@@ -212,8 +198,7 @@ class DiscountCondition
     }
 
     /**
-     *
-     * @param integer $brand_id
+     * @param int $brand_id
      */
     public function setBrandId($brand_id)
     {
@@ -221,8 +206,7 @@ class DiscountCondition
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getBrandId()
     {
@@ -230,8 +214,7 @@ class DiscountCondition
     }
 
     /**
-     *
-     * @param integer $model_id
+     * @param int $model_id
      */
     public function setModelId($model_id)
     {
@@ -239,8 +222,7 @@ class DiscountCondition
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getModelId()
     {
@@ -248,8 +230,7 @@ class DiscountCondition
     }
 
     /**
-     *
-     * @param integer $category_id
+     * @param int $category_id
      */
     public function setCategoryId($category_id)
     {
@@ -257,8 +238,7 @@ class DiscountCondition
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getCategoryId()
     {
@@ -266,8 +246,7 @@ class DiscountCondition
     }
 
     /**
-     *
-     * @param integer $product_group_id
+     * @param int $product_group_id
      */
     public function setProductGroupId($product_group_id)
     {
@@ -275,8 +254,7 @@ class DiscountCondition
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getProductGroupId()
     {
@@ -284,8 +262,7 @@ class DiscountCondition
     }
 
     /**
-     *
-     * @param integer $product_id
+     * @param int $product_id
      */
     public function setProductId($product_id)
     {
@@ -293,8 +270,7 @@ class DiscountCondition
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getProductId()
     {
@@ -302,7 +278,6 @@ class DiscountCondition
     }
 
     /**
-     *
      * @return date
      */
     public function getActivatedAt()
@@ -319,7 +294,6 @@ class DiscountCondition
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -328,7 +302,6 @@ class DiscountCondition
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -337,7 +310,6 @@ class DiscountCondition
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -346,7 +318,6 @@ class DiscountCondition
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -355,7 +326,6 @@ class DiscountCondition
     }
 
     /**
-     *
      * @return string
      */
     public function getDeletedAt()
@@ -364,7 +334,6 @@ class DiscountCondition
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setDeletedAt($deleted_at)
@@ -373,7 +342,8 @@ class DiscountCondition
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -382,7 +352,8 @@ class DiscountCondition
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -391,7 +362,8 @@ class DiscountCondition
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -400,7 +372,8 @@ class DiscountCondition
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -409,7 +382,8 @@ class DiscountCondition
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -418,7 +392,8 @@ class DiscountCondition
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -427,7 +402,8 @@ class DiscountCondition
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -436,7 +412,8 @@ class DiscountCondition
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()
@@ -455,7 +432,6 @@ class DiscountCondition
     }
 
     /**
-     *
      * @return string
      */
     public function __toString()
@@ -467,6 +443,7 @@ class DiscountCondition
      * Magic getter to expose protected properties.
      *
      * @param string $property
+     *
      * @return mixed
      */
     public function __get($property)
@@ -478,7 +455,7 @@ class DiscountCondition
      * Magic setter to save protected properties.
      *
      * @param string $property
-     * @param mixed $value
+     * @param mixed  $value
      */
     public function __set($property, $value)
     {

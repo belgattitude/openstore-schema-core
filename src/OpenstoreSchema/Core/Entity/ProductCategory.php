@@ -32,7 +32,6 @@ use Gedmo\Mapping\Annotation as Gedmo;
  */
 class ProductCategory
 {
-
     /**
      * @ORM\Id
      * @ORM\Column(name="category_id", type="integer", nullable=false,  options={"unsigned"=true})
@@ -66,19 +65,15 @@ class ProductCategory
      */
     private $breadcrumb;
 
-
-
     /**
      * @ORM\Column(type="boolean", nullable=true, options={"default"=null, "comment"="Can be used to rank products beloging to"})
      */
     private $flag_rankable;
 
-
     /**
      * @ORM\Column(type="string", length=255, nullable=true, options={"default"=null, "comment"="Rankable breadcrumb if flag_rankable is true"})
      */
     private $rankable_breadcrumb;
-
 
     /**
      * @ORM\Column(type="integer", nullable=true, options={"unsigned"=true, "comment"="Relative sort index"})
@@ -176,8 +171,7 @@ class ProductCategory
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -185,7 +179,6 @@ class ProductCategory
     }
 
     /**
-     *
      * @param string $reference
      */
     public function setReference($reference)
@@ -194,7 +187,6 @@ class ProductCategory
     }
 
     /**
-     *
      * @return string
      */
     public function getReference()
@@ -203,7 +195,6 @@ class ProductCategory
     }
 
     /**
-     *
      * @param string $title
      */
     public function setTitle($title)
@@ -212,7 +203,6 @@ class ProductCategory
     }
 
     /**
-     *
      * @return string
      */
     public function getTitle()
@@ -221,7 +211,6 @@ class ProductCategory
     }
 
     /**
-     *
      * @param string $description
      */
     public function setDescription($description)
@@ -230,7 +219,6 @@ class ProductCategory
     }
 
     /**
-     *
      * @return string
      */
     public function getDescription()
@@ -239,7 +227,6 @@ class ProductCategory
     }
 
     /**
-     *
      * @param string $slug
      */
     public function setSlug($slug)
@@ -248,7 +235,6 @@ class ProductCategory
     }
 
     /**
-     *
      * @return string
      */
     public function getSlug()
@@ -257,8 +243,8 @@ class ProductCategory
     }
 
     /**
+     * @param int $sort_index
      *
-     * @param integer $sort_index
      * @return ProductCategory
      */
     public function setSortIndex($sort_index)
@@ -267,8 +253,7 @@ class ProductCategory
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getSortIndex()
     {
@@ -276,8 +261,8 @@ class ProductCategory
     }
 
     /**
+     * @param int $global_sort_index
      *
-     * @param integer $global_sort_index
      * @return ProductCategory
      */
     public function setGlobalSortIndex($global_sort_index)
@@ -286,8 +271,7 @@ class ProductCategory
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getGlobalSortIndex()
     {
@@ -295,7 +279,6 @@ class ProductCategory
     }
 
     /**
-     *
      * @return string
      */
     public function setIconClass($icon_class)
@@ -304,7 +287,6 @@ class ProductCategory
     }
 
     /**
-     *
      * @return string
      */
     public function getIconClass()
@@ -348,7 +330,6 @@ class ProductCategory
     }
 
     /**
-     *
      * @param string|int $alt_mapping_reference
      */
     public function setAltMappingReference($alt_mapping_reference)
@@ -357,7 +338,6 @@ class ProductCategory
     }
 
     /**
-     *
      * @return string|int
      */
     public function getAltMappingReference()
@@ -366,7 +346,6 @@ class ProductCategory
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -375,7 +354,6 @@ class ProductCategory
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -384,7 +362,6 @@ class ProductCategory
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -393,7 +370,6 @@ class ProductCategory
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -402,7 +378,8 @@ class ProductCategory
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -411,7 +388,8 @@ class ProductCategory
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -420,7 +398,8 @@ class ProductCategory
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -429,7 +408,8 @@ class ProductCategory
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -438,7 +418,8 @@ class ProductCategory
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -447,7 +428,8 @@ class ProductCategory
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -456,7 +438,8 @@ class ProductCategory
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -465,7 +448,8 @@ class ProductCategory
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()
@@ -474,7 +458,6 @@ class ProductCategory
     }
 
     /**
-     *
      * @return string
      */
     public function __toString()
@@ -496,6 +479,7 @@ class ProductCategory
      * Magic getter to expose protected properties.
      *
      * @param string $property
+     *
      * @return mixed
      */
     public function __get($property)
@@ -507,7 +491,7 @@ class ProductCategory
      * Magic setter to save protected properties.
      *
      * @param string $property
-     * @param mixed $value
+     * @param mixed  $value
      */
     public function __set($property, $value)
     {

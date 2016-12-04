@@ -94,8 +94,8 @@ class MediaContainer
     }
 
     /**
+     * @param int $container_id
      *
-     * @param integer $container_id
      * @return \OpenstoreSchema\Core\Entity\MediaContainer
      */
     public function setContainerId($container_id)
@@ -104,8 +104,7 @@ class MediaContainer
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getContainerId()
     {
@@ -113,7 +112,6 @@ class MediaContainer
     }
 
     /**
-     *
      * @param string $folder
      */
     public function setFolder($folder)
@@ -122,7 +120,6 @@ class MediaContainer
     }
 
     /**
-     *
      * @return string
      */
     public function getFolder()
@@ -131,7 +128,6 @@ class MediaContainer
     }
 
     /**
-     *
      * @param string $reference
      */
     public function setReference($reference)
@@ -140,7 +136,6 @@ class MediaContainer
     }
 
     /**
-     *
      * @return string
      */
     public function getReference()
@@ -149,7 +144,6 @@ class MediaContainer
     }
 
     /**
-     *
      * @param string $title
      */
     public function setTitle($title)
@@ -158,7 +152,6 @@ class MediaContainer
     }
 
     /**
-     *
      * @return string
      */
     public function getTitle()
@@ -167,7 +160,6 @@ class MediaContainer
     }
 
     /**
-     *
      * @param string $description
      */
     public function setDescription($description)
@@ -176,7 +168,6 @@ class MediaContainer
     }
 
     /**
-     *
      * @return string
      */
     public function getDescription()
@@ -185,7 +176,6 @@ class MediaContainer
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -194,7 +184,6 @@ class MediaContainer
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -203,7 +192,6 @@ class MediaContainer
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -212,7 +200,6 @@ class MediaContainer
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -221,7 +208,6 @@ class MediaContainer
     }
 
     /**
-     *
      * @return string
      */
     public function getDeletedAt()
@@ -230,7 +216,6 @@ class MediaContainer
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setDeletedAt($deleted_at)
@@ -239,7 +224,8 @@ class MediaContainer
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -248,7 +234,8 @@ class MediaContainer
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -257,7 +244,8 @@ class MediaContainer
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -266,7 +254,8 @@ class MediaContainer
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -275,7 +264,8 @@ class MediaContainer
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -284,7 +274,8 @@ class MediaContainer
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -293,7 +284,8 @@ class MediaContainer
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -302,7 +294,8 @@ class MediaContainer
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()
@@ -321,7 +314,6 @@ class MediaContainer
     }
 
     /**
-     *
      * @return string
      */
     public function __toString()
@@ -333,6 +325,7 @@ class MediaContainer
      * Magic getter to expose protected properties.
      *
      * @param string $property
+     *
      * @return mixed
      */
     public function __get($property)
@@ -344,7 +337,7 @@ class MediaContainer
      * Magic setter to save protected properties.
      *
      * @param string $property
-     * @param mixed $value
+     * @param mixed  $value
      */
     public function __set($property, $value)
     {

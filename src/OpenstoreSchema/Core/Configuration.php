@@ -4,21 +4,18 @@ namespace OpenstoreSchema\Core;
 
 class Configuration
 {
-
     /**
-     *
      * @var array|null
      */
     protected static $paths;
 
     /**
-     *
      * @var string
      */
     protected static $namespace = 'OpenstoreSchema\Core\Entity';
 
     /**
-     * Return entity paths
+     * Return entity paths.
      *
      * @return array
      */
@@ -27,12 +24,13 @@ class Configuration
         if (self::$paths === null) {
             self::$paths = [realpath(__DIR__ . DIRECTORY_SEPARATOR . 'Entity')];
         }
+
         return self::$paths;
     }
 
-
     /**
-     * Return entity namespace
+     * Return entity namespace.
+     *
      * @return string
      */
     public static function getEntityNamespace()

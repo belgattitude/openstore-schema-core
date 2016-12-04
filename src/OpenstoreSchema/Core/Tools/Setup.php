@@ -15,41 +15,40 @@ use Doctrine\Common\EventManager;
 
 class Setup
 {
-
     /**
      * @var array
      */
     protected $dbParams;
 
     /**
-     * Paths to store entities
+     * Paths to store entities.
+     *
      * @var array
      */
     protected $paths;
 
-
     /**
-     * Entity namespace
+     * Entity namespace.
+     *
      * @var string
      */
     protected $namespace;
 
     /**
-     *
      * @var string development|production
      */
     protected $env;
 
     /**
-     *
      * @var string
      */
     protected $proxy_path;
 
     /**
-     * Constructor
-     * @param array $dbParams database connection configuration
-     * @param array $paths paths to look for entities
+     * Constructor.
+     *
+     * @param array  $dbParams  database connection configuration
+     * @param array  $paths     paths to look for entities
      * @param string $namespace entity namespace
      */
     public function __construct(array $dbParams, array $paths, $namespace)
@@ -69,7 +68,6 @@ class Setup
     }
 
     /**
-     *
      * @param string $path
      */
     public function setProxyPath($path)
@@ -77,9 +75,7 @@ class Setup
         $this->proxy_path = $path;
     }
 
-
     /**
-     *
      * @return EntityManager
      */
     public function getEntityManager()
@@ -109,12 +105,11 @@ class Setup
             $this->paths
         );
 
-
         $driverChain->addDriver($annotationDriver, $this->namespace);
 
         // general ORM configuration
 
-        $isDevMode = $this->env != "production";
+        $isDevMode = $this->env != 'production';
         $config = DoctrineSetup::createAnnotationMetadataConfiguration($this->paths, $isDevMode);
         $config->setMetadataCacheImpl($cache);
         $config->setQueryCacheImpl($cache);
@@ -122,7 +117,6 @@ class Setup
         $config->setProxyDir($this->proxy_path);
         $config->setProxyNamespace($this->namespace . '\Proxy');
         $config->setAutoGenerateProxyClasses($isDevMode);
-
 
         // Third, create event manager and hook prefered extension listeners
         $evm = new EventManager();
@@ -140,7 +134,7 @@ class Setup
         $evm->addEventSubscriber($treeListener);
 
         // loggable, not used in example
-        $loggableListener = new Gedmo\Loggable\LoggableListener;
+        $loggableListener = new Gedmo\Loggable\LoggableListener();
         $loggableListener->setAnnotationReader($cachedAnnotationReader);
         $loggableListener->setUsername('unknown');
         $evm->addEventSubscriber($loggableListener);
@@ -168,7 +162,7 @@ class Setup
         */
 
         // sortable, not used in example
-        $sortableListener = new Gedmo\Sortable\SortableListener;
+        $sortableListener = new Gedmo\Sortable\SortableListener();
         $sortableListener->setAnnotationReader($cachedAnnotationReader);
         $evm->addEventSubscriber($sortableListener);
 

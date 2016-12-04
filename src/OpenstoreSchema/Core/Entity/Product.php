@@ -16,7 +16,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *   },
  *   indexes={
  *     @ORM\Index(name="title_idx", columns={"title"}),
- *     @ORM\Index(name="flag_active_idx", columns={"flag_active"}),  
+ *     @ORM\Index(name="flag_active_idx", columns={"flag_active"}),
  *     @ORM\Index(name="reference_idx", columns={"reference"}),
  *     @ORM\Index(name="search_reference_idx", columns={"search_reference"}),
  *     @ORM\Index(name="description_idx", columns={"description"}),
@@ -61,72 +61,68 @@ class Product
     private $parent_id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="ProductBrand", inversedBy="products", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="brand_id", referencedColumnName="brand_id", onDelete="CASCADE", nullable=true)
      */
     private $brand_id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="ProductGroup", inversedBy="products", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="group_id", referencedColumnName="group_id", onDelete="CASCADE", nullable=true)
      */
     private $group_id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="ProductModel", inversedBy="models", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="model_id", referencedColumnName="model_id", onDelete="CASCADE", nullable=true)
      */
     private $model_id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="ProductSerie", inversedBy="series", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="serie_id", referencedColumnName="serie_id", onDelete="CASCADE", nullable=true)
      */
     private $serie_id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="ProductCategory", inversedBy="categories", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="category_id", referencedColumnName="category_id", onDelete="CASCADE", nullable=true)
      */
     private $category_id;
 
-
     /**
-     * Type id
+     * Type id.
+     *
      * @ORM\ManyToOne(targetEntity="ProductType", inversedBy="products", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="type_id", referencedColumnName="type_id", onDelete="CASCADE", nullable=true)
      */
     private $type_id;
 
     /**
-     * Status id
+     * Status id.
+     *
      * @ORM\ManyToOne(targetEntity="ProductStatus", inversedBy="products", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="status_id", referencedColumnName="status_id", onDelete="CASCADE", nullable=true)
      */
     private $status_id;
 
     /**
-     * Sales unit
+     * Sales unit.
+     *
      * @ORM\ManyToOne(targetEntity="ProductUnit", inversedBy="products", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="unit_id", referencedColumnName="unit_id", onDelete="CASCADE", nullable=true)
      */
     private $unit_id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="ProductStub", inversedBy="stubs", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="product_stub_id", referencedColumnName="product_stub_id", onDelete="CASCADE", nullable=true)
      */
     private $product_stub_id;
 
-
     /**
-     * Primary color id
+     * Primary color id.
+     *
      * @ORM\ManyToOne(targetEntity="Color", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="primary_color_id", referencedColumnName="color_id", onDelete="CASCADE", nullable=true)
      */
@@ -177,7 +173,6 @@ class Product
      * @ORM\Column(type="decimal", precision=12, scale=6, nullable=true, options={"comment"="Gross weight per sales unit in Kg"})
      */
     private $weight_gross;
-
 
     /**
      * @ORM\Column(type="decimal", precision=12, scale=6, nullable=true, options={"comment"="Length per sales unit in meter"})
@@ -259,12 +254,10 @@ class Product
      */
     private $icon_class;
 
-
     /**
      * @ORM\Column(type="string", length=20, nullable=true, options={"comment"="European intrastat customs code"})
      */
     private $trade_code_intrastat;
-
 
     /**
      * @ORM\Column(type="string", length=20, nullable=true, options={"comment"="International Harmonized Trade System common nomenclature code"})
@@ -312,15 +305,14 @@ class Product
 
     public function __construct()
     {
-        /**
+        /*
          * Default value for flag_active
          */
         $this->flag_active = true;
     }
 
     /**
-     *
-     * @param integer $product_id
+     * @param int $product_id
      */
     public function setProductId($product_id)
     {
@@ -328,8 +320,7 @@ class Product
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getProductId()
     {
@@ -337,7 +328,8 @@ class Product
     }
 
     /**
-     * Set reference
+     * Set reference.
+     *
      * @param string $reference
      */
     public function setReference($reference)
@@ -346,7 +338,8 @@ class Product
     }
 
     /**
-     * Return reference
+     * Return reference.
+     *
      * @return string
      */
     public function getReference()
@@ -363,7 +356,6 @@ class Product
     }
 
     /**
-     *
      * @return string
      */
     public function getSlug()
@@ -372,7 +364,6 @@ class Product
     }
 
     /**
-     *
      * @param string $title
      */
     public function setTitle($title)
@@ -381,7 +372,6 @@ class Product
     }
 
     /**
-     *
      * @return string
      */
     public function getTitle()
@@ -390,7 +380,6 @@ class Product
     }
 
     /**
-     *
      * @param string $description
      */
     public function setDescription($description)
@@ -399,7 +388,6 @@ class Product
     }
 
     /**
-     *
      * @return string
      */
     public function getDescription()
@@ -408,7 +396,6 @@ class Product
     }
 
     /**
-     *
      * @param int $type_id
      */
     public function setTypeId($type_id)
@@ -417,16 +404,14 @@ class Product
     }
 
     /**
-     * @return integer
+     * @return int
      */
     public function getTypeId()
     {
         return $this->type_id;
     }
 
-
     /**
-     *
      * @param int $group_id
      */
     public function setGroupId($group_id)
@@ -435,16 +420,14 @@ class Product
     }
 
     /**
-     * @return integer
+     * @return int
      */
     public function getGroupId()
     {
         return $this->group_id;
     }
 
-
     /**
-     *
      * @param int $brand_id
      */
     public function setBrandId($brand_id)
@@ -453,17 +436,16 @@ class Product
     }
 
     /**
-     * @return integer
+     * @return int
      */
     public function getBrandId()
     {
         return $this->brand_id;
     }
 
-
     /**
-     *
      * @param int $status_id
+     *
      * @return Product
      */
     public function setStatusId($status_id)
@@ -472,7 +454,7 @@ class Product
     }
 
     /**
-     * @return integer|null
+     * @return int|null
      */
     public function getStatusId()
     {
@@ -480,8 +462,8 @@ class Product
     }
 
     /**
-     *
      * @param float $unit_id
+     *
      * @return \OpenstoreSchema\Core\Entity\Product
      */
     public function setUnitId($unit_id)
@@ -490,7 +472,7 @@ class Product
     }
 
     /**
-     * @return integer
+     * @return int
      */
     public function getUnitId()
     {
@@ -498,7 +480,8 @@ class Product
     }
 
     /**
-     * Set volume
+     * Set volume.
+     *
      * @return Product
      */
     public function setVolume($volume)
@@ -507,7 +490,6 @@ class Product
     }
 
     /**
-     *
      * @return float
      */
     public function getVolume()
@@ -516,7 +498,8 @@ class Product
     }
 
     /**
-     * Set weight
+     * Set weight.
+     *
      * @return Product
      */
     public function setWeight($weight)
@@ -525,7 +508,6 @@ class Product
     }
 
     /**
-     *
      * @return float
      */
     public function getWeight()
@@ -534,7 +516,8 @@ class Product
     }
 
     /**
-     * Set length
+     * Set length.
+     *
      * @return Product
      */
     public function setLength($length)
@@ -543,7 +526,6 @@ class Product
     }
 
     /**
-     *
      * @return float
      */
     public function getLength()
@@ -552,7 +534,8 @@ class Product
     }
 
     /**
-     * Set height
+     * Set height.
+     *
      * @return Product
      */
     public function setHeight($height)
@@ -561,7 +544,6 @@ class Product
     }
 
     /**
-     *
      * @return decimal
      */
     public function getHeight()
@@ -570,7 +552,8 @@ class Product
     }
 
     /**
-     * Set width
+     * Set width.
+     *
      * @return Product
      */
     public function setWidth($width)
@@ -579,7 +562,6 @@ class Product
     }
 
     /**
-     *
      * @return decimal
      */
     public function getWidth()
@@ -588,8 +570,10 @@ class Product
     }
 
     /**
-     * Set barcode_ean13
+     * Set barcode_ean13.
+     *
      * @param string $barcode_ean13
+     *
      * @return Product
      */
     public function setBarcodeEan13($barcode_ean13)
@@ -598,7 +582,6 @@ class Product
     }
 
     /**
-     *
      * @return string
      */
     public function getBarcodeEan13()
@@ -607,7 +590,6 @@ class Product
     }
 
     /**
-     *
      * @return string
      */
     public function setIconClass($icon_class)
@@ -616,7 +598,6 @@ class Product
     }
 
     /**
-     *
      * @return string
      */
     public function getIconClass()
@@ -624,9 +605,7 @@ class Product
         return $this->icon_class;
     }
 
-
     /**
-     *
      * @return string
      */
     public function getTradeCodeHts()
@@ -635,7 +614,6 @@ class Product
     }
 
     /**
-     *
      * @param string $code
      */
     public function setTradeCodeHts($code)
@@ -643,9 +621,7 @@ class Product
         $this->trade_code_hts = $code;
     }
 
-
     /**
-     *
      * @param string $code
      */
     public function setTradeCodeIntrastat($code)
@@ -654,7 +630,6 @@ class Product
     }
 
     /**
-     *
      * @return string
      */
     public function getTradeCodeIntrastat()
@@ -663,24 +638,19 @@ class Product
     }
 
     /**
-     *
-     * @return boolean
+     * @return bool
      */
     public function getFlagActive()
     {
-        return (boolean) $this->flag_active;
+        return (bool) $this->flag_active;
     }
 
-    /**
-     *
-     */
     public function setFlagActive($flag_active)
     {
         $this->flag_active = $flag_active;
     }
 
     /**
-     *
      * @return date
      */
     public function getAvailableAt()
@@ -697,7 +667,6 @@ class Product
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -706,7 +675,6 @@ class Product
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -715,7 +683,6 @@ class Product
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -724,7 +691,6 @@ class Product
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -733,7 +699,6 @@ class Product
     }
 
     /**
-     *
      * @return string
      */
     public function getDeletedAt()
@@ -742,7 +707,6 @@ class Product
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setDeletedAt($deleted_at)
@@ -751,7 +715,8 @@ class Product
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -760,7 +725,8 @@ class Product
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -769,7 +735,8 @@ class Product
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -778,7 +745,8 @@ class Product
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -787,7 +755,8 @@ class Product
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -796,7 +765,8 @@ class Product
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -805,7 +775,8 @@ class Product
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -814,7 +785,8 @@ class Product
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()
@@ -833,7 +805,6 @@ class Product
     }
 
     /**
-     *
      * @return string
      */
     public function __toString()
@@ -845,6 +816,7 @@ class Product
      * Magic getter to expose protected properties.
      *
      * @param string $property
+     *
      * @return mixed
      */
     public function __get($property)
@@ -856,7 +828,7 @@ class Product
      * Magic setter to save protected properties.
      *
      * @param string $property
-     * @param mixed $value
+     * @param mixed  $value
      */
     public function __set($property, $value)
     {

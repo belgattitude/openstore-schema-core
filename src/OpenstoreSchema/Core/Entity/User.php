@@ -62,7 +62,7 @@ class User implements UserInterface, IdentityInterface
     private $lang;
 
     /**
-     * Bidirectional - Many users have many roles (OWNING SIDE)
+     * Bidirectional - Many users have many roles (OWNING SIDE).
      *
      * @var Collection
      *
@@ -113,8 +113,6 @@ class User implements UserInterface, IdentityInterface
      * Set id.
      *
      * @param int $id
-     *
-     * @return void
      */
     public function setUserId($user_id)
     {
@@ -135,8 +133,6 @@ class User implements UserInterface, IdentityInterface
      * Set username.
      *
      * @param string $username
-     *
-     * @return void
      */
     public function setUsername($username)
     {
@@ -157,8 +153,6 @@ class User implements UserInterface, IdentityInterface
      * Set email.
      *
      * @param string $email
-     *
-     * @return void
      */
     public function setEmail($email)
     {
@@ -179,8 +173,6 @@ class User implements UserInterface, IdentityInterface
      * Set displayName.
      *
      * @param string $displayName
-     *
-     * @return void
      */
     public function setDisplayName($displayName)
     {
@@ -201,8 +193,6 @@ class User implements UserInterface, IdentityInterface
      * Set password.
      *
      * @param string $password
-     *
-     * @return void
      */
     public function setPassword($password)
     {
@@ -223,8 +213,6 @@ class User implements UserInterface, IdentityInterface
      * Set state.
      *
      * @param int $state
-     *
-     * @return void
      */
     public function setState($state)
     {
@@ -240,7 +228,8 @@ class User implements UserInterface, IdentityInterface
     }
 
     /**
-     * Set the list of roles
+     * Set the list of roles.
+     *
      * @param Collection $roles
      */
     public function setRoles(Collection $roles)
@@ -252,7 +241,8 @@ class User implements UserInterface, IdentityInterface
     }
 
     /**
-     * Add one role to roles list
+     * Add one role to roles list.
+     *
      * @param \Rbac\Role\RoleInterface $role
      */
     public function addRole(RoleInterface $role)
@@ -261,7 +251,6 @@ class User implements UserInterface, IdentityInterface
     }
 
     /**
-     *
      * @return Collection
      */
     public function getPricelists()

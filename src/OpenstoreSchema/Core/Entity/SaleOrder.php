@@ -44,21 +44,18 @@ class SaleOrder
     private $status_id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="Customer", inversedBy="orders", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="customer_id", referencedColumnName="customer_id", nullable=false)
      */
     private $customer_id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="SaleRep", inversedBy="orders", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="rep_id", referencedColumnName="rep_id", nullable=true)
      */
     private $rep_id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="User", inversedBy="orders", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="user_id", referencedColumnName="user_id", nullable=true)
      */
@@ -71,7 +68,6 @@ class SaleOrder
     private $parent_id;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="Pricelist", inversedBy="orders", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="pricelist_id", referencedColumnName="pricelist_id", nullable=false)
      */
@@ -142,7 +138,6 @@ class SaleOrder
     protected $legacy_synchro_at;
 
     /**
-     *
      * @return string
      */
     public function getCustomerId()
@@ -151,7 +146,6 @@ class SaleOrder
     }
 
     /**
-     *
      * @param string $customer_id
      */
     public function setCustomerId($customer_id)
@@ -289,7 +283,6 @@ class SaleOrder
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -298,7 +291,6 @@ class SaleOrder
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -307,7 +299,6 @@ class SaleOrder
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -316,7 +307,6 @@ class SaleOrder
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -325,7 +315,6 @@ class SaleOrder
     }
 
     /**
-     *
      * @return string
      */
     public function getDeletedAt()
@@ -334,7 +323,6 @@ class SaleOrder
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setDeletedAt($deleted_at)
@@ -343,7 +331,8 @@ class SaleOrder
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -352,7 +341,8 @@ class SaleOrder
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -361,7 +351,8 @@ class SaleOrder
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -370,7 +361,8 @@ class SaleOrder
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -379,7 +371,8 @@ class SaleOrder
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -388,7 +381,8 @@ class SaleOrder
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -397,7 +391,8 @@ class SaleOrder
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -406,7 +401,8 @@ class SaleOrder
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()

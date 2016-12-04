@@ -95,8 +95,7 @@ class Language
     }
 
     /**
-     *
-     * @param integer $id
+     * @param int $id
      */
     public function setId($id)
     {
@@ -104,8 +103,7 @@ class Language
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -113,7 +111,8 @@ class Language
     }
 
     /**
-     * Set lang
+     * Set lang.
+     *
      * @param string $lang
      */
     public function setLang($lang)
@@ -122,7 +121,8 @@ class Language
     }
 
     /**
-     * Return lang
+     * Return lang.
+     *
      * @return string
      */
     public function getLang()
@@ -131,7 +131,6 @@ class Language
     }
 
     /**
-     *
      * @param string $title
      */
     public function setTitle($title)
@@ -140,7 +139,6 @@ class Language
     }
 
     /**
-     *
      * @return string
      */
     public function getTitle()
@@ -149,7 +147,6 @@ class Language
     }
 
     /**
-     *
      * @return string
      */
     public function setIconClass($icon_class)
@@ -158,41 +155,32 @@ class Language
     }
 
     /**
-     *
-     * @return boolean
+     * @return bool
      */
     public function getFlagActive()
     {
-        return (boolean) $this->flag_active;
+        return (bool) $this->flag_active;
     }
 
-    /**
-     *
-     */
     public function setFlagActive($flag_active)
     {
         $this->flag_active = $flag_active;
     }
 
     /**
-     *
-     * @return boolean
+     * @return bool
      */
     public function getFlagDefault()
     {
-        return (boolean) $this->flag_default;
+        return (bool) $this->flag_default;
     }
 
-    /**
-     *
-     */
     public function setFlagDefault($flag_default)
     {
         $this->flag_default = $flag_default;
     }
 
     /**
-     *
      * @return string
      */
     public function getIconClass()
@@ -201,7 +189,6 @@ class Language
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -210,7 +197,6 @@ class Language
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -219,7 +205,6 @@ class Language
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -228,7 +213,6 @@ class Language
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -237,7 +221,8 @@ class Language
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -246,7 +231,8 @@ class Language
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -255,7 +241,8 @@ class Language
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -264,7 +251,8 @@ class Language
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -273,7 +261,8 @@ class Language
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -282,7 +271,8 @@ class Language
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -291,7 +281,8 @@ class Language
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -300,7 +291,8 @@ class Language
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()
@@ -319,7 +311,6 @@ class Language
     }
 
     /**
-     *
      * @return string
      */
     public function __toString()
@@ -331,6 +322,7 @@ class Language
      * Magic getter to expose protected properties.
      *
      * @param string $property
+     *
      * @return mixed
      */
     public function __get($property)
@@ -342,7 +334,7 @@ class Language
      * Magic setter to save protected properties.
      *
      * @param string $property
-     * @param mixed $value
+     * @param mixed  $value
      */
     public function __set($property, $value)
     {

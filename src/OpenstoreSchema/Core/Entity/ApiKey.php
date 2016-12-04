@@ -71,16 +71,14 @@ class ApiKey
 
     public function __construct()
     {
-
-        /**
+        /*
          * Default value for flag_active
          */
         $this->flag_active = true;
     }
 
     /**
-     *
-     * @param integer $api_id
+     * @param int $api_id
      */
     public function setApiId($api_id)
     {
@@ -88,8 +86,7 @@ class ApiKey
     }
 
     /**
-     *
-     * @return integer
+     * @return int
      */
     public function getApiId()
     {
@@ -97,7 +94,8 @@ class ApiKey
     }
 
     /**
-     * Set api_key
+     * Set api_key.
+     *
      * @param string $api_key
      */
     public function setApiKey($api_key)
@@ -106,7 +104,8 @@ class ApiKey
     }
 
     /**
-     * Return api key
+     * Return api key.
+     *
      * @return string
      */
     public function getApiKey()
@@ -115,24 +114,19 @@ class ApiKey
     }
 
     /**
-     *
-     * @return boolean
+     * @return bool
      */
     public function getFlagActive()
     {
-        return (boolean) $this->flag_active;
+        return (bool) $this->flag_active;
     }
 
-    /**
-     *
-     */
     public function setFlagActive($flag_active)
     {
         $this->flag_active = $flag_active;
     }
 
     /**
-     *
      * @return string
      */
     public function getCreatedAt()
@@ -141,7 +135,6 @@ class ApiKey
     }
 
     /**
-     *
      * @param string $created_at
      */
     public function setCreatedAt($created_at)
@@ -150,7 +143,6 @@ class ApiKey
     }
 
     /**
-     *
      * @return string
      */
     public function getUpdatedAt()
@@ -159,7 +151,6 @@ class ApiKey
     }
 
     /**
-     *
      * @param string $updated_at
      */
     public function setUpdatedAt($updated_at)
@@ -168,7 +159,8 @@ class ApiKey
     }
 
     /**
-     * Return creator username
+     * Return creator username.
+     *
      * @return string
      */
     public function getCreatedBy()
@@ -177,7 +169,8 @@ class ApiKey
     }
 
     /**
-     * Set creator username
+     * Set creator username.
+     *
      * @param string $created_by
      */
     public function setCreatedBy($created_by)
@@ -186,7 +179,8 @@ class ApiKey
     }
 
     /**
-     * Return last updater username
+     * Return last updater username.
+     *
      * @return string
      */
     public function getUpdatedBy()
@@ -195,7 +189,8 @@ class ApiKey
     }
 
     /**
-     * Set the last updater username
+     * Set the last updater username.
+     *
      * @param string $updated_by
      */
     public function setUpdatedBy($updated_by)
@@ -204,7 +199,8 @@ class ApiKey
     }
 
     /**
-     * Return legacy mapping
+     * Return legacy mapping.
+     *
      * @return string $legacy_mapping
      */
     public function getLegacyMapping()
@@ -213,7 +209,8 @@ class ApiKey
     }
 
     /**
-     * Set a legacy mapping for this record
+     * Set a legacy mapping for this record.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacyMapping($legacy_mapping)
@@ -222,7 +219,8 @@ class ApiKey
     }
 
     /**
-     * Set legacy synchro time
+     * Set legacy synchro time.
+     *
      * @param string $legacy_mapping
      */
     public function setLegacySynchroAt($legacy_synchro_at)
@@ -231,7 +229,8 @@ class ApiKey
     }
 
     /**
-     * Return legacy synchro timestamp
+     * Return legacy synchro timestamp.
+     *
      * @return string
      */
     public function getLegacySynchroAt()
@@ -250,7 +249,6 @@ class ApiKey
     }
 
     /**
-     *
      * @return string
      */
     public function __toString()
@@ -262,6 +260,7 @@ class ApiKey
      * Magic getter to expose protected properties.
      *
      * @param string $property
+     *
      * @return mixed
      */
     public function __get($property)
@@ -273,7 +272,7 @@ class ApiKey
      * Magic setter to save protected properties.
      *
      * @param string $property
-     * @param mixed $value
+     * @param mixed  $value
      */
     public function __set($property, $value)
     {
