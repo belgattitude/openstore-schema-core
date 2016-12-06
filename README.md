@@ -24,7 +24,7 @@ Openstore core database schema.
 Via composer
 
 ```sh
-$ composer require openstore/schema-core:dev-master
+$ composer require openstore/schema-core
 ```
     
 ### Standalone setup
