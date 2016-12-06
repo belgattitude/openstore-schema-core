@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## 0.30.0 (2016-11-22)
+
+- [BC-Break] Breaking change
+  
+  Removal of `zf-commons/zfc-rbac` and `zf-commons/zfc-user` dependencies.
+  
+  User, Roles and Permissions entities are not implementing the user and rbac interfaces.
+  If you rely on them, just extend the entity classes. 
+             
+
 ## 0.26.0 (2016-11-22)
 
 - Added a new procedure `CALL rebuild_category_keywords()` to rebuild product translation keywords 

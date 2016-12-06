@@ -3,7 +3,6 @@
 namespace OpenstoreSchema\Core\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use ZfcRbac\Permission\PermissionInterface;
 
 /**
  * @ORM\Entity
@@ -18,7 +17,7 @@ use ZfcRbac\Permission\PermissionInterface;
  *   options={"comment" = "Custom permissions"}
  * )
  */
-class Permission implements PermissionInterface
+class Permission
 {
     /**
      * @var int

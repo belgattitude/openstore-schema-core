@@ -4,9 +4,6 @@ namespace OpenstoreSchema\Core\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use ZfcUser\Entity\UserInterface;
-use ZfcRbac\Identity\IdentityInterface;
-use Rbac\Role\RoleInterface;
 use Doctrine\Common\Collections\Collection;
 
 /**
@@ -21,7 +18,7 @@ use Doctrine\Common\Collections\Collection;
  *   options={"comment" = "User table"}
  * )
  */
-class User implements UserInterface, IdentityInterface
+class User
 {
     /**
      * @var int
@@ -238,16 +235,6 @@ class User implements UserInterface, IdentityInterface
         foreach ($roles as $role) {
             $this->roles[] = $role;
         }
-    }
-
-    /**
-     * Add one role to roles list.
-     *
-     * @param \Rbac\Role\RoleInterface $role
-     */
-    public function addRole(RoleInterface $role)
-    {
-        $this->roles[] = $role;
     }
 
     /**
