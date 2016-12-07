@@ -53,15 +53,24 @@ class ProductBrand
     private $description;
 
     /**
-     * @ORM\Column(type="string", length=80, nullable=true)
+     * @ORM\Column(type="string", length=80, nullable=true, options={"comment"="Brand homepage"})
      */
     private $url;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true, options={"comment"="Url to logo"})
+     */
+    private $logo_url;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=false, options={"default"=1, "comment"="Whether the brand is currently active"})
+     */
+    private $flag_active;
 
     /**
      * @ORM\Column(type="boolean", nullable=false, options={"default"=1, "comment"="Whether the brand is active in public website"})
      */
-    private $flag_active;
+    private $flag_public;
 
     /**
      * @ORM\Column(type="string", length=40, nullable=true)

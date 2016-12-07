@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 0.30.2 (2016-12-07)
+
+- Added `ProductBrand::logo_url` and `ProductBrand:flag_public`
+
+```sql
+ALTER TABLE product_brand ADD logo_url VARCHAR(255) DEFAULT NULL COMMENT 'Url to logo', ADD flag_public TINYINT(1) DEFAULT '1' NOT NULL COMMENT 'Whether the brand is active in public website', CHANGE url url VARCHAR(80) DEFAULT NULL COMMENT 'Brand homepage', CHANGE flag_active flag_active TINYINT(1) DEFAULT '1' NOT NULL COMMENT 'Whether the brand is currently active';
+```
+
 ## 0.30.1 (2016-12-07)
 
 - Added `ProductBrand::sort_index`
