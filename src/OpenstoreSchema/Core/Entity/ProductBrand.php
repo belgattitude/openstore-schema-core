@@ -16,9 +16,8 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     @ORM\UniqueConstraint(name="unique_slug_idx",columns={"slug"})
  *   },
  *   indexes={
- *     @ORM\Index(name="title_idx", columns={"title"}),
+ *     @ORM\Index(name="sort_index_idx", columns={"sort_index"}),
  *     @ORM\Index(name="description_idx", columns={"description"}),
- *     @ORM\Index(name="slug_idx", columns={"slug"}),
  *   },
  *   options={"comment" = "Product brand table"}
  * )
@@ -58,6 +57,7 @@ class ProductBrand
      */
     private $url;
 
+
     /**
      * @ORM\Column(type="boolean", nullable=false, options={"default"=1, "comment"="Whether the brand is active in public website"})
      */
@@ -67,6 +67,12 @@ class ProductBrand
      * @ORM\Column(type="string", length=40, nullable=true)
      */
     private $icon_class;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, options={"unsigned"=true, "comment"="Relative sort index"})
+     */
+    private $sort_index;
+
 
     /**
      * @Gedmo\Timestampable(on="create")

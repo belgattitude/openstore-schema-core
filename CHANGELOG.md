@@ -1,6 +1,15 @@
 # CHANGELOG
 
-## 0.30.0 (2016-11-22)
+## 0.30.1 (2016-12-07)
+
+- Added `ProductBrand::sort_index`
+
+```sql
+ALTER TABLE product_brand ADD sort_index INT UNSIGNED DEFAULT NULL COMMENT 'Relative sort index';
+CREATE INDEX sort_index_idx ON product_brand (sort_index);
+```
+
+## 0.30.0 (2016-12-05)
 
 - [BC-Break] Breaking change
   
