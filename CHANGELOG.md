@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## 0.30.3 (2017-01-10)
+
+- Added `ProductDepartment` and `ProductTarget` entities
+
+```sql
+CREATE TABLE product_target (target_id SMALLINT UNSIGNED AUTO_INCREMENT NOT NULL, reference VARCHAR(60) NOT NULL COMMENT 'Reference', title VARCHAR(80) DEFAULT NULL, description VARCHAR(15000) DEFAULT NULL, flag_exclude_enduser TINYINT(1) DEFAULT '0' NOT NULL COMMENT 'Visibility should be excluded for enduser target audience', icon_class VARCHAR(40) DEFAULT NULL, sort_index INT UNSIGNED DEFAULT NULL COMMENT 'Relative sort index', created_at DATETIME DEFAULT NULL COMMENT 'Record creation timestamp', updated_at DATETIME DEFAULT NULL COMMENT 'Record last update timestamp', created_by VARCHAR(40) DEFAULT NULL COMMENT 'Creator name', updated_by VARCHAR(40) DEFAULT NULL COMMENT 'Last updater name', legacy_mapping VARCHAR(40) DEFAULT NULL COMMENT 'Unique reference of this record taken from legacy system', legacy_synchro_at DATETIME DEFAULT NULL COMMENT 'Last synchro timestamp', INDEX sort_index_idx (sort_index), INDEX description_idx (description), UNIQUE INDEX unique_reference_idx (reference), UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), UNIQUE INDEX unique_title_idx (title), PRIMARY KEY(target_id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product target audience table' ;
+CREATE TABLE product_department (department_id SMALLINT UNSIGNED AUTO_INCREMENT NOT NULL, reference VARCHAR(60) NOT NULL COMMENT 'Reference', title VARCHAR(80) DEFAULT NULL, description VARCHAR(15000) DEFAULT NULL, icon_class VARCHAR(40) DEFAULT NULL, sort_index INT UNSIGNED DEFAULT NULL COMMENT 'Relative sort index', created_at DATETIME DEFAULT NULL COMMENT 'Record creation timestamp', updated_at DATETIME DEFAULT NULL COMMENT 'Record last update timestamp', created_by VARCHAR(40) DEFAULT NULL COMMENT 'Creator name', updated_by VARCHAR(40) DEFAULT NULL COMMENT 'Last updater name', legacy_mapping VARCHAR(40) DEFAULT NULL COMMENT 'Unique reference of this record taken from legacy system', legacy_synchro_at DATETIME DEFAULT NULL COMMENT 'Last synchro timestamp', INDEX sort_index_idx (sort_index), INDEX description_idx (description), UNIQUE INDEX unique_reference_idx (reference), UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), UNIQUE INDEX unique_title_idx (title), PRIMARY KEY(department_id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product departments' ;
+ALTER TABLE product ADD department_id SMALLINT UNSIGNED DEFAULT NULL, ADD target_id SMALLINT UNSIGNED DEFAULT NULL;
+ALTER TABLE product ADD CONSTRAINT FK_D34A04ADAE80F5DF FOREIGN KEY (department_id) REFERENCES product_department (department_id) ON DELETE CASCADE;
+ALTER TABLE product ADD CONSTRAINT FK_D34A04AD158E0B66 FOREIGN KEY (target_id) REFERENCES product_target (target_id) ON DELETE CASCADE;
+CREATE INDEX IDX_D34A04ADAE80F5DF ON product (department_id);
+CREATE INDEX IDX_D34A04AD158E0B66 ON product (target_id);
+```
+
 ## 0.30.2 (2016-12-07)
 
 - Added `ProductBrand::logo_url` and `ProductBrand:flag_public`

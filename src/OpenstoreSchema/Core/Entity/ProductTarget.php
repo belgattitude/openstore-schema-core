@@ -8,39 +8,32 @@ use Gedmo\Mapping\Annotation as Gedmo;
 /**
  * @ORM\Entity
  * @ORM\Table(
- *   name="product_brand",
+ *   name="product_target",
  *   uniqueConstraints={
  *     @ORM\UniqueConstraint(name="unique_reference_idx",columns={"reference"}),
  *     @ORM\UniqueConstraint(name="unique_legacy_mapping_idx",columns={"legacy_mapping"}),
  *     @ORM\UniqueConstraint(name="unique_title_idx",columns={"title"}),
- *     @ORM\UniqueConstraint(name="unique_slug_idx",columns={"slug"})
  *   },
  *   indexes={
  *     @ORM\Index(name="sort_index_idx", columns={"sort_index"}),
  *     @ORM\Index(name="description_idx", columns={"description"}),
  *   },
- *   options={"comment" = "Product brand table"}
+ *   options={"comment" = "Product target audience table"}
  * )
  */
-class ProductBrand
+class ProductTarget
 {
     /**
      * @ORM\Id
-     * @ORM\Column(name="brand_id", type="integer", nullable=false, options={"unsigned"=true})
+     * @ORM\Column(name="target_id", type="smallint", nullable=false, options={"unsigned"=true})
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $brand_id;
+    private $target_id;
 
     /**
      * @ORM\Column(type="string", length=60, nullable=false, options={"comment" = "Reference"})
      */
     private $reference;
-
-    /**
-     * @Gedmo\Slug(fields={"title"})
-     * @ORM\Column(length=64, nullable=true, options={"comment" = "Unique slug for this record"})
-     */
-    private $slug;
 
     /**
      * @ORM\Column(type="string", length=80, nullable=true)
@@ -53,24 +46,9 @@ class ProductBrand
     private $description;
 
     /**
-     * @ORM\Column(type="string", length=80, nullable=true, options={"comment"="Brand homepage"})
+     * @ORM\Column(type="boolean", nullable=false, options={"default"=0, "comment"="Visibility should be excluded for enduser target audience"})
      */
-    private $url;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true, options={"comment"="Url to logo"})
-     */
-    private $logo_url;
-
-    /**
-     * @ORM\Column(type="boolean", nullable=false, options={"default"=1, "comment"="Whether the brand is currently active"})
-     */
-    private $flag_active;
-
-    /**
-     * @ORM\Column(type="boolean", nullable=false, options={"default"=1, "comment"="Whether the brand is active in public website"})
-     */
-    private $flag_public;
+    private $flag_exclude_enduser;
 
     /**
      * @ORM\Column(type="string", length=40, nullable=true)
@@ -118,26 +96,22 @@ class ProductBrand
 
     public function __construct()
     {
-        /*
-         * Default value for flag_active
-         */
-        $this->flag_active = true;
     }
 
     /**
      * @param int $id
      */
-    public function setBrandId($id)
+    public function setTargetId($id)
     {
-        $this->brand_id = $id;
+        $this->target_id = $id;
     }
 
     /**
      * @return int
      */
-    public function getBrandId()
+    public function getTargetId()
     {
-        return $this->brand_id;
+        return $this->target_id;
     }
 
     /**
@@ -158,22 +132,6 @@ class ProductBrand
     public function getReference()
     {
         return $this->reference;
-    }
-
-    /**
-     * @param string $slug
-     */
-    public function setSlug($slug)
-    {
-        $this->slug = $slug;
-    }
-
-    /**
-     * @return string
-     */
-    public function getSlug()
-    {
-        return $this->slug;
     }
 
     /**
@@ -208,49 +166,9 @@ class ProductBrand
         return $this->description;
     }
 
-    /**
-     * @param string $url homepage url
-     */
-    public function setUrl($url)
+    public function setFlagExcludeEnduser($exclude = true)
     {
-        $this->url = $url;
-    }
-
-    /**
-     * @return string
-     */
-    public function getUrl()
-    {
-        return $this->url;
-    }
-
-    /**
-     * @return string
-     */
-    public function setIconClass($icon_class)
-    {
-        $this->icon_class = $icon_class;
-    }
-
-    /**
-     * @return string
-     */
-    public function getIconClass()
-    {
-        return $this->icon_class;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getFlagActive()
-    {
-        return (bool) $this->flag_active;
-    }
-
-    public function setFlagActive($flag_active)
-    {
-        $this->flag_active = $flag_active;
+        $this->flag_exclude_enduser = $exclude;
     }
 
     /**

@@ -1,4 +1,4 @@
 #!/usr/bin/env php
 <?php
 
-include('openstore-schema-core.php');
+include(__DIR__ . DIRECTORY_SEPARATOR . 'openstore-schema-core.php');

@@ -20,13 +20,19 @@
             "OpenstoreSchema\\Core\\": "src/OpenstoreSchema/Core"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "OpenstoreFixture\\Core\\": "fixtures/OpenstoreFixture/Core"
+        }
+    },
+
     "require": {
         "php": "^5.6 || ^7.0",
         "doctrine/dbal": "^2.5.5",
         "doctrine/common": "^2.6.1 || ^2.7.1",
-        "doctrine/orm": "^2.5.5",
-        "gedmo/doctrine-extensions": "^2.4.24",
-        "doctrine/data-fixtures": "^1.2.1",
+        "doctrine/orm": "^2.5.6",
+        "gedmo/doctrine-extensions": "^2.4.26",
+        "doctrine/data-fixtures": "^1.2.2",
         "symfony/console": "^2.6.0 || ^3.0.0"
     },
     "require-dev": {

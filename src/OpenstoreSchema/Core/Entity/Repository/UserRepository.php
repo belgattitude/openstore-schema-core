@@ -2,13 +2,9 @@
 
 namespace OpenstoreSchema\Core\Entity\Repository;
 
-use Zend\InputFilter\InputFilter;
-use Zend\InputFilter\Factory as InputFactory;
-use Zend\InputFilter\InputFilterAwareInterface;
-use Zend\InputFilter\InputFilterInterface;
 use Doctrine\ORM\EntityRepository;
 
-class UserRepository extends EntityRepository implements InputFilterAwareInterface
+class UserRepository extends EntityRepository
 {
     /**
      * @var InputFilterInterface

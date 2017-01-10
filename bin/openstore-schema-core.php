@@ -80,7 +80,8 @@ $cli->addCommands(array(
     new OpenstoreSchema\Core\Tools\Console\Command\Schema\CreateCommand(),
     new OpenstoreSchema\Core\Tools\Console\Command\Schema\RecreateExtraCommand(),
     new OpenstoreSchema\Core\Tools\Console\Command\Schema\UpdateCommand(),
-    new OpenstoreSchema\Core\Tools\Console\Command\Schema\DropCommand()
+    new OpenstoreSchema\Core\Tools\Console\Command\Schema\DropCommand(),
+    new OpenstoreSchema\Core\Tools\Console\Command\Fixture\LoadFixtureCommand()
 ));
 
 

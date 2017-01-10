@@ -4,8 +4,6 @@ namespace OpenstoreSchema\Core\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use Rbac\Role\HierarchicalRoleInterface;
-use ZfcRbac\Permission\PermissionInterface;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\Common\Collections\Collection;
 
@@ -24,7 +22,7 @@ use Doctrine\Common\Collections\Collection;
  *   options={"comment" = "Access roles"}
  * )
  */
-class Role implements HierarchicalRoleInterface
+class Role
 {
     /**
      * @var int|null

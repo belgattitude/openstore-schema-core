@@ -121,6 +121,18 @@ class Product
     private $product_stub_id;
 
     /**
+     * @ORM\ManyToOne(targetEntity="ProductDepartment", inversedBy="products", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(name="department_id", referencedColumnName="department_id", onDelete="CASCADE", nullable=true)
+     */
+    private $primary_department_id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="ProductTarget", inversedBy="products", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(name="target_id", referencedColumnName="target_id", onDelete="CASCADE", nullable=true)
+     */
+    private $target_id;
+
+    /**
      * Primary color id.
      *
      * @ORM\ManyToOne(targetEntity="Color", cascade={"persist", "remove"})

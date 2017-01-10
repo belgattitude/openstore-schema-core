@@ -8,39 +8,32 @@ use Gedmo\Mapping\Annotation as Gedmo;
 /**
  * @ORM\Entity
  * @ORM\Table(
- *   name="product_brand",
+ *   name="product_department",
  *   uniqueConstraints={
  *     @ORM\UniqueConstraint(name="unique_reference_idx",columns={"reference"}),
  *     @ORM\UniqueConstraint(name="unique_legacy_mapping_idx",columns={"legacy_mapping"}),
  *     @ORM\UniqueConstraint(name="unique_title_idx",columns={"title"}),
- *     @ORM\UniqueConstraint(name="unique_slug_idx",columns={"slug"})
  *   },
  *   indexes={
  *     @ORM\Index(name="sort_index_idx", columns={"sort_index"}),
  *     @ORM\Index(name="description_idx", columns={"description"}),
  *   },
- *   options={"comment" = "Product brand table"}
+ *   options={"comment" = "Product departments"}
  * )
  */
-class ProductBrand
+class ProductDepartment
 {
     /**
      * @ORM\Id
-     * @ORM\Column(name="brand_id", type="integer", nullable=false, options={"unsigned"=true})
+     * @ORM\Column(name="department_id", type="smallint", nullable=false, options={"unsigned"=true})
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $brand_id;
+    private $department_id;
 
     /**
      * @ORM\Column(type="string", length=60, nullable=false, options={"comment" = "Reference"})
      */
     private $reference;
-
-    /**
-     * @Gedmo\Slug(fields={"title"})
-     * @ORM\Column(length=64, nullable=true, options={"comment" = "Unique slug for this record"})
-     */
-    private $slug;
 
     /**
      * @ORM\Column(type="string", length=80, nullable=true)
@@ -51,26 +44,6 @@ class ProductBrand
      * @ORM\Column(type="string", length=15000, nullable=true)
      */
     private $description;
-
-    /**
-     * @ORM\Column(type="string", length=80, nullable=true, options={"comment"="Brand homepage"})
-     */
-    private $url;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true, options={"comment"="Url to logo"})
-     */
-    private $logo_url;
-
-    /**
-     * @ORM\Column(type="boolean", nullable=false, options={"default"=1, "comment"="Whether the brand is currently active"})
-     */
-    private $flag_active;
-
-    /**
-     * @ORM\Column(type="boolean", nullable=false, options={"default"=1, "comment"="Whether the brand is active in public website"})
-     */
-    private $flag_public;
 
     /**
      * @ORM\Column(type="string", length=40, nullable=true)
@@ -118,26 +91,22 @@ class ProductBrand
 
     public function __construct()
     {
-        /*
-         * Default value for flag_active
-         */
-        $this->flag_active = true;
     }
 
     /**
      * @param int $id
      */
-    public function setBrandId($id)
+    public function setDepartmentId($id)
     {
-        $this->brand_id = $id;
+        $this->department_id = $id;
     }
 
     /**
      * @return int
      */
-    public function getBrandId()
+    public function getDepartmentId()
     {
-        return $this->brand_id;
+        return $this->department_id;
     }
 
     /**
@@ -158,22 +127,6 @@ class ProductBrand
     public function getReference()
     {
         return $this->reference;
-    }
-
-    /**
-     * @param string $slug
-     */
-    public function setSlug($slug)
-    {
-        $this->slug = $slug;
-    }
-
-    /**
-     * @return string
-     */
-    public function getSlug()
-    {
-        return $this->slug;
     }
 
     /**
@@ -206,51 +159,6 @@ class ProductBrand
     public function getDescription()
     {
         return $this->description;
-    }
-
-    /**
-     * @param string $url homepage url
-     */
-    public function setUrl($url)
-    {
-        $this->url = $url;
-    }
-
-    /**
-     * @return string
-     */
-    public function getUrl()
-    {
-        return $this->url;
-    }
-
-    /**
-     * @return string
-     */
-    public function setIconClass($icon_class)
-    {
-        $this->icon_class = $icon_class;
-    }
-
-    /**
-     * @return string
-     */
-    public function getIconClass()
-    {
-        return $this->icon_class;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getFlagActive()
-    {
-        return (bool) $this->flag_active;
-    }
-
-    public function setFlagActive($flag_active)
-    {
-        $this->flag_active = $flag_active;
     }
 
     /**
