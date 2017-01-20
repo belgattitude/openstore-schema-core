@@ -84,10 +84,10 @@ $ ./vendor/bin/openstore-schema-core openstore:schema:drop
 If INNODB file_format is barracuda you can change the compression format of the following tables
 
 ```sql
-ALTER TABLE product_translation ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=16;
+ALTER TABLE product_translation ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
 ALTER TABLE product_category_translation ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
 
-ALTER TABLE sale_order_line ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=16;
+ALTER TABLE sale_order_line ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
 ALTER TABLE sale_order ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
 ```
 
