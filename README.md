@@ -4,10 +4,10 @@
 
 Openstore database schema.
 
-> Warning: While the openstore database schema is relying on doctrine2, no work  
-> has been done yet to develop repositories and ensure model relationships (correct naming). 
-> In other words, doctrine was just used to keep a way to generate sql not to consume data 
-> as the datalayer has been developped with zend-db. 
+> Warning: While the openstore database schema is relying on doctrine2, no work
+> has been done yet to develop repositories and ensure model relationships (correct naming).
+> In other words, doctrine was just used to keep a way to generate sql not to consume data
+> as the datalayer has been developped with zend-db.
 
 ## Requirements
 
