@@ -2,7 +2,12 @@
 
 [![Dependency Status](https://www.versioneye.com/user/projects/5677ba2b107997003e0011c3/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5677ba2b107997003e0011c3)
 
-Openstore core database schema.
+Openstore database schema.
+
+> Warning: While the openstore database schema is relying on doctrine2, no work  
+> has been done yet to develop repositories and ensure model relationships (correct naming). 
+> In other words, doctrine was just used to keep a way to generate sql not to consume data 
+> as the datalayer has been developped with zend-db. 
 
 ## Requirements
 
