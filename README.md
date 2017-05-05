@@ -20,9 +20,11 @@ Openstore database schema.
 | Mariadb 10+   | INNODB/XTRADB      |
 | Percona 5.6+  | INNODB/XTRADB      |
 
-> For users of MySQL < 5.7 or MariaDB < 10.2, to be able to work with utf8mb4,
+> To be able to work with utf8mb4 for users of MySQL < 5.7 or MariaDB < 10.2,
 > you must ensure `innodb_file_per_table=1`, `innodb_file_format=barracuda` and `innodb_large_prefix=1`.
-> Note that from MariaDB 10.2.2 `barracuda` has become the default file format. 
+> at the server settings level (my.cnf) AND that your tables are created with
+> `CREATE TABLE .... InnoDB ROW_FORMAT=DYNAMIC`. (a default value has been introduced in MariaDB 10.2: innodb_default_row_format).
+> *Note that from MariaDB 10.2.2 `barracuda` has become the default file format.* 
 
 ## Install
 
