@@ -17,7 +17,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *   },
  *   indexes={
  *     @ORM\Index(name="sort_index_idx", columns={"sort_index"}),
- *     @ORM\Index(name="description_idx", columns={"description"}),
+ *     @ORM\Index(name="title_idx", columns={"title"}),
  *   },
  *   options={"comment" = "Product brand table"}
  * )

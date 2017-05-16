@@ -16,7 +16,6 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *   },
  *   indexes={
  *     @ORM\Index(name="title_idx", columns={"title"}),
- *     @ORM\Index(name="description_idx", columns={"description"}),
  *   },
  *   options={"comment" = "Media container table"}
  * )

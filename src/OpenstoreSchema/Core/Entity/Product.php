@@ -19,8 +19,6 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     @ORM\Index(name="flag_active_idx", columns={"flag_active"}),
  *     @ORM\Index(name="reference_idx", columns={"reference"}),
  *     @ORM\Index(name="search_reference_idx", columns={"search_reference"}),
- *     @ORM\Index(name="description_idx", columns={"description"}),
- *     @ORM\Index(name="characteristic_idx", columns={"characteristic"}),
  *     @ORM\Index(name="barcode_ean13_idx", columns={"barcode_ean13"}),
  *     @ORM\Index(name="barcode_upca_idx", columns={"barcode_upca"}),
  *     @ORM\Index(name="keywords_idx", columns={"keywords"}),

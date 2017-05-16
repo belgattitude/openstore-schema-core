@@ -14,7 +14,6 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     @ORM\UniqueConstraint(name="unique_translation_idx",columns={"product_stub_id", "lang"})
  *   },
  *   indexes={
- *     @ORM\Index(name="description_idx", columns={"description_header"}),
  *     @ORM\Index(name="keywords_idx", columns={"keywords"}),
  *     @ORM\Index(name="revision_idx", columns={"revision"}),
  *   },

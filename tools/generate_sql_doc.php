@@ -3,7 +3,7 @@
 
 $cmd = "./bin/openstore-schema-core openstore:schema:create --dump-sql";
 
-$working_directory = realpath(dirname(__FILE__) . '/../');
+$working_directory = realpath(__DIR__ . '/../');
 
 chdir($working_directory);
 

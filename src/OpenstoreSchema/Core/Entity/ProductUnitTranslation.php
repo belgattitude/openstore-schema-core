@@ -14,7 +14,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     @ORM\UniqueConstraint(name="unique_translation_idx",columns={"unit_id", "lang"})
  *   },
  *   indexes={
- *     @ORM\Index(name="description_idx", columns={"description"}),
+ *     @ORM\Index(name="title_idx", columns={"title"}),
  *   },
  *   options={
  *      "comment" = "Product unit translation"

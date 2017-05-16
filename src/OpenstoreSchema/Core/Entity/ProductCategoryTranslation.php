@@ -15,7 +15,6 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *   },
  *   indexes={
  *     @ORM\Index(name="title_idx", columns={"title"}),
- *     @ORM\Index(name="description_idx", columns={"description"}),
  *     @ORM\Index(name="keywords_ft_idx", columns={"keywords"}, flags={"fulltext"}),
  *     @ORM\Index(name="slug_idx", columns={"slug"}),
  *     @ORM\Index(name="breadcrumb_idx", columns={"breadcrumb"}),

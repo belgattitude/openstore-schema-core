@@ -36,9 +36,16 @@
         "symfony/console": "^2.6.0 || ^3.0.0"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.0.0"
+        "friendsofphp/php-cs-fixer": "^2.1.0"
     },
     "bin": ["bin/openstore-schema-core"],
+    "scripts": {
+        "fix": [
+            "@cs-fix"
+        ],
+        "cs-check": "vendor/bin/php-cs-fixer --diff --dry-run -v fix",
+        "cs-fix": "vendor/bin/php-cs-fixer -v fix"
+    },
     "archive": {
         "exclude": ["test", "doc", "tools", ".travis.yml", ".codeclimate.yml", ".coveralls.yml", ".scrutinizer.yml", "phpcs.xml", ".gitignore"]
     }
