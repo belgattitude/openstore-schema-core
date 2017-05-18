@@ -24,7 +24,7 @@ openstore-schema-core provides the database schema used in openstore.
 
 - [x] Automatic schema generation from doctrine entities. 
 - [x] Schema migrations made easy.
-- [x] Provide triggers, procedures and functions (extras).
+- [x] Provide triggers, procedures and functions ([extras](https://github.com/belgattitude/openstore-schema-core/blob/master/src/OpenstoreSchema/Core/Extra/MysqlExtra.php)).
 
 # Install
 
@@ -55,7 +55,7 @@ $ vi ./config/openstore-schema-core.config.php
 Create an empty database:
 
 ```shell
-$ mysql -e "CREATE DATABASE openstore_test;" -uroot -p
+$ mysql -e "CREATE DATABASE openstore_test CHARACTER SET='utf8mb4' COLLATE='utf8mb4_unicode_ci';" -uroot -p
 ```
 
 ## Commands
@@ -74,8 +74,9 @@ Practically, use the following commands for:
 | `openstore:schema:recreate-extra`  | Recreate all triggers, procedures, functions... |
 | `openstore:schema:update`          | Apply schema migration on an existing database. |
 
-> WARNING: use the option `--dump-sql` to display the DDL instead of applying onto the database,
-> for example:
+> WARNING: use the option `--dump-sql` to display the DDL instead of applying onto the database.
+> This is particularly useful to show migration needed over a production database, for example:
+
 
 ```shell
 $ ./bin/openstore-schema-core openstore:schema:update --dump-sql
@@ -92,19 +93,20 @@ The following database have been tested:
 |---------------|--------------------|
 | MySQL 5.6+    | INNODB engine      |
 | Mariadb 10+   | INNODB/XTRADB      |
-| Percona 5.6+  | INNODB/XTRADB      |
 
-*Always try to work with `utf8mb4` instead of `utf8`, see note below.
+> To be able to work with utf8mb4 for users of MySQL < 5.7.7 or MariaDB < 10.2,
+> you must ensure 
+>   - [x] `innodb_file_per_table=1`
+>   - [x] `innodb_file_format=barracuda` and `innodb_large_prefix=1`.
+> at the server settings level (my.cnf) AND that your tables are created with
+> `CREATE TABLE .... InnoDB ROW_FORMAT=DYNAMIC`. (a default value has been introduced in MariaDB 10.2: innodb_default_row_format).
+> *(Note that from MariaDB 10.2.2, `barracuda` has become the default file format.)* 
+
 
 ### Unicode
 
 Support for unicode in MySQL is far from perfect. If possible try to use `utf8mb4` instead of `utf8`.
 
-> To be able to work with utf8mb4 for users of MySQL < 5.7 or MariaDB < 10.2,
-> you must ensure `innodb_file_per_table=1`, `innodb_file_format=barracuda` and `innodb_large_prefix=1`.
-> at the server settings level (my.cnf) AND that your tables are created with
-> `CREATE TABLE .... InnoDB ROW_FORMAT=DYNAMIC`. (a default value has been introduced in MariaDB 10.2: innodb_default_row_format).
-> *Note that from MariaDB 10.2.2 `barracuda` has become the default file format.* 
 
 ### Compressing tables
 

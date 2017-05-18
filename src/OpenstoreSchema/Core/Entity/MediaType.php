@@ -25,7 +25,11 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *   },
  *   indexes={
  *   },
- *   options={"comment" = "Media type table"}
+ *   options={
+ *     "comment" = "Media type table",
+ *     "charset"="utf8mb4",
+ *     "collate"="utf8mb4_unicode_ci"
+ *   }
  * )
  */
 class MediaType

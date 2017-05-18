@@ -27,7 +27,11 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     @ORM\Index(name="available_stock_idx", columns={"available_stock"}),
  *     @ORM\Index(name="theoretical_stock_idx", columns={"theoretical_stock"}),
  *   },
- *   options={"comment" = "Product stock"}
+ *   options={
+ *     "comment" = "Product stock",
+ *     "charset"="utf8mb4",
+ *     "collate"="utf8mb4_unicode_ci"
+ *   }
  * )
  */
 class ProductStock

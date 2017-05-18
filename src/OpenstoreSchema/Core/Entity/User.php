@@ -25,7 +25,11 @@ use Doctrine\Common\Collections\Collection;
  *     @ORM\UniqueConstraint(name="unique_username_idx",columns={"username"}),
  *     @ORM\UniqueConstraint(name="unique_email_idx",columns={"email"}),
  *   },
- *   options={"comment" = "User table"}
+ *   options={
+ *     "comment" = "User table",
+ *     "charset"="utf8mb4",
+ *     "collate"="utf8mb4_unicode_ci"
+ *   }
  * )
  */
 class User

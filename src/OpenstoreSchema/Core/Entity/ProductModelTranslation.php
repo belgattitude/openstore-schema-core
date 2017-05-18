@@ -26,7 +26,11 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *   indexes={
  *     @ORM\Index(name="title_idx", columns={"title"}),
  *   },
- *   options={"comment" = "Product model translation table"}
+ *   options={
+ *     "comment" = "Product model translation table",
+ *     "charset"="utf8mb4",
+ *     "collate"="utf8mb4_unicode_ci"
+ *   }
  * )
  */
 class ProductModelTranslation
@@ -62,9 +66,14 @@ class ProductModelTranslation
     private $title;
 
     /**
-     * @ORM\Column(type="string", length=16000, nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      */
     private $description;
+
+    /**
+     * @ORM\Column(type="text", nullable=true, options={"comment" = "Specifications"})
+     */
+    private $specs;
 
     /**
      * @Gedmo\Timestampable(on="create")

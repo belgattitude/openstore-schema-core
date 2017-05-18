@@ -26,7 +26,11 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *   },
  *   indexes={
  *   },
- *   options={"comment" = "Product type table"}
+ *   options={
+ *     "comment" = "Product type table",
+ *     "charset"="utf8mb4",
+ *     "collate"="utf8mb4_unicode_ci"
+ *   }
  * )
  */
 class ProductType

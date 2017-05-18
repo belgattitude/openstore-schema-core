@@ -27,7 +27,12 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *   indexes={
  *     @ORM\Index(name="title_idx", columns={"title"}),
  *   },
- *   options={"comment" = "Media container table"}
+ *   options={
+ *     "comment" = "Media container table",
+ *     "charset"="utf8mb4",
+ *     "collate"="utf8mb4_unicode_ci",
+ *     "row_format" = "DYNAMIC"
+ *   }
  * )
  */
 class MediaContainer

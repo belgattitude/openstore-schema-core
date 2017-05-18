@@ -160,17 +160,6 @@ class Setup
         $blameableListener->setUserValue('unknown'); // determine from your environment
         $evm->addEventSubscriber($blameableListener);
 
-        // translatable - buggy !!!
-        /*
-        $translatableListener = new Gedmo\Translatable\TranslatableListener();
-        // current translation locale should be set from session or hook later into the listener
-        // most important, before entity manager is flushed
-        $translatableListener->setTranslatableLocale('en');
-        $translatableListener->setDefaultLocale('en');
-        $translatableListener->setAnnotationReader($cachedAnnotationReader);
-        $evm->addEventSubscriber($translatableListener);
-        */
-
         // sortable, not used in example
         $sortableListener = new Gedmo\Sortable\SortableListener();
         $sortableListener->setAnnotationReader($cachedAnnotationReader);

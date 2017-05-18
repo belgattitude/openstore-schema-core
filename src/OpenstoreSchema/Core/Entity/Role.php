@@ -29,7 +29,11 @@ use Doctrine\Common\Collections\Collection;
  *     @ORM\Index(name="lft_idx", columns={"lft"}),
  *     @ORM\Index(name="rgt_idx", columns={"rgt"}),
  *   },
- *   options={"comment" = "Access roles"}
+ *   options={
+ *     "comment" = "Access roles",
+ *     "charset"="utf8mb4",
+ *     "collate"="utf8mb4_unicode_ci"
+ *   }
  * )
  */
 class Role

@@ -24,7 +24,11 @@ use Doctrine\ORM\Mapping as ORM;
  *   indexes={
  *     @ORM\Index(name="name_idx", columns={"name"}),
  *   },
- *   options={"comment" = "Custom permissions"}
+ *   options={
+ *     "comment" = "Custom permissions",
+ *     "charset"="utf8mb4",
+ *     "collate"="utf8mb4_unicode_ci"
+ *   }
  * )
  */
 class Permission

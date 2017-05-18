@@ -29,16 +29,16 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     @ORM\Index(name="slug_idx", columns={"slug"}),
  *     @ORM\Index(name="breadcrumb_idx", columns={"breadcrumb"}),
  *   },
- *   options={"comment" = "Product translation table"}
+ *   options={
+ *     "comment" = "Product translation table",
+ *     "charset"="utf8mb4",
+ *     "collate"="utf8mb4_unicode_ci",
+ *     "row_format" = "DYNAMIC"
+ *   }
  * )
  */
 class ProductCategoryTranslation
 {
-    /**
-     * @var \Zend\InputFilter\InputFilterInterface
-     */
-    protected $inputFilter;
-
     /**
      * @ORM\Id
      * @ORM\Column(name="id", type="bigint", nullable=false, options={"unsigned"=true, "comment" = "Primary key"})

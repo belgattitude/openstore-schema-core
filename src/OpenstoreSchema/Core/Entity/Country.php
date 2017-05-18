@@ -23,7 +23,11 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     @ORM\UniqueConstraint(name="unique_reference_idx",columns={"reference"}),
  *     @ORM\UniqueConstraint(name="unique_legacy_mapping_idx",columns={"legacy_mapping"}),
  *   },
- *   options={"comment" = "Country table"}
+ *   options={
+ *      "comment" = "Country table",
+ *      "charset"="utf8mb4",
+ *      "collate"="utf8mb4_unicode_ci"
+ *   }
  * )
  */
 class Country

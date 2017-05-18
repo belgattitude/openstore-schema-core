@@ -26,7 +26,11 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *   indexes={
  *     @ORM\Index(name="name_idx", columns={"name"}),
  *   },
- *   options={"comment" = "Color translation table"}
+ *   options={
+ *      "comment" = "Color translation table",
+ *      "charset"="utf8mb4",
+ *      "collate"="utf8mb4_unicode_ci"
+ *   }
  * )
  */
 class ColorTranslation

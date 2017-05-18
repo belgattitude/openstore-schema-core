@@ -34,7 +34,12 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     @ORM\Index(name="keywords_idx", columns={"keywords"}),
  *     @ORM\Index(name="slug_idx", columns={"slug"}),
  *   },
- *   options={"comment" = "Product table"}
+ *   options={
+ *     "comment" = "Product table",
+ *     "charset"="utf8mb4",
+ *     "collate"="utf8mb4_unicode_ci",
+ *     "row_format" = "DYNAMIC"
+ *   }
  * )
  * @Gedmo\SoftDeleteable(fieldName="deleted_at")
  */

@@ -24,7 +24,11 @@ use Doctrine\ORM\Mapping as ORM;
  *   },
  *   indexes={
  *   },
- *   options={"comment" = "Product packaging information"}
+ *   options={
+ *     "comment" = "Product packaging information",
+ *     "charset"="utf8mb4",
+ *     "collate"="utf8mb4_unicode_ci"
+ *   }
  * )
  */
 class ProductPackaging

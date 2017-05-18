@@ -29,7 +29,11 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     @ORM\Index(name="title_idx", columns={"title"}),
  *     @ORM\Index(name="slug_idx", columns={"slug"}),
  *   },
- *   options={"comment" = "Product set table"}
+ *   options={
+ *     "comment" = "Product set table",
+ *     "charset"="utf8mb4",
+ *     "collate"="utf8mb4_unicode_ci"
+ *   }
  * )
  */
 class ProductSet

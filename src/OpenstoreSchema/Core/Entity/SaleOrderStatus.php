@@ -24,7 +24,11 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     @ORM\UniqueConstraint(name="unique_legacy_mapping_idx",columns={"legacy_mapping"}),
  *     @ORM\UniqueConstraint(name="unique_flag_default_idx",columns={"flag_default"}),
  *   },
- *   options={"comment" = "Order status table"}
+ *   options={
+ *     "comment" = "Order status table",
+ *     "charset"="utf8mb4",
+ *     "collate"="utf8mb4_unicode_ci"
+ *   }
  * )
  */
 class SaleOrderStatus

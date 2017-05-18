@@ -35,7 +35,11 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     @ORM\Index(name="deal_rank_idx", columns={"deal_rank"}),
  *     @ORM\Index(name="bestseller_rank_idx", columns={"bestseller_rank"}),
  *   },
- *   options={"comment" = "Product pricelist"}
+ *   options={
+ *     "comment" = "Product pricelist",
+ *     "charset"="utf8mb4",
+ *     "collate"="utf8mb4_unicode_ci"
+ *   }
  * )
  */
 class ProductPricelist

@@ -23,7 +23,11 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     @ORM\UniqueConstraint(name="unique_user_customer_idx",columns={"user_id", "customer_id"}),
  *     @ORM\UniqueConstraint(name="unique_legacy_mapping_idx",columns={"legacy_mapping"}),
  *   },
- *   options={"comment" = "User scope (customer, rep...)"}
+ *   options={
+ *     "comment" = "User scope (customer, rep...)",
+ *     "charset"="utf8mb4",
+ *     "collate"="utf8mb4_unicode_ci"
+ *   }
  * )
  */
 class UserScope

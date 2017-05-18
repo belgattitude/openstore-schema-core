@@ -23,7 +23,11 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     @ORM\UniqueConstraint(name="unique_api_service_idx",columns={"api_id", "service_id"}),
  *     @ORM\UniqueConstraint(name="unique_legacy_mapping_idx",columns={"legacy_mapping"}),
  *   },
- *   options={"comment" = "Api key services"}
+ *   options={
+ *      "comment" = "Api key services",
+ *      "charset"="utf8mb4",
+ *      "collate"="utf8mb4_unicode_ci"
+ *   }
  * )
  */
 class ApiKeyService

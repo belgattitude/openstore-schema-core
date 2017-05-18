@@ -28,12 +28,12 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     @ORM\Index(name="revision_idx", columns={"revision"}),
  *   },
  *   options={
- *      "comment" = "Product stub translation table",
+ *     "comment" = "Product stub translation table",
+ *     "charset" = "utf8mb4",
+ *     "collate" = "utf8mb4_unicode_ci",
+ *     "row_format" = "DYNAMIC"
  *   }
  * )
- *
- * //"charset"="utf8mb4",
- * //"collate"="utf8mb4_unicode_ci"
  */
 class ProductStubTranslation
 {

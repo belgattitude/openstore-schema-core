@@ -25,7 +25,11 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     @ORM\UniqueConstraint(name="unique_flag_default_idx",columns={"flag_default"}),
  *     @ORM\UniqueConstraint(name="sort_index_idx",columns={"sort_index"})
  *   },
- *   options={"comment" = "Pricelist table"}
+ *   options={
+ *     "comment" = "Pricelist table",
+ *     "charset"="utf8mb4",
+ *     "collate"="utf8mb4_unicode_ci"
+ *   }
  * )
  */
 class Pricelist

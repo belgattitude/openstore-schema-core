@@ -27,7 +27,11 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     @ORM\Index(name="invoiced_at_idx", columns={"invoiced_at"}),
  *     @ORM\Index(name="line_number_idx", columns={"line_number"})
  *   },
- *   options={"comment" = "Order line table"}
+ *   options={
+ *     "comment" = "Order line table",
+ *     "charset"="utf8mb4",
+ *     "collate"="utf8mb4_unicode_ci"
+ *   }
  * )
  */
 class SaleOrderLine

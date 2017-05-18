@@ -24,7 +24,11 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *   },
  *   indexes={
  *   },
- *   options={"comment" = "Sales order table"}
+ *   options={
+ *     "comment" = "Sales order table",
+ *     "charset"="utf8mb4",
+ *     "collate"="utf8mb4_unicode_ci"
+ *   }
  * )
  */
 class SaleOrder

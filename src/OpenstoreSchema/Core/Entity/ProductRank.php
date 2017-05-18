@@ -30,7 +30,11 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     @ORM\Index(name="trending_rank_idx", columns={"trending_rank"}),
  *     @ORM\Index(name="mostrated_rank_idx", columns={"mostrated_rank"}),
  *   },
- *   options={"comment" = "Product rankings"}
+ *   options={
+ *     "comment" = "Product rankings",
+ *     "charset"="utf8mb4",
+ *     "collate"="utf8mb4_unicode_ci"
+ *   }
  * )
  */
 class ProductRank

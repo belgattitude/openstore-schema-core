@@ -19,7 +19,11 @@ use Gedmo\Mapping\Annotation as Gedmo;
  * @ORM\Entity
  * @ORM\Table(
  *   name="product_pricelist_stat",
- *   options={"comment" = "Product pricelist quick statistics"}
+ *   options={
+ *     "comment" = "Product pricelist quick statistics",
+ *     "charset"="utf8mb4",
+ *     "collate"="utf8mb4_unicode_ci"
+ *   }
  * )
  */
 class ProductPricelistStat

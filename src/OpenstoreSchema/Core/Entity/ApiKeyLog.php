@@ -21,7 +21,11 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *   name="api_key_log",
  *   uniqueConstraints={
  *   },
- *   options={"comment" = "Api usage logs"}
+ *   options={
+ *      "comment" = "Api usage logs",
+ *      "charset"="utf8mb4",
+ *      "collate"="utf8mb4_unicode_ci"
+ *   }
  * )
  */
 class ApiKeyLog

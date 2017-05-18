@@ -27,7 +27,11 @@ use Doctrine\ORM\Mapping as ORM;
  *     @ORM\Index(name="total_recorded_quantity_last_12_months_idx", columns={"total_recorded_quantity_last_12_months"}),
  *     @ORM\Index(name="total_recorded_turnover_last_12_months_idx", columns={"total_recorded_turnover_last_12_months"}),
  *   },
- *   options={"comment" = "Product sale trend stats"}
+ *   options={
+ *     "comment" = "Product sale trend stats",
+ *     "charset"="utf8mb4",
+ *     "collate"="utf8mb4_unicode_ci"
+ *   }
  * )
  */
 class ProductStatTrend

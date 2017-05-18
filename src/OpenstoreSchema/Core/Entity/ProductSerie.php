@@ -29,7 +29,12 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     @ORM\Index(name="slug_idx", columns={"slug"}),
  *     @ORM\Index(name="revision_idx", columns={"revision"})
  *   },
- *   options={"comment" = "Product serie table"}
+ *   options={
+ *     "comment" = "Product serie table",
+ *     "charset"="utf8mb4",
+ *     "collate"="utf8mb4_unicode_ci",
+ *     "row_format" = "DYNAMIC"
+ *   }
  * )
  */
 class ProductSerie
@@ -74,7 +79,7 @@ class ProductSerie
     private $title;
 
     /**
-     * @ORM\Column(type="string", length=10000, nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      */
     private $description;
 
@@ -84,7 +89,7 @@ class ProductSerie
     private $flag_marketing_action;
 
     /**
-     * @ORM\Column(type="string", length=10000, nullable=true, options={"comment" = "Specifications"})
+     * @ORM\Column(type="text", nullable=true, options={"comment" = "Specifications"})
      */
     private $specs;
 

@@ -35,7 +35,12 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     @ORM\Index(name="flag_rankable_idx", columns={"flag_rankable"}),
  *     @ORM\Index(name="alt_mapping_reference_idx", columns={"alt_mapping_reference"}),
  *   },
- *   options={"comment" = "Product category table"}
+ *   options={
+ *     "comment" = "Product category table",
+ *     "charset"="utf8mb4",
+ *     "collate"="utf8mb4_unicode_ci",
+ *     "row_format" = "DYNAMIC"
+ *   }
  * )
  * @ORM\Entity(repositoryClass="OpenstoreSchema\Core\Entity\Repository\ProductCategoryRepository")
  */

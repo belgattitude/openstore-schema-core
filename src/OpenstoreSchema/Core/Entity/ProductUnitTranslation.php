@@ -27,17 +27,14 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     @ORM\Index(name="title_idx", columns={"title"}),
  *   },
  *   options={
- *      "comment" = "Product unit translation"
+ *      "comment" = "Product unit translation",
+ *      "charset"="utf8mb4",
+ *      "collate"="utf8mb4_unicode_ci"
  *   }
  * )
  */
 class ProductUnitTranslation
 {
-    /**
-     * @var \Zend\InputFilter\InputFilterInterface
-     */
-    protected $inputFilter;
-
     /**
      * @ORM\Id
      * @ORM\Column(name="id", type="bigint", nullable=false, options={"unsigned"=true, "comment" = "Primary key"})

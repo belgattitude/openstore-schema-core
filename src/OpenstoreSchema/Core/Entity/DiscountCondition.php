@@ -26,7 +26,11 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     @ORM\Index(name="valid_from_idx", columns={"valid_from"}),
  *     @ORM\Index(name="valid_till_idx", columns={"valid_till"}),
  *   },
- *   options={"comment" = "Discount conditions table"}
+ *   options={
+ *     "comment" = "Discount conditions table",
+ *     "charset"="utf8mb4",
+ *     "collate"="utf8mb4_unicode_ci"
+ *   }
  * )
  */
 class DiscountCondition

@@ -63,7 +63,7 @@ DROP FUNCTION IF EXISTS `strip_tags` //
 DELIMITER ;
 DELIMITER //
         CREATE FUNCTION strip_tags( DIRTY VARCHAR(3000) )
-        RETURNS VARCHAR(3000) CHARSET utf8mb4 COLLATE utf8_general_ci
+        RETURNS VARCHAR(3000) CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci
         DETERMINISTIC
         BEGIN
           DECLARE iStart, iEnd, iLength int;
@@ -86,7 +86,7 @@ DROP FUNCTION IF EXISTS `delete_double_spaces` //
 DELIMITER ;
 DELIMITER //
         CREATE FUNCTION delete_double_spaces ( title VARCHAR(3000) )
-        RETURNS VARCHAR(3000) CHARSET utf8mb4 COLLATE utf8_unicode_ci DETERMINISTIC
+        RETURNS VARCHAR(3000) CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci DETERMINISTIC
         BEGIN
             DECLARE result VARCHAR(3000);
             SET result = REPLACE( title, '  ', ' ' );
@@ -101,7 +101,7 @@ DELIMITER //
 DROP FUNCTION IF EXISTS `get_searchable_reference` //
 DELIMITER ;
 DELIMITER //
-        CREATE FUNCTION `get_searchable_reference` (`in_str` VARCHAR(2048)) RETURNS VARCHAR(2048) CHARSET utf8
+        CREATE FUNCTION `get_searchable_reference` (`in_str` VARCHAR(2048)) RETURNS VARCHAR(2048) CHARSET utf8mb4
         BEGIN
             /*
               This function escape a string from any non alphanumeric chars (A_Z0_9)
@@ -375,7 +375,7 @@ DELIMITER //
                                             GROUP_CONCAT(
                                                     pc2.title
                                                     ORDER BY pc1.lvl , pc2.lvl
-                                                    --     could be utf8mb4 - &rarr; →
+                                                    --     could be utf8 - &rarr; →
                                                     SEPARATOR ' | '
                                     ) AS `breadcrumb`
                             FROM
@@ -399,7 +399,7 @@ DELIMITER //
                                             GROUP_CONCAT(
                                                     IF(pc18.title is null, pc2.title, pc18.title)
                                                     ORDER BY pc1.lvl , pc2.lvl
-                                                    --     could be utf8mb4 - &rarr; →
+                                                    --     could be utf8 - &rarr; →
                                                     SEPARATOR ' | '
                                     ) AS `breadcrumb`
                             FROM

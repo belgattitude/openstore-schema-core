@@ -26,7 +26,11 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *   indexes={
  *     @ORM\Index(name="reference_idx", columns={"reference"}),
  *   },
- *   options={"comment" = "Product stub"}
+ *   options={
+ *     "comment" = "Product stub",
+ *     "charset"="utf8mb4",
+ *     "collate"="utf8mb4_unicode_ci"
+ *   }
  * )
  */
 class ProductStub

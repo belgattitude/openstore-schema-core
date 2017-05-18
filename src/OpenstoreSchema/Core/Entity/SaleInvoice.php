@@ -25,7 +25,11 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *   indexes={
  *     @ORM\Index(name="invoiced_at_idx", columns={"invoiced_at"}),
  *   },
- *   options={"comment" = "Sales invoices table"}
+ *   options={
+ *     "comment" = "Sales invoices table",
+ *     "charset"="utf8mb4",
+ *     "collate"="utf8mb4_unicode_ci"
+ *   }
  * )
  */
 class SaleInvoice

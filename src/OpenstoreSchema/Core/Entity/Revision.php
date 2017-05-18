@@ -28,7 +28,11 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     @ORM\Index(name="revision_idx", columns={"revision"}),
  *     @ORM\Index(name="created_at_idx", columns={"created_at"}),
  *   },
- *   options={"comment" = "Custom table revisions history"}
+ *   options={
+ *     "comment" = "Custom table revisions history",
+ *     "charset"="utf8mb4",
+ *     "collate"="utf8mb4_unicode_ci"
+ *   }
  * )
  */
 class Revision
