@@ -16,7 +16,7 @@ openstore-schema-core provides the database schema used in openstore.
 
 ## Databases
 
-Be sure to have one of the supported databases available:
+Be sure to have one of the supported databases installed:
 
 | Database      | Extra              |
 |---------------|--------------------|
