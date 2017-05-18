@@ -2,9 +2,9 @@
 
 [![PHP Version](http://img.shields.io/badge/php-5.5+-ff69b4.svg)](https://packagist.org/packages/begattitude/openstore-schema-core)
 [![Dependency Status](https://www.versioneye.com/user/projects/5677ba2b107997003e0011c3/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5677ba2b107997003e0011c3)
-[![Latest Stable Version](https://poser.pugx.org/belgattitude/openstore-schema-core/v/stable.svg)](https://packagist.org/packages/belgattitude/openstore-schema-core)
-[![Total Downloads](https://poser.pugx.org/belgattitude/openstore-schema-core/downloads.png)](https://packagist.org/packages/belgattitude/openstore-schema-core)
-[![License](https://poser.pugx.org/belgattitude/openstore-schema-core/license.png)](https://packagist.org/packages/belgattitude/openstore-schema-core)
+[![Latest Stable Version](https://poser.pugx.org/openstore/schema-core/v/stable.svg)](https://packagist.org/packages/openstore/schema-core)
+[![Total Downloads](https://poser.pugx.org/openstore/schema-core/downloads.png)](https://packagist.org/packages/openstore/schema-core)
+[![License](https://poser.pugx.org/openstore/schema-core/license.png)](https://packagist.org/packages/openstore/schema-core)
 
 openstore-schema-core provides the database schema used in openstore. 
 
@@ -112,6 +112,6 @@ ALTER TABLE sale_order ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
 
 ### Basic zoom on product group tables
 
-![product_erd_image](https://raw.githubusercontent.com/belgattitude/openstore-schema-core/master/docs/image/erd-zoom-product.jpg "Product erd")
+![product_erd_image](https://raw.githubusercontent.com/openstore/schema-core/master/docs/image/erd-zoom-product.jpg "Product erd")
 
 	
