@@ -47,7 +47,6 @@ Make a copy of the [distribution config file](https://github.com/belgattitude/op
 edit your database parameters:
 
 ```shell
-$ 
 $ cp ./config/openstore-schema-core.config.php.dist ./config/openstore-schema-core.config.php
 # Edit database parameters
 $ vi ./config/openstore-schema-core.config.php
