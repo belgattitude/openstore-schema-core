@@ -8,7 +8,7 @@
 [![License](https://poser.pugx.org/openstore/schema-core/license.png)](https://packagist.org/packages/openstore/schema-core)
 
 openstore-schema-core provides the database schema used in the openstore project. It consists of around 80 tables
-specifically designed to be used in a product catalog database.
+specifically designed to deal with a product catalog.
    
 > **Disclaimer: this is a work-in-progress !**   
 
