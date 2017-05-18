@@ -20,9 +20,45 @@ openstore-schema-core provides the database schema used in openstore.
 - PHP 5.5+, 7.0+ or HHVM >= 3.2.
 - MySQL or MariaDB with InnoDB
 
-## Databases
+## Features
 
-Be sure to have one of the supported databases installed:
+- [x] Automatic schema generation from doctrine entities. 
+- [x] Schema migrations
+
+
+# Install
+
+## Clone the project
+
+```shell
+$ git clone https://github.com/belgattitude/openstore-schema-core.git
+```
+
+*Alternatively you can require the project through composer `composer require openstore/schema-core`*
+        
+## Setup
+
+### Configuration
+
+Make a copy of the [distribution config file](https://github.com/belgattitude/openstore-schema-core/blob/master/config/openstore-schema-core.config.php.dist) and
+edit your database parameters:
+
+```shell
+$ 
+$ cp ./config/openstore-schema-core.config.php.dist ./config/openstore-schema-core.config.php
+# Edit database parameters
+$ vi ./config/openstore-schema-core.config.php
+```
+
+### Database
+
+Create an empty database:
+
+```shell
+$ mysql -e "CREATE DATABASE openstore_test;" -uroot -p
+```
+
+The following database have been tested:
 
 | Database      | Extra              |
 |---------------|--------------------|
@@ -36,41 +72,13 @@ Be sure to have one of the supported databases installed:
 > `CREATE TABLE .... InnoDB ROW_FORMAT=DYNAMIC`. (a default value has been introduced in MariaDB 10.2: innodb_default_row_format).
 > *Note that from MariaDB 10.2.2 `barracuda` has become the default file format.* 
 
-## Install
 
-### In your existing project
+## Commands
 
-Via composer
+You can list the registered command here: 
 
-```sh
-$ composer require openstore/schema-core
-```
-    
-### Standalone setup
-
-For standalone setup, you must ensure a local configuration exists with
-correct database parameters.
-
-```sh
-$ mkdir config
-$ cp ./vendor/openstore/schema-core/config/openstore-schema-core.config.php.dist ./config/openstore-schema-core.config.php
-# Edit database parameters
-$ vi ./config/openstore-schema-core.config.php
-```
-
-### Database creation
-
-```console
-mysql -e "CREATE DATABASE my_test_db;" -uroot -p
-```
-
-
-## Openstore schema commands
-
-### List commands
-
-```console
-$ ./vendor/bin/openstore-schema-core
+```shell
+$ ./bin/openstore-schema-core
 ```
 
 ### Get SQL to create database (and db extras)
@@ -109,10 +117,6 @@ ALTER TABLE product_category_translation ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
 ALTER TABLE sale_order_line ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
 ALTER TABLE sale_order ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
 ```
-
-## ERD
-
-### Basic zoom on product group tables
 
 
 
