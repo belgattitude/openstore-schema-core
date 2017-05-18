@@ -20,7 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
   $ mysqldump -u {USER} -p --no-data --triggers --events --routines --default-character-set=utf8mb4 {DATABASE} > /{PATH}/{DATABASE}.schema.sql
   # 2. Create a new database and create the latest schema
   $ ./bin/openstore-schema-core openstore:schema:create --dump-sql > /{PATH}/openstore.schema.sql    
-  $ mysql -e "create database {NEW_DATABASE} CHARSET='utf8mb4' COLLATE="utf8mb4_unicode_ci"' -u{USER} -p  
+  $ mysql -e "create database {NEW_DATABASE} CHARSET='utf8mb4' COLLATE='utf8mb4_unicode_ci'" -u{USER} -p  
   $ mysql -u {USER} -p {NEW_DATABASE} < /{PATH}/openstore.schema.sql
   # 3. Import data backup in newly created database
   $ mysql -u {USER} -p {NEW_DATABASE} < /{PATH}/{BACKUP_FILE}.data.sql  
