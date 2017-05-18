@@ -129,7 +129,14 @@ Be sure to execute code style check before commit:
 $ composer check
 ```
 
-and regenerate the doc
+You can also fix the code style issues:
+
+```shell
+$ composer check
+```
+
+
+Don't forget to regenerate regenerate the [sql doc](https://github.com/belgattitude/openstore-schema-core/tree/master/resources/sql):
 
 ```shell
 $ composer build
