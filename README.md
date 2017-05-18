@@ -144,7 +144,7 @@ $ mysql -e "create database {NEW_DATABASE} CHARSET='utf8mb4' COLLATE='utf8mb4_un
 $ mysqldump -u {USER} -p --routines --events --triggers --default-character-set=utf8mb4 {DATABASE} > /{PATH}/{DATABASE}.all.sql
 # 3. Restore the complete backup in the new database
 $ mysql -u {USER} -p {NEW_DATABASE} < /{PATH}/{DATABASE}.all.sql      
-```      
+```
 
 *You can also (unix)-pipe the two last commands*      
       
