@@ -23,8 +23,8 @@ openstore-schema-core provides the database schema used in openstore.
 ## Features
 
 - [x] Automatic schema generation from doctrine entities. 
-- [x] Schema migrations
-
+- [x] Schema migrations made easy.
+- [x] Provide triggers, procedures and functions (extras).
 
 # Install
 
@@ -58,6 +58,34 @@ Create an empty database:
 $ mysql -e "CREATE DATABASE openstore_test;" -uroot -p
 ```
 
+## Commands
+
+You can list the registered commands by executing: 
+
+```shell
+$ ./bin/openstore-schema-core
+```
+
+Practically, use the following commands for:
+
+| Command                            | Description                                     |
+|------------------------------------|-------------------------------------------------|
+| `openstore:schema:create`          | Create a schema on a new empty database.        |
+| `openstore:schema:recreate-extra`  | Recreate all triggers, procedures, functions... |
+| `openstore:schema:update`          | Apply schema migration on an existing database. |
+
+> WARNING: use the option `--dump-sql` to display the DDL instead of applying onto the database,
+> for example:
+
+```shell
+$ ./bin/openstore-schema-core openstore:schema:update --dump-sql
+```
+  
+
+## Notes
+
+### Databases
+
 The following database have been tested:
 
 | Database      | Extra              |
@@ -66,49 +94,22 @@ The following database have been tested:
 | Mariadb 10+   | INNODB/XTRADB      |
 | Percona 5.6+  | INNODB/XTRADB      |
 
+*Always try to work with `utf8mb4` instead of `utf8`, see note below.
+
+### Unicode
+
+Support for unicode in MySQL is far from perfect. If possible try to use `utf8mb4` instead of `utf8`.
+
 > To be able to work with utf8mb4 for users of MySQL < 5.7 or MariaDB < 10.2,
 > you must ensure `innodb_file_per_table=1`, `innodb_file_format=barracuda` and `innodb_large_prefix=1`.
 > at the server settings level (my.cnf) AND that your tables are created with
 > `CREATE TABLE .... InnoDB ROW_FORMAT=DYNAMIC`. (a default value has been introduced in MariaDB 10.2: innodb_default_row_format).
 > *Note that from MariaDB 10.2.2 `barracuda` has become the default file format.* 
 
-
-## Commands
-
-You can list the registered command here: 
-
-```shell
-$ ./bin/openstore-schema-core
-```
-
-### Get SQL to create database (and db extras)
-
-Use this command to dump the changes from your existing schema
-
-```console
-$ ./vendor/bin/openstore-schema-core openstore:schema:create --dump-sql
-```
-
-*Remove --dump-sql to execute query on your database*
-
-
-### Get SQL to (re-)create db extras (triggers, procedures, functions, events...)
-
-```console
-$ ./vendor/bin/openstore-schema-core openstore:schema:recreate-extra --dump-sql
-```
-
-### Drop database (only testing environment)
-
-```console
-$ ./vendor/bin/openstore-schema-core openstore:schema:drop 
-```
-
-## Notes
-
 ### Compressing tables
 
-If INNODB file_format is barracuda you can change the compression format of the following tables
+If INNODB `file_format` is barracuda you can change the compression format of the following tables to
+reduce disk usage:
 
 ```sql
 ALTER TABLE product_translation ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
@@ -117,7 +118,5 @@ ALTER TABLE product_category_translation ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
 ALTER TABLE sale_order_line ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
 ALTER TABLE sale_order ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
 ```
-
-
 
 	
