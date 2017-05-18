@@ -1,6 +1,10 @@
 # Openstore Schema Core
 
+[![PHP Version](http://img.shields.io/badge/php-5.5+-ff69b4.svg)](https://packagist.org/packages/begattitude/openstore-schema-core)
 [![Dependency Status](https://www.versioneye.com/user/projects/5677ba2b107997003e0011c3/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5677ba2b107997003e0011c3)
+[![Latest Stable Version](https://poser.pugx.org/belgattitude/openstore-schema-core/v/stable.svg)](https://packagist.org/packages/belgattitude/openstore-schema-core)
+[![Total Downloads](https://poser.pugx.org/belgattitude/openstore-schema-core/downloads.png)](https://packagist.org/packages/belgattitude/openstore-schema-core)
+[![License](https://poser.pugx.org/belgattitude/openstore-schema-core/license.png)](https://packagist.org/packages/belgattitude/openstore-schema-core)
 
 openstore-schema-core provides the database schema used in openstore. 
 
@@ -11,7 +15,7 @@ openstore-schema-core provides the database schema used in openstore.
    
 ## Requirements
 
-- PHP engine 5.4+, 7.0+ or HHVM >= 3.2.
+- PHP 5.5+, 7.0+ or HHVM >= 3.2.
 - MySQL or MariaDB with InnoDB
 
 ## Databases
