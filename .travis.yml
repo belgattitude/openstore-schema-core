@@ -17,5 +17,6 @@ script:
   - composer build
   - cat resources/sql/mysql-utf8-compat/create_schema_utf8_compat.sql | mysql -u root openstore_test_utf8_compat
   - cat resources/sql/mysql-utf8-compat/create_extra_utf8_compat.sql | mysql -u root openstore_test_utf8_compat
+  - ./bin/openstore-schema-core openstore:schema:create --dump-sql
   - ./vendor/bin/php-cs-fixer --diff --dry-run -v fix
 
