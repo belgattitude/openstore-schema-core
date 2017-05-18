@@ -13,6 +13,7 @@ before_script:
   - composer install
   - mysql -e "DROP DATABASE IF EXISTS openstore_test_utf8_compat;" -u root
   - mysql -e "CREATE DATABASE openstore_test_utf8_compat;" -u root
+  - cp ./.travis/config/openstore-schema-core.config.travis.php ./config/openstore-schema-core.config.php
 script:
   - composer build
   - cat resources/sql/mysql-utf8-compat/create_schema_utf8_compat.sql | mysql -u root openstore_test_utf8_compat
