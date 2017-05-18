@@ -2,6 +2,12 @@
 
 ## 0.40.0
 
+### Changed
+
+- [BC-BREAK] possible bc-break, moved to `utf8mb4` by default. Be sure to setup the mysql server accordingly.
+- Moved `doc/sql` to `resources/sql`.
+- Split generated sql doc into `ddl` and extras `triggers, procedures, functions...` 
+
 ### Added
 
 - New console `inputOption` to generate schema without extras (triggers,...)
@@ -13,11 +19,6 @@
 - Removed indexes made on text columns (varchar > 255 chars).
 - A lot of cs-issues
 
-### Changed
-
-- Moved `doc/sql` to `resources/sql`.
-- Split generated sql doc into `ddl` and extras `triggers, procedures, functions...`
- 
 
 ## 0.30.3 (2017-01-10)
 
