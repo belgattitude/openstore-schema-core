@@ -16,7 +16,7 @@ return PhpCsFixer\Config::create()
         '@PSR1' => true,
         '@PSR2' => true,
         'psr4' => true,
-        'header_comment' => array('header' => $header), // disable when code is okay
+       // 'header_comment' => array('header' => $header), // disable when code is okay
         'array_syntax' => ['syntax' => 'short'],
 
         //'strict_comparison' => true,
