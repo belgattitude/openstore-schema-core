@@ -58,17 +58,17 @@ $ vi ./config/openstore-schema-core.config.php
 
 First ensure your database server is supported and enable support for `utf8mb4` charset.
 
-| Database      | Storage engine     | Fileformat  |
-|---------------|--------------------|-------------|
-| MySQL 5.6+    | INNODB engine      | Barracuda   |
-| Mariadb 10+   | INNODB/XTRADB      | Barracuda   |
+| Database      | Storage engine     | File format  | Large prefix |
+|---------------|--------------------|-------------:|-------------:|
+| MySQL 5.6+    | INNODB engine      | Barracuda    |          On  |
+| Mariadb 10+   | INNODB/XTRADB      | Barracuda    |          On  |
 
-> To be able to work with `utf8mb4`check that the following 
+> Note: to be able to work with `utf8mb4`check that the following 
 > parameters are present in the mysql configuration file (`my.cnf`):
 >   - [x] `innodb_file_per_table=1`
 >   - [x] `innodb_file_format=barracuda`
->   - [x] `innodb_large_prefix=1`    
-> *(Note that from MariaDB 10.2.2 and Mysql 5.7.7, `barracuda` has become the default file format.)* 
+>   - [x] `innodb_large_prefix=1`      
+> *(Note that from MariaDB 10.2.2 and Mysql 5.7.7 some of those params have become default)* 
 
 Then create a new database:
 
@@ -92,18 +92,17 @@ Practically, use the following commands for:
 | `openstore:schema:recreate-extra`  | Recreate all triggers, procedures, functions... |
 | `openstore:schema:update`          | Apply schema migration on an existing database. |
 
-> WARNING: use the option `--dump-sql` to display the DDL instead of applying onto the database.
+> NOTE: use the option `--dump-sql` to display the DDL instead of applying onto the database.
 > This is particularly useful to show migration needed over a production database, for example:
-
-
-```shell
-$ ./bin/openstore-schema-core openstore:schema:update --dump-sql
-```
+> ```shell
+> $ ./bin/openstore-schema-core openstore:schema:update --dump-sql
+> ```
+> Will show the migrations that have to be applied on the *current* database. 
 
 ## FAQ
 
-> Caution: backup and restore procedures below are not valid for production.
-> Be sure of what you're doing.    
+> Caution: backup and restore recipes described below have not been for real production 
+> usage. Always be sure of what you're doing.
     
 ### Backup a database
 
@@ -149,6 +148,13 @@ $ mysql -u {USER} -p {NEW_DATABASE} < /{PATH}/{DATABASE}.all.sql
 ```
 
 *You can also (unix)-pipe the two last commands*      
+
+## Future
+      
+- [ ] Fix entities and remove magic methods `__get` and `__set`.
+- [ ] Start working on repositories.
+- [ ] Document tables and conventions.
+- [ ] Add doctrine validate to CI (fix wrong relations names).      
       
 ## Notes
 
@@ -177,16 +183,18 @@ ALTER TABLE sale_order ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
 
 Contributions are welcome, fork the repository and make a pull request.
 
+### Tips for contributors
+
 Be sure to execute code style check before commit:
 
 ```shell
-$ composer check
+$ composer cs-check
 ```
 
-You can also fix the code style issues:
+You can also fix the code style issues automatically:
 
 ```shell
-$ composer fix
+$ composer cs-fix
 ```
 
 Don't forget to regenerate regenerate the [sql doc](https://github.com/belgattitude/openstore-schema-core/tree/master/resources/sql):
