@@ -9,7 +9,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 
-- [BC-BREAK] possible bc-break, moved to `utf8mb4` by default. Be sure to setup the mysql server accordingly.
+- [BC-BREAK] updated to `utf8mb4` by default. 
+  **In order to migrate, you must backup database, recreate the schema and restore the data.**
 - Moved `doc/sql` to `resources/sql`.
 - Split generated sql doc into `ddl` and extras `triggers, procedures, functions...` 
 
