@@ -14,6 +14,10 @@ openstore-schema-core provides the database schema used in openstore.
 - PHP engine 5.4+, 7.0+ or HHVM >= 3.2.
 - MySQL or MariaDB with InnoDB
 
+## Databases
+
+Be sure to have one of the supported databases available:
+
 | Database      | Extra              |
 |---------------|--------------------|
 | MySQL 5.6+    | INNODB engine      |
