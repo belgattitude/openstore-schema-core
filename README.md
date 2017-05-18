@@ -118,7 +118,7 @@ First perform a backup with `mysqldump` as illustrated above, then create a new 
 
 ```shell
 $ ./bin/openstore-schema-core openstore:schema:create --dump-sql > /{PATH}/openstore.schema.sql  
-$ mysql -e "create database {NEW_DATABASE} CHARSET='utf8mb4' COLLATE="utf8mb4_unicode_ci" -u{USER} -p
+$ mysql -e "create database {NEW_DATABASE} CHARSET='utf8mb4' COLLATE="utf8mb4_unicode_ci"' -u{USER} -p
 $ mysql -u {USER} -p {NEW_DATABASE} < /{PATH}/openstore.schema.sql
 $ mysql -u {USER} -p {NEW_DATABASE} < /{PATH}/{BACKUP_FILE}.data.sql
 ```
