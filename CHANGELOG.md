@@ -10,7 +10,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 - [BC-BREAK] updated to `utf8mb4` by default. 
-  **In order to migrate, you must backup database, recreate the schema and restore the data.**
+  **In order to migrate, you must backup database, recreate the schema and restore the data, for development you can use:**
+
+  ```shell
+  # 1. Backup existing database
+  # 1.1 Make backup of the data (sql: inserts)
+  $ mysqldump -u {USER} -p --no-create-info --skip-triggers --complete-insert --disable-keys --default-character-set=utf8mb4 --lock-tables {DATABASE} > /{PATH}/{DATABASE}.data.sql
+  # 1.2 Make backup of the schema (ddl: create tables, routines...)
+  $ mysqldump -u {USER} -p --no-data --triggers --events --routines --default-character-set=utf8mb4 {DATABASE} > /{PATH}/{DATABASE}.schema.sql
+  # 2. Create a new database and create the latest schema
+  $ ./bin/openstore-schema-core openstore:schema:create --dump-sql > /{PATH}/openstore.schema.sql    
+  $ mysql -e "create database {NEW_DATABASE} CHARSET='utf8mb4' COLLATE="utf8mb4_unicode_ci" -u{USER} -p  
+  $ mysql -u {USER} -p {NEW_DATABASE} < /{PATH}/openstore.schema.sql
+  # 3. Import data backup in newly created database
+  $ mysql -u {USER} -p {NEW_DATABASE} < /{PATH}/{BACKUP_FILE}.data.sql  
+  ```
+    
 - Moved `doc/sql` to `resources/sql`.
 - Split generated sql doc into `ddl` and extras `triggers, procedures, functions...` 
 

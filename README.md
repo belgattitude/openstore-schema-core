@@ -98,6 +98,31 @@ Practically, use the following commands for:
 ```shell
 $ ./bin/openstore-schema-core openstore:schema:update --dump-sql
 ```
+
+## FAQ
+  
+### Backup a database
+
+With `mysqldump`, good to backup `schema` (ddl) and `data` (inserts) in separated files, it
+allows to restore the data on a fresh database. As an example:
+
+```shell
+$ mysqldump -u {USER} -p --no-create-info --skip-triggers --complete-insert --disable-keys --default-character-set=utf8mb4 --lock-tables {DATABASE} > /{PATH}/{DATABASE}.data.sql
+$ mysqldump -u {USER} -p --no-data --triggers --events --routines --default-character-set=utf8mb4 {DATABASE} > /{PATH}/{DATABASE}.schema.sql 
+```
+
+### Restore data on an newly created schema
+
+First perform a backup with `mysqldump` as illustrated above, then create a new schema:
+
+
+```shell
+$ ./bin/openstore-schema-core openstore:schema:create --dump-sql > /{PATH}/openstore.schema.sql  
+$ mysql -e "create database {NEW_DATABASE} CHARSET='utf8mb4' COLLATE="utf8mb4_unicode_ci" -u{USER} -p
+$ mysql -u {USER} -p {NEW_DATABASE} < /{PATH}/openstore.schema.sql
+$ mysql -u {USER} -p {NEW_DATABASE} < /{PATH}/{BACKUP_FILE}.data.sql
+```
+    
   
 ## Notes
 
