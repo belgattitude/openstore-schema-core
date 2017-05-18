@@ -7,7 +7,8 @@
 [![Total Downloads](https://poser.pugx.org/openstore/schema-core/downloads.png)](https://packagist.org/packages/openstore/schema-core)
 [![License](https://poser.pugx.org/openstore/schema-core/license.png)](https://packagist.org/packages/openstore/schema-core)
 
-openstore-schema-core provides the database schema used in openstore. 
+openstore-schema-core provides the database schema used in the openstore project. It consists of around 80 tables
+specifically designed to be used in a product catalog database.   
 
 ![product_erd_image](https://github.com/belgattitude/openstore-schema-core/blob/master/docs/image/erd-zoom-product.jpg "Product erd")
 
@@ -24,8 +25,9 @@ openstore-schema-core provides the database schema used in openstore.
 ## Features
 
 - [x] Automatic schema generation from doctrine entities. 
-- [x] Schema migrations made easy.
-- [x] Provide triggers, procedures and functions ([extras](https://github.com/belgattitude/openstore-schema-core/blob/master/src/OpenstoreSchema/Core/Extra/MysqlExtra.php)).
+- [x] Support for painless schema migrations.
+- [x] Provides special triggers, procedures and functions (see [extras](https://github.com/belgattitude/openstore-schema-core/blob/master/src/OpenstoreSchema/Core/Extra/MysqlExtra.php)).
+- [x] Raw sql generation. (see [generated sql](https://github.com/belgattitude/openstore-schema-core/tree/master/resources/sql))
 
 # Install
 
@@ -141,4 +143,3 @@ Don't forget to regenerate regenerate the [sql doc](https://github.com/belgattit
 ```shell
 $ composer build
 ```
-	

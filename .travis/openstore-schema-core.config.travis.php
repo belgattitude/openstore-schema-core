@@ -8,7 +8,7 @@ return [
         'user'     => 'root', // user
         'host'     => 'localhost',
         'password' => '', // password
-        'dbname'   => 'openstore_schema',
+        'dbname'   => 'openstore_test_utf8_compat',
         'charset' => 'utf8mb4'
         
     ],
