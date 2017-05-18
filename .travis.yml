@@ -1,0 +1,21 @@
+language: php
+sudo: required
+dist: trusty
+group: edge
+
+matrix:
+  include:
+    - php: 7.1
+      env:
+        - SEND_COVERAGE=true
+
+before_script:
+  - composer install
+  - mysql -e "DROP DATABASE IF EXISTS openstore_test_utf8_compat;" -u root
+  - mysql -e "CREATE DATABASE openstore_test_utf8_compat;" -u root
+script:
+  - composer build
+  - cat resources/sql/mysql-utf8-compat/create_schema_utf8_compat.sql | mysql -u root openstore_test_utf8_compat
+  - cat resources/sql/mysql-utf8-compat/create_extra_utf8_compat.sql | mysql -u root openstore_test_utf8_compat
+  - ./vendor/bin/php-cs-fixer --diff --dry-run -v fix
+

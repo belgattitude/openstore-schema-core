@@ -34,7 +34,7 @@ openstore-schema-core provides the database schema used in openstore.
 $ git clone https://github.com/belgattitude/openstore-schema-core.git
 ```
 
-*Alternatively you can require the project through composer `composer require openstore/schema-core`*
+*Alternatively you can install the project through composer `composer require openstore/schema-core`*
         
 ## Setup
 
