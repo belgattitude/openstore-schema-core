@@ -2,21 +2,21 @@
 
 [![Dependency Status](https://www.versioneye.com/user/projects/5677ba2b107997003e0011c3/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5677ba2b107997003e0011c3)
 
-Openstore database schema.
+openstore-schema-core provides the database schema used in openstore. 
 
-> Warning: While the openstore database schema is relying on doctrine2, no work
-> has been done yet to develop repositories and ensure model relationships (correct naming).
-> In other words, doctrine was just used to keep a way to generate sql not to consume data
-> as the datalayer has been developped with zend-db.
-
+> Warning: the `openstore-schema-core` project relies on doctrine2 to facilitate schema generation.
+> No work have been done to make entities useful through doctrine as openstore use `zend-db` for
+> database access. In other words, schema generation works well but there's work to do if
+> you need using doctrine for data access *(fix naming of relationship, make repositories...)*.
+   
 ## Requirements
 
 - PHP engine 5.4+, 7.0+ or HHVM >= 3.2.
-- Currently supported database platforms (Mysql, MariaDb)
+- MySQL or MariaDB with InnoDB
 
 | Database      | Extra              |
 |---------------|--------------------|
-| MySQL 5.6+    | INNODB engine  )   |
+| MySQL 5.6+    | INNODB engine      |
 | Mariadb 10+   | INNODB/XTRADB      |
 | Percona 5.6+  | INNODB/XTRADB      |
 
