@@ -1,5 +1,15 @@
 <?php
 
+/*
+ * opentore-schema-core
+ *
+ * @author    Vanvelthem Sébastien
+ * @link      https://github.com/belgattitude/openstore-schema-core
+ * @copyright Copyright (c) 2015-2017 Vanvelthem Sébastien
+ * @license   MIT License, https://github.com/belgattitude/openstore-schema-core/blob/master/LICENSE.md
+ *
+ */
+
 namespace OpenstoreSchema\Core\Extra;
 
 class MysqlExtra extends AbstractExtra
@@ -44,21 +54,21 @@ class MysqlExtra extends AbstractExtra
         RETURNS VARCHAR(255) CHARSET latin1
         DETERMINISTIC
         BEGIN
-            DECLARE x, y , z Int;
-            DECLARE temp_string, new_string VarChar(255);
-            DECLARE is_allowed Bool;
-            DECLARE c, check_char VarChar(1);
+            DECLARE x, y , z INT;
+            DECLARE temp_string, new_string VARCHAR(255);
+            DECLARE is_allowed BOOL;
+            DECLARE c, check_char VARCHAR(1);
 
             SET temp_string = LOWER(dirty_string);
 
-            SET temp_string = replace(temp_string, '&', ' and ');
+            SET temp_string = REPLACE(temp_string, '&', ' and ');
 
-            SELECT temp_string REGEXP('[^a-z0-9\-]+') into x;
-            IF x = 1 then
+            SELECT temp_string REGEXP('[^a-z0-9\-]+') INTO x;
+            IF x = 1 THEN
                 SET z = 1;
-                WHILE z <= CHAR_LENGTH(temp_string) Do
+                WHILE z <= CHAR_LENGTH(temp_string) DO
                     SET c = SUBSTRING(temp_string, z, 1);
-                    SET is_allowed = False;
+                    SET is_allowed = FALSE;
                     IF !((ascii(c) = 45) or (ascii(c) >= 48 and ascii(c) <= 57) or (ascii(c) >= 97 and ascii(c) <= 122)) THEN
                         SET temp_string = REPLACE(temp_string, c, '-');
                     END IF;
@@ -66,13 +76,13 @@ class MysqlExtra extends AbstractExtra
                 END WHILE;
             END IF;
 
-            SELECT temp_string REGEXP("^-|-$|'") into x;
+            SELECT temp_string REGEXP("^-|-$|'") INTO x;
             IF x = 1 THEN
                 SET temp_string = REPLACE(temp_string, "'", '');
                 SET z = CHAR_LENGTH(temp_string);
                 SET y = CHAR_LENGTH(temp_string);
-                Dash_check: WHILE z > 1 Do
-                    IF Strcmp(SUBSTRING(temp_string, -1, 1), '-') = 0 THEN
+                Dash_check: WHILE z > 1 DO
+                    IF STRCMP(SUBSTRING(temp_string, -1, 1), '-') = 0 THEN
                         SET temp_string = SUBSTRING(temp_string,1, y-1);
                         SET y = y - 1;
                     ELSE
@@ -83,7 +93,7 @@ class MysqlExtra extends AbstractExtra
             END IF;
 
             REPEAT
-                SELECT temp_string REGEXP("--") into x;
+                SELECT temp_string REGEXP("--") INTO x;
                 IF x = 1 THEN
                     SET temp_string = REPLACE(temp_string, "--", "-");
                 END IF;
@@ -110,7 +120,7 @@ ENDQ;
                 SET iLength = ( iEnd - iStart) + 1;
                 IF iLength > 0 THEN
                   BEGIN
-                    SET DIRTY = Insert( DIRTY, iStart, iLength, '');
+                    SET DIRTY = INSERT( DIRTY, iStart, iLength, '');
                   END;
                 END IF;
               END;
@@ -185,58 +195,6 @@ ENDQ;
 ENDQ;
 
         return $stmts;
-
-/*
-create function jsonvalue returns string soname 'ha_connect.so';
-create function json_array returns string soname 'ha_connect.so';
-create function json_array_add_values returns string soname 'ha_connect.so';
-create function json_array_add returns string soname 'ha_connect.so';
-create function json_array_delete returns string soname 'ha_connect.so';
-create function json_object returns string soname 'ha_connect.so';
-create function json_object_nonull returns string soname 'ha_connect.so';
-create function json_object_key returns string soname 'ha_connect.so';
-create function json_object_add returns string soname 'ha_connect.so';
-create function json_object_delete returns string soname 'ha_connect.so';
-create function json_object_list returns string soname 'ha_connect.so';
-create function jsonvalue returns string soname 'ha_connect.so';
-create aggregate function json_array_grp returns string soname 'ha_connect.so';
-create aggregate function json_object_grp returns string soname 'ha_connect.so';
-create function json_array_add_values returns string soname 'ha_connect.so';
-create function json_object_add returns string soname 'ha_connect.so';
-create function json_object_delete returns string soname 'ha_connect.so';
-create function json_object_list returns string soname 'ha_connect.so';
-create function jsonlocate returns string soname 'ha_connect.so';
-create function json_locate_all returns string soname 'ha_connect.so';
-create function jsoncontains returns integer soname 'ha_connect.so';
-create function jsoncontains_path returns integer soname 'ha_connect.so';
-create function json_item_merge returns real soname 'ha_connect.so';
-create function json_get_item returns string soname 'ha_connect.so';
-create function jsonget_string returns string soname 'ha_connect.so';
-create function jsonget_int returns integer soname 'ha_connect.so';
-create function jsonget_real returns real soname 'ha_connect.so';
-create function json_set_item returns string soname 'ha_connect.so';
-create function json_insert_item returns string soname 'ha_connect.so';
-create function json_update_item returns string soname 'ha_connect.so';
-create function json_file returns string soname 'ha_connect.so';
-create function jfile_make returns string soname 'ha_connect.so';
-create function json_serialize returns string soname 'ha_connect.so';
-create function jbin_array returns string soname 'ha_connect.so';
-create function jbin_array_add_values returns string soname 'ha_connect.so';
-create function jbin_array_add returns string soname 'ha_connect.so';
-create function jbin_array_delete returns string soname 'ha_connect.so';
-create function jbin_object returns string soname 'ha_connect.so';
-create function jbin_object_nonull returns string soname 'ha_connect.so';
-create function jbin_object_key returns string soname 'ha_connect.so';
-create function jbin_object_add returns string soname 'ha_connect.so';
-create function jbin_object_delete returns string soname 'ha_connect.so';
-create function jbin_object_list returns string soname 'ha_connect.so';
-create function jbin_item_merge returns string soname 'ha_connect.so';
-create function jbin_get_item returns string soname 'ha_connect.so';
-create function jbin_set_item returns real soname 'ha_connect.so';
-create function jbin_insert_item returns real soname 'ha_connect.so';
-create function jbin_update_item returns real soname 'ha_connect.so';
-create function jbin_file returns string soname 'ha_connect.so';
- */
     }
 
     /**
@@ -259,7 +217,7 @@ create function jbin_file returns string soname 'ha_connect.so';
                 INSERT INTO product_search (product_id, lang, keywords, updated_at)
                 SELECT DISTINCT
                     p.product_id,
-                    if (p18.lang is null, @default_lang, p18.lang) as lang,
+                    IF (p18.lang is null, @default_lang, p18.lang) as lang,
                     UPPER(
                         delete_double_spaces(
                             REPLACE(
@@ -315,7 +273,7 @@ create function jbin_file returns string soname 'ha_connect.so';
                     1=1
                     and p.flag_active = 1
                     and pl.flag_active = 1
-                order by if (p18.lang is null, @default_lang, p18.lang), p.product_id 
+                order by IF (p18.lang is null, @default_lang, p18.lang), p.product_id 
             on duplicate key update
                     keywords = UPPER(
                         delete_double_spaces(
@@ -363,7 +321,7 @@ ENDQ;
                 "INSERT INTO product_search (product_id, lang, keywords, updated_at)
                 SELECT DISTINCT
                     p.product_id,
-                    if (p18.lang is null, @default_lang, p18.lang) as lang,
+                    IF (p18.lang is null, @default_lang, p18.lang) as lang,
                     UPPER(
                         delete_double_spaces(
                             REPLACE(
@@ -420,7 +378,7 @@ ENDQ;
                     and p.flag_active = 1
                     and pl.flag_active = 1
                     and p.product_id = ?
-                order by if (p18.lang is null, @default_lang, p18.lang), p.product_id 
+                order by IF (p18.lang is null, @default_lang, p18.lang), p.product_id 
                 on duplicate key update
                     keywords = UPPER(
                         delete_double_spaces(

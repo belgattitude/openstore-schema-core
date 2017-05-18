@@ -10,5 +10,5 @@ nbproject
 *.bak
 .*.cache
 composer.lock
-config/openstore-schema-core.config.php
+config/*.php
 vendor

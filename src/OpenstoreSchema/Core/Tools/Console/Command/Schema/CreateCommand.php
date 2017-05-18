@@ -1,5 +1,15 @@
 <?php
 
+/*
+ * opentore-schema-core
+ *
+ * @author    Vanvelthem Sébastien
+ * @link      https://github.com/belgattitude/openstore-schema-core
+ * @copyright Copyright (c) 2015-2017 Vanvelthem Sébastien
+ * @license   MIT License, https://github.com/belgattitude/openstore-schema-core/blob/master/LICENSE.md
+ *
+ */
+
 namespace OpenstoreSchema\Core\Tools\Console\Command\Schema;
 
 use Symfony\Component\Console\Input\InputOption;
@@ -25,6 +35,12 @@ class CreateCommand extends AbstractCommand
                 null,
                 InputOption::VALUE_NONE,
                 'Instead of trying to apply generated SQLs into EntityManager Storage Connection, output them.'
+            ),
+            new InputOption(
+                'no-extras',
+                null,
+                InputOption::VALUE_NONE,
+                'Does not generate the extra statements (triggers, procedures, events...).'
             )
         ])
         ->setHelp(<<<'EOT'
@@ -45,13 +61,18 @@ EOT
     protected function executeSchemaCommand(InputInterface $input, OutputInterface $output, SchemaTool $schemaTool, array $metadatas)
     {
         $extra = new Extra\MysqlExtra();
+
+        $extras = !($input->getOption('no-extras'));
+
         if ($input->getOption('dump-sql')) {
             $sqls = $schemaTool->getCreateSchemaSql($metadatas);
 
             $output->writeln(implode(';' . PHP_EOL, $sqls) . ';');
 
-            $ddls = $extra->getExtrasDDLWithDelimiter();
-            $output->writeln($ddls);
+            if ($extras) {
+                $ddls = $extra->getExtrasDDLWithDelimiter();
+                $output->writeln($ddls);
+            }
         } else {
             $conn = $this->getConnection();
 
@@ -60,14 +81,19 @@ EOT
             $output->writeln('Creating database schema...');
             $schemaTool->createSchema($metadatas);
 
-            $output->writeln('Recreating database extras...');
-            $metadatas = $extra->getExtrasDDL();
+            if ($extras) {
+                $output->writeln('Recreating database extras...');
+                $metadatas = $extra->getExtrasDDL();
 
-            foreach ($metadatas as $key => $ddl) {
-                $output->writeln("Executing: $key");
-                $ret = $conn->exec($ddl);
+                foreach ($metadatas as $key => $ddl) {
+                    $output->writeln("Executing: $key");
+                    $ret = $conn->exec($ddl);
+                }
+
+                $output->writeln('Database schema and extras created successfully!');
+            } else {
+                $output->writeln('Database schema created successfully (without extras)!');
             }
-            $output->writeln('Database schema and extras created successfully!');
         }
 
         return 0;

@@ -1,12 +1,21 @@
 <?php
 
-// Bootstrap
+/*
+ * opentore-schema-core
+ *
+ * @author    Vanvelthem Sébastien
+ * @link      https://github.com/belgattitude/openstore-schema-core
+ * @copyright Copyright (c) 2015-2017 Vanvelthem Sébastien
+ * @license   MIT License, https://github.com/belgattitude/openstore-schema-core/blob/master/LICENSE.md
+ *
+ */
+
 try {
     // Step 1: init autoloader
-    
-    $autoloadFiles = array(__DIR__ . '/../vendor/autoload.php',
-                           __DIR__ . '/../../../autoload.php');
-    
+
+    $autoloadFiles = [__DIR__ . '/../vendor/autoload.php',
+                           __DIR__ . '/../../../autoload.php'];
+
     $found = false;
     foreach ($autoloadFiles as $autoloadFile) {
         if (file_exists($autoloadFile)) {
@@ -14,14 +23,14 @@ try {
             require_once $autoloadFile;
             break;
         }
-    }    
+    }
     if (!$found) {
         throw new \Exception('Cannot find composer vendor autoload, run composer update');
     }
 
     // Step 2 : init configuration
 
-    $directories = array(getcwd(), getcwd() . DIRECTORY_SEPARATOR . 'config');
+    $directories = [getcwd(), getcwd() . DIRECTORY_SEPARATOR . 'config'];
 
     $configFound = false;
     $configFile = null;
@@ -31,8 +40,8 @@ try {
             $configFound = true;
             break;
         }
-    }    
-    
+    }
+
     if (!$found) {
         throw new \Exception("Cannot find configuration file '$configFile'");
     }
@@ -54,9 +63,9 @@ $em = $setup->getEntityManager();
 $cli = new Symfony\Component\Console\Application('openstore-schema-core console', '1.0.0');
 $cli->setCatchExceptions(true);
 // commands
-$cli->addCommands(array(
+$cli->addCommands([
     // DBAL Commands
-    // 
+    //
     //new Doctrine\DBAL\Tools\Console\Command\RunSqlCommand(),
     //new Doctrine\DBAL\Tools\Console\Command\ImportCommand(),
 
@@ -76,26 +85,23 @@ $cli->addCommands(array(
     new Doctrine\ORM\Tools\Console\Command\RunDqlCommand(),
     new Doctrine\ORM\Tools\Console\Command\ValidateSchemaCommand(),
     new Doctrine\ORM\Tools\Console\Command\InfoCommand(),
-    
+
     new OpenstoreSchema\Core\Tools\Console\Command\Schema\CreateCommand(),
     new OpenstoreSchema\Core\Tools\Console\Command\Schema\RecreateExtraCommand(),
     new OpenstoreSchema\Core\Tools\Console\Command\Schema\UpdateCommand(),
     new OpenstoreSchema\Core\Tools\Console\Command\Schema\DropCommand(),
     new OpenstoreSchema\Core\Tools\Console\Command\Fixture\LoadFixtureCommand()
-));
-
-
+]);
 
 // helpers
-$helpers = array(
+$helpers = [
     'db' => new Doctrine\DBAL\Tools\Console\Helper\ConnectionHelper($em->getConnection()),
     'em' => new Doctrine\ORM\Tools\Console\Helper\EntityManagerHelper($em),
     'question' => new Symfony\Component\Console\Helper\QuestionHelper(),
-);
+];
 foreach ($helpers as $name => $helper) {
     $cli->getHelperSet()->set($helper, $name);
 }
 
 $cli->run();
 //return $cli;
-

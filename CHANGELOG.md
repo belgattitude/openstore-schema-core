@@ -1,6 +1,27 @@
 # CHANGELOG
 
+## 0.40.0
+
+### Added
+
+- New console `inputOption` to generate schema without extras (triggers,...)
+  see `./bin/openstore-schema-core openstore:schema:create --dump-sql --no-extras`.
+- Preliminary tests with phpstan    
+
+### Fixed 
+
+- Removed indexes made on text columns (varchar > 255 chars).
+- A lot of cs-issues
+
+### Changed
+
+- Moved `doc/sql` to `resources/sql`.
+- Split generated sql doc into `ddl` and extras `triggers, procedures, functions...`
+ 
+
 ## 0.30.3 (2017-01-10)
+
+### Added
 
 - Added `ProductDepartment` and `ProductTarget` entities
 
@@ -16,6 +37,8 @@ CREATE INDEX IDX_D34A04AD158E0B66 ON product (target_id);
 
 ## 0.30.2 (2016-12-07)
 
+### Added
+
 - Added `ProductBrand::logo_url` and `ProductBrand:flag_public`
 
 ```sql
@@ -23,6 +46,8 @@ ALTER TABLE product_brand ADD logo_url VARCHAR(255) DEFAULT NULL COMMENT 'Url to
 ```
 
 ## 0.30.1 (2016-12-07)
+
+### Added
 
 - Added `ProductBrand::sort_index`
 
@@ -32,6 +57,8 @@ CREATE INDEX sort_index_idx ON product_brand (sort_index);
 ```
 
 ## 0.30.0 (2016-12-05)
+
+### Added
 
 - [BC-Break] Breaking change
   
@@ -43,6 +70,8 @@ CREATE INDEX sort_index_idx ON product_brand (sort_index);
 
 ## 0.26.0 (2016-11-22)
 
+### Added
+
 - Added a new procedure `CALL rebuild_category_keywords()` to rebuild product translation keywords 
 
 Update your database with
@@ -51,8 +80,9 @@ Update your database with
 $ ./bin/openstore-schema-core openstore:schema:recreate-extra
 ```
 
-
 ## 0.25.0 (2016-11-09)
+
+### Added 
 
 - Added `keywords` in `ProductCategoryTranslation` that can be used with fulltext search
 - Added `rank_pricelist_id` in `Pricelist` useful when you want to use `ProductRank` on another
@@ -69,6 +99,7 @@ CREATE INDEX IDX_5CCFEA6D5ECD273E ON pricelist (rank_pricelist_id);
 
 ## 0.24.0 (2016-11-02)
 
+### Changed
 
 - For `Pricelist`, added condition for marking products as 'new': `cond_product_new_max_days`
   And REMOVAL of `new_product_min_date`

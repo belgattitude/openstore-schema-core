@@ -28,27 +28,43 @@
 
     "require": {
         "php": "^5.6 || ^7.0",
-        "doctrine/dbal": "^2.5.9",
+        "doctrine/dbal": "^2.5.12",
         "doctrine/common": "^2.6.1 || ^2.7.2",
         "doctrine/orm": "^2.5.6",
-        "gedmo/doctrine-extensions": "^2.4.26",
+        "gedmo/doctrine-extensions": "^2.4.28",
         "doctrine/data-fixtures": "^1.2.2",
-        "symfony/console": "^2.6.0 || ^3.0.0"
+        "symfony/console": "^2.6.0 || ^3.2.0"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.1.0"
+        "phpunit/phpunit": "^4.8 || ^5.4",
+        "friendsofphp/php-cs-fixer": "^2.3.1",
+        "pds/skeleton": "@dev",
+        "phpstan/phpstan": "^0.7.0",
+        "jdorn/sql-formatter": "^1.2"
+
     },
     "bin": ["bin/openstore-schema-core"],
     "scripts": {
+        "check": [
+            "@phpds",
+            "@cs-check",
+            "@phpstan",
+            "@test"
+        ],
         "fix": [
             "@cs-fix"
         ],
+        "build": [
+            "@generate-sql"
+        ],
         "cs-check": "vendor/bin/php-cs-fixer --diff --dry-run -v fix",
-        "cs-fix": "vendor/bin/php-cs-fixer -v fix"
+        "cs-fix": "vendor/bin/php-cs-fixer -v fix",
+        "phpstan": "vendor/bin/phpstan analyse -l 3 -c phpstan.neon src tests tools bin",
+        "phpds": "vendor/bin/pds-skeleton validate",
+        "test": "phpunit",
+        "generate-sql": "bin/generate_sql.php"
     },
     "archive": {
-        "exclude": ["test", "doc", "tools", ".travis.yml", ".codeclimate.yml", ".coveralls.yml", ".scrutinizer.yml", "phpcs.xml", ".gitignore"]
+        "exclude": ["tests", "docs", "tools", ".travis.yml", ".codeclimate.yml", ".coveralls.yml", ".scrutinizer.yml", "phpcs.xml", ".gitignore"]
     }
 }
-
-
