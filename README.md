@@ -52,7 +52,21 @@ $ vi ./config/openstore-schema-core.config.php
 
 ### Database
 
-Create an empty database:
+First ensure your database server is supported and enable support for `utf8mb4` charset.
+
+| Database      | Storage engine     | Fileformat  |
+|---------------|--------------------|-------------|
+| MySQL 5.6+    | INNODB engine      | Barracuda   |
+| Mariadb 10+   | INNODB/XTRADB      | Barracuda   |
+
+> To be able to work with `utf8mb4`check that the following 
+> parameters are present in the mysql configuration file (`my.cnf`):
+>   - [x] `innodb_file_per_table=1`
+>   - [x] `innodb_file_format=barracuda`
+>   - [x] `innodb_large_prefix=1`    
+> *(Note that from MariaDB 10.2.2 and Mysql 5.7.7, `barracuda` has become the default file format.)* 
+
+Then create a new database:
 
 ```shell
 $ mysql -e "CREATE DATABASE openstore_test CHARACTER SET='utf8mb4' COLLATE='utf8mb4_unicode_ci';" -uroot -p
@@ -82,35 +96,15 @@ Practically, use the following commands for:
 $ ./bin/openstore-schema-core openstore:schema:update --dump-sql
 ```
   
-
 ## Notes
-
-### Databases
-
-The following database have been tested:
-
-| Database      | Extra              |
-|---------------|--------------------|
-| MySQL 5.6+    | INNODB engine      |
-| Mariadb 10+   | INNODB/XTRADB      |
-
-> To be able to work with utf8mb4 for users of MySQL < 5.7.7 or MariaDB < 10.2,
-> you must ensure 
->   - [x] `innodb_file_per_table=1`
->   - [x] `innodb_file_format=barracuda` and `innodb_large_prefix=1`.
-> at the server settings level (my.cnf) AND that your tables are created with
-> `CREATE TABLE .... InnoDB ROW_FORMAT=DYNAMIC`. (a default value has been introduced in MariaDB 10.2: innodb_default_row_format).
-> *(Note that from MariaDB 10.2.2, `barracuda` has become the default file format.)* 
-
 
 ### Unicode
 
-Support for unicode in MySQL is far from perfect. If possible try to use `utf8mb4` instead of `utf8`.
-
+From version 0.40.0, `openstore-schema-core` defaults to `utf8mb4` charset by default. 
 
 ### Compressing tables
 
-If INNODB `file_format` is barracuda you can change the compression format of the following tables to
+OIf INNODB `file_format` is barracuda you can change the compression format of the following tables to
 reduce disk usage:
 
 ```sql
