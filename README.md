@@ -8,6 +8,8 @@
 
 openstore-schema-core provides the database schema used in openstore. 
 
+![product_erd_image](https://github.com/belgattitude/openstore-schema-core/blob/master/docs/image/erd-zoom-product.jpg "Product erd")
+
 > Warning: the `openstore-schema-core` project relies on doctrine2 to facilitate schema generation.
 > No work have been done to make entities useful through doctrine as openstore use `zend-db` for
 > database access. In other words, schema generation works well but there's work to do if
@@ -112,6 +114,6 @@ ALTER TABLE sale_order ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
 
 ### Basic zoom on product group tables
 
-![product_erd_image](https://raw.githubusercontent.com/openstore/schema-core/master/docs/image/erd-zoom-product.jpg "Product erd")
+
 
 	
