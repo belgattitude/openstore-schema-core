@@ -102,10 +102,13 @@ $ ./bin/openstore-schema-core openstore:schema:update --dump-sql
 
 From version 0.40.0, `openstore-schema-core` defaults to `utf8mb4` charset by default. 
 
+If you don't have the possibility to set mysql server variables (i.e. on a continuous integration server...)
+you can fall back to the [generated compatibility scripts](https://github.com/belgattitude/openstore-schema-core/tree/master/resources/sql/mysql-utf8-compat).
+
+
 ### Compressing tables
 
-OIf INNODB `file_format` is barracuda you can change the compression format of the following tables to
-reduce disk usage:
+Optional, to reduce disk usage you can change the compression format of the following tables:
 
 ```sql
 ALTER TABLE product_translation ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
@@ -115,4 +118,20 @@ ALTER TABLE sale_order_line ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
 ALTER TABLE sale_order ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
 ```
 
+
+## Contributing
+
+Contributions are welcome, fork the repository and make a pull request.
+
+Be sure to execute code style check before commit:
+
+```shell
+$ composer check
+```
+
+and regenerate the doc
+
+```shell
+$ composer build
+```
 	
