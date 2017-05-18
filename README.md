@@ -71,7 +71,7 @@ First ensure your database server is supported and enable support for `utf8mb4` 
 Then create a new database:
 
 ```shell
-$ mysql -e "CREATE DATABASE openstore_test CHARACTER SET='utf8mb4' COLLATE='utf8mb4_unicode_ci';" -uroot -p
+$ mysql -e "CREATE DATABASE openstore_test CHARACTER SET='utf8mb4' COLLATE='utf8mb4_unicode_ci';" -u {USER} -p
 ```
 
 ## Commands
@@ -99,7 +99,10 @@ $ ./bin/openstore-schema-core openstore:schema:update --dump-sql
 ```
 
 ## FAQ
-  
+
+> Caution: backup and restore procedures below are not valid for production.
+> Be sure of what you're doing.    
+    
 ### Backup a database
 
 With `mysqldump`, good to backup `schema` (ddl) and `data` (inserts) in separated files, it
@@ -122,6 +125,24 @@ $ mysql -e "create database {NEW_DATABASE} CHARSET='utf8mb4' COLLATE='utf8mb4_un
 $ mysql -u {USER} -p {NEW_DATABASE} < /{PATH}/openstore.schema.sql
 $ mysql -u {USER} -p {NEW_DATABASE} < /{PATH}/{BACKUP_FILE}.data.sql
 ```
+
+### Move/rename database
+
+After having restored the database in the new schema, you might want to 
+move/rename it. 
+ 
+For development or small database, you can use `mysqldump`:
+      
+```shell
+# 1. Create the new database (a new empty one) 
+$ mysql -e "create database {NEW_DATABASE} CHARSET='utf8mb4' COLLATE='utf8mb4_unicode_ci'" -u{USER} -p
+# 2. Complete backup of your database 
+$ mysqldump -u {USER} -p --routines --events --triggers --default-character-set=utf8mb4 {DATABASE} > /{PATH}/{DATABASE}.all.sql
+# 3. Restore the complete backup in the new database
+$ mysql -u {USER} -p {NEW_DATABASE} < /{PATH}/{DATABASE}.all.sql      
+```      
+
+*You can also (unix)-pipe the two last commands*      
       
 ## Notes
 
