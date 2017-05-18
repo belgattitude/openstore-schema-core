@@ -173,35 +173,19 @@ class ProductGroupTranslation
     }
 
     /**
-     * @param int $product_id
+     * @param string $lang
      */
-    public function setProductId($product_id)
+    public function setLang($lang)
     {
-        $this->product_id = $product_id;
+        $this->lang = $lang;
     }
 
     /**
-     * @return int
+     * @return string
      */
-    public function getProductId()
+    public function getLang()
     {
-        return $this->product_id;
-    }
-
-    /**
-     * @param int $lang_id
-     */
-    public function setLangId($lang_id)
-    {
-        $this->lang_id = $lang_id;
-    }
-
-    /**
-     * @return int
-     */
-    public function getLangId()
-    {
-        return $this->lang_id;
+        return $this->lang;
     }
 
     /**
@@ -314,24 +298,6 @@ class ProductGroupTranslation
     public function getLegacySynchroAt()
     {
         return $this->legacy_synchro_at;
-    }
-
-    /**
-     * Convert the object to an array.
-     *
-     * @return array
-     */
-    public function getArrayCopy()
-    {
-        return get_object_vars($this);
-    }
-
-    /**
-     * @return string
-     */
-    public function __toString()
-    {
-        return $this->getTitle();
     }
 
     /**

@@ -408,7 +408,7 @@ class ProductStatTrend
      */
     public function getId()
     {
-        return $this->product_stat_trend;
+        return $this->product_stat_trend_id;
     }
 
     /**

@@ -19,6 +19,10 @@
 - Removed indexes made on text columns (varchar > 255 chars).
 - A lot of cs-issues
 
+### Removed
+
+- Removed `getArrayCopy()` from all entities.
+
 
 ## 0.30.3 (2017-01-10)
 

@@ -307,7 +307,7 @@ class ProductPricelist
     }
 
     /**
-     * @return date
+     * @return string|null
      */
     public function getUnavailableAt()
     {
@@ -323,7 +323,7 @@ class ProductPricelist
     }
 
     /**
-     * @return date
+     * @return string
      */
     public function getAvailableAt()
     {
@@ -542,24 +542,6 @@ class ProductPricelist
     public function getLegacySynchroAt()
     {
         return $this->legacy_synchro_at;
-    }
-
-    /**
-     * Convert the object to an array.
-     *
-     * @return array
-     */
-    public function getArrayCopy()
-    {
-        return get_object_vars($this);
-    }
-
-    /**
-     * @return string
-     */
-    public function __toString()
-    {
-        return $this->getPrice();
     }
 
     /**

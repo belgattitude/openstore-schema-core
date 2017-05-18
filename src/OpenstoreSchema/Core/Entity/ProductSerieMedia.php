@@ -295,16 +295,6 @@ class ProductSerieMedia
     }
 
     /**
-     * Convert the object to an array.
-     *
-     * @return array
-     */
-    public function getArrayCopy()
-    {
-        return get_object_vars($this);
-    }
-
-    /**
      * Magic getter to expose protected properties.
      *
      * @param string $property

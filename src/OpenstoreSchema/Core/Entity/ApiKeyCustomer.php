@@ -266,24 +266,6 @@ class ApiKeyCustomer
     }
 
     /**
-     * Convert the object to an array.
-     *
-     * @return array
-     */
-    public function getArrayCopy()
-    {
-        return get_object_vars($this);
-    }
-
-    /**
-     * @return string
-     */
-    public function __toString()
-    {
-        return $this->getPrice();
-    }
-
-    /**
      * Magic getter to expose protected properties.
      *
      * @param string $property

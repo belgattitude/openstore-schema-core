@@ -370,16 +370,6 @@ class ProductType
     }
 
     /**
-     * Convert the object to an array.
-     *
-     * @return array
-     */
-    public function getArrayCopy()
-    {
-        return get_object_vars($this);
-    }
-
-    /**
      * @return string
      */
     public function __toString()
