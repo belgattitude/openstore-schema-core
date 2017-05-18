@@ -59,7 +59,7 @@
         ],
         "cs-check": "vendor/bin/php-cs-fixer --diff --dry-run -v fix",
         "cs-fix": "vendor/bin/php-cs-fixer -v fix",
-        "phpstan": "vendor/bin/phpstan analyse -l 3 -c phpstan.neon src tests tools bin",
+        "phpstan": "vendor/bin/phpstan analyse -l 3 -c phpstan.neon src tests bin",
         "phpds": "vendor/bin/pds-skeleton validate",
         "test": "phpunit",
         "generate-sql": "bin/generate_sql.php"

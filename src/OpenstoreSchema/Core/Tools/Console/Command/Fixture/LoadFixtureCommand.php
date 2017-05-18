@@ -71,7 +71,7 @@ EOT
             $question = new ConfirmationQuestion('Your database will be cleared (use --append to prevent)?', false);
 
             if (!$helper->ask($input, $output, $question)) {
-                return;
+                return null;
             }
         }
 
@@ -101,9 +101,9 @@ EOT
             $output->writeln(sprintf('  <comment>></comment> <info>%s</info>', $message));
         });
 
-        $multiple_transactions = false; //$input->getOption('multiple-transactions');
+        //$multiple_transactions = false; //$input->getOption('multiple-transactions');
         $append = true; //$input->getOption('append');
-        $executor->execute($fixtures, $append, $multiple_transactions);
+        $executor->execute($fixtures, $append);
     }
 
     /**

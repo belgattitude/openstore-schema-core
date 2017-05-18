@@ -49,7 +49,7 @@ EOT
         $question = new Question\ConfirmationQuestion("Are you sure you want to drop database '$current_db' (y/n) ?", false);
 
         if (!$qhelper->ask($input, $output, $question)) {
-            return;
+            return null;
         }
 
         $query = "drop database if exists $current_db";
