@@ -43,7 +43,8 @@ class CreateCommand extends AbstractCommand
                 'Does not generate the extra statements (triggers, procedures, events...).'
             )
         ])
-        ->setHelp(<<<'EOT'
+        ->setHelp(
+            <<<'EOT'
 Processes the schema and either create it directly on EntityManager Storage Connection or generate the SQL output.
 
 <comment>Hint:</comment> If you have a database with tables that should not be managed

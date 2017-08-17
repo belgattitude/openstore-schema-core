@@ -42,7 +42,8 @@ class LoadFixtureCommand extends Command
         ->addOption('append', null, InputOption::VALUE_NONE, 'Append the data fixtures instead of deleting all data from the database first.')
         ->addOption('purge-with-truncate', null, InputOption::VALUE_NONE, 'Purge data by using a database-level TRUNCATE statement');
 
-        $this->setHelp(<<<'EOT'
+        $this->setHelp(
+            <<<'EOT'
 The <info>%command.name%</info> command generates the SQL needed to load default
 fixtures in the database
 

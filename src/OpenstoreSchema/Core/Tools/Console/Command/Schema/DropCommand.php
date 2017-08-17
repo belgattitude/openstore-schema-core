@@ -28,7 +28,8 @@ class DropCommand extends AbstractCommand
              ->setDescription(
                  'Drop the current database schema.'
              )
-        ->setHelp(<<<'EOT'
+        ->setHelp(
+            <<<'EOT'
 Drop the current database
 EOT
         );

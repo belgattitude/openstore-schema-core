@@ -37,7 +37,8 @@ class RecreateExtraCommand extends AbstractCommand
                 'Instead of trying to apply generated DDLs into EntityManager, output them.'
             )
         ])
-        ->setHelp(<<<'EOT'
+        ->setHelp(
+            <<<'EOT'
 Processes the extra DDL statements and either create it directly on EntityManager Storage Connection or generate the SQL output.
 EOT
         );
