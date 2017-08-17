@@ -1,6 +1,6 @@
 # Openstore Schema Core
 
-[![PHP Version](http://img.shields.io/badge/php-5.5+-ff69b4.svg)](https://packagist.org/packages/begattitude/openstore-schema-core)
+[![PHP Version](http://img.shields.io/badge/php-7.1+-ff69b4.svg)](https://packagist.org/packages/begattitude/openstore-schema-core)
 [![Build Status](https://travis-ci.org/belgattitude/openstore-schema-core.svg?branch=master)](https://travis-ci.org/belgattitude/openstore-schema-core)
 [![Dependency Status](https://www.versioneye.com/user/projects/5677ba2b107997003e0011c3/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5677ba2b107997003e0011c3)
 [![Latest Stable Version](https://poser.pugx.org/openstore/schema-core/v/stable.svg)](https://packagist.org/packages/openstore/schema-core)
@@ -21,7 +21,7 @@ specifically designed to deal with a product catalog.
    
 ## Requirements
 
-- PHP 5.5+, 7.0+ or HHVM >= 3.2.
+- PHP 7.1+
 - MySQL or MariaDB with InnoDB
 
 ## Features
