@@ -61,7 +61,7 @@ class ApiKeyLog
     private $created_at;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true, options={"comment" = "Custom message"})
+     * @ORM\Column(type="string", length=784, nullable=true, options={"comment" = "Custom message"})
      */
     private $message;
 
