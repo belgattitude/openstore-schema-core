@@ -100,7 +100,6 @@ class Stock
 
     public function __construct()
     {
-        $this->translations = new \Doctrine\Common\Collections\ArrayCollection();
         /*
          * Default value for flag_active
          */

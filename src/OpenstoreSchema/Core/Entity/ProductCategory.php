@@ -189,7 +189,7 @@ class ProductCategory
      */
     public function getId()
     {
-        return $this->id;
+        return $this->category_id;
     }
 
     /**

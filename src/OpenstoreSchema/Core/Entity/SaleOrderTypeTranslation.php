@@ -114,22 +114,6 @@ class SaleOrderTypeTranslation
     }
 
     /**
-     * @param string $slug
-     */
-    public function setSlug($slug)
-    {
-        $this->slug = $slug;
-    }
-
-    /**
-     * @return string
-     */
-    public function getSlug()
-    {
-        return $this->slug;
-    }
-
-    /**
      * @param string $title
      */
     public function setTitle($title)
@@ -145,20 +129,14 @@ class SaleOrderTypeTranslation
         return $this->title;
     }
 
-    /**
-     * @param int $lang_id
-     */
-    public function setLangId($lang_id)
+    public function setLang(string $lang): void
     {
-        $this->lang_id = $lang_id;
+        $this->lang = $lang;
     }
 
-    /**
-     * @return int
-     */
-    public function getLangId()
+    public function getLang(): string
     {
-        return $this->lang_id;
+        return $this->lang;
     }
 
     /**

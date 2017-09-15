@@ -50,6 +50,8 @@ class ProductGroup
     private $group_id;
 
     /**
+     * //"collation"="utf8_bin".
+     *
      * @ORM\Column(type="string", length=60, nullable=false, options={"comment" = "Reference"})
      */
     private $reference;
@@ -105,7 +107,7 @@ class ProductGroup
     private $updated_by;
 
     /**
-     * @ORM\Column(type="string",length=40,nullable=true, options={"comment" = "Unique reference of this record taken from legacy system"})
+     * @ORM\Column(type="string",length=40,nullable=true, options={"collation"="utf8_bin", "comment" = "Unique reference of this record taken from legacy system"})
      */
     protected $legacy_mapping;
 
@@ -129,7 +131,7 @@ class ProductGroup
      */
     public function setId($id)
     {
-        $this->id = $id;
+        $this->group_id = $id;
     }
 
     /**
@@ -137,7 +139,7 @@ class ProductGroup
      */
     public function getId()
     {
-        return $this->id;
+        return $this->group_id;
     }
 
     /**

@@ -91,7 +91,7 @@ class Role
     private $children;
 
     /**
-     * @var PermissionInterface[]|Collection
+     * @var Collection
      *
      * @ORM\ManyToMany(targetEntity="Permission", indexBy="name", fetch="EAGER")
      * @ORM\JoinTable(name="role_permission",
@@ -136,22 +136,12 @@ class Role
         return $this->role_id;
     }
 
-    /**
-     * Set the role name.
-     *
-     * @param string $name
-     */
-    public function setName($name)
+    public function setName(string $name)
     {
-        $this->name = (string) $name;
+        $this->name = $name;
     }
 
-    /**
-     * Get the role name.
-     *
-     * @return string
-     */
-    public function getName()
+    public function getName(): ?string
     {
         return $this->name;
     }
@@ -159,7 +149,7 @@ class Role
     /**
      * {@inheritdoc}
      */
-    public function addChild(HierarchicalRoleInterface $child)
+    public function addChild($child)
     {
         $this->children[] = $child;
     }

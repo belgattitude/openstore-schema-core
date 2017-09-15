@@ -97,10 +97,6 @@ class ProductMediaType
 
     public function __construct()
     {
-        /*
-         * Default value for flag_active
-         */
-        $this->flag_active = true;
     }
 
     /**
@@ -185,19 +181,6 @@ class ProductMediaType
     public function getIconClass()
     {
         return $this->icon_class;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getFlagActive()
-    {
-        return (bool) $this->flag_active;
-    }
-
-    public function setFlagActive($flag_active)
-    {
-        $this->flag_active = $flag_active;
     }
 
     /**

@@ -184,38 +184,22 @@ class ProductPackaging
         return $this->length;
     }
 
-    /**
-     * Set height.
-     *
-     * @return Product
-     */
-    public function setHeight($height)
+    public function setHeight(float $height)
     {
         $this->height = $height;
     }
 
-    /**
-     * @return decimal
-     */
-    public function getHeight()
+    public function getHeight(): ?float
     {
         return $this->height;
     }
 
-    /**
-     * Set width.
-     *
-     * @return Product
-     */
-    public function setWidth($width)
+    public function setWidth(float $width)
     {
-        $this->width = $with;
+        $this->width = $width;
     }
 
-    /**
-     * @return decimal
-     */
-    public function getWidth()
+    public function getWidth(): ?float
     {
         return $this->width;
     }

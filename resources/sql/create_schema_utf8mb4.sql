@@ -565,7 +565,7 @@
 -- 
  CREATE TABLE product_group (
   group_id INT UNSIGNED AUTO_INCREMENT NOT NULL, 
-  reference VARCHAR(60) NOT NULL COMMENT 'Reference', 
+  reference VARCHAR(60) NOT NULL COLLATE utf8_bin COMMENT 'Reference', 
   slug VARCHAR(64) DEFAULT NULL COMMENT 'Unique slug for this record', 
   title VARCHAR(80) DEFAULT NULL, 
   description VARCHAR(15000) DEFAULT NULL, 
@@ -575,7 +575,7 @@
   updated_at DATETIME DEFAULT NULL COMMENT 'Record last update timestamp', 
   created_by VARCHAR(40) DEFAULT NULL COMMENT 'Creator name', 
   updated_by VARCHAR(40) DEFAULT NULL COMMENT 'Last updater name', 
-  legacy_mapping VARCHAR(40) DEFAULT NULL COMMENT 'Unique reference of this record taken from legacy system', 
+  legacy_mapping VARCHAR(40) DEFAULT NULL COLLATE utf8_bin COMMENT 'Unique reference of this record taken from legacy system', 
   legacy_synchro_at DATETIME DEFAULT NULL COMMENT 'Last synchro timestamp', 
   INDEX title_idx (title), 
   UNIQUE INDEX unique_reference_idx (reference), 
@@ -1547,7 +1547,7 @@
   service_id INT UNSIGNED DEFAULT NULL, 
   remote_ip VARCHAR(32) DEFAULT NULL COMMENT 'Remote api', 
   created_at DATETIME DEFAULT NULL COMMENT 'Record creation timestamp', 
-  message VARCHAR(255) DEFAULT NULL COMMENT 'Custom message', 
+  message VARCHAR(784) DEFAULT NULL COMMENT 'Custom message', 
   execution_time INT UNSIGNED DEFAULT NULL COMMENT 'Time of execution in seconds', 
   network_usage INT UNSIGNED DEFAULT NULL COMMENT 'Size in bytes', 
   usage_count INT UNSIGNED DEFAULT 1 NOT NULL COMMENT 'Count usage', 

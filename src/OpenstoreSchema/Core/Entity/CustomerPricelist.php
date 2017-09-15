@@ -160,10 +160,7 @@ class CustomerPricelist
         $this->flag_active = $flag_active;
     }
 
-    /**
-     * @return date
-     */
-    public function getActivatedAt()
+    public function getActivatedAt(): ?string
     {
         return $this->activated_at;
     }
@@ -171,7 +168,7 @@ class CustomerPricelist
     /**
      * @param string $activated_at date in Y-m-d H:i:s format
      */
-    public function setActivatedAt($activated_at)
+    public function setActivatedAt(string $activated_at)
     {
         $this->activated_at = $activated_at;
     }
@@ -206,22 +203,6 @@ class CustomerPricelist
     public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
-    }
-
-    /**
-     * @return string
-     */
-    public function getDeletedAt()
-    {
-        return $this->deleted_at;
-    }
-
-    /**
-     * @param string $updated_at
-     */
-    public function setDeletedAt($deleted_at)
-    {
-        $this->deleted_at = $deleted_at;
     }
 
     /**
@@ -302,28 +283,5 @@ class CustomerPricelist
     public function getLegacySynchroAt()
     {
         return $this->legacy_synchro_at;
-    }
-
-    /**
-     * Magic getter to expose protected properties.
-     *
-     * @param string $property
-     *
-     * @return mixed
-     */
-    public function __get($property)
-    {
-        return $this->$property;
-    }
-
-    /**
-     * Magic setter to save protected properties.
-     *
-     * @param string $property
-     * @param mixed  $value
-     */
-    public function __set($property, $value)
-    {
-        $this->$property = $value;
     }
 }

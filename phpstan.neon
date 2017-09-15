@@ -1,6 +1,6 @@
+includes:
+	- vendor/phpstan/phpstan-doctrine/extension.neon
 parameters:
-	# For zend-expressive tests, the routes.php and pipeline.php
-	# will break with phpstan.
 	ignoreErrors:
-		#- '#Call to an undefined method Prophecy\\Prophecy\\ObjectProphecy::get()#'
-		#- '#but returns PHPUnit_Framework_MockObject_MockObject#'
+		- '#Parameter \#1 \$reader of class Doctrine\\ORM\\Mapping\\Driver\\AnnotationDriver#'
+

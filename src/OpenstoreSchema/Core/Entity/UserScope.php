@@ -111,22 +111,6 @@ class UserScope
     }
 
     /**
-     * @param int $pricelist_id
-     */
-    public function setPricelistId($pricelist_id)
-    {
-        $this->pricelist_id = $pricelist_id;
-    }
-
-    /**
-     * @return int
-     */
-    public function getPricelistId()
-    {
-        return $this->pricelist_id;
-    }
-
-    /**
      * @param int $customer_id
      */
     public function setCustomerId($customer_id)
@@ -153,22 +137,6 @@ class UserScope
     public function setFlagActive($flag_active)
     {
         $this->flag_active = $flag_active;
-    }
-
-    /**
-     * @return date
-     */
-    public function getActivatedAt()
-    {
-        return $this->activated_at;
-    }
-
-    /**
-     * @param string $activated_at date in Y-m-d H:i:s format
-     */
-    public function setActivatedAt($activated_at)
-    {
-        $this->activated_at = $activated_at;
     }
 
     /**
@@ -201,22 +169,6 @@ class UserScope
     public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
-    }
-
-    /**
-     * @return string
-     */
-    public function getDeletedAt()
-    {
-        return $this->deleted_at;
-    }
-
-    /**
-     * @param string $updated_at
-     */
-    public function setDeletedAt($deleted_at)
-    {
-        $this->deleted_at = $deleted_at;
     }
 
     /**

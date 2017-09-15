@@ -168,20 +168,14 @@ class ProductSerieTranslation
         return $this->description;
     }
 
-    /**
-     * @param int $lang_id
-     */
-    public function setLangId($lang_id)
+    public function setLang(string $lang): void
     {
-        $this->lang_id = $lang_id;
+        $this->lang = $lang;
     }
 
-    /**
-     * @return int
-     */
-    public function getLangId()
+    public function getLang(): string
     {
-        return $this->lang_id;
+        return $this->lang;
     }
 
     /**

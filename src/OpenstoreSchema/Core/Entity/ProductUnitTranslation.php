@@ -124,22 +124,6 @@ class ProductUnitTranslation
     }
 
     /**
-     * @param string $slug
-     */
-    public function setSlug($slug)
-    {
-        $this->slug = $slug;
-    }
-
-    /**
-     * @return string
-     */
-    public function getSlug()
-    {
-        return $this->slug;
-    }
-
-    /**
      * @param string $title
      */
     public function setTitle($title)
@@ -171,36 +155,14 @@ class ProductUnitTranslation
         return $this->description;
     }
 
-    /**
-     * @param int $product_id
-     */
-    public function setProductId($product_id)
+    public function setLang(string $lang): void
     {
-        $this->product_id = $product_id;
+        $this->lang = $lang;
     }
 
-    /**
-     * @return int
-     */
-    public function getProductId()
+    public function getLang(): string
     {
-        return $this->product_id;
-    }
-
-    /**
-     * @param int $lang_id
-     */
-    public function setLangId($lang_id)
-    {
-        $this->lang_id = $lang_id;
-    }
-
-    /**
-     * @return int
-     */
-    public function getLangId()
-    {
-        return $this->lang_id;
+        return $this->lang;
     }
 
     /**

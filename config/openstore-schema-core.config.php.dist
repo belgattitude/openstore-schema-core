@@ -4,7 +4,7 @@ use OpenstoreSchema\Core\Configuration;
 
 return [
     'database' => [
-        'driver'   => 'mysqli',
+        'driver'   => 'pdo_mysql',
         'user'     => 'root', // user
         'host'     => 'localhost',
         'password' => '', // password

@@ -104,22 +104,6 @@ class ProductPricelistStat
     }
 
     /**
-     * @param int $product_pricelist_id
-     */
-    public function setProduct_PricelistId($product_pricelist_id)
-    {
-        $this->product_pricelist_id = $product_pricelist_id;
-    }
-
-    /**
-     * @return int
-     */
-    public function getProductPricelistId()
-    {
-        return $this->product_pricelist_id;
-    }
-
-    /**
      * @return string
      */
     public function getCreatedAt()

@@ -30,10 +30,16 @@ try {
 
     // Step 2 : init configuration
 
-    $directories = [getcwd(), getcwd() . DIRECTORY_SEPARATOR . 'config'];
+    $currentWorkingDirectory = getcwd();
+    $directories = [
+                     $currentWorkingDirectory,
+                     $currentWorkingDirectory . DIRECTORY_SEPARATOR . 'config',
+                     dirname(__DIR__) . DIRECTORY_SEPARATOR . 'config'
+                   ];
 
     $configFound = false;
     $configFile = null;
+
     foreach ($directories as $directory) {
         $configFile = $directory . DIRECTORY_SEPARATOR . 'openstore-schema-core.config.php';
         if (file_exists($configFile)) {
@@ -42,7 +48,7 @@ try {
         }
     }
 
-    if (!$found) {
+    if (!$configFound) {
         throw new \Exception("Cannot find configuration file '$configFile'");
     }
     $config = include $configFile;
@@ -61,6 +67,7 @@ $setup->setProxyPath($config['proxy_path']);
 $em = $setup->getEntityManager();
 
 $cli = new Symfony\Component\Console\Application('openstore-schema-core console', '1.0.0');
+
 $cli->setCatchExceptions(true);
 // commands
 $cli->addCommands([

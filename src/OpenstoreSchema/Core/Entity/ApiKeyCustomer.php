@@ -170,22 +170,6 @@ class ApiKeyCustomer
     }
 
     /**
-     * @return string
-     */
-    public function getDeletedAt()
-    {
-        return $this->deleted_at;
-    }
-
-    /**
-     * @param string $updated_at
-     */
-    public function setDeletedAt($deleted_at)
-    {
-        $this->deleted_at = $deleted_at;
-    }
-
-    /**
      * Return creator username.
      *
      * @return string
@@ -263,28 +247,5 @@ class ApiKeyCustomer
     public function getLegacySynchroAt()
     {
         return $this->legacy_synchro_at;
-    }
-
-    /**
-     * Magic getter to expose protected properties.
-     *
-     * @param string $property
-     *
-     * @return mixed
-     */
-    public function __get($property)
-    {
-        return $this->$property;
-    }
-
-    /**
-     * Magic setter to save protected properties.
-     *
-     * @param string $property
-     * @param mixed  $value
-     */
-    public function __set($property, $value)
-    {
-        $this->$property = $value;
     }
 }

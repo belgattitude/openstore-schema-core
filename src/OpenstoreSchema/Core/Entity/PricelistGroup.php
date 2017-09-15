@@ -142,14 +142,6 @@ class PricelistGroup
     }
 
     /**
-     * @return string
-     */
-    public function setIconClass($icon_class)
-    {
-        $this->icon_class = $icon_class;
-    }
-
-    /**
      * @param int $sort_index
      *
      * @return Pricelist

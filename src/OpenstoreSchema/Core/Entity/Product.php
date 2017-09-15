@@ -569,7 +569,7 @@ class Product
     }
 
     /**
-     * @return decimal
+     * @return float
      */
     public function getHeight()
     {
@@ -583,11 +583,11 @@ class Product
      */
     public function setWidth($width)
     {
-        $this->width = $with;
+        $this->width = $width;
     }
 
     /**
-     * @return decimal
+     * @return float
      */
     public function getWidth()
     {
@@ -675,10 +675,7 @@ class Product
         $this->flag_active = $flag_active;
     }
 
-    /**
-     * @return date
-     */
-    public function getAvailableAt()
+    public function getAvailableAt(): ?string
     {
         return $this->available_at;
     }
@@ -686,7 +683,7 @@ class Product
     /**
      * @param string $available_at date in Y-m-d H:i:s format
      */
-    public function setAvailableAt($available_at)
+    public function setAvailableAt(string $available_at): void
     {
         $this->available_at = $available_at;
     }

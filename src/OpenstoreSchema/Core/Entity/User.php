@@ -211,27 +211,7 @@ class User
     }
 
     /**
-     * Get state.
-     *
-     * @return int
-     */
-    public function getState()
-    {
-        return $this->state;
-    }
-
-    /**
-     * Set state.
-     *
-     * @param int $state
-     */
-    public function setState($state)
-    {
-        $this->state = $state;
-    }
-
-    /**
-     * @return <array>Role
+     * @return Role[]
      */
     public function getRoles()
     {

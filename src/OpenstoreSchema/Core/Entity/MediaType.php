@@ -97,10 +97,6 @@ class MediaType
 
     public function __construct()
     {
-        /*
-         * Default value for flag_active
-         */
-        $this->flag_active = true;
     }
 
     /**
@@ -171,10 +167,7 @@ class MediaType
         return $this->description;
     }
 
-    /**
-     * @return string
-     */
-    public function setIconClass($icon_class)
+    public function setIconClass(string $icon_class): void
     {
         $this->icon_class = $icon_class;
     }
@@ -182,36 +175,17 @@ class MediaType
     /**
      * @return string
      */
-    public function getIconClass()
+    public function getIconClass(): ?string
     {
         return $this->icon_class;
     }
 
-    /**
-     * @return bool
-     */
-    public function getFlagActive()
-    {
-        return (bool) $this->flag_active;
-    }
-
-    public function setFlagActive($flag_active)
-    {
-        $this->flag_active = $flag_active;
-    }
-
-    /**
-     * @return string
-     */
-    public function getCreatedAt()
+    public function getCreatedAt(): ?string
     {
         return $this->created_at;
     }
 
-    /**
-     * @param string $created_at
-     */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt(string $created_at): void
     {
         $this->created_at = $created_at;
     }
