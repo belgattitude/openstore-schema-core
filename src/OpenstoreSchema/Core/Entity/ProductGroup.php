@@ -107,12 +107,13 @@ class ProductGroup
     private $updated_by;
 
     /**
-     * @ORM\Column(type="string",length=40,nullable=true, options={"collation"="utf8_bin", "comment" = "Unique reference of this record taken from legacy system"})
+     * // options={"collation"="utf8_bin"}
+     * @ORM\Column(type="string", length=40, nullable=true, options={"comment" = "Unique reference of this record taken from legacy system"})
      */
     protected $legacy_mapping;
 
     /**
-     * @ORM\Column(type="datetime",nullable=true, options={"comment" = "Last synchro timestamp"})
+     * @ORM\Column(type="datetime", nullable=true, options={"comment" = "Last synchro timestamp"})
      */
     protected $legacy_synchro_at;
 

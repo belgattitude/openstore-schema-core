@@ -565,7 +565,7 @@
 -- 
  CREATE TABLE product_group (
   group_id INT UNSIGNED AUTO_INCREMENT NOT NULL, 
-  reference VARCHAR(60) NOT NULL COLLATE utf8_bin COMMENT 'Reference', 
+  reference VARCHAR(60) NOT NULL COMMENT 'Reference', 
   slug VARCHAR(64) DEFAULT NULL COMMENT 'Unique slug for this record', 
   title VARCHAR(80) DEFAULT NULL, 
   description VARCHAR(15000) DEFAULT NULL, 
@@ -575,7 +575,7 @@
   updated_at DATETIME DEFAULT NULL COMMENT 'Record last update timestamp', 
   created_by VARCHAR(40) DEFAULT NULL COMMENT 'Creator name', 
   updated_by VARCHAR(40) DEFAULT NULL COMMENT 'Last updater name', 
-  legacy_mapping VARCHAR(40) DEFAULT NULL COLLATE utf8_bin COMMENT 'Unique reference of this record taken from legacy system', 
+  legacy_mapping VARCHAR(40) DEFAULT NULL COMMENT 'Unique reference of this record taken from legacy system', 
   legacy_synchro_at DATETIME DEFAULT NULL COMMENT 'Last synchro timestamp', 
   INDEX title_idx (title), 
   UNIQUE INDEX unique_reference_idx (reference), 
@@ -1281,8 +1281,8 @@
   flag_revision_updated TINYINT(1) DEFAULT '0' NOT NULL COMMENT 'Whether the saving includes a new revision', 
   revision INT DEFAULT NULL COMMENT 'Optional revision number, revision differ from version as it acts like a milestone', 
   message VARCHAR(150) DEFAULT NULL COMMENT 'Log message, reason of change', 
-  previous_data MEDIUMTEXT NOT NULL COMMENT 'Previous data, stored as json', 
-  current_data MEDIUMTEXT NOT NULL COMMENT 'Data at time of saving, stored as json', 
+  previous_data LONGTEXT NOT NULL COMMENT 'Previous data, stored as json', 
+  current_data LONGTEXT NOT NULL COMMENT 'Data at time of saving, stored as json', 
   INDEX related_table_idx (related_table), 
   INDEX related_id_idx (related_id), 
   INDEX revision_idx (revision), 

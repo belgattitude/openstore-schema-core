@@ -82,18 +82,14 @@ class Revision
     private $message;
 
     /**
-     * @ORM\Column(type="string", length=65536, nullable=false, options={"comment" = "Previous data, stored as json"})
+     * @ORM\Column(type="text", nullable=false, options={"comment" = "Previous data, stored as json"})
      */
     private $previous_data;
 
     /**
-     * @ORM\Column(type="string", length=65536, nullable=false, options={"comment" = "Data at time of saving, stored as json"})
+     * @ORM\Column(type="text", nullable=false, options={"comment" = "Data at time of saving, stored as json"})
      */
     private $current_data;
-
-    public function __construct()
-    {
-    }
 
     /**
      * @param string $message
