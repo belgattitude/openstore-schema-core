@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * opentore-schema-core
  *
@@ -29,7 +31,7 @@ class Configuration
      *
      * @return array
      */
-    public static function getEntityPaths()
+    public static function getEntityPaths(): array
     {
         if (self::$paths === null) {
             self::$paths = [realpath(__DIR__ . DIRECTORY_SEPARATOR . 'Entity')];
@@ -43,7 +45,7 @@ class Configuration
      *
      * @return string
      */
-    public static function getEntityNamespace()
+    public static function getEntityNamespace(): string
     {
         return self::$namespace;
     }

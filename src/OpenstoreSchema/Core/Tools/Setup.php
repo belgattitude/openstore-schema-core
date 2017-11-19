@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * opentore-schema-core
  *
@@ -61,7 +63,7 @@ class Setup
      * @param array  $paths     paths to look for entities
      * @param string $namespace entity namespace
      */
-    public function __construct(array $dbParams, array $paths, $namespace)
+    public function __construct(array $dbParams, array $paths, string $namespace)
     {
         $this->dbParams = $dbParams;
         $this->paths = $paths;
@@ -72,7 +74,7 @@ class Setup
     /**
      * @var string production|development
      */
-    public function setEnvironment($env)
+    public function setEnvironment(string $env): void
     {
         $this->env = $env;
     }
@@ -80,15 +82,12 @@ class Setup
     /**
      * @param string $path
      */
-    public function setProxyPath($path)
+    public function setProxyPath(string $path)
     {
         $this->proxy_path = $path;
     }
 
-    /**
-     * @return EntityManager
-     */
-    public function getEntityManager()
+    public function getEntityManager(): EntityManager
     {
         $cache = new DoctrineCache\ArrayCache();
 

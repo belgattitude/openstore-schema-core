@@ -12,6 +12,7 @@
 
 namespace OpenstoreSchema\Core\Tools\Console\Command\Schema;
 
+use Doctrine\DBAL\Connection;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Command\Command;
@@ -55,10 +56,8 @@ abstract class AbstractCommand extends Command
 
     /**
      * Return underlying database connection.
-     *
-     * @return \Doctrine\DBAL\Connection
      */
-    protected function getConnection()
+    protected function getConnection(): Connection
     {
         return $this->getHelper('db')->getConnection();
     }
