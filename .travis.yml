@@ -63,6 +63,18 @@ jobs:
       addons:
         mariadb: 10.2
 
+    # PHPstan
+    - stage: PHPStan
+      php: 7.1
+      script:
+        - vendor/bin/phpstan analyse -l 5 -c phpstan.neon src tests bin
+
+    # Coding standards
+    - stage: Coding standard
+      php: 7.2
+      script:
+        - ./vendor/bin/php-cs-fixer --diff --dry-run -v fix
+
     # Coverage
     - stage: Coverage
       php: 7.1
@@ -74,13 +86,6 @@ jobs:
       after_script:
         #- wget https://scrutinizer-ci.com/ocular.phar
         #- php ocular.phar code-coverage:upload --format=php-clover clover.xml
-
-    # Coding standards
-    - stage: Coding standard
-      php: 7.2
-      script:
-        - ./vendor/bin/php-cs-fixer --diff --dry-run -v fix
-
 
 
 
