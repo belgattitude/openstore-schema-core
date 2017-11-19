@@ -22,7 +22,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "OpenstoreFixture\\Core\\": "fixtures/OpenstoreFixture/Core"
+            "OpenstoreSchemaTest\\Core\\": "tests/OpenstoreSchemaTest/Core"
         }
     },
     "require": {
@@ -35,13 +35,12 @@
         "symfony/console": "^2.6.0 || ^3.2.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^6.2",
+        "phpunit/phpunit": "^6.4",
         "friendsofphp/php-cs-fixer": "^2.8.0",
         "pds/skeleton": "@dev",
         "phpstan/phpstan": "^0.8.5",
         "jdorn/sql-formatter": "^1.2.17",
         "phpstan/phpstan-doctrine": "^0.8.0"
-
     },
     "bin": ["bin/openstore-schema-core"],
     "scripts": {

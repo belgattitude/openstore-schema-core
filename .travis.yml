@@ -1,29 +1,102 @@
 language: php
 sudo: required
 dist: trusty
-group: edge
 
-matrix:
-  include:
-    - php: 7.1
-      env:
-        - SEND_COVERAGE=true
-    - php: 7.2
-  allow_failures:
-    # PHP7.2 failure is due to php-code-fixer
-    # can safely be removed when updated to 7.2
-    - php: 7.2
+cache:
+    directories:
+        - vendor
+        - $HOME/.composer/cache
 
+php:
+  - 7.1
+  - 7.2
+  - nightly
+
+before_install:
+  - mv ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini{,.disabled} || echo "xdebug not available"
 
 before_script:
-  - composer install
   - mysql -e "DROP DATABASE IF EXISTS openstore_test_utf8_compat;" -u root
   - mysql -e "CREATE DATABASE openstore_test_utf8_compat;" -u root
   - cp ./.travis/openstore-schema-core.config.travis.php ./config/openstore-schema-core.config.php
+
+install:
+  - travis_retry composer -n install
+
 script:
   - composer build
   - cat resources/sql/mysql-utf8-compat/create_schema_utf8_compat.sql | mysql -u root openstore_test_utf8_compat
   - cat resources/sql/mysql-utf8-compat/create_extra_utf8_compat.sql | mysql -u root openstore_test_utf8_compat
   - ./bin/openstore-schema-core openstore:schema:create --dump-sql
-  - ./vendor/bin/php-cs-fixer --diff --dry-run -v fix
+
+jobs:
+  allow_failures:
+    - php: nightly
+  include:
+    # PHP 7.1
+    - stage: Test
+      php: 7.1
+      env: MYSQL_VERSION=5.7
+      sudo: required
+    - stage: Test
+      php: 7.1
+      env: MARIADB_VERSION=10.0
+      addons:
+        mariadb: 10.0
+    - stage: Test
+      php: 7.1
+      env: MARIADB_VERSION=10.2
+      addons:
+        mariadb: 10.2
+    # PHP 7.2
+    - stage: Test
+      php: 7.2
+      env: MYSQL_VERSION=5.7
+      sudo: required
+    - stage: Test
+      php: 7.2
+      env: MARIADB_VERSION=10.0
+      addons:
+        mariadb: 10.0
+    - stage: Test
+      php: 7.2
+      env: MARIADB_VERSION=10.2
+      addons:
+        mariadb: 10.2
+    # PHP nightly
+    - stage: Test
+      php: nightly
+      env: MYSQL_VERSION=5.7
+      sudo: required
+    - stage: nightly
+      php: 7.2
+      env: MARIADB_VERSION=10.0
+      addons:
+        mariadb: 10.0
+    - stage: Test
+      php: nightly
+      env: MARIADB_VERSION=10.2
+      addons:
+        mariadb: 10.2
+
+    # Coverage
+    - stage: Coverage
+      php: 7.1
+      before_script:
+        - mv ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini{.disabled,}
+        - if [[ ! $(php -m | grep -si xdebug) ]]; then echo "xdebug required for coverage"; exit 1; fi
+      script:
+        - ./vendor/bin/phpunit -v --coverage-clover coverage.xml
+      after_script:
+        #- wget https://scrutinizer-ci.com/ocular.phar
+        #- php ocular.phar code-coverage:upload --format=php-clover clover.xml
+
+    # Coding standards
+    - stage: Coding standard
+      php: nightly
+      script:
+        - ./vendor/bin/php-cs-fixer --diff --dry-run -v fix
+
+
+
 
