@@ -22,13 +22,12 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "OpenstoreSchemaTest\\Core\\": "fixtures/OpenstoreSchemaTest/Core"
+            "OpenstoreFixture\\Core\\": "fixtures/OpenstoreFixture/Core"
         }
     },
-
     "require": {
         "php": "^7.1",
-        "doctrine/dbal": "2.6.2",
+        "doctrine/dbal": "2.7.x-dev as 2.6.4",
         "doctrine/common": "^2.7.0",
         "doctrine/orm": "^2.5.0",
         "gedmo/doctrine-extensions": "^2.4.28",
