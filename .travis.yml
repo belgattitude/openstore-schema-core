@@ -11,11 +11,12 @@ before_install:
   - mv ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini{,.disabled} || echo "xdebug not available"
 
 before_script:
+  - echo -e "[server]\ninnodb_large_prefix=1" | sudo tee -a /etc/mysql/my.cnf
+  - sudo service mysql restart
   - mysql -e "DROP DATABASE IF EXISTS openstore_test_utf8_compat;" -u root
   - mysql -e "CREATE DATABASE openstore_test_utf8_compat;" -u root
   - mysql -e "DROP DATABASE IF EXISTS openstore_test_utf8mb4;" -u root
   - mysql -e "CREATE DATABASE openstore_test_utf8mb4;" -u root
-
   - cp ./.travis/openstore-schema-core.config.travis.php ./config/openstore-schema-core.config.php
 
 install:
@@ -30,8 +31,6 @@ script:
   - ./bin/openstore-schema-core openstore:schema:create --dump-sql
 
 jobs:
-  allow_failures:
-    - php: nightly
   include:
     # PHP 7.1
     - stage: Test
@@ -60,21 +59,6 @@ jobs:
         mariadb: 10.1
     - stage: Test
       php: 7.2
-      env: MARIADB_VERSION=10.2
-      addons:
-        mariadb: 10.2
-    # PHP nightly
-    - stage: Test
-      php: nightly
-      env: MYSQL_VERSION=5.7
-      sudo: required
-    - stage: Test
-      php: nightly
-      env: MARIADB_VERSION=10.1
-      addons:
-        mariadb: 10.1
-    - stage: Test
-      php: nightly
       env: MARIADB_VERSION=10.2
       addons:
         mariadb: 10.2
