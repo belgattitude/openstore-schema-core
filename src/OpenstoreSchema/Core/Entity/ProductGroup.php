@@ -107,7 +107,8 @@ class ProductGroup
     private $updated_by;
 
     /**
-     * // options={"collation"="utf8_bin"}
+     * // options={"collation"="utf8_bin"}.
+     *
      * @ORM\Column(type="string", length=40, nullable=true, options={"comment" = "Unique reference of this record taken from legacy system"})
      */
     protected $legacy_mapping;
