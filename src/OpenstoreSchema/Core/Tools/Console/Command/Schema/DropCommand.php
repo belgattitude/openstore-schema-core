@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * opentore-schema-core
  *
@@ -22,7 +24,7 @@ class DropCommand extends AbstractCommand
     /**
      * {@inheritdoc}
      */
-    protected function configure()
+    protected function configure(): void
     {
         $this->setName('openstore:schema:drop')
              ->setDescription(
@@ -38,7 +40,7 @@ EOT
     /**
      * {@inheritdoc}
      */
-    protected function executeSchemaCommand(InputInterface $input, OutputInterface $output, SchemaTool $schemaTool, array $metadatas)
+    protected function executeSchemaCommand(InputInterface $input, OutputInterface $output, SchemaTool $schemaTool, array $metadatas): ?int
     {
         $conn = $this->getConnection();
         $current_db = $conn->getDatabase();

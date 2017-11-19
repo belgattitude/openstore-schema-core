@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * opentore-schema-core
  *
@@ -23,7 +25,7 @@ class RecreateExtraCommand extends AbstractCommand
     /**
      * {@inheritdoc}
      */
-    protected function configure()
+    protected function configure(): void
     {
         $this->setName('openstore:schema:recreate-extra')
              ->setDescription(
@@ -47,7 +49,7 @@ EOT
     /**
      * {@inheritdoc}
      */
-    protected function executeSchemaCommand(InputInterface $input, OutputInterface $output, SchemaTool $schemaTool, array $metadatas)
+    protected function executeSchemaCommand(InputInterface $input, OutputInterface $output, SchemaTool $schemaTool, array $metadatas): ?int
     {
         $extra = new Extra\MysqlExtra();
 

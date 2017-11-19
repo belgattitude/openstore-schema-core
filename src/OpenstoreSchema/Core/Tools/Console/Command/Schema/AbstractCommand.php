@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * opentore-schema-core
  *
@@ -28,12 +30,12 @@ abstract class AbstractCommand extends Command
      *
      * @return null|int null or 0 if everything went fine, or an error code
      */
-    abstract protected function executeSchemaCommand(InputInterface $input, OutputInterface $output, SchemaTool $schemaTool, array $metadatas);
+    abstract protected function executeSchemaCommand(InputInterface $input, OutputInterface $output, SchemaTool $schemaTool, array $metadatas): ?int;
 
     /**
      * {@inheritdoc}
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): ?int
     {
         $emHelper = $this->getHelper('em');
 

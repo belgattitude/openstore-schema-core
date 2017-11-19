@@ -22,7 +22,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "OpenstoreSchemaTest\\Core\\": "tests/OpenstoreSchemaTest/Core"
+            "OpenstoreSchemaTest\\Core\\": "tests/src/OpenstoreSchemaTest/Core"
         }
     },
     "require": {
