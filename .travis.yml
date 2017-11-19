@@ -7,11 +7,6 @@ cache:
         - vendor
         - $HOME/.composer/cache
 
-php:
-  - 7.1
-  - 7.2
-  - nightly
-
 before_install:
   - mv ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini{,.disabled} || echo "xdebug not available"
 
@@ -73,7 +68,7 @@ jobs:
       php: nightly
       env: MYSQL_VERSION=5.7
       sudo: required
-    - stage: nightly
+    - stage: Test
       php: nightly
       env: MARIADB_VERSION=10.1
       addons:
@@ -98,7 +93,7 @@ jobs:
 
     # Coding standards
     - stage: Coding standard
-      php: nightly
+      php: 7.2
       script:
         - ./vendor/bin/php-cs-fixer --diff --dry-run -v fix
 
