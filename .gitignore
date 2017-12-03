@@ -13,3 +13,4 @@ composer.lock
 config/*.php
 vendor
 build
+!config/cli-config.php
