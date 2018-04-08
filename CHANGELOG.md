@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Updated to doctrine/dbal 2.7 for mariadb 10.2 support.
 
+### Fixed
+
+- Some phpdoc type-hints
+
 ## 0.40.0 (2017-05-18)
 
 ### Changed
