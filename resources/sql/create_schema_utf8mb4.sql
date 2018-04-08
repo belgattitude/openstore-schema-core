@@ -187,7 +187,7 @@
   INDEX IDX_6F7DF886D60322AC (role_id), 
   INDEX IDX_6F7DF886FED90CCA (permission_id), 
   PRIMARY KEY(role_id, permission_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB;
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB;
 -- 
 -- schema object
 -- 
@@ -834,7 +834,7 @@
   INDEX IDX_2DE8C6A3A76ED395 (user_id), 
   INDEX IDX_2DE8C6A3D60322AC (role_id), 
   PRIMARY KEY(user_id, role_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB;
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB;
 -- 
 -- schema object
 -- 
