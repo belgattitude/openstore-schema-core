@@ -1,6 +1,10 @@
 includes:
+	#- vendor/phpstan/phpstan-strict-rules/rules.neon
+	- vendor/phpstan/phpstan-phpunit/extension.neon
+	- vendor/phpstan/phpstan-phpunit/rules.neon
 	- vendor/phpstan/phpstan-doctrine/extension.neon
 parameters:
+	reportUnmatchedIgnoredErrors: true
 	ignoreErrors:
 		- '#Parameter \#1 \$reader of class Doctrine\\ORM\\Mapping\\Driver\\AnnotationDriver#'
 
