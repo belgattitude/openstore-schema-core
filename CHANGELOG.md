@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 0.50.0 (2018-05-18)
+
+### Changed
+
+- Updated to doctrine/dbal 2.7 for mariadb 10.2 support.
+
 ## 0.40.0 (2017-05-18)
 
 ### Changed
