@@ -281,7 +281,7 @@ class ProductMedia
     /**
      * Set legacy synchro time.
      *
-     * @param string $legacy_mapping
+     * @param string $legacy_synchro_at
      */
     public function setLegacySynchroAt($legacy_synchro_at)
     {

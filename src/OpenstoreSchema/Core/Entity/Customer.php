@@ -220,7 +220,7 @@ class Customer
     }
 
     /**
-     * @param string $title
+     * @param string $name
      */
     public function setName($name)
     {
@@ -359,7 +359,7 @@ class Customer
     /**
      * Set legacy synchro time.
      *
-     * @param string $legacy_mapping
+     * @param string $legacy_synchro_at
      */
     public function setLegacySynchroAt($legacy_synchro_at)
     {

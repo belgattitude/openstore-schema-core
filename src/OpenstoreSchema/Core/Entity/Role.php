@@ -119,7 +119,7 @@ class Role
     /**
      * Get the role identifier.
      *
-     * @return int
+     * @return int|null
      */
     public function getId()
     {
@@ -129,7 +129,7 @@ class Role
     /**
      * Get the role identifier.
      *
-     * @return int
+     * @return int|null
      */
     public function getRoleId()
     {

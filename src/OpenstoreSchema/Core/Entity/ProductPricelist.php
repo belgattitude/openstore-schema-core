@@ -457,7 +457,7 @@ class ProductPricelist
     }
 
     /**
-     * @param string $updated_at
+     * @param string $deleted_at
      */
     public function setDeletedAt($deleted_at)
     {
@@ -527,7 +527,7 @@ class ProductPricelist
     /**
      * Set legacy synchro time.
      *
-     * @param string $legacy_mapping
+     * @param string $legacy_synchro_at
      */
     public function setLegacySynchroAt($legacy_synchro_at)
     {

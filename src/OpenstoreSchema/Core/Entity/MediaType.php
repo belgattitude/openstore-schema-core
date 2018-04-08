@@ -100,7 +100,7 @@ class MediaType
     }
 
     /**
-     * @param int $id
+     * @param int $type_id
      */
     public function setTypeId($type_id)
     {
@@ -269,7 +269,7 @@ class MediaType
     /**
      * Set legacy synchro time.
      *
-     * @param string $legacy_mapping
+     * @param string $legacy_synchro_at
      */
     public function setLegacySynchroAt($legacy_synchro_at)
     {

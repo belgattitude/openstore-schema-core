@@ -107,7 +107,7 @@ class Stock
     }
 
     /**
-     * @param int $id
+     * @param int $stock_id
      */
     public function setStockId($stock_id)
     {
@@ -298,7 +298,7 @@ class Stock
     /**
      * Set legacy synchro time.
      *
-     * @param string $legacy_mapping
+     * @param string $legacy_synchro_at
      */
     public function setLegacySynchroAt($legacy_synchro_at)
     {

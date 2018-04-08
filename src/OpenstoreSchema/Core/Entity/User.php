@@ -123,7 +123,7 @@ class User
     /**
      * Set id.
      *
-     * @param int $id
+     * @param int|string $user_id
      */
     public function setUserId($user_id)
     {

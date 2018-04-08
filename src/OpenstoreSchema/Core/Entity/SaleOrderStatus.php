@@ -120,7 +120,7 @@ class SaleOrderStatus
     }
 
     /**
-     * @param int $id
+     * @param int $status_id
      */
     public function setStatusId($status_id)
     {
@@ -305,7 +305,7 @@ class SaleOrderStatus
     /**
      * Set legacy synchro time.
      *
-     * @param string $legacy_mapping
+     * @param string $legacy_synchro_at
      */
     public function setLegacySynchroAt($legacy_synchro_at)
     {

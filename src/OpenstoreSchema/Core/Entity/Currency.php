@@ -105,7 +105,7 @@ class Currency
     }
 
     /**
-     * @param int $id
+     * @param int $currency_id
      */
     public function setCurrencyId($currency_id)
     {
@@ -303,7 +303,7 @@ class Currency
     /**
      * Set legacy synchro time.
      *
-     * @param string $legacy_mapping
+     * @param string $legacy_synchro_at
      */
     public function setLegacySynchroAt($legacy_synchro_at)
     {
