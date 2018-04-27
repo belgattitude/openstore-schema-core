@@ -39,7 +39,7 @@ script:
   # Recreate test database from doctrine
   - mysql -e "DROP DATABASE IF EXISTS openstore_test_utf8mb4;" -u root
   - mysql -e "CREATE DATABASE openstore_test_utf8mb4;" -u root
-  - php vendor/bin/doctrine orm:schema-tool:create --force
+  - php vendor/bin/doctrine orm:schema-tool:create
   # Running a diff should not generate migrations
   - php vendor/bin/doctrine orm:schema-tool:update --dump-sql
 
