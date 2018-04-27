@@ -7,4 +7,4 @@ parameters:
 	reportUnmatchedIgnoredErrors: true
 	ignoreErrors:
 		- '#Parameter \#1 \$reader of class Doctrine\\ORM\\Mapping\\Driver\\AnnotationDriver#'
-
+		- '#Class OpenstoreSchema\\Core\\Entity\\Question was not found while trying#'
