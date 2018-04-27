@@ -4,7 +4,8 @@ includes:
 	- vendor/phpstan/phpstan-phpunit/rules.neon
 	- vendor/phpstan/phpstan-doctrine/extension.neon
 parameters:
+	excludes_analyse:
+		- tests/entity/Question.php
 	reportUnmatchedIgnoredErrors: true
 	ignoreErrors:
 		- '#Parameter \#1 \$reader of class Doctrine\\ORM\\Mapping\\Driver\\AnnotationDriver#'
-		- '#Class OpenstoreSchema\\Core\\Entity\\Question was not found while trying#'
