@@ -33,23 +33,27 @@ script:
   # - Create a database from generated SQL (utf8mb4)
   - cat resources/sql/create_schema_utf8mb4.sql | mysql -u root openstore_test_utf8mb4
   - cat resources/sql/create_schema_extra_utf8mb4.sql | mysql -u root openstore_test_utf8mb4
-  # Running a diff should not generate migrations
+  # Running a diff should not generate migrations (--dump-sql for debug it always return 0 exit code)
   - php vendor/bin/doctrine orm:schema-tool:update --dump-sql
+  - php vendor/bin/doctrine orm:schema-tool:update
+
   # Test 2.
   # Recreate test database from doctrine
   - mysql -e "DROP DATABASE IF EXISTS openstore_test_utf8mb4;" -u root
   - mysql -e "CREATE DATABASE openstore_test_utf8mb4;" -u root
   - php vendor/bin/doctrine orm:schema-tool:create
-  # Running a diff should not generate migrations
+  # Running a diff should not generate migrations (--dump-sql for debug it always return 0 exit code)
   - php vendor/bin/doctrine orm:schema-tool:update --dump-sql
+  - php vendor/bin/doctrine orm:schema-tool:update
+  # Test 3.
   # Adding a new entity should generate a new diff
   - cp tests/entity/Question.php src/OpenstoreSchema/Core/Entity/Question.php
   - php vendor/bin/doctrine orm:schema-tool:update --dump-sql
   # Updating schema
   - php vendor/bin/doctrine orm:schema-tool:update --force
-  # This one should not give new migrations
+  # This one should not give new migrations (--dump-sql for debug it always return 0 exit code)
   - php vendor/bin/doctrine orm:schema-tool:update --dump-sql
-
+  - php vendor/bin/doctrine orm:schema-tool:update
 
 jobs:
   include:
