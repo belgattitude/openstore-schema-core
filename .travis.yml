@@ -42,6 +42,14 @@ script:
   - php vendor/bin/doctrine orm:schema-tool:create
   # Running a diff should not generate migrations
   - php vendor/bin/doctrine orm:schema-tool:update --dump-sql
+  # Adding a new entity should generate a new diff
+  - cp tests/entity/Question.php src/OpenstoreSchema/Core/Entity/Question.php
+  - php vendor/bin/doctrine orm:schema-tool:update --dump-sql
+  # Updating schema
+  - php vendor/bin/doctrine orm:schema-tool:update --force
+  # This one should not give new migrations
+  - php vendor/bin/doctrine orm:schema-tool:update --dump-sql
+
 
 jobs:
   include:
