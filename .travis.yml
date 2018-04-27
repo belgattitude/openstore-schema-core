@@ -13,6 +13,7 @@ before_install:
 before_script:
   - echo -e "[server]\ninnodb_file_per_table=1\ninnodb_file_format=barracuda\ninnodb_large_prefix=1" | sudo tee -a /etc/mysql/my.cnf
   - sudo service mysql restart
+  # Create two test databases
   - mysql -e "DROP DATABASE IF EXISTS openstore_test_utf8_compat;" -u root
   - mysql -e "CREATE DATABASE openstore_test_utf8_compat;" -u root
   - mysql -e "DROP DATABASE IF EXISTS openstore_test_utf8mb4;" -u root
@@ -23,13 +24,23 @@ install:
   - travis_retry composer -n install
 
 script:
+  # Test 1.
+  # Build generated SQL and check they work by pushing them to the db
   - composer build
+  # - Create a database from generated SQL (utf8)
   - cat resources/sql/mysql-utf8-compat/create_schema_utf8_compat.sql | mysql -u root openstore_test_utf8_compat
   - cat resources/sql/mysql-utf8-compat/create_schema_extra_utf8_compat.sql | mysql -u root openstore_test_utf8_compat
+  # - Create a database from generated SQL (utf8mb4)
   - cat resources/sql/create_schema_utf8mb4.sql | mysql -u root openstore_test_utf8mb4
   - cat resources/sql/create_schema_extra_utf8mb4.sql | mysql -u root openstore_test_utf8mb4
-  - ./bin/openstore-schema-core openstore:schema:create --dump-sql
-  # Test doctrine migrations works
+  # Running a diff should not generate migrations
+  - php vendor/bin/doctrine orm:schema-tool:update --dump-sql
+  # Test 2.
+  # Recreate test database from doctrine
+  - mysql -e "DROP DATABASE IF EXISTS openstore_test_utf8mb4;" -u root
+  - mysql -e "CREATE DATABASE openstore_test_utf8mb4;" -u root
+  - php vendor/bin/doctrine orm:schema-tool:create --force
+  # Running a diff should not generate migrations
   - php vendor/bin/doctrine orm:schema-tool:update --dump-sql
 
 jobs:
