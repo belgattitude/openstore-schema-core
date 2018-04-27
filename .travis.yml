@@ -30,7 +30,7 @@ script:
   - cat resources/sql/create_schema_extra_utf8mb4.sql | mysql -u root openstore_test_utf8mb4
   - ./bin/openstore-schema-core openstore:schema:create --dump-sql
   # Test doctrine migrations works
-  - php vendor/bin/doctrine orm:schema-tool-update --dump-sql
+  - php vendor/bin/doctrine orm:schema-tool:update --dump-sql
 
 jobs:
   include:
