@@ -5,7 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## 0.50.0 (2018-05-18)
+## 0.51.0 (2018-05-05)
+
+- Removed magic getter/setters in entities (possible BC-break)
+
+## 0.50.0 (2018-04-18)
 
 ### Changed
 
