@@ -151,7 +151,6 @@ $ mysql -u {USER} -p {NEW_DATABASE} < /{PATH}/{DATABASE}.all.sql
 
 ## Future
       
-- [ ] Fix entities and remove magic methods `__get` and `__set`.
 - [ ] Start working on repositories.
 - [ ] Document tables and conventions.
 - [ ] Add doctrine validate to CI (fix wrong relations names).      
