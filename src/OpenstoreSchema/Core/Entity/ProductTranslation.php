@@ -139,68 +139,63 @@ class ProductTranslation
     }
 
     /**
-     * @param int $id
+     * @param string|int $id
      */
-    public function setId($id)
+    public function setId($id): void
     {
         $this->id = $id;
     }
 
     /**
-     * @return int
+     * @return int|string
      */
     public function getId()
     {
         return $this->id;
     }
 
-    /**
-     * @param string $slug
-     */
-    public function setSlug($slug)
+    public function setSlug(string $slug): void
     {
         $this->slug = $slug;
     }
 
-    /**
-     * @return string
-     */
-    public function getSlug()
+    public function getSlug(): ?string
     {
         return $this->slug;
     }
 
-    /**
-     * @param string $title
-     */
-    public function setTitle($title)
+    public function setTitle(string $title): void
     {
         $this->title = $title;
     }
 
-    /**
-     * @return string
-     */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
 
-    /**
-     * @param string $description
-     */
-    public function setDescription($description)
+    public function setDescription(string $description): void
     {
         $this->description = $description;
     }
 
-    /**
-     * @return string
-     */
-    public function getDescription()
+    public function getDescription(): ?string
     {
         return $this->description;
     }
+
+    public function setCharacteristic(string $characteristic): void
+    {
+        $this->characteristic = $characteristic;
+    }
+
+    public function getCharacteristic(): string
+    {
+        return $this->characteristic;
+    }
+
+
+
 
     /**
      * @param string $specs
@@ -227,7 +222,7 @@ class ProductTranslation
     }
 
     /**
-     * @return int
+     * @return int|string
      */
     public function getProductId()
     {
@@ -260,122 +255,68 @@ class ProductTranslation
         return $this->lang;
     }
 
-    /**
-     * @return string
-     */
-    public function getCreatedAt()
+    public function getCreatedAt(): ?string
     {
         return $this->created_at;
     }
 
-    /**
-     * @param string $created_at
-     */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt(string $created_at): void
     {
         $this->created_at = $created_at;
     }
 
-    /**
-     * @return string
-     */
-    public function getUpdatedAt()
+    public function getUpdatedAt(): ?string
     {
         return $this->updated_at;
     }
 
-    /**
-     * @param string $updated_at
-     */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt(string $updated_at): void
     {
         $this->updated_at = $updated_at;
     }
 
-    /**
-     * Return creator username.
-     *
-     * @return string
-     */
-    public function getCreatedBy()
+    public function getCreatedBy(): ?string
     {
         return $this->created_by;
     }
 
-    /**
-     * Set creator username.
-     *
-     * @param string $created_by
-     */
-    public function setCreatedBy($created_by)
+    public function setCreatedBy(string $created_by): void
     {
         $this->created_by = $created_by;
     }
 
-    /**
-     * Return last updater username.
-     *
-     * @return string
-     */
-    public function getUpdatedBy()
+    public function getUpdatedBy(): ?string
     {
         return $this->updated_by;
     }
 
-    /**
-     * Set the last updater username.
-     *
-     * @param string $updated_by
-     */
-    public function setUpdatedBy($updated_by)
+
+    public function setUpdatedBy(string $updated_by): void
     {
         $this->updated_by = $updated_by;
     }
 
-    /**
-     * Return legacy mapping.
-     *
-     * @return string $legacy_mapping
-     */
-    public function getLegacyMapping()
+    public function getLegacyMapping(): ?string
     {
         return $this->legacy_mapping;
     }
 
-    /**
-     * Set a legacy mapping for this record.
-     *
-     * @param string $legacy_mapping
-     */
-    public function setLegacyMapping($legacy_mapping)
+    public function setLegacyMapping(string $legacy_mapping): void
     {
         $this->legacy_mapping = $legacy_mapping;
     }
 
-    /**
-     * Set legacy synchro time.
-     *
-     * @param string $legacy_synchro_at
-     */
-    public function setLegacySynchroAt($legacy_synchro_at)
+    public function setLegacySynchroAt(string $legacy_synchro_at): void
     {
         $this->legacy_synchro_at = $legacy_synchro_at;
     }
 
-    /**
-     * Return legacy synchro timestamp.
-     *
-     * @return string
-     */
-    public function getLegacySynchroAt()
+    public function getLegacySynchroAt(): ?string
     {
         return $this->legacy_synchro_at;
     }
 
-    /**
-     * @return string
-     */
-    public function __toString()
+    public function __toString(): string
     {
         return $this->getTitle();
     }
