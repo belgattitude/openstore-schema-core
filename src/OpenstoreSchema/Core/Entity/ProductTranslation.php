@@ -194,9 +194,6 @@ class ProductTranslation
         return $this->characteristic;
     }
 
-
-
-
     /**
      * @param string $specs
      */
@@ -289,7 +286,6 @@ class ProductTranslation
     {
         return $this->updated_by;
     }
-
 
     public function setUpdatedBy(string $updated_by): void
     {

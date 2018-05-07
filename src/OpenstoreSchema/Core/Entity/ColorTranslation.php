@@ -177,42 +177,22 @@ class ColorTranslation
         $this->updated_at = $updated_at;
     }
 
-    /**
-     * Return creator username.
-     *
-     * @return string
-     */
-    public function getCreatedBy()
+    public function getCreatedBy(): ?string
     {
         return $this->created_by;
     }
 
-    /**
-     * Set creator username.
-     *
-     * @param string $created_by
-     */
-    public function setCreatedBy($created_by)
+    public function setCreatedBy(string $created_by): void
     {
         $this->created_by = $created_by;
     }
 
-    /**
-     * Return last updater username.
-     *
-     * @return string
-     */
-    public function getUpdatedBy()
+    public function getUpdatedBy(): ?string
     {
         return $this->updated_by;
     }
 
-    /**
-     * Set the last updater username.
-     *
-     * @param string $updated_by
-     */
-    public function setUpdatedBy($updated_by)
+    public function setUpdatedBy(string $updated_by): void
     {
         $this->updated_by = $updated_by;
     }
