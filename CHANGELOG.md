@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 0.51.1 (2018-05-29)
+
+### Added 
+
+- `ProductTranslation` new field: `usp` (Unique selling proposition)
+
+### Changed
+
+- `ProductTranslation` field `specs` now `varchar(5000)` instead of `text`
+
+### Fixed 
+
+- Minor typehint fixes for `ProductTranslation` entity.
+
+### Example of migration:
+
+```sql
+ALTER TABLE product_translation ADD usp VARCHAR(200) DEFAULT NULL COMMENT 'Unique Selling Proposition', CHANGE description description VARCHAR(5000) DEFAULT NULL COMMENT 'Product description', CHANGE specs specs VARCHAR(5000) DEFAULT NULL COMMENT 'Product specifications';
+```
+
 ## 0.51.0 (2018-05-05)
 
 ### Changed

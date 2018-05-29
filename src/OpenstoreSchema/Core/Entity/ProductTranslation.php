@@ -76,7 +76,7 @@ class ProductTranslation
     private $invoice_title;
 
     /**
-     * @ORM\Column(type="string", length=5000, nullable=true)
+     * @ORM\Column(type="string", length=5000, nullable=true, options={"comment" = "Product description"})
      */
     private $description;
 
@@ -86,9 +86,14 @@ class ProductTranslation
     private $characteristic;
 
     /**
-     * @ORM\Column(type="text", nullable=true, options={"comment" = "Specifications"})
+     * @ORM\Column(type="string", length=5000, nullable=true, options={"comment" = "Product specifications"})
      */
     private $specs;
+
+    /**
+     * @ORM\Column(type="string", length=200, nullable=true, options={"comment" = "Unique Selling Proposition"})
+     */
+    private $usp;
 
     /**
      * @ORM\Column(type="string", length=200, nullable=true)
@@ -146,15 +151,12 @@ class ProductTranslation
         $this->id = $id;
     }
 
-    /**
-     * @return int|string
-     */
-    public function getId()
+    public function getId(): int
     {
-        return $this->id;
+        return (int) $this->id;
     }
 
-    public function setSlug(string $slug): void
+    public function setSlug(?string $slug): void
     {
         $this->slug = $slug;
     }
@@ -164,17 +166,27 @@ class ProductTranslation
         return $this->slug;
     }
 
-    public function setTitle(string $title): void
+    public function setTitle(?string $title): void
     {
         $this->title = $title;
     }
 
-    public function getTitle(): string
+    public function getTitle(): ?string
     {
         return $this->title;
     }
 
-    public function setDescription(string $description): void
+    public function setInvoiceTitle(?string $invoice_title): void
+    {
+        $this->invoice_title = $invoice_title;
+    }
+
+    public function getInvoiceTitle(): ?string
+    {
+        return $this->invoice_title;
+    }
+
+    public function setDescription(?string $description): void
     {
         $this->description = $description;
     }
@@ -189,30 +201,31 @@ class ProductTranslation
         $this->characteristic = $characteristic;
     }
 
-    public function getCharacteristic(): string
+    public function getCharacteristic(): ?string
     {
         return $this->characteristic;
     }
 
-    /**
-     * @param string $specs
-     */
-    public function setSpecs($specs)
+    public function setSpecs(?string $specs): void
     {
         $this->specs = $specs;
     }
 
-    /**
-     * @return string
-     */
-    public function getSpecs()
+    public function getSpecs(): ?string
     {
         return $this->specs;
     }
 
-    /**
-     * @param int $product_id
-     */
+    public function setUsp(?string $usp): void
+    {
+        $this->usp = $usp;
+    }
+
+    public function getUsp(): ?string
+    {
+        return $this->usp;
+    }
+
     public function setProductId($product_id)
     {
         $this->product_id = $product_id;
@@ -257,7 +270,7 @@ class ProductTranslation
         return $this->created_at;
     }
 
-    public function setCreatedAt(string $created_at): void
+    public function setCreatedAt(?string $created_at): void
     {
         $this->created_at = $created_at;
     }
@@ -267,7 +280,7 @@ class ProductTranslation
         return $this->updated_at;
     }
 
-    public function setUpdatedAt(string $updated_at): void
+    public function setUpdatedAt(?string $updated_at): void
     {
         $this->updated_at = $updated_at;
     }
@@ -277,7 +290,7 @@ class ProductTranslation
         return $this->created_by;
     }
 
-    public function setCreatedBy(string $created_by): void
+    public function setCreatedBy(?string $created_by): void
     {
         $this->created_by = $created_by;
     }
@@ -287,7 +300,7 @@ class ProductTranslation
         return $this->updated_by;
     }
 
-    public function setUpdatedBy(string $updated_by): void
+    public function setUpdatedBy(?string $updated_by): void
     {
         $this->updated_by = $updated_by;
     }
@@ -297,12 +310,12 @@ class ProductTranslation
         return $this->legacy_mapping;
     }
 
-    public function setLegacyMapping(string $legacy_mapping): void
+    public function setLegacyMapping(?string $legacy_mapping): void
     {
         $this->legacy_mapping = $legacy_mapping;
     }
 
-    public function setLegacySynchroAt(string $legacy_synchro_at): void
+    public function setLegacySynchroAt(?string $legacy_synchro_at): void
     {
         $this->legacy_synchro_at = $legacy_synchro_at;
     }
@@ -314,6 +327,6 @@ class ProductTranslation
 
     public function __toString(): string
     {
-        return $this->getTitle();
+        return $this->getTitle() ?? '';
     }
 }
