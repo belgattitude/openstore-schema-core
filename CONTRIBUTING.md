@@ -41,15 +41,15 @@ $ ./bin/openstore-schema-core openstore:schema:create
 
 ### Step 4: Create a branch to make an addition or fix
 
-1. Create a new branch from master (i.e. feature/24)
-2. Modify the code... Fix, improve :)
-3. See the differences by running
+1. Create a new branch from master (i.e. name your branch like `feature/24` or `hotfix/25`)
+2. Make the code changes...
+3. Good to check the schema diff:
 
 ```shell
 $ ./bin/openstore-schema-core openstore:schema:update
 ```
 
-### Step 5: On happy, release a P/R (pull request)
+### Step 5: When happy, release a P/R (pull request)
 
 1. First ensure the code is clean
 
@@ -64,6 +64,6 @@ $ composer phpstan
 $ composer generate-sql
 ```
 
-3. Don't forget to update the Changelog.md
+3. Don't forget to update the `CHANGELOG.md`
 
-4. Push your changes. 
+4. Commit/push your changes. 
