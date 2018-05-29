@@ -9,7 +9,7 @@
 3. Clone your newly created fork: 
 
 ```shell
-$ git clone https://github.com/<username>/openstore-schema-core.git`
+$ git clone https://github.com/<username>/openstore-schema-core.git
 ```
 
 4. Install deps
