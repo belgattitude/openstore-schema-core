@@ -87,6 +87,11 @@ jobs:
       env: MARIADB_VERSION=10.2
       addons:
         mariadb: 10.2
+    - stage: Test
+      php: 7.2
+      env: MARIADB_VERSION=10.3
+      addons:
+        mariadb: 10.3
 
     # PHPstan
     - stage: PHPStan
