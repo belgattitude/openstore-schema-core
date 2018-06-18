@@ -132,7 +132,8 @@ ENDQ;
         $stmts['drop/function/delete_double_spaces'] = 'DROP FUNCTION IF EXISTS `delete_double_spaces`';
         $stmts['create/function/delete_double_spaces'] = <<< 'ENDQ'
         CREATE FUNCTION delete_double_spaces ( title VARCHAR(3000) )
-        RETURNS VARCHAR(3000) CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci DETERMINISTIC
+        RETURNS VARCHAR(3000) CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci 
+        DETERMINISTIC
         BEGIN
             DECLARE result VARCHAR(3000);
             SET result = REPLACE( title, '  ', ' ' );
@@ -146,7 +147,9 @@ ENDQ;
 
         $stmts['drop/function/get_searchable_reference'] = 'DROP FUNCTION IF EXISTS `get_searchable_reference`';
         $stmts['create/function/get_searchable_reference'] = <<< 'ENDQ'
-        CREATE FUNCTION `get_searchable_reference` (`in_str` VARCHAR(2048)) RETURNS VARCHAR(2048) CHARSET utf8mb4
+        CREATE FUNCTION `get_searchable_reference` (`in_str` VARCHAR(2048)) 
+        RETURNS VARCHAR(2048) CHARSET utf8mb4
+        DETERMINISTIC        
         BEGIN
             /*
               This function escape a string from any non alphanumeric chars (A_Z0_9)

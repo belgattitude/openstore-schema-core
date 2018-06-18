@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 0.51.2 (2018-06-18)
+
+### Added
+
+- Added travis tests for mariadb 10.3+
+
+### Fixed 
+
+- [MySQLExtra] Fix creation of function `get_searchable_reference` and add `DETERMINISTIC` to avoid possible problem if binlog is enabled. 
+
 ## 0.51.1 (2018-05-29)
 
 ### Added 
