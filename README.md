@@ -2,7 +2,6 @@
 
 [![PHP Version](http://img.shields.io/badge/php-7.1+-ff69b4.svg)](https://packagist.org/packages/begattitude/openstore-schema-core)
 [![Build Status](https://travis-ci.org/belgattitude/openstore-schema-core.svg?branch=master)](https://travis-ci.org/belgattitude/openstore-schema-core)
-[![Dependency Status](https://www.versioneye.com/user/projects/5677ba2b107997003e0011c3/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5677ba2b107997003e0011c3)
 [![Latest Stable Version](https://poser.pugx.org/openstore/schema-core/v/stable.svg)](https://packagist.org/packages/openstore/schema-core)
 [![Total Downloads](https://poser.pugx.org/openstore/schema-core/downloads.png)](https://packagist.org/packages/openstore/schema-core)
 [![License](https://poser.pugx.org/openstore/schema-core/license.png)](https://packagist.org/packages/openstore/schema-core)
