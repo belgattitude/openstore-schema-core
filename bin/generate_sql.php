@@ -23,7 +23,7 @@ $ddl_cmd = './bin/openstore-schema-core openstore:schema:create --dump-sql --no-
 $ddl_output = [];
 exec($ddl_cmd, $ddl_output, $return_var);
 if ($return_var !== 0) {
-    echo 'Cannot generate ddl:' . implode(PHP_EOL . $ddl_output);
+    echo 'Cannot generate ddl:' . implode(PHP_EOL, $ddl_output);
     exit(1);
 }
 
@@ -59,7 +59,7 @@ $extra_cmd = './bin/openstore-schema-core openstore:schema:recreate-extra --dump
 
 exec($extra_cmd, $extra_output, $return_var);
 if ($return_var !== 0) {
-    echo 'Cannot generate extras:' . implode(PHP_EOL . $extra_output);
+    echo 'Cannot generate extras:' . implode(PHP_EOL, $extra_output);
     exit(1);
 }
 
