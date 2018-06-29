@@ -65,9 +65,8 @@ First ensure your database server is supported and enable support for `utf8mb4` 
 > Note: to be able to work with `utf8mb4`check that the following 
 > parameters are present in the mysql configuration file (`my.cnf`):
 >   - [x] `innodb_file_per_table=1`
->   - [x] `innodb_file_format=barracuda`
->   - [x] `innodb_large_prefix=1`      
-> *(Note that from MariaDB 10.2.2 and Mysql 5.7.7 some of those params have become default)* 
+>   - [x] `innodb_file_format=barracuda` *([default for MariaDb 10.2.2+](https://mariadb.com/kb/en/library/xtradbinnodb-server-system-variables/#innodb_file_format), removed in 10.3)*
+>   - [x] `innodb_large_prefix=1` *([default for Mariadb 10.2.2+](https://mariadb.com/kb/en/library/xtradbinnodb-server-system-variables/#innodb_large_prefix), removed in 10.3)*      
 
 Then create a new database:
 
