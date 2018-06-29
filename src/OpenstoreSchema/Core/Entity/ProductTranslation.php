@@ -96,6 +96,11 @@ class ProductTranslation
     private $usp;
 
     /**
+     * @ORM\Column(type="string", length=2000, nullable=true, options={"comment" = "Product marketing text"})
+     */
+    private $marketing_text;
+
+    /**
      * @ORM\Column(type="string", length=200, nullable=true)
      */
     private $keywords;
@@ -224,6 +229,16 @@ class ProductTranslation
     public function getUsp(): ?string
     {
         return $this->usp;
+    }
+
+    public function setMarketingText(?string $marketing_text): void
+    {
+        $this->marketing_text = $marketing_text;
+    }
+
+    public function getMarketingText(): ?string
+    {
+        return $this->marketing_text;
     }
 
     public function setProductId($product_id)
