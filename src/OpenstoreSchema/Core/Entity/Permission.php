@@ -43,8 +43,6 @@ class Permission
     protected $permission_id;
 
     /**
-     * @var string|null
-     *
      * @ORM\Column(type="string", length=128)
      */
     protected $name;
@@ -52,36 +50,24 @@ class Permission
     /**
      * Constructor.
      */
-    public function __construct($name)
+    public function __construct(string $name)
     {
-        $this->name = (string) $name;
+        $this->name = $name;
     }
 
     /**
      * Get the permission identifier.
-     *
-     * @return int
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->permission_id;
     }
 
     /**
      * Get the permission identifier.
-     *
-     * @return int
      */
-    public function getPermissionId()
+    public function getPermissionId(): int
     {
         return $this->permission_id;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function __toString()
-    {
-        return $this->name;
     }
 }
