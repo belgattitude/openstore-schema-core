@@ -369,7 +369,7 @@
   characteristic VARCHAR(150) DEFAULT NULL, 
   specs VARCHAR(5000) DEFAULT NULL COMMENT 'Product specifications', 
   usp VARCHAR(200) DEFAULT NULL COMMENT 'Unique Selling Proposition', 
-  marketing_text VARCHAR(2000) DEFAULT NULL COMMENT 'Product marketing text', 
+  additional_description VARCHAR(2000) DEFAULT NULL COMMENT 'Additional description', 
   keywords VARCHAR(200) DEFAULT NULL, 
   revision INT UNSIGNED DEFAULT 1 COMMENT 'Translation revision number', 
   created_at DATETIME DEFAULT NULL COMMENT 'Record creation timestamp', 

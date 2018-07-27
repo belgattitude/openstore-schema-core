@@ -96,9 +96,9 @@ class ProductTranslation
     private $usp;
 
     /**
-     * @ORM\Column(type="string", length=2000, nullable=true, options={"comment" = "Product marketing text"})
+     * @ORM\Column(type="string", length=2000, nullable=true, options={"comment" = "Additional description"})
      */
-    private $marketing_text;
+    private $additional_description;
 
     /**
      * @ORM\Column(type="string", length=200, nullable=true)
@@ -231,14 +231,14 @@ class ProductTranslation
         return $this->usp;
     }
 
-    public function setMarketingText(?string $marketing_text): void
+    public function setAdditionalDescription(?string $additional_description): void
     {
-        $this->marketing_text = $marketing_text;
+        $this->additional_description = $additional_description;
     }
 
-    public function getMarketingText(): ?string
+    public function getAdditionalDescription(): ?string
     {
-        return $this->marketing_text;
+        return $this->additional_description;
     }
 
     public function setProductId($product_id)
