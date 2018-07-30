@@ -96,6 +96,11 @@ class ProductTranslation
     private $usp;
 
     /**
+     * @ORM\Column(type="string", length=2000, nullable=true, options={"comment" = "Additional description"})
+     */
+    private $additional_description;
+
+    /**
      * @ORM\Column(type="string", length=200, nullable=true)
      */
     private $keywords;
@@ -224,6 +229,16 @@ class ProductTranslation
     public function getUsp(): ?string
     {
         return $this->usp;
+    }
+
+    public function setAdditionalDescription(?string $additional_description): void
+    {
+        $this->additional_description = $additional_description;
+    }
+
+    public function getAdditionalDescription(): ?string
+    {
+        return $this->additional_description;
     }
 
     public function setProductId($product_id)
