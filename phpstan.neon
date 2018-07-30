@@ -8,4 +8,4 @@ parameters:
 		- tests/entity/Question.php
 	reportUnmatchedIgnoredErrors: true
 	ignoreErrors:
-		- '#Parameter \#1 \$reader of class Doctrine\\ORM\\Mapping\\Driver\\AnnotationDriver#'
+		#- '#Parameter \#1 \$reader of class Doctrine\\ORM\\Mapping\\Driver\\AnnotationDriver#'
