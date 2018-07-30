@@ -5,11 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## 0.51.3 (2018-07-27)
+## 0.51.3 (2018-07-30)
 
 ### Added 
 
 - `ProductTranslation` new field: `additional_description` (Additional description for products)
+
+### Updated
+
+- Deps requirements updated: dbal 2.8, orm 2.6
 
 ## 0.51.2 (2018-06-18)
 
