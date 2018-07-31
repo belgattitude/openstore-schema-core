@@ -1,6 +1,6 @@
 # Openstore Schema Core
 
-[![PHP Version](http://img.shields.io/badge/php-7.1+-ff69b4.svg)](https://packagist.org/packages/begattitude/openstore-schema-core)
+[![PHP Version](https://img.shields.io/badge/php-7.1+-ff69b4.svg)](https://packagist.org/packages/begattitude/openstore-schema-core)
 [![Build Status](https://travis-ci.org/belgattitude/openstore-schema-core.svg?branch=master)](https://travis-ci.org/belgattitude/openstore-schema-core)
 [![Latest Stable Version](https://poser.pugx.org/openstore/schema-core/v/stable.svg)](https://packagist.org/packages/openstore/schema-core)
 [![Total Downloads](https://poser.pugx.org/openstore/schema-core/downloads.png)](https://packagist.org/packages/openstore/schema-core)
