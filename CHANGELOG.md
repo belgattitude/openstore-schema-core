@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 0.51.5 (2018-08-30)
+
+### Added
+
+- Added `purge_api_key_logs` event to remove api log older than 12 months.
+
 ## 0.51.4 (2018-08-13)
 
 ### Added 

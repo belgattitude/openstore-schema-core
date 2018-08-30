@@ -452,4 +452,13 @@ DELIMITER //
             SET product_category_translation.keywords = tmp.keywords;
         END//
 DELIMITER ;
+DELIMITER //
+        DROP EVENT IF EXISTS purge_api_key_logs;     //
+DELIMITER ;
+DELIMITER //
+        CREATE EVENT purge_api_key_logs
+        ON SCHEDULE EVERY 1 WEEK ON COMPLETION PRESERVE ENABLE
+        COMMENT 'Removes api_key_logs older than 12 months'
+        DO DELETE FROM openstore_emd.api_key_log WHERE created_at < DATE_SUB(CURRENT_DATE(), INTERVAL 12 MONTH)//
+DELIMITER ;
 DELIMITER ;
