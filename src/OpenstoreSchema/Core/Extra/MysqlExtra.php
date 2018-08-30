@@ -538,11 +538,11 @@ ENDQ;
     {
         $stmts = [];
 
-        $stmts['drop/event/purge_api_key_logs'] = <<< ENDQ
+        $stmts['drop/event/purge_api_key_logs'] = <<< 'ENDQ'
         DROP EVENT IF EXISTS purge_api_key_logs;    
 ENDQ;
 
-        $stmts['create/event/purge_api_key_logs'] = <<< ENDQ
+        $stmts['create/event/purge_api_key_logs'] = <<< 'ENDQ'
         CREATE EVENT purge_api_key_logs 
         ON SCHEDULE EVERY 1 WEEK ON COMPLETION PRESERVE ENABLE 
         COMMENT 'Removes api_key_logs older than 12 months' 
