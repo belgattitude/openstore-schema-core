@@ -43,10 +43,10 @@ $ddl = array_reduce($ddl_output, function ($carry, $value) {
 
 file_put_contents("$doc_directory/create_schema_utf8mb4.sql", $ddl);
 
-$ddl_utf8mb4 = preg_replace('/utf8mb4_unicode_ci/i', 'utf8_unicode_ci', $ddl);
+$ddl_utf8mb4 = preg_replace('/utf8mb4_unicode_ci/i', 'utf8_unicode_ci', $ddl) ?: '';
 
 /** @see why http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci/766996#766996 */
-$ddl_utf8mb4 = preg_replace('/utf8mb4/i', 'utf8', $ddl_utf8mb4);
+$ddl_utf8mb4 = preg_replace('/utf8mb4/i', 'utf8', $ddl_utf8mb4) ?: '';
 file_put_contents("$doc_directory/mysql-utf8-compat/create_schema_utf8_compat.sql", $ddl_utf8mb4);
 
 /*
@@ -67,8 +67,8 @@ $extra_ddl = implode("\n", $extra_output);
 
 file_put_contents("$doc_directory/create_schema_extra_utf8mb4.sql", $extra_ddl);
 
-$extra_ddl_utf8mb4 = preg_replace('/utf8mb4_unicode_ci/i', 'utf8_unicode_ci', $extra_ddl);
-$extra_ddl_utf8mb4 = preg_replace('/utf8mb4/i', 'utf8', $extra_ddl_utf8mb4);
+$extra_ddl_utf8mb4 = preg_replace('/utf8mb4_unicode_ci/i', 'utf8_unicode_ci', $extra_ddl) ?: '';
+$extra_ddl_utf8mb4 = preg_replace('/utf8mb4/i', 'utf8', $extra_ddl_utf8mb4) ?: '';
 
 file_put_contents("$doc_directory/mysql-utf8-compat/create_schema_extra_utf8_compat.sql", $extra_ddl_utf8mb4);
 
