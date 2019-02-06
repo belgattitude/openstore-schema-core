@@ -47,9 +47,9 @@ class ProductAttribute
      */
     private $product_id;
 
-
     /**
-     * Attributes
+     * Attributes.
+     *
      * @ORM\Column(type="json", nullable=true, options={"comment" = "Json attributes"})
      */
     private $attributes;
@@ -79,7 +79,6 @@ class ProductAttribute
     {
         return $this->product_id;
     }
-
 
     /**
      * @return string
@@ -112,5 +111,4 @@ class ProductAttribute
     {
         $this->updated_at = $updated_at;
     }
-
 }

@@ -1185,6 +1185,18 @@
 -- 
 -- schema object
 -- 
+ CREATE TABLE product_attribute (
+  product_attribute_id BIGINT UNSIGNED AUTO_INCREMENT NOT NULL, 
+  product_id BIGINT UNSIGNED NOT NULL, 
+  attributes LONGTEXT DEFAULT NULL COMMENT 'Json attributes(DC2Type:json)', 
+  created_at DATETIME DEFAULT NULL COMMENT 'Record creation timestamp', 
+  updated_at DATETIME DEFAULT NULL COMMENT 'Record last update timestamp', 
+  UNIQUE INDEX unique_product_idx (product_id), 
+  PRIMARY KEY(product_attribute_id)
+) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product attributes table';
+-- 
+-- schema object
+-- 
  CREATE TABLE sale_order_status (
   status_id SMALLINT UNSIGNED AUTO_INCREMENT NOT NULL, 
   reference VARCHAR(60) NOT NULL COMMENT 'Reference', 
@@ -2426,6 +2438,13 @@ ADD
   product_model_translation 
 ADD 
   CONSTRAINT FK_6EEE4ED031098462 FOREIGN KEY (lang) REFERENCES language (lang) ON DELETE RESTRICT;
+-- 
+-- schema object
+-- 
+ ALTER TABLE 
+  product_attribute 
+ADD 
+  CONSTRAINT FK_94DA59764584665A FOREIGN KEY (product_id) REFERENCES product (product_id) ON DELETE CASCADE;
 -- 
 -- schema object
 -- 
