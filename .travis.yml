@@ -71,42 +71,47 @@ jobs:
       env: MARIADB_VERSION=10.2 SET_INNODB_CONF=yes
       addons:
         mariadb: 10.2
-    # PHP 7.2
+    # PHP 7.3
     - stage: Test
-      php: 7.2
+      php: 7.3
       env: MYSQL_VERSION=5.7 SET_INNODB_CONF=yes
       sudo: required
     - stage: Test
-      php: 7.2
+      php: 7.3
       env: MARIADB_VERSION=10.1 SET_INNODB_CONF=yes
       addons:
         mariadb: 10.1
     - stage: Test
-      php: 7.2
+      php: 7.3
       env: MARIADB_VERSION=10.2 SET_INNODB_CONF=yes
       addons:
         mariadb: 10.2
     - stage: Test
-      php: 7.2
+      php: 7.3
       env: MARIADB_VERSION=10.3 SET_INNODB_CONF=no
       addons:
         mariadb: 10.3
+    - stage: Test
+      php: 7.3
+      env: MARIADB_VERSION=10.4 SET_INNODB_CONF=no
+      addons:
+        mariadb: 10.4
 
     # PHPstan
     - stage: PHPStan
-      php: 7.2
+      php: 7.3
       script:
         - vendor/bin/phpstan analyse -l max -c phpstan.neon src tests bin
 
     # Coding standards
     - stage: Coding standard
-      php: 7.2
+      php: 7.3
       script:
         - ./vendor/bin/php-cs-fixer --diff --dry-run -v fix
 
     # Coverage
     - stage: Coverage
-      php: 7.2
+      php: 7.3
       before_script:
         - mv ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini{.disabled,}
         - if [[ ! $(php -m | grep -si xdebug) ]]; then echo "xdebug required for coverage"; exit 1; fi
