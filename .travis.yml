@@ -28,11 +28,12 @@ script:
   - composer build
   # - Create a database from generated SQL (utf8)
   - cat resources/sql/mysql-utf8-compat/create_schema_utf8_compat.sql | mysql -u root openstore_test_utf8_compat
-  - cat resources/sql/mysql-utf8-compat/create_schema_utf8_compat.sql
   - cat resources/sql/mysql-utf8-compat/create_schema_extra_utf8_compat.sql | mysql -u root openstore_test_utf8_compat
+  - cat resources/sql/mysql-utf8-compat/create_schema_extra_utf8_compat.sql
   # - Create a database from generated SQL (utf8mb4)
   - cat resources/sql/create_schema_utf8mb4.sql | mysql -u root openstore_test_utf8mb4
   - cat resources/sql/create_schema_extra_utf8mb4.sql | mysql -u root openstore_test_utf8mb4
+  - cat resources/sql/create_schema_extra_utf8mb4.sql
   # Running a diff should not generate migrations (--dump-sql for debug it always return 0 exit code)
   - php vendor/bin/doctrine orm:schema-tool:update --dump-sql
   - php vendor/bin/doctrine orm:schema-tool:update
