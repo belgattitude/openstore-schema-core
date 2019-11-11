@@ -36,7 +36,7 @@
   INDEX line_number_idx (line_number), 
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   PRIMARY KEY(line_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Order line table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Order line table';
 -- 
 -- schema object
 -- 
@@ -56,7 +56,7 @@
   UNIQUE INDEX unique_user_customer_idx (user_id, customer_id), 
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   PRIMARY KEY(id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'User scope (customer, rep...)';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'User scope (customer, rep...)';
 -- 
 -- schema object
 -- 
@@ -89,7 +89,7 @@
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   UNIQUE INDEX unique_translation_idx (product_id, lang), 
   PRIMARY KEY(id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product translation table' ROW_FORMAT = DYNAMIC;
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product translation table' ROW_FORMAT = DYNAMIC;
 -- 
 -- schema object
 -- 
@@ -177,7 +177,7 @@
   ), 
   UNIQUE INDEX unique_product_price_idx (pricelist_id, product_id), 
   PRIMARY KEY(product_stat_trend_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product sale trend stats';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product sale trend stats';
 -- 
 -- schema object
 -- 
@@ -196,7 +196,7 @@
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   UNIQUE INDEX sort_index_idx (sort_index), 
   PRIMARY KEY(group_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Pricelist groups table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Pricelist groups table';
 -- 
 -- schema object
 -- 
@@ -224,7 +224,7 @@
   UNIQUE INDEX unique_title_idx (title), 
   UNIQUE INDEX unique_slug_idx (slug), 
   PRIMARY KEY(brand_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product brand table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product brand table';
 -- 
 -- schema object
 -- 
@@ -245,7 +245,7 @@
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   UNIQUE INDEX unique_flag_default_idx (flag_default), 
   PRIMARY KEY(status_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Order line status table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Order line status table';
 -- 
 -- schema object
 -- 
@@ -267,7 +267,7 @@
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   UNIQUE INDEX unique_flag_default_idx (flag_default), 
   PRIMARY KEY(id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Language table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Language table';
 -- 
 -- schema object
 -- 
@@ -282,7 +282,7 @@
   UNIQUE INDEX unique_username_idx (username), 
   UNIQUE INDEX unique_email_idx (email), 
   PRIMARY KEY(user_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'User table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'User table';
 -- 
 -- schema object
 -- 
@@ -292,7 +292,7 @@
   INDEX IDX_2DE8C6A3A76ED395 (user_id), 
   INDEX IDX_2DE8C6A3D60322AC (role_id), 
   PRIMARY KEY(user_id, role_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB;
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB;
 -- 
 -- schema object
 -- 
@@ -306,7 +306,7 @@
   UNIQUE INDEX unique_reference_idx (reference), 
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   PRIMARY KEY(product_stub_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product stub';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product stub';
 -- 
 -- schema object
 -- 
@@ -325,7 +325,7 @@
   UNIQUE INDEX unique_reference_idx (reference), 
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   PRIMARY KEY(country_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Country table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Country table';
 -- 
 -- schema object
 -- 
@@ -342,7 +342,7 @@
   UNIQUE INDEX unique_api_key_idx (api_key), 
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   PRIMARY KEY(api_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Api credentials';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Api credentials';
 -- 
 -- schema object
 -- 
@@ -362,7 +362,7 @@
   INDEX IDX_812DA558EA9FDD75 (media_id), 
   UNIQUE INDEX unique_format_per_media (media_id, format_reference), 
   PRIMARY KEY(video_source_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Media video source files';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Media video source files';
 -- 
 -- schema object
 -- 
@@ -401,7 +401,7 @@
   UNIQUE INDEX unique_flag_default_idx (flag_default), 
   UNIQUE INDEX sort_index_idx (sort_index), 
   PRIMARY KEY(pricelist_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Pricelist table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Pricelist table';
 -- 
 -- schema object
 -- 
@@ -430,7 +430,7 @@
     flag_primary
   ), 
   PRIMARY KEY(id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product serie media table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product serie media table';
 -- 
 -- schema object
 -- 
@@ -451,7 +451,7 @@
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   UNIQUE INDEX unique_translation_idx (status_id, lang), 
   PRIMARY KEY(id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Order type translation table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Order type translation table';
 -- 
 -- schema object
 -- 
@@ -474,7 +474,7 @@
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   UNIQUE INDEX unique_translation_idx (group_id, lang), 
   PRIMARY KEY(id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product group translation table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product group translation table';
 -- 
 -- schema object
 -- 
@@ -507,7 +507,7 @@
   UNIQUE INDEX unique_container_location_idx (container_id, location), 
   UNIQUE INDEX unique_remote_media_id_idx (type_id, remote_media_id), 
   PRIMARY KEY(media_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Media table' ROW_FORMAT = DYNAMIC;
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Media table' ROW_FORMAT = DYNAMIC;
 -- 
 -- schema object
 -- 
@@ -528,7 +528,7 @@
   UNIQUE INDEX unique_user_pricelist_idx (customer_id, pricelist_id), 
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   PRIMARY KEY(id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Customer pricelists';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Customer pricelists';
 -- 
 -- schema object
 -- 
@@ -547,7 +547,7 @@
   UNIQUE INDEX unique_reference_idx (reference), 
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   PRIMARY KEY(type_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Media type table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Media type table';
 -- 
 -- schema object
 -- 
@@ -565,7 +565,7 @@
   UNIQUE INDEX unique_reference_idx (reference), 
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   PRIMARY KEY(type_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Order type table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Order type table';
 -- 
 -- schema object
 -- 
@@ -582,7 +582,7 @@
   INDEX IDX_B608017254963938 (api_id), 
   INDEX IDX_B6080172ED5CA9E6 (service_id), 
   PRIMARY KEY(id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Api usage logs';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Api usage logs';
 -- 
 -- schema object
 -- 
@@ -604,7 +604,7 @@
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   UNIQUE INDEX unique_title_idx (title), 
   PRIMARY KEY(department_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product departments';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product departments';
 -- 
 -- schema object
 -- 
@@ -627,7 +627,7 @@
   UNIQUE INDEX unique_reference_idx (reference), 
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   PRIMARY KEY(unit_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product unit table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product unit table';
 -- 
 -- schema object
 -- 
@@ -649,7 +649,7 @@
   UNIQUE INDEX unique_folder_idx (folder), 
   UNIQUE INDEX unique_reference_idx (reference), 
   PRIMARY KEY(container_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Media container table' ROW_FORMAT = DYNAMIC;
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Media container table' ROW_FORMAT = DYNAMIC;
 -- 
 -- schema object
 -- 
@@ -684,7 +684,7 @@
   UNIQUE INDEX unique_reference_idx (reference), 
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   PRIMARY KEY(rep_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Sales representative table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Sales representative table';
 -- 
 -- schema object
 -- 
@@ -713,7 +713,7 @@
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   UNIQUE INDEX unique_translation_idx (category_id, lang), 
   PRIMARY KEY(id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product translation table' ROW_FORMAT = DYNAMIC;
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product translation table' ROW_FORMAT = DYNAMIC;
 -- 
 -- schema object
 -- 
@@ -733,7 +733,7 @@
   UNIQUE INDEX unique_reference_idx (reference), 
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   PRIMARY KEY(type_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product packaging type table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product packaging type table';
 -- 
 -- schema object
 -- 
@@ -756,7 +756,7 @@
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   UNIQUE INDEX unique_slug_idx (slug), 
   PRIMARY KEY(group_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product group table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product group table';
 -- 
 -- schema object
 -- 
@@ -775,7 +775,7 @@
   UNIQUE INDEX unique_reference_idx (reference), 
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   PRIMARY KEY(type_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product media type table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product media type table';
 -- 
 -- schema object
 -- 
@@ -793,7 +793,7 @@
   UNIQUE INDEX unique_reference_idx (reference), 
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   PRIMARY KEY(color_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Color table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Color table';
 -- 
 -- schema object
 -- 
@@ -816,7 +816,7 @@
   UNIQUE INDEX unique_product_packaging_idx (type_id, product_id), 
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   PRIMARY KEY(id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product packaging information';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product packaging information';
 -- 
 -- schema object
 -- 
@@ -836,7 +836,7 @@
   UNIQUE INDEX unique_reference_idx (reference), 
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   PRIMARY KEY(stock_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Stock warehouse';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Stock warehouse';
 -- 
 -- schema object
 -- 
@@ -871,7 +871,7 @@
   INDEX IDX_25F5CB1B89045958 (pricelist_id), 
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   PRIMARY KEY(order_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Sales order table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Sales order table';
 -- 
 -- schema object
 -- 
@@ -907,7 +907,7 @@
     pricelist_id, brand_id
   ), 
   PRIMARY KEY(product_rank_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product rankings';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product rankings';
 -- 
 -- schema object
 -- 
@@ -930,7 +930,7 @@
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   UNIQUE INDEX unique_translation_idx (set_id, lang), 
   PRIMARY KEY(id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product set translation table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product set translation table';
 -- 
 -- schema object
 -- 
@@ -948,7 +948,7 @@
   UNIQUE INDEX unique_reference_idx (reference), 
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   PRIMARY KEY(service_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Api services';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Api services';
 -- 
 -- schema object
 -- 
@@ -1028,7 +1028,7 @@
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   UNIQUE INDEX unique_slug_idx (slug), 
   PRIMARY KEY(product_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product table' ROW_FORMAT = DYNAMIC;
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product table' ROW_FORMAT = DYNAMIC;
 -- 
 -- schema object
 -- 
@@ -1069,7 +1069,7 @@
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   UNIQUE INDEX unique_slug_idx (slug), 
   PRIMARY KEY(category_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product category table' ROW_FORMAT = DYNAMIC;
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product category table' ROW_FORMAT = DYNAMIC;
 -- 
 -- schema object
 -- 
@@ -1108,7 +1108,7 @@
   INDEX valid_till_idx (valid_till), 
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   PRIMARY KEY(id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Discount conditions table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Discount conditions table';
 -- 
 -- schema object
 -- 
@@ -1127,7 +1127,7 @@
   UNIQUE INDEX unique_api_cutomer_idx (api_id, customer_id), 
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   PRIMARY KEY(id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Api key customers';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Api key customers';
 -- 
 -- schema object
 -- 
@@ -1136,7 +1136,7 @@
   name VARCHAR(128) NOT NULL, 
   UNIQUE INDEX unique_name_idx (name), 
   PRIMARY KEY(permission_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Custom permissions';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Custom permissions';
 -- 
 -- schema object
 -- 
@@ -1157,7 +1157,7 @@
   UNIQUE INDEX unique_api_service_idx (api_id, service_id), 
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   PRIMARY KEY(id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Api key services';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Api key services';
 -- 
 -- schema object
 -- 
@@ -1181,7 +1181,7 @@
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   UNIQUE INDEX unique_translation_idx (model_id, lang), 
   PRIMARY KEY(id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product model translation table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product model translation table';
 -- 
 -- schema object
 -- 
@@ -1193,7 +1193,7 @@
   updated_at DATETIME DEFAULT NULL COMMENT 'Record last update timestamp', 
   UNIQUE INDEX unique_product_idx (product_id), 
   PRIMARY KEY(product_attribute_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product attributes table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product attributes table';
 -- 
 -- schema object
 -- 
@@ -1214,7 +1214,7 @@
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   UNIQUE INDEX unique_flag_default_idx (flag_default), 
   PRIMARY KEY(status_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Order status table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Order status table';
 -- 
 -- schema object
 -- 
@@ -1244,7 +1244,7 @@
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   UNIQUE INDEX unique_slug_idx (slug), 
   PRIMARY KEY(serie_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product serie table' ROW_FORMAT = DYNAMIC;
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product serie table' ROW_FORMAT = DYNAMIC;
 -- 
 -- schema object
 -- 
@@ -1265,7 +1265,7 @@
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   UNIQUE INDEX unique_translation_idx (type_id, lang), 
   PRIMARY KEY(id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Order type translation table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Order type translation table';
 -- 
 -- schema object
 -- 
@@ -1282,7 +1282,7 @@
   INDEX rgt_idx (rgt), 
   UNIQUE INDEX unique_name_idx (name), 
   PRIMARY KEY(role_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Access roles';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Access roles';
 -- 
 -- schema object
 -- 
@@ -1292,7 +1292,7 @@
   INDEX IDX_6F7DF886D60322AC (role_id), 
   INDEX IDX_6F7DF886FED90CCA (permission_id), 
   PRIMARY KEY(role_id, permission_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB;
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB;
 -- 
 -- schema object
 -- 
@@ -1313,7 +1313,7 @@
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   UNIQUE INDEX unique_translation_idx (status_id, lang), 
   PRIMARY KEY(id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Order line status translation table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Order line status translation table';
 -- 
 -- schema object
 -- 
@@ -1333,7 +1333,7 @@
   INDEX delivered_at_idx (delivered_at), 
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   PRIMARY KEY(delivery_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Sales deliveries table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Sales deliveries table';
 -- 
 -- schema object
 -- 
@@ -1349,7 +1349,7 @@
   FULLTEXT INDEX keywords_ft_idx (keywords), 
   UNIQUE INDEX unique_translation_idx (product_id, lang), 
   PRIMARY KEY(id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product search indexes' ROW_FORMAT = DYNAMIC;
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product search indexes' ROW_FORMAT = DYNAMIC;
 -- 
 -- schema object
 -- 
@@ -1372,7 +1372,7 @@
     related_table, related_id, created_at
   ), 
   PRIMARY KEY(revision_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Custom table revisions history';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Custom table revisions history';
 -- 
 -- schema object
 -- 
@@ -1392,7 +1392,7 @@
   INDEX invoiced_at_idx (invoiced_at), 
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   PRIMARY KEY(invoice_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Sales invoices table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Sales invoices table';
 -- 
 -- schema object
 -- 
@@ -1414,7 +1414,7 @@
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   UNIQUE INDEX unique_flag_default_idx (flag_default), 
   PRIMARY KEY(type_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product set type table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product set type table';
 -- 
 -- schema object
 -- 
@@ -1439,7 +1439,7 @@
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   UNIQUE INDEX unique_flag_default_idx (flag_default), 
   PRIMARY KEY(type_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product type table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product type table';
 -- 
 -- schema object
 -- 
@@ -1462,7 +1462,7 @@
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   UNIQUE INDEX unique_translation_idx (brand_id, lang), 
   PRIMARY KEY(id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product brand translation table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product brand translation table';
 -- 
 -- schema object
 -- 
@@ -1483,7 +1483,7 @@
   UNIQUE INDEX unique_user_pricelist_idx (pricelist_id, user_id), 
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   PRIMARY KEY(id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'User pricelists';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'User pricelists';
 -- 
 -- schema object
 -- 
@@ -1509,7 +1509,7 @@
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   UNIQUE INDEX unique_translation_idx (product_stub_id, lang), 
   PRIMARY KEY(id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product stub translation table' ROW_FORMAT = DYNAMIC;
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product stub translation table' ROW_FORMAT = DYNAMIC;
 -- 
 -- schema object
 -- 
@@ -1568,7 +1568,7 @@
   UNIQUE INDEX unique_product_price_idx (pricelist_id, product_id), 
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   PRIMARY KEY(product_pricelist_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product pricelist';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product pricelist';
 -- 
 -- schema object
 -- 
@@ -1585,7 +1585,7 @@
   created_at DATETIME DEFAULT NULL COMMENT 'Record creation timestamp', 
   updated_at DATETIME DEFAULT NULL COMMENT 'Record last update timestamp', 
   PRIMARY KEY(product_pricelist_stat_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product pricelist quick statistics';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product pricelist quick statistics';
 -- 
 -- schema object
 -- 
@@ -1608,7 +1608,7 @@
   UNIQUE INDEX unique_product_price_idx (stock_id, product_id), 
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   PRIMARY KEY(id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product stock';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product stock';
 -- 
 -- schema object
 -- 
@@ -1633,7 +1633,7 @@
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   UNIQUE INDEX unique_flag_default_idx (flag_default), 
   PRIMARY KEY(status_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product status table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product status table';
 -- 
 -- schema object
 -- 
@@ -1654,7 +1654,7 @@
   UNIQUE INDEX unique_reference_idx (reference), 
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   PRIMARY KEY(group_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Customer group table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Customer group table';
 -- 
 -- schema object
 -- 
@@ -1677,7 +1677,7 @@
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   UNIQUE INDEX unique_title_idx (title), 
   PRIMARY KEY(target_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product target audience table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product target audience table';
 -- 
 -- schema object
 -- 
@@ -1714,7 +1714,7 @@
   UNIQUE INDEX unique_reference_idx (reference), 
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   PRIMARY KEY(customer_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Customer table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Customer table';
 -- 
 -- schema object
 -- 
@@ -1741,7 +1741,7 @@
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   UNIQUE INDEX unique_slug_idx (slug), 
   PRIMARY KEY(model_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product model table' ROW_FORMAT = DYNAMIC;
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product model table' ROW_FORMAT = DYNAMIC;
 -- 
 -- schema object
 -- 
@@ -1762,7 +1762,7 @@
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   UNIQUE INDEX unique_translation_idx (color_id, lang), 
   PRIMARY KEY(id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Color translation table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Color translation table';
 -- 
 -- schema object
 -- 
@@ -1788,7 +1788,7 @@
     type_id, product_id, flag_primary
   ), 
   PRIMARY KEY(id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product media table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product media table';
 -- 
 -- schema object
 -- 
@@ -1811,7 +1811,7 @@
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   UNIQUE INDEX unique_translation_idx (serie_id, lang), 
   PRIMARY KEY(id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product serie translation table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product serie translation table';
 -- 
 -- schema object
 -- 
@@ -1834,7 +1834,7 @@
   UNIQUE INDEX unique_legacy_mapping_idx (legacy_mapping), 
   UNIQUE INDEX unique_translation_idx (unit_id, lang), 
   PRIMARY KEY(id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product unit translation';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product unit translation';
 -- 
 -- schema object
 -- 
@@ -1860,7 +1860,7 @@
   UNIQUE INDEX unique_title_idx (title), 
   UNIQUE INDEX unique_slug_idx (slug), 
   PRIMARY KEY(set_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Product set table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Product set table';
 -- 
 -- schema object
 -- 
@@ -1880,7 +1880,7 @@
   UNIQUE INDEX unique_reference_idx (reference), 
   UNIQUE INDEX unique_title_idx (title), 
   PRIMARY KEY(currency_id)
-) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = 'Currency table';
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Currency table';
 -- 
 -- schema object
 -- 
