@@ -58,18 +58,18 @@ script:
 
 jobs:
   include:
-    # PHP 7.1
+    # PHP 7.2
     - stage: Test
-      php: 7.1
+      php: 7.2
       env: MYSQL_VERSION=5.7 SET_INNODB_CONF=yes
       sudo: required
     - stage: Test
-      php: 7.1
+      php: 7.2
       env: MARIADB_VERSION=10.1 SET_INNODB_CONF=yes
       addons:
         mariadb: 10.1
     - stage: Test
-      php: 7.1
+      php: 7.2
       env: MARIADB_VERSION=10.2 SET_INNODB_CONF=yes
       addons:
         mariadb: 10.2
