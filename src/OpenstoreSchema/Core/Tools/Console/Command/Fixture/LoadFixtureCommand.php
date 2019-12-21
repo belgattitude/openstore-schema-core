@@ -99,6 +99,7 @@ EOT
         //$multiple_transactions = false; //$input->getOption('multiple-transactions');
         $append = true; //$input->getOption('append');
         $executor->execute($fixtures, $append);
+
         return 0;
     }
 
