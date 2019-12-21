@@ -58,6 +58,30 @@ script:
 
 jobs:
   include:
+    # PHPstan
+    - stage: PHPStan
+      php: 7.3
+      script:
+        - composer phpstan
+
+    # Coding standards
+    - stage: Coding standard
+      php: 7.3
+      script:
+        - ./vendor/bin/php-cs-fixer --diff --dry-run -v fix
+
+    # Coverage
+    - stage: Coverage
+      php: 7.3
+      before_script:
+        - mv ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini{.disabled,}
+        - if [[ ! $(php -m | grep -si xdebug) ]]; then echo "xdebug required for coverage"; exit 1; fi
+      script:
+        - ./vendor/bin/phpunit -v --coverage-clover coverage.xml
+      after_script:
+      #- wget https://scrutinizer-ci.com/ocular.phar
+      #- php ocular.phar code-coverage:upload --format=php-clover clover.xml
+
     # PHP 7.2
     - stage: Test
       php: 7.2
@@ -99,29 +123,6 @@ jobs:
       addons:
         mariadb: 10.4
 
-    # PHPstan
-    - stage: PHPStan
-      php: 7.3
-      script:
-        - composer phpstan
-
-    # Coding standards
-    - stage: Coding standard
-      php: 7.3
-      script:
-        - ./vendor/bin/php-cs-fixer --diff --dry-run -v fix
-
-    # Coverage
-    - stage: Coverage
-      php: 7.3
-      before_script:
-        - mv ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini{.disabled,}
-        - if [[ ! $(php -m | grep -si xdebug) ]]; then echo "xdebug required for coverage"; exit 1; fi
-      script:
-        - ./vendor/bin/phpunit -v --coverage-clover coverage.xml
-      after_script:
-        #- wget https://scrutinizer-ci.com/ocular.phar
-        #- php ocular.phar code-coverage:upload --format=php-clover clover.xml
 
 
 
