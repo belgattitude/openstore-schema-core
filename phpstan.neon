@@ -6,6 +6,8 @@ includes:
 parameters:
 	excludes_analyse:
 		- tests/entity/Question.php
+	inferPrivatePropertyTypeFromConstructor: true
+	checkMissingIterableValueType: false
 	reportUnmatchedIgnoredErrors: true
 	ignoreErrors:
 		#- '#Parameter \#1 \$reader of class Doctrine\\ORM\\Mapping\\Driver\\AnnotationDriver#'
