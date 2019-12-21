@@ -199,9 +199,6 @@ class ProductType
         return $this->description;
     }
 
-    /**
-     * @return ProductType
-     */
     public function setFlagEnableDiscountCondition($flag_enable_discount_condition)
     {
         $this->flag_enable_discount_condition = $flag_enable_discount_condition;
@@ -228,9 +225,6 @@ class ProductType
         $this->flag_default = $flag_default;
     }
 
-    /**
-     * @return string
-     */
     public function setIconClass($icon_class)
     {
         $this->icon_class = $icon_class;

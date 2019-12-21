@@ -126,8 +126,6 @@ class ProductStock
 
     /**
      * @param float $available_stock
-     *
-     * @return ProductPricelist
      */
     public function setAvailableStock($available_stock)
     {
@@ -136,8 +134,6 @@ class ProductStock
 
     /**
      * @param float $theoretical_stock
-     *
-     * @return ProductPricelist
      */
     public function setTheoreticalStock($theoretical_stock)
     {

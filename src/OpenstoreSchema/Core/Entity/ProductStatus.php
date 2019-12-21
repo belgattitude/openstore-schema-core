@@ -238,9 +238,6 @@ class ProductStatus
         $this->flag_default = $flag_default;
     }
 
-    /**
-     * @return string
-     */
     public function setIconClass($icon_class)
     {
         $this->icon_class = $icon_class;

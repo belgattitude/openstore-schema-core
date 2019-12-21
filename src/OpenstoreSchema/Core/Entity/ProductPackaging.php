@@ -130,11 +130,6 @@ class ProductPackaging
         $this->quantity = $quantity;
     }
 
-    /**
-     * Set volume.
-     *
-     * @return Product
-     */
     public function setVolume($volume)
     {
         $this->volume = $volume;
@@ -148,11 +143,6 @@ class ProductPackaging
         return $this->volume;
     }
 
-    /**
-     * Set weight.
-     *
-     * @return Product
-     */
     public function setWeight($weight)
     {
         $this->weight = $weight;
@@ -166,11 +156,6 @@ class ProductPackaging
         return $this->weight;
     }
 
-    /**
-     * Set length.
-     *
-     * @return Product
-     */
     public function setLength($length)
     {
         $this->length = $length;
@@ -205,11 +190,7 @@ class ProductPackaging
     }
 
     /**
-     * Set barcode_ean.
-     *
      * @param string $barcode_ean
-     *
-     * @return Product
      */
     public function setBarcodeEan($barcode_ean)
     {
@@ -225,11 +206,7 @@ class ProductPackaging
     }
 
     /**
-     * Set barcode_upc.
-     *
      * @param string $barcode_upc
-     *
-     * @return Product
      */
     public function setBarcodeUpc($barcode_upc)
     {

@@ -28,9 +28,6 @@ class LoadFixtureCommand extends Command
      */
     protected $name = 'openstore:schema:load-fixture';
 
-    /**
-     * {@inheritdoc}
-     */
     protected function configure()
     {
         $this
@@ -51,9 +48,6 @@ EOT
         );
     }
 
-    /**
-     * {@inheritdoc}
-     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $emHelper = $this->getHelper('em');
@@ -72,7 +66,7 @@ EOT
             $question = new ConfirmationQuestion('Your database will be cleared (use --append to prevent)?', false);
 
             if (!$helper->ask($input, $output, $question)) {
-                return null;
+                return 1;
             }
         }
 
@@ -105,6 +99,7 @@ EOT
         //$multiple_transactions = false; //$input->getOption('multiple-transactions');
         $append = true; //$input->getOption('append');
         $executor->execute($fixtures, $append);
+        return 0;
     }
 
     /**

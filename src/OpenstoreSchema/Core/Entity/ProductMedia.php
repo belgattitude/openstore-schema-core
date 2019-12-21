@@ -118,8 +118,6 @@ class ProductMedia
 
     /**
      * @param int $product_id
-     *
-     * @return \OpenstoreSchema\Core\Entity\ProductMedia
      */
     public function setProductId($product_id)
     {
@@ -136,8 +134,6 @@ class ProductMedia
 
     /**
      * @param int $media_id
-     *
-     * @return \OpenstoreSchema\Core\Entity\ProductMedia
      */
     public function setMediaId($media_id)
     {
@@ -154,8 +150,6 @@ class ProductMedia
 
     /**
      * @param int $type_id
-     *
-     * @return \OpenstoreSchema\Core\Entity\ProductMedia
      */
     public function setTypeId($type_id)
     {

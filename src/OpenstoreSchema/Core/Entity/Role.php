@@ -215,26 +215,11 @@ class Role
     /**
      * {@inheritdoc}
      */
-    /*
-      public function getChildren()
-      {
-      return $this->children;
-      }
-     */
-
-    /**
-     * {@inheritdoc}
-     */
     public function hasChildren()
     {
         return !$this->children->isEmpty();
     }
 
-    /**
-     * Get users.
-     *
-     * @return User
-     */
     public function getUsers()
     {
         return $this->users;

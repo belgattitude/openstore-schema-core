@@ -143,8 +143,6 @@ class PricelistGroup
 
     /**
      * @param int $sort_index
-     *
-     * @return Pricelist
      */
     public function setSortIndex($sort_index)
     {
@@ -169,8 +167,6 @@ class PricelistGroup
 
     /**
      * @param string $created_at
-     *
-     * @return Pricelist
      */
     public function setCreatedAt($created_at)
     {
@@ -187,8 +183,6 @@ class PricelistGroup
 
     /**
      * @param string $updated_at
-     *
-     * @return Pricelist
      */
     public function setUpdatedAt($updated_at)
     {
@@ -209,8 +203,6 @@ class PricelistGroup
      * Set creator username.
      *
      * @param string $created_by
-     *
-     * @return Pricelist
      */
     public function setCreatedBy($created_by)
     {
@@ -231,8 +223,6 @@ class PricelistGroup
      * Set the last updater username.
      *
      * @param string $updated_by
-     *
-     * @return Pricelist
      */
     public function setUpdatedBy($updated_by)
     {

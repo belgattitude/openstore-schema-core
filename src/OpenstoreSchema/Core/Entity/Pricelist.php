@@ -267,9 +267,6 @@ class Pricelist
         return $this->description;
     }
 
-    /**
-     * @return string
-     */
     public function setIconClass($icon_class)
     {
         $this->icon_class = $icon_class;
@@ -277,8 +274,6 @@ class Pricelist
 
     /**
      * @param int $sort_index
-     *
-     * @return Pricelist
      */
     public function setSortIndex($sort_index)
     {
@@ -309,9 +304,6 @@ class Pricelist
         return (bool) $this->flag_active;
     }
 
-    /**
-     * @return Pricelist
-     */
     public function setFlagActive($flag_active)
     {
         $this->flag_active = $flag_active;
@@ -325,9 +317,6 @@ class Pricelist
         return (bool) $this->flag_public;
     }
 
-    /**
-     * @return Pricelist
-     */
     public function setFlagEnableDiscountCondition($flag_enable_discount_condition)
     {
         $this->flag_enable_discount_condition = $flag_enable_discount_condition;
@@ -341,9 +330,6 @@ class Pricelist
         return (bool) $this->flag_enable_discount_condition;
     }
 
-    /**
-     * @return Pricelist
-     */
     public function setFlagPublic($flag_public)
     {
         $this->flag_public = $flag_public;
@@ -359,8 +345,6 @@ class Pricelist
 
     /**
      * @param string $created_at
-     *
-     * @return Pricelist
      */
     public function setCreatedAt($created_at)
     {
@@ -377,8 +361,6 @@ class Pricelist
 
     /**
      * @param string $updated_at
-     *
-     * @return Pricelist
      */
     public function setUpdatedAt($updated_at)
     {
@@ -399,8 +381,6 @@ class Pricelist
      * Set creator username.
      *
      * @param string $created_by
-     *
-     * @return Pricelist
      */
     public function setCreatedBy($created_by)
     {
@@ -421,8 +401,6 @@ class Pricelist
      * Set the last updater username.
      *
      * @param string $updated_by
-     *
-     * @return Pricelist
      */
     public function setUpdatedBy($updated_by)
     {

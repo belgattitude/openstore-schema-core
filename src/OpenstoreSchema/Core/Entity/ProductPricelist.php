@@ -348,8 +348,6 @@ class ProductPricelist
 
     /**
      * @param float $price
-     *
-     * @return ProductPricelist
      */
     public function setPrice($price)
     {
@@ -358,8 +356,6 @@ class ProductPricelist
 
     /**
      * @param float $public_price
-     *
-     * @return ProductPricelist
      */
     public function setPublicPrice($public_price)
     {

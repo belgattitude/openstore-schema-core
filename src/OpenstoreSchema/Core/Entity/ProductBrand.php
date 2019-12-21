@@ -238,9 +238,6 @@ class ProductBrand
         return $this->url;
     }
 
-    /**
-     * @return string
-     */
     public function setIconClass($icon_class)
     {
         $this->icon_class = $icon_class;

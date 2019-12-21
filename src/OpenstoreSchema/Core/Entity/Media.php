@@ -161,8 +161,6 @@ class Media
 
     /**
      * @param int $media_id
-     *
-     * @return \OpenstoreSchema\Core\Entity\Media
      */
     public function setMediaId($media_id)
     {

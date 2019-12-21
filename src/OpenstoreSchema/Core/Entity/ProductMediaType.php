@@ -167,9 +167,6 @@ class ProductMediaType
         return $this->description;
     }
 
-    /**
-     * @return string
-     */
     public function setIconClass($icon_class)
     {
         $this->icon_class = $icon_class;

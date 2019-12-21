@@ -134,8 +134,6 @@ class ProductSerieMedia
 
     /**
      * @param int $media_id
-     *
-     * @return \OpenstoreSchema\Core\Entity\ProductMedia
      */
     public function setMediaId($media_id)
     {

@@ -109,8 +109,6 @@ class MediaContainer
 
     /**
      * @param int $container_id
-     *
-     * @return \OpenstoreSchema\Core\Entity\MediaContainer
      */
     public function setContainerId($container_id)
     {

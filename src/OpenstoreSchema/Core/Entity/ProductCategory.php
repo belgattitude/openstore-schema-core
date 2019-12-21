@@ -258,8 +258,6 @@ class ProductCategory
 
     /**
      * @param int $sort_index
-     *
-     * @return ProductCategory
      */
     public function setSortIndex($sort_index)
     {
@@ -276,8 +274,6 @@ class ProductCategory
 
     /**
      * @param int $global_sort_index
-     *
-     * @return ProductCategory
      */
     public function setGlobalSortIndex($global_sort_index)
     {
@@ -292,9 +288,6 @@ class ProductCategory
         return $this->global_sort_index;
     }
 
-    /**
-     * @return string
-     */
     public function setIconClass($icon_class)
     {
         $this->icon_class = $icon_class;

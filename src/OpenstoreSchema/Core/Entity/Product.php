@@ -470,8 +470,6 @@ class Product
 
     /**
      * @param int $status_id
-     *
-     * @return Product
      */
     public function setStatusId($status_id)
     {
@@ -488,8 +486,6 @@ class Product
 
     /**
      * @param float $unit_id
-     *
-     * @return \OpenstoreSchema\Core\Entity\Product
      */
     public function setUnitId($unit_id)
     {
@@ -504,11 +500,6 @@ class Product
         return $this->unit_id;
     }
 
-    /**
-     * Set volume.
-     *
-     * @return Product
-     */
     public function setVolume($volume)
     {
         $this->volume = $volume;
@@ -522,11 +513,6 @@ class Product
         return $this->volume;
     }
 
-    /**
-     * Set weight.
-     *
-     * @return Product
-     */
     public function setWeight($weight)
     {
         $this->weight = $weight;
@@ -540,11 +526,6 @@ class Product
         return $this->weight;
     }
 
-    /**
-     * Set length.
-     *
-     * @return Product
-     */
     public function setLength($length)
     {
         $this->length = $length;
@@ -558,11 +539,6 @@ class Product
         return $this->length;
     }
 
-    /**
-     * Set height.
-     *
-     * @return Product
-     */
     public function setHeight($height)
     {
         $this->height = $height;
@@ -576,11 +552,6 @@ class Product
         return $this->height;
     }
 
-    /**
-     * Set width.
-     *
-     * @return Product
-     */
     public function setWidth($width)
     {
         $this->width = $width;
@@ -594,13 +565,6 @@ class Product
         return $this->width;
     }
 
-    /**
-     * Set barcode_ean13.
-     *
-     * @param string $barcode_ean13
-     *
-     * @return Product
-     */
     public function setBarcodeEan13($barcode_ean13)
     {
         $this->barcode_ean13 = $barcode_ean13;
@@ -614,9 +578,6 @@ class Product
         return $this->barcode_ean13;
     }
 
-    /**
-     * @return string
-     */
     public function setIconClass($icon_class)
     {
         $this->icon_class = $icon_class;

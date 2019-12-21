@@ -153,9 +153,6 @@ class Country
         return $this->name;
     }
 
-    /**
-     * @return string
-     */
     public function setIconClass($icon_class)
     {
         $this->icon_class = $icon_class;
