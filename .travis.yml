@@ -1,6 +1,6 @@
 language: php
 sudo: required
-dist: trusty
+dist: bionic
 
 cache:
     directories:
@@ -103,7 +103,7 @@ jobs:
     - stage: PHPStan
       php: 7.3
       script:
-        - vendor/bin/phpstan analyse -l max -c phpstan.neon src tests bin
+        - composer phpstan
 
     # Coding standards
     - stage: Coding standard
