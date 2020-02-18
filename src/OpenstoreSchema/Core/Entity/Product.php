@@ -290,6 +290,11 @@ class Product
     private $trade_code_hts;
 
     /**
+     * @ORM\Column(type="boolean", nullable=false, options={"default"=0, "comment"="Whether the product is for kids"})
+     */
+    private $flag_kids;
+
+    /**
      * @Gedmo\Timestampable(on="create")
      * @ORM\Column(type="datetime", nullable=true, options={"comment" = "Record creation timestamp"})
      */
@@ -634,6 +639,19 @@ class Product
     public function setFlagActive($flag_active)
     {
         $this->flag_active = $flag_active;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getFlagKids()
+    {
+        return (bool) $this->flag_kids;
+    }
+
+    public function setFlagKids($flag_kids)
+    {
+        $this->flag_kids = $flag_kids;
     }
 
     public function getAvailableAt(): ?string
