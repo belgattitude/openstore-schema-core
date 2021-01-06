@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 0.51.7 (2020-02-18)
+
+### Added 
+
+- `Product` new field: `flag_kids` (Whether the product is for kids)
+
 ## 0.51.6 (2019-02-08)
 
 ### Added
