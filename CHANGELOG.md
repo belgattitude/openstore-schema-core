@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 0.51.8 (2021-01-07)
+
+### Added 
+
+- `Product` new field: `country_of_origin` (Product's country_of_origin, ISO)
+
 ## 0.51.7 (2020-02-18)
 
 ### Added 

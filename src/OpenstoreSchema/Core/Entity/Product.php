@@ -280,6 +280,11 @@ class Product
     private $icon_class;
 
     /**
+     * @ORM\Column(type="string", length=3, nullable=true, options={"comment"="Country of origin"})
+     */
+    private $country_of_origin;
+
+    /**
      * @ORM\Column(type="string", length=20, nullable=true, options={"comment"="European intrastat customs code"})
      */
     private $trade_code_intrastat;
@@ -594,6 +599,22 @@ class Product
     public function getIconClass()
     {
         return $this->icon_class;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCountryOfOrigin()
+    {
+        return $this->country_of_origin;
+    }
+
+    /**
+     * @param string $county
+     */
+    public function setCountryOfOrigin($country)
+    {
+        $this->country_of_origin = $country;
     }
 
     /**
