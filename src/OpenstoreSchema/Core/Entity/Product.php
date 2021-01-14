@@ -280,6 +280,11 @@ class Product
     private $icon_class;
 
     /**
+     * @ORM\Column(type="string", length=3, nullable=true, options={"comment"="Country of origin"})
+     */
+    private $country_of_origin;
+
+    /**
      * @ORM\Column(type="string", length=20, nullable=true, options={"comment"="European intrastat customs code"})
      */
     private $trade_code_intrastat;
@@ -288,6 +293,11 @@ class Product
      * @ORM\Column(type="string", length=20, nullable=true, options={"comment"="International Harmonized Trade System common nomenclature code"})
      */
     private $trade_code_hts;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=false, options={"default"=0, "comment"="Whether the product is for kids"})
+     */
+    private $flag_kids;
 
     /**
      * @Gedmo\Timestampable(on="create")
@@ -594,6 +604,22 @@ class Product
     /**
      * @return string
      */
+    public function getCountryOfOrigin()
+    {
+        return $this->country_of_origin;
+    }
+
+    /**
+     * @param string $county
+     */
+    public function setCountryOfOrigin($country)
+    {
+        $this->country_of_origin = $country;
+    }
+
+    /**
+     * @return string
+     */
     public function getTradeCodeHts()
     {
         return $this->trade_code_hts;
@@ -634,6 +660,19 @@ class Product
     public function setFlagActive($flag_active)
     {
         $this->flag_active = $flag_active;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getFlagKids()
+    {
+        return (bool) $this->flag_kids;
+    }
+
+    public function setFlagKids($flag_kids)
+    {
+        $this->flag_kids = $flag_kids;
     }
 
     public function getAvailableAt(): ?string
