@@ -82,6 +82,17 @@
 -- 
 -- schema object
 -- 
+ CREATE TABLE product_customer (
+  product_id BIGINT NOT NULL, 
+  customer_id INT NOT NULL, 
+  legacy_synchro_at DATETIME DEFAULT NULL, 
+  INDEX product_id_idx (product_id), 
+  INDEX customer_id_idx (customer_id), 
+  PRIMARY KEY(product_id, customer_id)
+) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = 'Reserved product for customers';
+-- 
+-- schema object
+-- 
  CREATE TABLE user_pricelist (
   id BIGINT UNSIGNED AUTO_INCREMENT NOT NULL, 
   pricelist_id SMALLINT UNSIGNED NOT NULL, 
